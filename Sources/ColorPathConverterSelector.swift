@@ -40,6 +40,16 @@ public struct ColorPathConverterSelector {
         XYZToBT2020RGB.pathId:  XYZToBT2020RGB,
         XYZToIPT.pathId:        XYZToIPT,
         
+        HexTosRGB.pathId:       HexTosRGB,
+        HexToAppleRGB.pathId:   HexToAppleRGB,
+        HexToAdobeRGB.pathId:   HexToAdobeRGB,
+        HexToBT2020RGB.pathId:  HexToBT2020RGB,
+        
+        sRGBToHex.pathId:       sRGBToHex,
+        AppleRGBToHex.pathId:   AppleRGBToHex,
+        AdobeRGBToHex.pathId:   AdobeRGBToHex,
+        BT2020RGBToHex.pathId:  BT2020RGBToHex,
+        
         sRGBToXYZ.pathId:       sRGBToXYZ,
         AppleRGBToXYZ.pathId:   AppleRGBToXYZ,
         AdobeRGBToXYZ.pathId:   AdobeRGBToXYZ,
@@ -189,6 +199,87 @@ public struct ColorPathConverterSelector {
     
     public static let XYZToIPT: PathConverter = .init( .XYZ ==> .IPT ) {
         .init( Self.XYZToIPT(color: ($0.base as! XYZ), infos: $1) )
+    }
+    
+    // MARK: Hex
+    public static let HexTosRGB: PathConverter = .init( .Hex ==> .sRGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+        infos?["\(Illuminant.self)"] = nil
+        return .init(
+            Self.HexTosRGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
+    public static let HexToAppleRGB: PathConverter = .init( .Hex ==> .AppleRGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+        infos?["\(Illuminant.self)"] = nil
+        return .init(
+            Self.HexToAppleRGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
+    public static let HexToAdobeRGB: PathConverter = .init( .Hex ==> .AdobeRGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+        infos?["\(Illuminant.self)"] = nil
+        return .init(
+            Self.HexToAdobeRGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
+    public static let HexToBT2020RGB: PathConverter = .init( .Hex ==> .BT2020RGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+        infos?["\(Illuminant.self)"] = nil
+        return .init(
+            Self.HexToBT2020RGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
+    public static let sRGBToHex: PathConverter = .init( .sRGB ==> .Hex) {
+        let color = $0.base as! sRGB
+        var infos = $1
+        let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+        infos?["\(Illuminant.self)"] = nil
+        return .init(
+            Self.sRGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
+    public static let AppleRGBToHex: PathConverter = .init( .AppleRGB ==> .Hex) {
+        let color = $0.base as! AppleRGB
+        var infos = $1
+        let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+        infos?["\(Illuminant.self)"] = nil
+        return .init(
+            Self.AppleRGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
+    public static let AdobeRGBToHex: PathConverter = .init( .AdobeRGB ==> .Hex) {
+        let color = $0.base as! AdobeRGB
+        var infos = $1
+        let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+        infos?["\(Illuminant.self)"] = nil
+        return .init(
+            Self.AdobeRGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
+    public static let BT2020RGBToHex: PathConverter = .init( .BT2020RGB ==> .Hex) {
+        let color = $0.base as! BT2020RGB
+        var infos = $1
+        let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+        infos?["\(Illuminant.self)"] = nil
+        return .init(
+            Self.BT2020RGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
     }
     
     // MARK: RGB
@@ -1024,6 +1115,95 @@ extension ColorPathConverterSelector {
         
         return .init(array: iptValues)
         
+    }
+    
+    // MARK: - Hex
+    private static func HexToXYZ(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> XYZ {
+        
+        let downColor = color.downable()
+        let colorTuple: RGBColorable.FloatTuple = (
+            downColor.red, downColor.green, downColor.blue, downColor.illuminant
+        )
+
+        switch color.rgbColorSpace {
+        case .unowned:
+            return sRGBToXYZ(
+                color: .init(),
+                illuminant: illuminant, infos: infos
+            )
+        case .sRGB:
+            return sRGBToXYZ(
+                color: .init(rgb: colorTuple),
+                illuminant: illuminant, infos: infos
+            )
+        case .AppleRGB:
+            return AppleRGBToXYZ(
+                color: .init(rgb: colorTuple),
+                illuminant: illuminant, infos: infos
+            )
+        case .AdobeRGB:
+            return AdobeRGBToXYZ(
+                color: .init(rgb: colorTuple),
+                illuminant: illuminant, infos: infos
+            )
+        case .BT2020RGB:
+            return BT2020RGBToXYZ(
+                color: .init(rgb: colorTuple),
+                illuminant: illuminant, infos: infos
+            )
+        }
+        
+    }
+    
+    /// - Tag: Hex -> xRGB
+    public static func HexToRGB<R: RGBColorable>(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> R {
+        
+        XYZToRGB(
+            color: HexToXYZ(
+                color: color, illuminant: illuminant, infos: infos
+            ),
+            illuminant: illuminant,
+            infos: infos
+        )
+        
+    }
+    
+    public static func HexTosRGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> sRGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+    
+    public static func HexToAppleRGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> AppleRGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+    
+    public static func HexToAdobeRGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> AdobeRGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+    
+    public static func HexToBT2020RGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> BT2020RGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+    
+    /// - Tag: xRGB -> Hex
+    public static func RGBToHex<T: RGBColorable>(color: T, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        
+        .init(rgb: color)
+    }
+    
+    public static func sRGBToHex(color: sRGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
+    }
+    
+    public static func AppleRGBToHex(color: AppleRGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
+    }
+    
+    public static func AdobeRGBToHex(color: AdobeRGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
+    }
+    
+    public static func BT2020RGBToHex(color: BT2020RGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
     }
     
     // MARK: - RGB

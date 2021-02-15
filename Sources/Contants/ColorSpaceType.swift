@@ -12,6 +12,8 @@ public enum ColorSpaceType: String {
     
     case unowned
     
+    case Hex
+    
     case sRGB
     case AppleRGB
     case AdobeRGB
@@ -37,6 +39,7 @@ public enum ColorSpaceType: String {
     
     public init<C: Colorable>(color: C.Type) {
         switch "\(color)" {
+        case Self.Hex.rawValue:       self = .Hex
         case Self.sRGB.rawValue:      self = .sRGB
         case Self.AppleRGB.rawValue:  self = .AppleRGB
         case Self.AdobeRGB.rawValue:  self = .AdobeRGB
@@ -63,10 +66,6 @@ public enum ColorSpaceType: String {
         self == .AdobeRGB ||
         self == .BT2020RGB
     }
-    
-//    public func type() ->  {
-//
-//    }
     
 }
 

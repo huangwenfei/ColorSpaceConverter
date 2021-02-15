@@ -266,6 +266,16 @@ extension ColorPath {
         addEdge(byFrom: .AdobeRGB, to: .CMY)
         addEdge(byFrom: .BT2020RGB, to: .CMY)
         
+        addEdge(byFrom: .sRGB, to: .Hex)
+        addEdge(byFrom: .AppleRGB, to: .Hex)
+        addEdge(byFrom: .AdobeRGB, to: .Hex)
+        addEdge(byFrom: .BT2020RGB, to: .Hex)
+        
+        addEdge(byFrom: .Hex, to: .sRGB)
+        addEdge(byFrom: .Hex, to: .AppleRGB)
+        addEdge(byFrom: .Hex, to: .AdobeRGB)
+        addEdge(byFrom: .Hex, to: .BT2020RGB)
+        
         addEdge(byFrom: .HSV, to: .sRGB)
         addEdge(byFrom: .HSV, to: .AppleRGB)
         addEdge(byFrom: .HSV, to: .AdobeRGB)

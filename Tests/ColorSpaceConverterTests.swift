@@ -28,6 +28,110 @@ class ColorSpaceConverterTests: XCTestCase {
         .init(round(atof(Array(String(format: "%0.4f", v).utf8CString))))
     }
     
+    func formatRound(_ v: Double) -> Double {
+        atof(Array(String(format: "%0.0f", round(v)).utf8CString))
+    }
+    
+    func testsHexInit() throws {
+        /// - Tag: init(hex: String)
+        /// case 1: 16 bits
+        /// (red: 5 /*85*/, green: 2 /*34*/, blue: 11 /*187*/)
+        XCTAssertTrue(Hex(byString: "52B").description == "#5522BBFF")
+        XCTAssertTrue(Hex(byString: "#52B").description == "#5522BBFF")
+        XCTAssertTrue(Hex(byString: "0x52B").description == "#5522BBFF")
+        XCTAssertTrue(Hex(byString: "0X52B").description == "#5522BBFF")
+        XCTAssertTrue(Hex(byString: "52BF").description == "#5522BBFF")
+        /// case 2: 32 bits
+        /// (red: 88, green: 38, blue: 182)
+        XCTAssertTrue(Hex(byString: "5522BB").description == "#5522BBFF")
+        XCTAssertTrue(Hex(byString: "#5522BB").description == "#5522BBFF")
+        XCTAssertTrue(Hex(byString: "0x5522BB").description == "#5522BBFF")
+        XCTAssertTrue(Hex(byString: "0X5522BB").description == "#5522BBFF")
+        XCTAssertTrue(Hex(byString: "5522BBFF").description == "#5522BBFF")
+    }
+    
+    func testsHexFromxRGB() throws {
+        let srgb = sRGB(red: 88, green: 38, blue: 182)
+        let hex = Hex(rgb: srgb)
+        XCTAssertTrue(hex.red == srgb.red)
+        XCTAssertTrue(hex.green == srgb.green)
+        XCTAssertTrue(hex.blue == srgb.blue)
+        ///
+        let applergb = AppleRGB(red: 88, green: 38, blue: 182)
+        let applehex = Hex(rgb: applergb)
+        XCTAssertTrue(applehex.red == applergb.red)
+        XCTAssertTrue(applehex.green == applergb.green)
+        XCTAssertTrue(applehex.blue == applergb.blue)
+        ///
+        let adobergb = AdobeRGB(red: 88, green: 38, blue: 182)
+        let adobehex = Hex(rgb: adobergb)
+        XCTAssertTrue(adobehex.red == adobergb.red)
+        XCTAssertTrue(adobehex.green == adobergb.green)
+        XCTAssertTrue(adobehex.blue == adobergb.blue)
+        ///
+        let bt2020rgb = AdobeRGB(red: 88, green: 38, blue: 182)
+        let bt2020hex = Hex(rgb: bt2020rgb)
+        XCTAssertTrue(bt2020hex.red == bt2020rgb.red)
+        XCTAssertTrue(bt2020hex.green == bt2020rgb.green)
+        XCTAssertTrue(bt2020hex.blue == bt2020rgb.blue)
+    }
+    
+    func testsxRGBToHex() throws {
+        ///
+        let rgb = sRGB(red: 88, green: 38, blue: 182)
+        var hex = Converter.convert(from: rgb, to: Hex.self)
+        XCTAssertTrue(format(hex.red) == 88)
+        XCTAssertTrue(format(hex.green) == 38)
+        XCTAssertTrue(format(hex.blue) == 182)
+        XCTAssertTrue(format(hex.alpha) == 255)
+        ///
+        let rgb1 = AppleRGB(red: 88, green: 38, blue: 182)
+        hex = Converter.convert(from: rgb1, to: Hex.self)
+        XCTAssertTrue(format(hex.red) == 88)
+        XCTAssertTrue(format(hex.green) == 38)
+        XCTAssertTrue(format(hex.blue) == 182)
+        XCTAssertTrue(format(hex.alpha) == 255)
+        ///
+        let rgb2 = AppleRGB(red: 88, green: 38, blue: 182)
+        hex = Converter.convert(from: rgb2, to: Hex.self)
+        XCTAssertTrue(format(hex.red) == 88)
+        XCTAssertTrue(format(hex.green) == 38)
+        XCTAssertTrue(format(hex.blue) == 182)
+        XCTAssertTrue(format(hex.alpha) == 255)
+        ///
+        let rgb3 = AppleRGB(red: 88, green: 38, blue: 182)
+        hex = Converter.convert(from: rgb3, to: Hex.self)
+        XCTAssertTrue(format(hex.red) == 88)
+        XCTAssertTrue(format(hex.green) == 38)
+        XCTAssertTrue(format(hex.blue) == 182)
+        XCTAssertTrue(format(hex.alpha) == 255)
+    }
+    
+    func testsHexToxRGB() throws {
+        /// (red: 5 /*85*/, green: 2 /*34*/, blue: 11 /*187*/)
+        let hex = Hex(byString: "5522BB")
+        /// case 1: to srgb
+        let srgb = Converter.convert(from: hex, to: sRGB.self).uppable()
+        XCTAssertTrue(formatRound(srgb.red) == 85)
+        XCTAssertTrue(formatRound(srgb.green) == 34)
+        XCTAssertTrue(formatRound(srgb.blue) == 187)
+        /// case 1: to srgb
+        let applergb = Converter.convert(from: hex, to: AppleRGB.self).uppable()
+        XCTAssertTrue(formatRound(applergb.red) == 63)
+        XCTAssertTrue(formatRound(applergb.green) == 15)
+        XCTAssertTrue(formatRound(applergb.blue) == 176)
+        /// case 1: to srgb
+        let adobergb = Converter.convert(from: hex, to: AdobeRGB.self).uppable()
+        XCTAssertTrue(formatRound(adobergb.red) == 76)
+        XCTAssertTrue(formatRound(adobergb.green) == 39)
+        XCTAssertTrue(formatRound(adobergb.blue) == 182)
+        /// case 1: to srgb
+        let bt2020rgb = Converter.convert(from: hex, to: BT2020RGB.self).uppable()
+        XCTAssertTrue(formatRound(bt2020rgb.red) == 67)
+        XCTAssertTrue(formatRound(bt2020rgb.green) == 30)
+        XCTAssertTrue(formatRound(bt2020rgb.blue) == 170)
+    }
+    
     func testsRgbToX() throws {
         let rgb = sRGB(red: 88, green: 38, blue: 182)
         /// case 1: to hsl

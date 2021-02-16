@@ -52,8 +52,8 @@ public struct Illuminant: IlluminantProtocol {
         case .ten:
             switch TenLights(rawValue: lamp.name)! {
             case .d55, .d75: return nil
-            case .d50: return .two ~ .d50
-            case .d65: return .two ~ .d65
+            case .d50: return .ten ~ .d50
+            case .d65: return .ten ~ .d65
             }
         }
     }

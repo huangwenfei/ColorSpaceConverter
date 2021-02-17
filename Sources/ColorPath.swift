@@ -123,10 +123,10 @@ public struct ColorPath {
         
         /// from ==> rgb
         let fromToRgb = converters(pathId: pathId.from ==> rgb.colorSpace)
-        print(fromToRgb)
+        // print(fromToRgb)
         /// rgb ==> to
         let rgbToTo = converters(pathId: rgb.colorSpace ==> pathId.to)
-        print(rgbToTo)
+        // print(rgbToTo)
         return fromToRgb + rgbToTo
     }
     

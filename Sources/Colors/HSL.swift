@@ -15,7 +15,7 @@ public struct HSL: NormalColorableProtocol, ColorElement {
     public var elementCount: Int { 3 }
     
     // MARK: Color Elements
-    /// [0, 360]
+    /// [0, 1]
     public var h: Element = 0
     /// [0, 1]
     public var s: Element = 0
@@ -63,15 +63,15 @@ extension HSL {
     
     
     public static var hDownerRange: (min: Element, max: Element) {
-        (0, 360)
-    }
-    
-    public static var sDownerRange: (min: Element, max: Element) {
         (0, 1)
     }
     
+    public static var sDownerRange: (min: Element, max: Element) {
+        hDownerRange
+    }
+    
     public static var lDownerRange: (min: Element, max: Element) {
-        sDownerRange
+        hDownerRange
     }
     
 }
@@ -83,6 +83,7 @@ extension HSL {
         var result = self
         
         if isUpscale {
+            result.h /= 360
             result.s /= 100
             result.l /= 100
         }
@@ -95,6 +96,7 @@ extension HSL {
         var result = self
         
         if !isUpscale {
+            result.h *= 360
             result.s *= 100
             result.l *= 100
         }

@@ -136,12 +136,12 @@ class ColorSpaceConverterTests: XCTestCase {
         let rgb = sRGB(red: 88, green: 38, blue: 182)
         /// case 1: to hsl
         let hsl = Converter.convert(from: rgb, to: HSL.self)
-        XCTAssertTrue(format(hsl.h) == 260.8333)
+        XCTAssertTrue(format(hsl.h) == 0.7245)
         XCTAssertTrue(format(hsl.s) == 0.6545)
         XCTAssertTrue(format(hsl.l) == 0.4314)
         /// case 2: to hsb/v
         let hsv = Converter.convert(from: rgb, to: HSV.self)
-        XCTAssertTrue(format(hsv.h) == 260.8333)
+        XCTAssertTrue(format(hsv.h) == 0.7245)
         XCTAssertTrue(format(hsv.s) == 0.7912)
         XCTAssertTrue(format(hsv.v) == 0.7137)
         /// case 3: to cmy
@@ -166,12 +166,12 @@ class ColorSpaceConverterTests: XCTestCase {
         let rgb = AppleRGB(red: 88, green: 38, blue: 182)
         /// case 1: to hsl
         let hsl = Converter.convert(from: rgb, to: HSL.self)
-        XCTAssertTrue(format(hsl.h) == 260.8333)
+        XCTAssertTrue(format(hsl.h) == 0.7245)
         XCTAssertTrue(format(hsl.s) == 0.6545)
         XCTAssertTrue(format(hsl.l) == 0.4314)
         /// case 2: to hsb/v
         let hsv = Converter.convert(from: rgb, to: HSV.self)
-        XCTAssertTrue(format(hsv.h) == 260.8333)
+        XCTAssertTrue(format(hsv.h) == 0.7245)
         XCTAssertTrue(format(hsv.s) == 0.7912)
         XCTAssertTrue(format(hsv.v) == 0.7137)
         /// case 3: to cmy
@@ -196,12 +196,12 @@ class ColorSpaceConverterTests: XCTestCase {
         let rgb = AdobeRGB(red: 88, green: 38, blue: 182)
         /// case 1: to hsl
         let hsl = Converter.convert(from: rgb, to: HSL.self)
-        XCTAssertTrue(format(hsl.h) == 260.8333)
+        XCTAssertTrue(format(hsl.h) == 0.7245)
         XCTAssertTrue(format(hsl.s) == 0.6545)
         XCTAssertTrue(format(hsl.l) == 0.4314)
         /// case 2: to hsb/v
         let hsv = Converter.convert(from: rgb, to: HSV.self)
-        XCTAssertTrue(format(hsv.h) == 260.8333)
+        XCTAssertTrue(format(hsv.h) == 0.7245)
         XCTAssertTrue(format(hsv.s) == 0.7912)
         XCTAssertTrue(format(hsv.v) == 0.7137)
         /// case 3: to cmy
@@ -226,12 +226,12 @@ class ColorSpaceConverterTests: XCTestCase {
         let rgb = BT2020RGB(red: 88, green: 38, blue: 182)
         /// case 1: to hsl
         let hsl = Converter.convert(from: rgb, to: HSL.self)
-        XCTAssertTrue(format(hsl.h) == 260.8333)
+        XCTAssertTrue(format(hsl.h) == 0.7245)
         XCTAssertTrue(format(hsl.s) == 0.6545)
         XCTAssertTrue(format(hsl.l) == 0.4314)
         /// case 2: to hsb/v
         let hsv = Converter.convert(from: rgb, to: HSV.self)
-        XCTAssertTrue(format(hsv.h) == 260.8333)
+        XCTAssertTrue(format(hsv.h) == 0.7245)
         XCTAssertTrue(format(hsv.s) == 0.7912)
         XCTAssertTrue(format(hsv.v) == 0.7137)
         /// case 3: to cmy
@@ -254,7 +254,7 @@ class ColorSpaceConverterTests: XCTestCase {
     }
     
     func testHSLTosRgb() throws {
-        let color = HSL(h: 260.8333, s: 0.6545, l: 0.4314)
+        let color = HSL(h: 0.7245, s: 0.6545, l: 0.4314)
         /// case 1: to sRgb
         let srgb = Converter.convert(from: color, to: sRGB.self).uppable()
         XCTAssertTrue(formatInt(srgb.red) == 88)
@@ -278,7 +278,7 @@ class ColorSpaceConverterTests: XCTestCase {
     }
     
     func testHSVTosRgb() throws {
-        let color = HSV(h: 260.8333, s: 0.7912, v: 0.7137)
+        let color = HSV(h: 0.7245, s: 0.7912, v: 0.7137)
         /// case 1: to sRgb
         let srgb = Converter.convert(from: color, to: sRGB.self).uppable()
         XCTAssertTrue(formatInt(srgb.red) == 88)
@@ -510,15 +510,16 @@ class ColorSpaceConverterTests: XCTestCase {
     
     func testHslAndLab() {
         /// hsl -> lab
-        var hsl = HSL(h: 260.8333, s: 0.6545, l: 0.4314)
+        var hsl = HSL(h: 0.7245, s: 0.6545, l: 0.4314)
         let lab = Converter.convert(from: hsl, to: Lab.self)
-        XCTAssertTrue(format(lab.l) == 31.4380)
-        XCTAssertTrue(format(lab.a) == 54.2015)
-        XCTAssertTrue(format(lab.b) == -67.0570)
+        print(lab)
+        XCTAssertTrue(format(lab.l) == 31.4344)
+        XCTAssertTrue(format(lab.a) == 54.1972)
+        XCTAssertTrue(format(lab.b) == -67.0630)
         /// lab -> hsl
         hsl = Converter.convert(from: lab, to: HSL.self)
         print(hsl)
-        XCTAssertTrue(format(hsl.h) == 260.8334)
+        XCTAssertTrue(format(hsl.h) == 0.7245)
         XCTAssertTrue(format(hsl.s) == 0.6545)
         XCTAssertTrue(format(hsl.l) == 0.4314)
     }

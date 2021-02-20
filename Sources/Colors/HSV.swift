@@ -15,7 +15,7 @@ public struct HSV: NormalColorableProtocol, ColorElement {
     public var elementCount: Int { 3 }
     
     // MARK: Color Elements
-    /// [0, 360]
+    /// [0, 1]
     public var h: Element = 0
     /// [0, 1]
     public var s: Element = 0
@@ -63,15 +63,15 @@ extension HSV {
     
     
     public static var hDownerRange: (min: Element, max: Element) {
-        (0, 360)
-    }
-    
-    public static var sDownerRange: (min: Element, max: Element) {
         (0, 1)
     }
     
+    public static var sDownerRange: (min: Element, max: Element) {
+        hDownerRange
+    }
+    
     public static var vDownerRange: (min: Element, max: Element) {
-        sDownerRange
+        hDownerRange
     }
     
 }

@@ -1299,7 +1299,7 @@ extension ColorPathConverterSelector {
         
         /// Converts from RGB to HSV.
         ///
-        /// H values are in degrees and are 0 to 360.
+        /// H values are in degrees and are 0 to 1.0.
         /// S values are a percentage, 0.0 to 1.0.
         /// V values are a percentage, 0.0 to 1.0.
 
@@ -1323,7 +1323,7 @@ extension ColorPathConverterSelector {
 
         let v = max
 
-        return .init(h: h, s: s, v: v, illuminant: color.illuminant)
+        return .init(h: h / 360.0, s: s, v: v, illuminant: color.illuminant)
         
     }
     
@@ -1347,7 +1347,7 @@ extension ColorPathConverterSelector {
         
         /// Converts from RGB to HSL.
         ///
-        /// H values are in degrees and are 0 to 360.
+        /// H values are in degrees and are 0 to 1.0.
         /// S values are a percentage, 0.0 to 1.0.
         /// L values are a percentage, 0.0 to 1.0.
  
@@ -1372,7 +1372,7 @@ extension ColorPathConverterSelector {
             s = (max - min) / (2.0 - (2.0 * l))
         }
 
-        return .init(h: h, s: s, l: l, illuminant: color.illuminant)
+        return .init(h: h / 360.0, s: s, l: l, illuminant: color.illuminant)
         
     }
     
@@ -1430,11 +1430,11 @@ extension ColorPathConverterSelector {
 
         /// HSV to RGB conversion.
         ///
-        /// H values are in degrees and are 0 to 360.
+        /// H values are in degrees and are 0 to 1.0.
         /// S values are a percentage, 0.0 to 1.0.
         /// V values are a percentage, 0.0 to 1.0.
 
-        let h = color.h
+        let h = color.h * 360.0
         let s = color.s
         let v = color.v
 
@@ -1529,7 +1529,7 @@ extension ColorPathConverterSelector {
         let varP = 2.0 * l - varQ
 
         /// - Tag: H normalized to range `[0,1]`
-        let hSubK = h / 360.0
+        let hSubK = h // h / 360.0
 
         let tSubR = hSubK + (1.0 / 3.0)
         let tSubG = hSubK

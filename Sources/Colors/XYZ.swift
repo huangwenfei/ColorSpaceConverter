@@ -39,6 +39,35 @@ public struct XYZ: NormalColorableProtocol, ColorElement {
 
 extension XYZ {
     
+    public static var xUpperRange: (min: Element, max: Element) {
+        (0, 95.047)
+    }
+    
+    public static var yUpperRange: (min: Element, max: Element) {
+        (0, 100)
+    }
+    
+    public static var zUpperRange: (min: Element, max: Element) {
+        (0, 108.883)
+    }
+    
+    
+    public static var xDownerRange: (min: Element, max: Element) {
+        (0, 1)
+    }
+    
+    public static var yDownerRange: (min: Element, max: Element) {
+        xDownerRange
+    }
+    
+    public static var zDownerRange: (min: Element, max: Element) {
+        xDownerRange
+    }
+    
+}
+
+extension XYZ {
+    
     public func downable() -> Self {
         
         var result = self

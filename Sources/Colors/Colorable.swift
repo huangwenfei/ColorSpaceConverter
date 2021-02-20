@@ -165,6 +165,43 @@ extension RGBColorable {
 
 extension RGBColorable {
     
+    public static var redUpperRange: (min: Element, max: Element) {
+        (0, 255)
+    }
+    
+    public static var greenUpperRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    public static var blueUpperRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    public static var alphaUpperRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    
+    public static var redDownerRange: (min: Element, max: Element) {
+        (0, 1)
+    }
+    
+    public static var greenDownerRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    public static var blueDownerRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    public static var alphaDownerRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+}
+
+extension RGBColorable {
+    
     /// - Tag: ColorProtocol
     public var elementCount: Int { 3 }
     

@@ -43,6 +43,35 @@ public struct LCHuv: NormalColorableProtocol, ColorElement {
 
 extension LCHuv {
     
+    public static var lUpperRange: (min: Element, max: Element) {
+        (0, 100)
+    }
+    
+    public static var uUpperRange: (min: Element, max: Element) {
+        lUpperRange
+    }
+    
+    public static var vUpperRange: (min: Element, max: Element) {
+        (0, 360)
+    }
+    
+    
+    public static var lDownerRange: (min: Element, max: Element) {
+        (0, 1)
+    }
+    
+    public static var uDownerRange: (min: Element, max: Element) {
+        lDownerRange
+    }
+    
+    public static var vDownerRange: (min: Element, max: Element) {
+        lDownerRange
+    }
+    
+}
+
+extension LCHuv {
+    
     public func downable() -> Self {
         
         var result = self

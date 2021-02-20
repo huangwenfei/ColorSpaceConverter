@@ -39,6 +39,35 @@ public struct CMY: NormalColorableProtocol {
 
 extension CMY {
     
+    public static var cUpperRange: (min: Element, max: Element) {
+        (0, 100)
+    }
+    
+    public static var mUpperRange: (min: Element, max: Element) {
+        cUpperRange
+    }
+    
+    public static var yUpperRange: (min: Element, max: Element) {
+        cUpperRange
+    }
+    
+    
+    public static var cDownerRange: (min: Element, max: Element) {
+        (0, 1)
+    }
+    
+    public static var mDownerRange: (min: Element, max: Element) {
+        cDownerRange
+    }
+    
+    public static var yDownerRange: (min: Element, max: Element) {
+        cDownerRange
+    }
+    
+}
+
+extension CMY {
+    
     public func downable() -> Self {
         
         var result = self

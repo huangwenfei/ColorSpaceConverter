@@ -63,6 +63,35 @@ public struct IPT: NormalColorableProtocol, ColorElement {
 
 extension IPT {
     
+    public static var iUpperRange: (min: Element, max: Element) {
+        (0, 100)
+    }
+    
+    public static var pUpperRange: (min: Element, max: Element) {
+        (-100, 100)
+    }
+    
+    public static var tUpperRange: (min: Element, max: Element) {
+        pUpperRange
+    }
+    
+    
+    public static var iDownerRange: (min: Element, max: Element) {
+        (0, 1)
+    }
+    
+    public static var pDownerRange: (min: Element, max: Element) {
+        (-1, 1)
+    }
+    
+    public static var tDownerRange: (min: Element, max: Element) {
+        pDownerRange
+    }
+    
+}
+
+extension IPT {
+    
     public func downable() -> Self {
         
         var result = self

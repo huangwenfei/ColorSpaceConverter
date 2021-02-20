@@ -174,6 +174,43 @@ extension Hex {
 
 extension Hex {
     
+    public static var redUpperRange: (min: Element, max: Element) {
+        sRGB.redUpperRange
+    }
+    
+    public static var greenUpperRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    public static var blueUpperRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    public static var alphaUpperRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    
+    public static var redDownerRange: (min: Element, max: Element) {
+        sRGB.redDownerRange
+    }
+    
+    public static var greenDownerRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    public static var blueDownerRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+    public static var alphaDownerRange: (min: Element, max: Element) {
+        redUpperRange
+    }
+    
+}
+
+extension Hex {
+    
     public func downable() -> Self {
         
         var result = self

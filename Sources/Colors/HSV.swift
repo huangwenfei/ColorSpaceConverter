@@ -49,6 +49,35 @@ public struct HSV: NormalColorableProtocol, ColorElement {
 
 extension HSV {
     
+    public static var hUpperRange: (min: Element, max: Element) {
+        (0, 360)
+    }
+    
+    public static var sUpperRange: (min: Element, max: Element) {
+        (0, 100)
+    }
+    
+    public static var vUpperRange: (min: Element, max: Element) {
+        sUpperRange
+    }
+    
+    
+    public static var hDownerRange: (min: Element, max: Element) {
+        (0, 360)
+    }
+    
+    public static var sDownerRange: (min: Element, max: Element) {
+        (0, 1)
+    }
+    
+    public static var vDownerRange: (min: Element, max: Element) {
+        sDownerRange
+    }
+    
+}
+
+extension HSV {
+    
     public func downable() -> Self {
         
         var result = self

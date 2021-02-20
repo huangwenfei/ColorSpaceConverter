@@ -41,6 +41,35 @@ public struct Lab: NormalColorableProtocol, ColorElement {
 
 extension Lab {
     
+    public static var lUpperRange: (min: Element, max: Element) {
+        (0, 100)
+    }
+    
+    public static var aUpperRange: (min: Element, max: Element) {
+        (-128, 127)
+    }
+    
+    public static var bUpperRange: (min: Element, max: Element) {
+        aUpperRange
+    }
+    
+    
+    public static var lDownerRange: (min: Element, max: Element) {
+        (0, 1)
+    }
+    
+    public static var aDownerRange: (min: Element, max: Element) {
+        (-1, 1)
+    }
+    
+    public static var bDownerRange: (min: Element, max: Element) {
+        aDownerRange
+    }
+    
+}
+
+extension Lab {
+    
     public func downable() -> Self {
         
         var result = self

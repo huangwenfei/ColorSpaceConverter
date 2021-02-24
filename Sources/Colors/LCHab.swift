@@ -43,28 +43,28 @@ public struct LCHab: NormalColorableProtocol, ColorElement {
 
 extension LCHab {
     
-    public static var lUpperRange: (min: Element, max: Element) {
+    public static var lUpperRange: ColorElement.Range {
         (0, 100)
     }
     
-    public static var aUpperRange: (min: Element, max: Element) {
+    public static var aUpperRange: ColorElement.Range {
         lUpperRange
     }
     
-    public static var bUpperRange: (min: Element, max: Element) {
+    public static var bUpperRange: ColorElement.Range {
         (0, 360)
     }
     
     
-    public static var lDownerRange: (min: Element, max: Element) {
+    public static var lDownerRange: ColorElement.Range {
         (0, 1)
     }
     
-    public static var aDownerRange: (min: Element, max: Element) {
+    public static var aDownerRange: ColorElement.Range {
         lDownerRange
     }
     
-    public static var bDownerRange: (min: Element, max: Element) {
+    public static var bDownerRange: ColorElement.Range {
         lDownerRange
     }
     

@@ -39,28 +39,28 @@ public struct CMY: NormalColorableProtocol {
 
 extension CMY {
     
-    public static var cUpperRange: (min: Element, max: Element) {
+    public static var cUpperRange: ColorElement.Range {
         (0, 100)
     }
     
-    public static var mUpperRange: (min: Element, max: Element) {
+    public static var mUpperRange: ColorElement.Range {
         cUpperRange
     }
     
-    public static var yUpperRange: (min: Element, max: Element) {
+    public static var yUpperRange: ColorElement.Range {
         cUpperRange
     }
     
     
-    public static var cDownerRange: (min: Element, max: Element) {
+    public static var cDownerRange: ColorElement.Range {
         (0, 1)
     }
     
-    public static var mDownerRange: (min: Element, max: Element) {
+    public static var mDownerRange: ColorElement.Range {
         cDownerRange
     }
     
-    public static var yDownerRange: (min: Element, max: Element) {
+    public static var yDownerRange: ColorElement.Range {
         cDownerRange
     }
     

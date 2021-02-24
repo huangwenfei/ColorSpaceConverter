@@ -49,28 +49,28 @@ public struct HSL: NormalColorableProtocol, ColorElement {
 
 extension HSL {
     
-    public static var hUpperRange: (min: Element, max: Element) {
+    public static var hUpperRange: ColorElement.Range {
         (0, 360)
     }
     
-    public static var sUpperRange: (min: Element, max: Element) {
+    public static var sUpperRange: ColorElement.Range {
         (0, 100)
     }
     
-    public static var lUpperRange: (min: Element, max: Element) {
+    public static var lUpperRange: ColorElement.Range {
         sUpperRange
     }
     
     
-    public static var hDownerRange: (min: Element, max: Element) {
+    public static var hDownerRange: ColorElement.Range {
         (0, 1)
     }
     
-    public static var sDownerRange: (min: Element, max: Element) {
+    public static var sDownerRange: ColorElement.Range {
         hDownerRange
     }
     
-    public static var lDownerRange: (min: Element, max: Element) {
+    public static var lDownerRange: ColorElement.Range {
         hDownerRange
     }
     

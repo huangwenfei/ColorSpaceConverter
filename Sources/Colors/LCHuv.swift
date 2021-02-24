@@ -43,28 +43,28 @@ public struct LCHuv: NormalColorableProtocol, ColorElement {
 
 extension LCHuv {
     
-    public static var lUpperRange: (min: Element, max: Element) {
+    public static var lUpperRange: ColorElement.Range {
         (0, 100)
     }
     
-    public static var uUpperRange: (min: Element, max: Element) {
+    public static var uUpperRange: ColorElement.Range {
         lUpperRange
     }
     
-    public static var vUpperRange: (min: Element, max: Element) {
+    public static var vUpperRange: ColorElement.Range {
         (0, 360)
     }
     
     
-    public static var lDownerRange: (min: Element, max: Element) {
+    public static var lDownerRange: ColorElement.Range {
         (0, 1)
     }
     
-    public static var uDownerRange: (min: Element, max: Element) {
+    public static var uDownerRange: ColorElement.Range {
         lDownerRange
     }
     
-    public static var vDownerRange: (min: Element, max: Element) {
+    public static var vDownerRange: ColorElement.Range {
         lDownerRange
     }
     

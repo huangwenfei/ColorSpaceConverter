@@ -41,28 +41,28 @@ public struct Luv: NormalColorableProtocol, ColorElement {
 
 extension Luv {
     
-    public static var lUpperRange: (min: Element, max: Element) {
+    public static var lUpperRange: ColorElement.Range {
         (0, 100)
     }
     
-    public static var aUpperRange: (min: Element, max: Element) {
+    public static var aUpperRange: ColorElement.Range {
         (-100, 100)
     }
     
-    public static var bUpperRange: (min: Element, max: Element) {
+    public static var bUpperRange: ColorElement.Range {
         aUpperRange
     }
     
     
-    public static var lDownerRange: (min: Element, max: Element) {
+    public static var lDownerRange: ColorElement.Range {
         (0, 1)
     }
     
-    public static var aDownerRange: (min: Element, max: Element) {
+    public static var aDownerRange: ColorElement.Range {
         (-1, 1)
     }
     
-    public static var bDownerRange: (min: Element, max: Element) {
+    public static var bDownerRange: ColorElement.Range {
         aDownerRange
     }
     

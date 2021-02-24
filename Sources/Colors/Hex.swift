@@ -174,36 +174,36 @@ extension Hex {
 
 extension Hex {
     
-    public static var redUpperRange: (min: Element, max: Element) {
+    public static var redUpperRange: ColorElement.Range {
         sRGB.redUpperRange
     }
     
-    public static var greenUpperRange: (min: Element, max: Element) {
+    public static var greenUpperRange: ColorElement.Range {
         redUpperRange
     }
     
-    public static var blueUpperRange: (min: Element, max: Element) {
+    public static var blueUpperRange: ColorElement.Range {
         redUpperRange
     }
     
-    public static var alphaUpperRange: (min: Element, max: Element) {
+    public static var alphaUpperRange: ColorElement.Range {
         redUpperRange
     }
     
     
-    public static var redDownerRange: (min: Element, max: Element) {
+    public static var redDownerRange: ColorElement.Range {
         sRGB.redDownerRange
     }
     
-    public static var greenDownerRange: (min: Element, max: Element) {
+    public static var greenDownerRange: ColorElement.Range {
         redUpperRange
     }
     
-    public static var blueDownerRange: (min: Element, max: Element) {
+    public static var blueDownerRange: ColorElement.Range {
         redUpperRange
     }
     
-    public static var alphaDownerRange: (min: Element, max: Element) {
+    public static var alphaDownerRange: ColorElement.Range {
         redUpperRange
     }
     

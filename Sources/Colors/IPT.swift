@@ -63,28 +63,28 @@ public struct IPT: NormalColorableProtocol, ColorElement {
 
 extension IPT {
     
-    public static var iUpperRange: (min: Element, max: Element) {
+    public static var iUpperRange: ColorElement.Range {
         (0, 100)
     }
     
-    public static var pUpperRange: (min: Element, max: Element) {
+    public static var pUpperRange: ColorElement.Range {
         (-100, 100)
     }
     
-    public static var tUpperRange: (min: Element, max: Element) {
+    public static var tUpperRange: ColorElement.Range {
         pUpperRange
     }
     
     
-    public static var iDownerRange: (min: Element, max: Element) {
+    public static var iDownerRange: ColorElement.Range {
         (0, 1)
     }
     
-    public static var pDownerRange: (min: Element, max: Element) {
+    public static var pDownerRange: ColorElement.Range {
         (-1, 1)
     }
     
-    public static var tDownerRange: (min: Element, max: Element) {
+    public static var tDownerRange: ColorElement.Range {
         pDownerRange
     }
     

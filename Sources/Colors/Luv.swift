@@ -45,12 +45,12 @@ extension Luv {
         (0, 100)
     }
     
-    public static var aUpperRange: ColorElement.Range {
+    public static var uUpperRange: ColorElement.Range {
         (-100, 100)
     }
     
-    public static var bUpperRange: ColorElement.Range {
-        aUpperRange
+    public static var vUpperRange: ColorElement.Range {
+        uUpperRange
     }
     
     
@@ -58,12 +58,12 @@ extension Luv {
         (0, 1)
     }
     
-    public static var aDownerRange: ColorElement.Range {
+    public static var uDownerRange: ColorElement.Range {
         (-1, 1)
     }
     
-    public static var bDownerRange: ColorElement.Range {
-        aDownerRange
+    public static var vDownerRange: ColorElement.Range {
+        uDownerRange
     }
     
 }

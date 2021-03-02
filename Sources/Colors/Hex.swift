@@ -174,6 +174,22 @@ extension Hex {
 
 extension Hex {
     
+    public static var rgbUInt32Range: ClosedRange<UInt32> {
+        0x000000 ... 0xFFFFFF
+    }
+    
+    public static var rgbaUInt32Range: ClosedRange<UInt64> {
+        0x00000000 ... 0xFFFFFFFF
+    }
+    
+    public static var rgbRange: String {
+        "[#000000, #FFFFFF]"
+    }
+    
+    public static var rgbaRange: String {
+        "[#00000000, #FFFFFFFF]"
+    }
+    
     public static var redUpperRange: ColorElement.Range {
         sRGB.redUpperRange
     }

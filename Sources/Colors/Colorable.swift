@@ -188,15 +188,15 @@ extension RGBColorable {
     }
     
     public static var greenDownerRange: ColorElement.Range {
-        redUpperRange
+        redDownerRange
     }
     
     public static var blueDownerRange: ColorElement.Range {
-        redUpperRange
+        redDownerRange
     }
     
     public static var alphaDownerRange: ColorElement.Range {
-        redUpperRange
+        redDownerRange
     }
     
 }

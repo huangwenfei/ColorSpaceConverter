@@ -1,0 +1,2119 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"ColorSpaceConverter::ColorSpaceConverterPackageTests::ProductTarget" /* ColorSpaceConverterPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_251 /* Build configuration list for PBXAggregateTarget "ColorSpaceConverterPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_254 /* PBXTargetDependency */,
+			);
+			name = ColorSpaceConverterPackageTests;
+			productName = ColorSpaceConverterPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		8339C81D25D516BE008B2B76 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* Comparator.swift */; };
+		8339C81E25D516BE008B2B76 /* ComparatorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* ComparatorResult.swift */; };
+		8339C81F25D516BE008B2B76 /* DequeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* DequeArray.swift */; };
+		8339C82025D516BE008B2B76 /* DequeLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* DequeLinkedList.swift */; };
+		8339C82125D516BE008B2B76 /* DequeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* DequeProtocol.swift */; };
+		8339C82225D516BE008B2B76 /* DequeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* DequeStack.swift */; };
+		8339C82325D516BE008B2B76 /* GraphEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* GraphEdge.swift */; };
+		8339C82425D516BE008B2B76 /* GraphEdgeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* GraphEdgeInfo.swift */; };
+		8339C82525D516BE008B2B76 /* GraphPathInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* GraphPathInfo.swift */; };
+		8339C82625D516BE008B2B76 /* GraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* GraphProtocol.swift */; };
+		8339C82725D516BE008B2B76 /* GraphTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* GraphTypes.swift */; };
+		8339C82825D516BE008B2B76 /* GraphVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* GraphVertex.swift */; };
+		8339C82925D516BE008B2B76 /* ListGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* ListGraph.swift */; };
+		8339C82A25D516BE008B2B76 /* MatrixGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* MatrixGraph.swift */; };
+		8339C82B25D516BE008B2B76 /* ListDigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* ListDigraph.swift */; };
+		8339C82C25D516BE008B2B76 /* ListGraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* ListGraphManager.swift */; };
+		8339C82D25D516BE008B2B76 /* ListGraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* ListGraphProtocol.swift */; };
+		8339C82E25D516BE008B2B76 /* ListGraphTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* ListGraphTypes.swift */; };
+		8339C82F25D516BE008B2B76 /* ListMutilDigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* ListMutilDigraph.swift */; };
+		8339C83025D516BE008B2B76 /* ListMutilSigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* ListMutilSigraph.swift */; };
+		8339C83125D516BE008B2B76 /* ListSigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* ListSigraph.swift */; };
+		8339C83225D516BE008B2B76 /* MatrixDigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* MatrixDigraph.swift */; };
+		8339C83325D516BE008B2B76 /* MatrixGraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* MatrixGraphManager.swift */; };
+		8339C83425D516BE008B2B76 /* MatrixGraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* MatrixGraphProtocol.swift */; };
+		8339C83525D516BE008B2B76 /* MatrixGraphTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* MatrixGraphTypes.swift */; };
+		8339C83625D516BE008B2B76 /* MatrixMutilDigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* MatrixMutilDigraph.swift */; };
+		8339C83725D516BE008B2B76 /* MatrixMutilSigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* MatrixMutilSigraph.swift */; };
+		8339C83825D516BE008B2B76 /* MatrixSigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* MatrixSigraph.swift */; };
+		8339C83925D516BE008B2B76 /* BinaryHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* BinaryHeap.swift */; };
+		8339C83A25D516BE008B2B76 /* HeapProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* HeapProtocol.swift */; };
+		8339C83B25D516BE008B2B76 /* ArrayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* ArrayList.swift */; };
+		8339C83C25D516BE008B2B76 /* CircleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* CircleLinkedList.swift */; };
+		8339C83D25D516BE008B2B76 /* CircleLinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* CircleLinkedListNode.swift */; };
+		8339C83E25D516BE008B2B76 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* LinkedList.swift */; };
+		8339C83F25D516BE008B2B76 /* LinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* LinkedListNode.swift */; };
+		8339C84025D516BF008B2B76 /* SingleCircleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* SingleCircleLinkedList.swift */; };
+		8339C84125D516BF008B2B76 /* SingleCircleLinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* SingleCircleLinkedListNode.swift */; };
+		8339C84225D516BF008B2B76 /* SingleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* SingleLinkedList.swift */; };
+		8339C84325D516BF008B2B76 /* SingleLinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_102 /* SingleLinkedListNode.swift */; };
+		8339C84425D516BF008B2B76 /* ListNodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* ListNodableProtocol.swift */; };
+		8339C84525D516BF008B2B76 /* ListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* ListProtocol.swift */; };
+		8339C84625D516BF008B2B76 /* SingleLinkedListNodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_107 /* SingleLinkedListNodable.swift */; };
+		8339C84725D516BF008B2B76 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_109 /* PriorityQueue.swift */; };
+		8339C84825D516BF008B2B76 /* PriorityQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_110 /* PriorityQueueProtocol.swift */; };
+		8339C84925D516BF008B2B76 /* QueueArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_112 /* QueueArray.swift */; };
+		8339C84A25D516BF008B2B76 /* QueueLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_113 /* QueueLinkedList.swift */; };
+		8339C84B25D516BF008B2B76 /* QueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_114 /* QueueProtocol.swift */; };
+		8339C84C25D516BF008B2B76 /* QueueRingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_115 /* QueueRingBuffer.swift */; };
+		8339C84D25D516BF008B2B76 /* QueueStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_116 /* QueueStack.swift */; };
+		8339C84E25D516BF008B2B76 /* HeapSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_118 /* HeapSort.swift */; };
+		8339C84F25D516BF008B2B76 /* ArrayStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_120 /* ArrayStack.swift */; };
+		8339C85025D516BF008B2B76 /* LinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_121 /* LinkedListStack.swift */; };
+		8339C85125D516BF008B2B76 /* StackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_122 /* StackProtocol.swift */; };
+		8339C85225D516BF008B2B76 /* UnionFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_124 /* UnionFind.swift */; };
+		8339C85325D516BF008B2B76 /* UnionFindProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_125 /* UnionFindProtocol.swift */; };
+		8339C86E25D5172C008B2B76 /* AlgorithmX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8339C80325D516A2008B2B76 /* AlgorithmX.framework */; };
+		8360465025D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
+		8360465125D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
+		8364B68825D27B0B00A62138 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364B68725D27B0B00A62138 /* Package.swift */; };
+		8364B6D825D27CA300A62138 /* ColorSpaceConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8364B6CF25D27CA300A62138 /* ColorSpaceConverter.framework */; };
+		8364B73625D27DD000A62138 /* ColorSpaceConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8364B69825D27BBE00A62138 /* ColorSpaceConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8364B73F25D27DE400A62138 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Converter.swift */; };
+		8364B74025D27DE500A62138 /* ColorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ColorPath.swift */; };
+		8364B74125D27DE500A62138 /* ColorPathConverterSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ColorPathConverterSelector.swift */; };
+		8364B74225D27DE500A62138 /* ChromaticAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* ChromaticAdaptation.swift */; };
+		8364B74325D27DE500A62138 /* DeltaE.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* DeltaE.swift */; };
+		8364B74425D27DE500A62138 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* Math.swift */; };
+		8364B74525D27DE500A62138 /* IlluminantProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* IlluminantProtocol.swift */; };
+		8364B74625D27DE500A62138 /* Illuminants.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* Illuminants.swift */; };
+		8364B74725D27DE500A62138 /* SpectralIlluminant.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* SpectralIlluminant.swift */; };
+		8364B74825D27DE500A62138 /* Density.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* Density.swift */; };
+		8364B74925D27DE500A62138 /* DensityStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* DensityStandard.swift */; };
+		8364B74A25D27DE500A62138 /* ColorSpaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* ColorSpaceType.swift */; };
+		8364B74B25D27DE500A62138 /* ATD95.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* ATD95.swift */; };
+		8364B74C25D27DE500A62138 /* CIECAM02.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CIECAM02.swift */; };
+		8364B74D25D27DE500A62138 /* CIECAM02m1.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* CIECAM02m1.swift */; };
+		8364B74E25D27DE500A62138 /* Hunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Hunt.swift */; };
+		8364B74F25D27DE500A62138 /* LLAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* LLAB.swift */; };
+		8364B75025D27DE500A62138 /* Nayatani95.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Nayatani95.swift */; };
+		8364B75125D27DE500A62138 /* RLAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* RLAB.swift */; };
+		8364B75225D27DE500A62138 /* AdobeRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* AdobeRGB.swift */; };
+		8364B75325D27DE500A62138 /* AppleRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* AppleRGB.swift */; };
+		8364B75425D27DE500A62138 /* BT2020RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* BT2020RGB.swift */; };
+		8364B75525D27DE500A62138 /* CMY.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* CMY.swift */; };
+		8364B75625D27DE500A62138 /* CMYK.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* CMYK.swift */; };
+		8364B75825D27DE500A62138 /* Colorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Colorable.swift */; };
+		8364B75925D27DE500A62138 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* HSL.swift */; };
+		8364B75A25D27DE500A62138 /* HSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* HSV.swift */; };
+		8364B75B25D27DE500A62138 /* IPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* IPT.swift */; };
+		8364B75C25D27DE500A62138 /* LCHab.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* LCHab.swift */; };
+		8364B75D25D27DE500A62138 /* LCHuv.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* LCHuv.swift */; };
+		8364B75E25D27DE500A62138 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Lab.swift */; };
+		8364B75F25D27DE500A62138 /* Luv.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Luv.swift */; };
+		8364B76025D27DE500A62138 /* Spectral.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* Spectral.swift */; };
+		8364B76125D27DE500A62138 /* XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* XYZ.swift */; };
+		8364B76225D27DE500A62138 /* sRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* sRGB.swift */; };
+		8364B76325D27DE500A62138 /* xyY.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* xyY.swift */; };
+		8364B78A25D27F8D00A62138 /* ColorSpaceConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* ColorSpaceConverterTests.swift */; };
+		8364B79425D27F9E00A62138 /* ColorSpaceConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8364B69825D27BBE00A62138 /* ColorSpaceConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		OBJ_137 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* Comparator.swift */; };
+		OBJ_138 /* ComparatorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* ComparatorResult.swift */; };
+		OBJ_139 /* DequeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* DequeArray.swift */; };
+		OBJ_140 /* DequeLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* DequeLinkedList.swift */; };
+		OBJ_141 /* DequeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* DequeProtocol.swift */; };
+		OBJ_142 /* DequeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* DequeStack.swift */; };
+		OBJ_143 /* GraphEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* GraphEdge.swift */; };
+		OBJ_144 /* GraphEdgeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* GraphEdgeInfo.swift */; };
+		OBJ_145 /* GraphPathInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* GraphPathInfo.swift */; };
+		OBJ_146 /* GraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* GraphProtocol.swift */; };
+		OBJ_147 /* GraphTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* GraphTypes.swift */; };
+		OBJ_148 /* GraphVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* GraphVertex.swift */; };
+		OBJ_149 /* ListGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* ListGraph.swift */; };
+		OBJ_150 /* MatrixGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* MatrixGraph.swift */; };
+		OBJ_151 /* ListDigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* ListDigraph.swift */; };
+		OBJ_152 /* ListGraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* ListGraphManager.swift */; };
+		OBJ_153 /* ListGraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* ListGraphProtocol.swift */; };
+		OBJ_154 /* ListGraphTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* ListGraphTypes.swift */; };
+		OBJ_155 /* ListMutilDigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* ListMutilDigraph.swift */; };
+		OBJ_156 /* ListMutilSigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* ListMutilSigraph.swift */; };
+		OBJ_157 /* ListSigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* ListSigraph.swift */; };
+		OBJ_158 /* MatrixDigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* MatrixDigraph.swift */; };
+		OBJ_159 /* MatrixGraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* MatrixGraphManager.swift */; };
+		OBJ_160 /* MatrixGraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* MatrixGraphProtocol.swift */; };
+		OBJ_161 /* MatrixGraphTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* MatrixGraphTypes.swift */; };
+		OBJ_162 /* MatrixMutilDigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* MatrixMutilDigraph.swift */; };
+		OBJ_163 /* MatrixMutilSigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* MatrixMutilSigraph.swift */; };
+		OBJ_164 /* MatrixSigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* MatrixSigraph.swift */; };
+		OBJ_165 /* BinaryHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* BinaryHeap.swift */; };
+		OBJ_166 /* HeapProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* HeapProtocol.swift */; };
+		OBJ_167 /* ArrayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* ArrayList.swift */; };
+		OBJ_168 /* CircleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* CircleLinkedList.swift */; };
+		OBJ_169 /* CircleLinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* CircleLinkedListNode.swift */; };
+		OBJ_170 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* LinkedList.swift */; };
+		OBJ_171 /* LinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* LinkedListNode.swift */; };
+		OBJ_172 /* SingleCircleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* SingleCircleLinkedList.swift */; };
+		OBJ_173 /* SingleCircleLinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* SingleCircleLinkedListNode.swift */; };
+		OBJ_174 /* SingleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* SingleLinkedList.swift */; };
+		OBJ_175 /* SingleLinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_102 /* SingleLinkedListNode.swift */; };
+		OBJ_176 /* ListNodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* ListNodableProtocol.swift */; };
+		OBJ_177 /* ListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* ListProtocol.swift */; };
+		OBJ_178 /* SingleLinkedListNodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_107 /* SingleLinkedListNodable.swift */; };
+		OBJ_179 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_109 /* PriorityQueue.swift */; };
+		OBJ_180 /* PriorityQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_110 /* PriorityQueueProtocol.swift */; };
+		OBJ_181 /* QueueArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_112 /* QueueArray.swift */; };
+		OBJ_182 /* QueueLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_113 /* QueueLinkedList.swift */; };
+		OBJ_183 /* QueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_114 /* QueueProtocol.swift */; };
+		OBJ_184 /* QueueRingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_115 /* QueueRingBuffer.swift */; };
+		OBJ_185 /* QueueStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_116 /* QueueStack.swift */; };
+		OBJ_186 /* HeapSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_118 /* HeapSort.swift */; };
+		OBJ_187 /* ArrayStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_120 /* ArrayStack.swift */; };
+		OBJ_188 /* LinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_121 /* LinkedListStack.swift */; };
+		OBJ_189 /* StackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_122 /* StackProtocol.swift */; };
+		OBJ_190 /* UnionFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_124 /* UnionFind.swift */; };
+		OBJ_191 /* UnionFindProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_125 /* UnionFindProtocol.swift */; };
+		OBJ_198 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* Package.swift */; };
+		OBJ_204 /* ATD95.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* ATD95.swift */; };
+		OBJ_205 /* CIECAM02.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CIECAM02.swift */; };
+		OBJ_206 /* CIECAM02m1.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* CIECAM02m1.swift */; };
+		OBJ_207 /* Hunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Hunt.swift */; };
+		OBJ_208 /* LLAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* LLAB.swift */; };
+		OBJ_209 /* Nayatani95.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Nayatani95.swift */; };
+		OBJ_210 /* RLAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* RLAB.swift */; };
+		OBJ_211 /* ChromaticAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* ChromaticAdaptation.swift */; };
+		OBJ_212 /* ColorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ColorPath.swift */; };
+		OBJ_213 /* ColorPathConverterSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ColorPathConverterSelector.swift */; };
+		OBJ_214 /* AdobeRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* AdobeRGB.swift */; };
+		OBJ_215 /* AppleRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* AppleRGB.swift */; };
+		OBJ_216 /* BT2020RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* BT2020RGB.swift */; };
+		OBJ_217 /* CMY.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* CMY.swift */; };
+		OBJ_218 /* CMYK.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* CMYK.swift */; };
+		OBJ_220 /* Colorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Colorable.swift */; };
+		OBJ_221 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* HSL.swift */; };
+		OBJ_222 /* HSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* HSV.swift */; };
+		OBJ_223 /* IPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* IPT.swift */; };
+		OBJ_224 /* LCHab.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* LCHab.swift */; };
+		OBJ_225 /* LCHuv.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* LCHuv.swift */; };
+		OBJ_226 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Lab.swift */; };
+		OBJ_227 /* Luv.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Luv.swift */; };
+		OBJ_228 /* Spectral.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* Spectral.swift */; };
+		OBJ_229 /* XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* XYZ.swift */; };
+		OBJ_230 /* sRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* sRGB.swift */; };
+		OBJ_231 /* xyY.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* xyY.swift */; };
+		OBJ_232 /* ColorSpaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* ColorSpaceType.swift */; };
+		OBJ_233 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Converter.swift */; };
+		OBJ_234 /* DeltaE.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* DeltaE.swift */; };
+		OBJ_235 /* Density.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* Density.swift */; };
+		OBJ_236 /* DensityStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* DensityStandard.swift */; };
+		OBJ_237 /* IlluminantProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* IlluminantProtocol.swift */; };
+		OBJ_238 /* Illuminants.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* Illuminants.swift */; };
+		OBJ_239 /* SpectralIlluminant.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* SpectralIlluminant.swift */; };
+		OBJ_240 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* Math.swift */; };
+		OBJ_242 /* AlgorithmX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "AlgorithmX::AlgorithmX::Product" /* AlgorithmX.framework */; };
+		OBJ_260 /* ColorSpaceConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* ColorSpaceConverterTests.swift */; };
+		OBJ_262 /* ColorSpaceConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "ColorSpaceConverter::ColorSpaceConverter::Product" /* ColorSpaceConverter.framework */; };
+		OBJ_263 /* AlgorithmX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "AlgorithmX::AlgorithmX::Product" /* AlgorithmX.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8339C86625D51714008B2B76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8339C80225D516A2008B2B76;
+			remoteInfo = "AlgorithmX iOS";
+		};
+		8364B67525D27AD000A62138 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "AlgorithmX::AlgorithmX";
+			remoteInfo = AlgorithmX;
+		};
+		8364B67625D27AD100A62138 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "ColorSpaceConverter::ColorSpaceConverter";
+			remoteInfo = ColorSpaceConverter;
+		};
+		8364B67725D27AD100A62138 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "AlgorithmX::AlgorithmX";
+			remoteInfo = AlgorithmX;
+		};
+		8364B67825D27AD100A62138 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "ColorSpaceConverter::ColorSpaceConverterTests";
+			remoteInfo = ColorSpaceConverterTests;
+		};
+		8364B6D925D27CA300A62138 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8364B6CE25D27CA300A62138;
+			remoteInfo = "ColorSpaceConverter iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8339C80325D516A2008B2B76 /* AlgorithmX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlgorithmX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8360464F25D907C000D5E1A7 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
+		8364B68725D27B0B00A62138 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
+		8364B68F25D27B1700A62138 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		8364B69125D27B3C00A62138 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		8364B69725D27BAD00A62138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8364B69825D27BBE00A62138 /* ColorSpaceConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorSpaceConverter.h; sourceTree = "<group>"; };
+		8364B69925D27BBE00A62138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8364B6CF25D27CA300A62138 /* ColorSpaceConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ColorSpaceConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8364B6D725D27CA300A62138 /* ColorSpaceConverter iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ColorSpaceConverter iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83ED102E25DA645F0094D787 /* ColorSpaceConverter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorSpaceConverter.podspec; sourceTree = SOURCE_ROOT; };
+		"AlgorithmX::AlgorithmX::Product" /* AlgorithmX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlgorithmX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"ColorSpaceConverter::ColorSpaceConverter::Product" /* ColorSpaceConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ColorSpaceConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"ColorSpaceConverter::ColorSpaceConverterTests::Product" /* ColorSpaceConverter OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = "ColorSpaceConverter OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* CIECAM02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIECAM02.swift; sourceTree = "<group>"; };
+		OBJ_100 /* SingleCircleLinkedListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCircleLinkedListNode.swift; sourceTree = "<group>"; };
+		OBJ_101 /* SingleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLinkedList.swift; sourceTree = "<group>"; };
+		OBJ_102 /* SingleLinkedListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLinkedListNode.swift; sourceTree = "<group>"; };
+		OBJ_104 /* ListNodableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNodableProtocol.swift; sourceTree = "<group>"; };
+		OBJ_105 /* ListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProtocol.swift; sourceTree = "<group>"; };
+		OBJ_107 /* SingleLinkedListNodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLinkedListNodable.swift; sourceTree = "<group>"; };
+		OBJ_109 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		OBJ_11 /* CIECAM02m1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIECAM02m1.swift; sourceTree = "<group>"; };
+		OBJ_110 /* PriorityQueueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueueProtocol.swift; sourceTree = "<group>"; };
+		OBJ_112 /* QueueArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueArray.swift; sourceTree = "<group>"; };
+		OBJ_113 /* QueueLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueLinkedList.swift; sourceTree = "<group>"; };
+		OBJ_114 /* QueueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueProtocol.swift; sourceTree = "<group>"; };
+		OBJ_115 /* QueueRingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueRingBuffer.swift; sourceTree = "<group>"; };
+		OBJ_116 /* QueueStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueStack.swift; sourceTree = "<group>"; };
+		OBJ_118 /* HeapSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapSort.swift; sourceTree = "<group>"; };
+		OBJ_12 /* Hunt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hunt.swift; sourceTree = "<group>"; };
+		OBJ_120 /* ArrayStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayStack.swift; sourceTree = "<group>"; };
+		OBJ_121 /* LinkedListStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListStack.swift; sourceTree = "<group>"; };
+		OBJ_122 /* StackProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackProtocol.swift; sourceTree = "<group>"; };
+		OBJ_124 /* UnionFind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionFind.swift; sourceTree = "<group>"; };
+		OBJ_125 /* UnionFindProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionFindProtocol.swift; sourceTree = "<group>"; };
+		OBJ_13 /* LLAB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLAB.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Nayatani95.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nayatani95.swift; sourceTree = "<group>"; };
+		OBJ_15 /* RLAB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLAB.swift; sourceTree = "<group>"; };
+		OBJ_16 /* ChromaticAdaptation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaticAdaptation.swift; sourceTree = "<group>"; };
+		OBJ_17 /* ColorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPath.swift; sourceTree = "<group>"; };
+		OBJ_18 /* ColorPathConverterSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPathConverterSelector.swift; sourceTree = "<group>"; };
+		OBJ_20 /* AdobeRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdobeRGB.swift; sourceTree = "<group>"; };
+		OBJ_21 /* AppleRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRGB.swift; sourceTree = "<group>"; };
+		OBJ_22 /* BT2020RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BT2020RGB.swift; sourceTree = "<group>"; };
+		OBJ_23 /* CMY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMY.swift; sourceTree = "<group>"; };
+		OBJ_24 /* CMYK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMYK.swift; sourceTree = "<group>"; };
+		OBJ_26 /* Colorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colorable.swift; sourceTree = "<group>"; };
+		OBJ_27 /* HSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
+		OBJ_28 /* HSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSV.swift; sourceTree = "<group>"; };
+		OBJ_29 /* IPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPT.swift; sourceTree = "<group>"; };
+		OBJ_30 /* LCHab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCHab.swift; sourceTree = "<group>"; };
+		OBJ_31 /* LCHuv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCHuv.swift; sourceTree = "<group>"; };
+		OBJ_32 /* Lab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Luv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Luv.swift; sourceTree = "<group>"; };
+		OBJ_34 /* Spectral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spectral.swift; sourceTree = "<group>"; };
+		OBJ_35 /* XYZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYZ.swift; sourceTree = "<group>"; };
+		OBJ_36 /* sRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sRGB.swift; sourceTree = "<group>"; };
+		OBJ_37 /* xyY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xyY.swift; sourceTree = "<group>"; };
+		OBJ_39 /* ColorSpaceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSpaceType.swift; sourceTree = "<group>"; };
+		OBJ_40 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		OBJ_41 /* DeltaE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeltaE.swift; sourceTree = "<group>"; };
+		OBJ_43 /* Density.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Density.swift; sourceTree = "<group>"; };
+		OBJ_44 /* DensityStandard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DensityStandard.swift; sourceTree = "<group>"; };
+		OBJ_46 /* IlluminantProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IlluminantProtocol.swift; sourceTree = "<group>"; };
+		OBJ_47 /* Illuminants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Illuminants.swift; sourceTree = "<group>"; };
+		OBJ_48 /* SpectralIlluminant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectralIlluminant.swift; sourceTree = "<group>"; };
+		OBJ_49 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		OBJ_51 /* ColorSpaceConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSpaceConverterTests.swift; sourceTree = "<group>"; };
+		OBJ_54 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = /Users/huangwenfei/Documents/Subai/Package/Developing/ColorSpaceConverter/.build/checkouts/AlgorithmX/Package.swift; sourceTree = "<group>"; };
+		OBJ_56 /* Comparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparator.swift; sourceTree = "<group>"; };
+		OBJ_57 /* ComparatorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparatorResult.swift; sourceTree = "<group>"; };
+		OBJ_59 /* DequeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DequeArray.swift; sourceTree = "<group>"; };
+		OBJ_60 /* DequeLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DequeLinkedList.swift; sourceTree = "<group>"; };
+		OBJ_61 /* DequeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DequeProtocol.swift; sourceTree = "<group>"; };
+		OBJ_62 /* DequeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DequeStack.swift; sourceTree = "<group>"; };
+		OBJ_65 /* GraphEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEdge.swift; sourceTree = "<group>"; };
+		OBJ_66 /* GraphEdgeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEdgeInfo.swift; sourceTree = "<group>"; };
+		OBJ_67 /* GraphPathInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphPathInfo.swift; sourceTree = "<group>"; };
+		OBJ_68 /* GraphProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphProtocol.swift; sourceTree = "<group>"; };
+		OBJ_69 /* GraphTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTypes.swift; sourceTree = "<group>"; };
+		OBJ_70 /* GraphVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphVertex.swift; sourceTree = "<group>"; };
+		OBJ_71 /* ListGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGraph.swift; sourceTree = "<group>"; };
+		OBJ_72 /* MatrixGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixGraph.swift; sourceTree = "<group>"; };
+		OBJ_74 /* ListDigraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDigraph.swift; sourceTree = "<group>"; };
+		OBJ_75 /* ListGraphManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGraphManager.swift; sourceTree = "<group>"; };
+		OBJ_76 /* ListGraphProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGraphProtocol.swift; sourceTree = "<group>"; };
+		OBJ_77 /* ListGraphTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGraphTypes.swift; sourceTree = "<group>"; };
+		OBJ_78 /* ListMutilDigraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMutilDigraph.swift; sourceTree = "<group>"; };
+		OBJ_79 /* ListMutilSigraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMutilSigraph.swift; sourceTree = "<group>"; };
+		OBJ_80 /* ListSigraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSigraph.swift; sourceTree = "<group>"; };
+		OBJ_82 /* MatrixDigraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixDigraph.swift; sourceTree = "<group>"; };
+		OBJ_83 /* MatrixGraphManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixGraphManager.swift; sourceTree = "<group>"; };
+		OBJ_84 /* MatrixGraphProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixGraphProtocol.swift; sourceTree = "<group>"; };
+		OBJ_85 /* MatrixGraphTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixGraphTypes.swift; sourceTree = "<group>"; };
+		OBJ_86 /* MatrixMutilDigraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixMutilDigraph.swift; sourceTree = "<group>"; };
+		OBJ_87 /* MatrixMutilSigraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixMutilSigraph.swift; sourceTree = "<group>"; };
+		OBJ_88 /* MatrixSigraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixSigraph.swift; sourceTree = "<group>"; };
+		OBJ_9 /* ATD95.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATD95.swift; sourceTree = "<group>"; };
+		OBJ_90 /* BinaryHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryHeap.swift; sourceTree = "<group>"; };
+		OBJ_91 /* HeapProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapProtocol.swift; sourceTree = "<group>"; };
+		OBJ_94 /* ArrayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayList.swift; sourceTree = "<group>"; };
+		OBJ_95 /* CircleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLinkedList.swift; sourceTree = "<group>"; };
+		OBJ_96 /* CircleLinkedListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLinkedListNode.swift; sourceTree = "<group>"; };
+		OBJ_97 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		OBJ_98 /* LinkedListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListNode.swift; sourceTree = "<group>"; };
+		OBJ_99 /* SingleCircleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCircleLinkedList.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8339C80025D516A2008B2B76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8364B6CC25D27CA300A62138 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8339C86E25D5172C008B2B76 /* AlgorithmX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8364B6D425D27CA300A62138 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8364B6D825D27CA300A62138 /* ColorSpaceConverter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_192 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_241 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_242 /* AlgorithmX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_262 /* ColorSpaceConverter.framework in Frameworks */,
+				OBJ_263 /* AlgorithmX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8339C86825D5171D008B2B76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8364B68025D27AF700A62138 /* Deployment */ = {
+			isa = PBXGroup;
+			children = (
+				83ED102E25DA645F0094D787 /* ColorSpaceConverter.podspec */,
+				8364B68725D27B0B00A62138 /* Package.swift */,
+				8364B68F25D27B1700A62138 /* LICENSE */,
+			);
+			path = Deployment;
+			sourceTree = "<group>";
+		};
+		8364B69025D27B3000A62138 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				8364B69125D27B3C00A62138 /* README.md */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		8364B69225D27B4D00A62138 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8364B69825D27BBE00A62138 /* ColorSpaceConverter.h */,
+				8364B69925D27BBE00A62138 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8364B69525D27B7E00A62138 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8364B69725D27BAD00A62138 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		OBJ_103 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_104 /* ListNodableProtocol.swift */,
+				OBJ_105 /* ListProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		OBJ_106 /* Special */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_107 /* SingleLinkedListNodable.swift */,
+			);
+			path = Special;
+			sourceTree = "<group>";
+		};
+		OBJ_108 /* PriorityQueue */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_109 /* PriorityQueue.swift */,
+				OBJ_110 /* PriorityQueueProtocol.swift */,
+			);
+			path = PriorityQueue;
+			sourceTree = "<group>";
+		};
+		OBJ_111 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_112 /* QueueArray.swift */,
+				OBJ_113 /* QueueLinkedList.swift */,
+				OBJ_114 /* QueueProtocol.swift */,
+				OBJ_115 /* QueueRingBuffer.swift */,
+				OBJ_116 /* QueueStack.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		OBJ_117 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_118 /* HeapSort.swift */,
+			);
+			path = Sort;
+			sourceTree = "<group>";
+		};
+		OBJ_119 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_120 /* ArrayStack.swift */,
+				OBJ_121 /* LinkedListStack.swift */,
+				OBJ_122 /* StackProtocol.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		OBJ_123 /* UnionFind */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_124 /* UnionFind.swift */,
+				OBJ_125 /* UnionFindProtocol.swift */,
+			);
+			path = UnionFind;
+			sourceTree = "<group>";
+		};
+		OBJ_126 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"ColorSpaceConverter::ColorSpaceConverterTests::Product" /* ColorSpaceConverter OSX Tests.xctest */,
+				"ColorSpaceConverter::ColorSpaceConverter::Product" /* ColorSpaceConverter.framework */,
+				"AlgorithmX::AlgorithmX::Product" /* AlgorithmX.framework */,
+				8364B6CF25D27CA300A62138 /* ColorSpaceConverter.framework */,
+				8364B6D725D27CA300A62138 /* ColorSpaceConverter iOS Tests.xctest */,
+				8339C80325D516A2008B2B76 /* AlgorithmX.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_19 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_26 /* Colorable.swift */,
+				8360464F25D907C000D5E1A7 /* Hex.swift */,
+				OBJ_36 /* sRGB.swift */,
+				OBJ_20 /* AdobeRGB.swift */,
+				OBJ_21 /* AppleRGB.swift */,
+				OBJ_22 /* BT2020RGB.swift */,
+				OBJ_27 /* HSL.swift */,
+				OBJ_28 /* HSV.swift */,
+				OBJ_35 /* XYZ.swift */,
+				OBJ_37 /* xyY.swift */,
+				OBJ_32 /* Lab.swift */,
+				OBJ_30 /* LCHab.swift */,
+				OBJ_33 /* Luv.swift */,
+				OBJ_31 /* LCHuv.swift */,
+				OBJ_23 /* CMY.swift */,
+				OBJ_24 /* CMYK.swift */,
+				OBJ_29 /* IPT.swift */,
+				OBJ_34 /* Spectral.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		OBJ_38 /* Contants */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_39 /* ColorSpaceType.swift */,
+			);
+			path = Contants;
+			sourceTree = "<group>";
+		};
+		OBJ_42 /* Density */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_43 /* Density.swift */,
+				OBJ_44 /* DensityStandard.swift */,
+			);
+			path = Density;
+			sourceTree = "<group>";
+		};
+		OBJ_45 /* Illuminants */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_46 /* IlluminantProtocol.swift */,
+				OBJ_47 /* Illuminants.swift */,
+				OBJ_48 /* SpectralIlluminant.swift */,
+			);
+			path = Illuminants;
+			sourceTree = "<group>";
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				8364B68025D27AF700A62138 /* Deployment */,
+				8364B69025D27B3000A62138 /* Documentation */,
+				OBJ_7 /* Sources */,
+				OBJ_50 /* Tests */,
+				OBJ_52 /* Dependencies */,
+				OBJ_126 /* Products */,
+				8339C86825D5171D008B2B76 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_50 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8364B69525D27B7E00A62138 /* Supporting Files */,
+				OBJ_51 /* ColorSpaceConverterTests.swift */,
+			);
+			path = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_52 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_53 /* AlgorithmX 0.0.1 */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		OBJ_53 /* AlgorithmX 0.0.1 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_54 /* Package.swift */,
+				OBJ_55 /* Comparator */,
+				OBJ_58 /* Deque */,
+				OBJ_63 /* Graph */,
+				OBJ_89 /* Heap */,
+				OBJ_92 /* LinkedList */,
+				OBJ_108 /* PriorityQueue */,
+				OBJ_111 /* Queue */,
+				OBJ_117 /* Sort */,
+				OBJ_119 /* Stack */,
+				OBJ_123 /* UnionFind */,
+			);
+			name = "AlgorithmX 0.0.1";
+			path = .build/checkouts/AlgorithmX/Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_55 /* Comparator */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_56 /* Comparator.swift */,
+				OBJ_57 /* ComparatorResult.swift */,
+			);
+			path = Comparator;
+			sourceTree = "<group>";
+		};
+		OBJ_58 /* Deque */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_59 /* DequeArray.swift */,
+				OBJ_60 /* DequeLinkedList.swift */,
+				OBJ_61 /* DequeProtocol.swift */,
+				OBJ_62 /* DequeStack.swift */,
+			);
+			path = Deque;
+			sourceTree = "<group>";
+		};
+		OBJ_63 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_64 /* Legacy */,
+				OBJ_73 /* ListGraph */,
+				OBJ_81 /* MatrixGraph */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		OBJ_64 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_65 /* GraphEdge.swift */,
+				OBJ_66 /* GraphEdgeInfo.swift */,
+				OBJ_67 /* GraphPathInfo.swift */,
+				OBJ_68 /* GraphProtocol.swift */,
+				OBJ_69 /* GraphTypes.swift */,
+				OBJ_70 /* GraphVertex.swift */,
+				OBJ_71 /* ListGraph.swift */,
+				OBJ_72 /* MatrixGraph.swift */,
+			);
+			path = Legacy;
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_40 /* Converter.swift */,
+				OBJ_17 /* ColorPath.swift */,
+				OBJ_18 /* ColorPathConverterSelector.swift */,
+				OBJ_16 /* ChromaticAdaptation.swift */,
+				OBJ_41 /* DeltaE.swift */,
+				OBJ_49 /* Math.swift */,
+				OBJ_45 /* Illuminants */,
+				OBJ_42 /* Density */,
+				OBJ_38 /* Contants */,
+				OBJ_8 /* Appearance Models */,
+				OBJ_19 /* Colors */,
+				8364B69225D27B4D00A62138 /* Supporting Files */,
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_73 /* ListGraph */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_74 /* ListDigraph.swift */,
+				OBJ_75 /* ListGraphManager.swift */,
+				OBJ_76 /* ListGraphProtocol.swift */,
+				OBJ_77 /* ListGraphTypes.swift */,
+				OBJ_78 /* ListMutilDigraph.swift */,
+				OBJ_79 /* ListMutilSigraph.swift */,
+				OBJ_80 /* ListSigraph.swift */,
+			);
+			path = ListGraph;
+			sourceTree = "<group>";
+		};
+		OBJ_8 /* Appearance Models */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* ATD95.swift */,
+				OBJ_10 /* CIECAM02.swift */,
+				OBJ_11 /* CIECAM02m1.swift */,
+				OBJ_12 /* Hunt.swift */,
+				OBJ_13 /* LLAB.swift */,
+				OBJ_14 /* Nayatani95.swift */,
+				OBJ_15 /* RLAB.swift */,
+			);
+			path = "Appearance Models";
+			sourceTree = "<group>";
+		};
+		OBJ_81 /* MatrixGraph */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_82 /* MatrixDigraph.swift */,
+				OBJ_83 /* MatrixGraphManager.swift */,
+				OBJ_84 /* MatrixGraphProtocol.swift */,
+				OBJ_85 /* MatrixGraphTypes.swift */,
+				OBJ_86 /* MatrixMutilDigraph.swift */,
+				OBJ_87 /* MatrixMutilSigraph.swift */,
+				OBJ_88 /* MatrixSigraph.swift */,
+			);
+			path = MatrixGraph;
+			sourceTree = "<group>";
+		};
+		OBJ_89 /* Heap */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_90 /* BinaryHeap.swift */,
+				OBJ_91 /* HeapProtocol.swift */,
+			);
+			path = Heap;
+			sourceTree = "<group>";
+		};
+		OBJ_92 /* LinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_93 /* Normal */,
+				OBJ_103 /* Protocols */,
+				OBJ_106 /* Special */,
+			);
+			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		OBJ_93 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_94 /* ArrayList.swift */,
+				OBJ_95 /* CircleLinkedList.swift */,
+				OBJ_96 /* CircleLinkedListNode.swift */,
+				OBJ_97 /* LinkedList.swift */,
+				OBJ_98 /* LinkedListNode.swift */,
+				OBJ_99 /* SingleCircleLinkedList.swift */,
+				OBJ_100 /* SingleCircleLinkedListNode.swift */,
+				OBJ_101 /* SingleLinkedList.swift */,
+				OBJ_102 /* SingleLinkedListNode.swift */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8339C7FE25D516A2008B2B76 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8364B6CA25D27CA300A62138 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8364B73625D27DD000A62138 /* ColorSpaceConverter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8364B79325D27F9A00A62138 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8364B79425D27F9E00A62138 /* ColorSpaceConverter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8339C80225D516A2008B2B76 /* AlgorithmX iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8339C80825D516A2008B2B76 /* Build configuration list for PBXNativeTarget "AlgorithmX iOS" */;
+			buildPhases = (
+				8339C7FE25D516A2008B2B76 /* Headers */,
+				8339C7FF25D516A2008B2B76 /* Sources */,
+				8339C80025D516A2008B2B76 /* Frameworks */,
+				8339C80125D516A2008B2B76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AlgorithmX iOS";
+			productName = "AlgorithmX iOS";
+			productReference = 8339C80325D516A2008B2B76 /* AlgorithmX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8364B6CE25D27CA300A62138 /* ColorSpaceConverter iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8364B6E025D27CA300A62138 /* Build configuration list for PBXNativeTarget "ColorSpaceConverter iOS" */;
+			buildPhases = (
+				8364B6CA25D27CA300A62138 /* Headers */,
+				8364B6CB25D27CA300A62138 /* Sources */,
+				8364B6CC25D27CA300A62138 /* Frameworks */,
+				8364B6CD25D27CA300A62138 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8339C86725D51714008B2B76 /* PBXTargetDependency */,
+			);
+			name = "ColorSpaceConverter iOS";
+			productName = "ColorSpaceConverter iOS";
+			productReference = 8364B6CF25D27CA300A62138 /* ColorSpaceConverter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8364B6D625D27CA300A62138 /* ColorSpaceConverter iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8364B6E325D27CA300A62138 /* Build configuration list for PBXNativeTarget "ColorSpaceConverter iOS Tests" */;
+			buildPhases = (
+				8364B6D325D27CA300A62138 /* Sources */,
+				8364B6D425D27CA300A62138 /* Frameworks */,
+				8364B6D525D27CA300A62138 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8364B6DA25D27CA300A62138 /* PBXTargetDependency */,
+			);
+			name = "ColorSpaceConverter iOS Tests";
+			productName = "ColorSpaceConverter iOSTests";
+			productReference = 8364B6D725D27CA300A62138 /* ColorSpaceConverter iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"AlgorithmX::AlgorithmX" /* AlgorithmX OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_133 /* Build configuration list for PBXNativeTarget "AlgorithmX OSX" */;
+			buildPhases = (
+				OBJ_136 /* Sources */,
+				OBJ_192 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AlgorithmX OSX";
+			productName = AlgorithmX;
+			productReference = "AlgorithmX::AlgorithmX::Product" /* AlgorithmX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"AlgorithmX::SwiftPMPackageDescription" /* AlgorithmXPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_194 /* Build configuration list for PBXNativeTarget "AlgorithmXPackageDescription" */;
+			buildPhases = (
+				OBJ_197 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlgorithmXPackageDescription;
+			productName = AlgorithmXPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"ColorSpaceConverter::ColorSpaceConverter" /* ColorSpaceConverter OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_200 /* Build configuration list for PBXNativeTarget "ColorSpaceConverter OSX" */;
+			buildPhases = (
+				8364B79325D27F9A00A62138 /* Headers */,
+				OBJ_203 /* Sources */,
+				OBJ_241 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_243 /* PBXTargetDependency */,
+			);
+			name = "ColorSpaceConverter OSX";
+			productName = ColorSpaceConverter;
+			productReference = "ColorSpaceConverter::ColorSpaceConverter::Product" /* ColorSpaceConverter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"ColorSpaceConverter::ColorSpaceConverterTests" /* ColorSpaceConverter OSX Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_256 /* Build configuration list for PBXNativeTarget "ColorSpaceConverter OSX Tests" */;
+			buildPhases = (
+				OBJ_259 /* Sources */,
+				OBJ_261 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_264 /* PBXTargetDependency */,
+				OBJ_265 /* PBXTargetDependency */,
+			);
+			name = "ColorSpaceConverter OSX Tests";
+			productName = ColorSpaceConverterTests;
+			productReference = "ColorSpaceConverter::ColorSpaceConverterTests::Product" /* ColorSpaceConverter OSX Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"ColorSpaceConverter::SwiftPMPackageDescription" /* ColorSpaceConverterPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_245 /* Build configuration list for PBXNativeTarget "ColorSpaceConverterPackageDescription" */;
+			buildPhases = (
+				OBJ_248 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorSpaceConverterPackageDescription;
+			productName = ColorSpaceConverterPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					8339C80225D516A2008B2B76 = {
+						CreatedOnToolsVersion = 12.3;
+						DevelopmentTeam = R25D8C74JA;
+						ProvisioningStyle = Automatic;
+					};
+					8364B6CE25D27CA300A62138 = {
+						CreatedOnToolsVersion = 12.3;
+						DevelopmentTeam = R25D8C74JA;
+						ProvisioningStyle = Automatic;
+					};
+					8364B6D625D27CA300A62138 = {
+						CreatedOnToolsVersion = 12.3;
+						DevelopmentTeam = R25D8C74JA;
+						ProvisioningStyle = Automatic;
+					};
+					"ColorSpaceConverter::SwiftPMPackageDescription" = {
+						LastSwiftMigration = 1230;
+					};
+				};
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "ColorSpaceConverter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_126 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8339C80225D516A2008B2B76 /* AlgorithmX iOS */,
+				"AlgorithmX::AlgorithmX" /* AlgorithmX OSX */,
+				"AlgorithmX::SwiftPMPackageDescription" /* AlgorithmXPackageDescription */,
+				8364B6CE25D27CA300A62138 /* ColorSpaceConverter iOS */,
+				8364B6D625D27CA300A62138 /* ColorSpaceConverter iOS Tests */,
+				"ColorSpaceConverter::ColorSpaceConverter" /* ColorSpaceConverter OSX */,
+				"ColorSpaceConverter::ColorSpaceConverterTests" /* ColorSpaceConverter OSX Tests */,
+				"ColorSpaceConverter::SwiftPMPackageDescription" /* ColorSpaceConverterPackageDescription */,
+				"ColorSpaceConverter::ColorSpaceConverterPackageTests::ProductTarget" /* ColorSpaceConverterPackageTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8339C80125D516A2008B2B76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8364B6CD25D27CA300A62138 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8364B6D525D27CA300A62138 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8339C7FF25D516A2008B2B76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8339C81D25D516BE008B2B76 /* Comparator.swift in Sources */,
+				8339C81E25D516BE008B2B76 /* ComparatorResult.swift in Sources */,
+				8339C81F25D516BE008B2B76 /* DequeArray.swift in Sources */,
+				8339C82025D516BE008B2B76 /* DequeLinkedList.swift in Sources */,
+				8339C82125D516BE008B2B76 /* DequeProtocol.swift in Sources */,
+				8339C82225D516BE008B2B76 /* DequeStack.swift in Sources */,
+				8339C82325D516BE008B2B76 /* GraphEdge.swift in Sources */,
+				8339C82425D516BE008B2B76 /* GraphEdgeInfo.swift in Sources */,
+				8339C82525D516BE008B2B76 /* GraphPathInfo.swift in Sources */,
+				8339C82625D516BE008B2B76 /* GraphProtocol.swift in Sources */,
+				8339C82725D516BE008B2B76 /* GraphTypes.swift in Sources */,
+				8339C82825D516BE008B2B76 /* GraphVertex.swift in Sources */,
+				8339C82925D516BE008B2B76 /* ListGraph.swift in Sources */,
+				8339C82A25D516BE008B2B76 /* MatrixGraph.swift in Sources */,
+				8339C82B25D516BE008B2B76 /* ListDigraph.swift in Sources */,
+				8339C82C25D516BE008B2B76 /* ListGraphManager.swift in Sources */,
+				8339C82D25D516BE008B2B76 /* ListGraphProtocol.swift in Sources */,
+				8339C82E25D516BE008B2B76 /* ListGraphTypes.swift in Sources */,
+				8339C82F25D516BE008B2B76 /* ListMutilDigraph.swift in Sources */,
+				8339C83025D516BE008B2B76 /* ListMutilSigraph.swift in Sources */,
+				8339C83125D516BE008B2B76 /* ListSigraph.swift in Sources */,
+				8339C83225D516BE008B2B76 /* MatrixDigraph.swift in Sources */,
+				8339C83325D516BE008B2B76 /* MatrixGraphManager.swift in Sources */,
+				8339C83425D516BE008B2B76 /* MatrixGraphProtocol.swift in Sources */,
+				8339C83525D516BE008B2B76 /* MatrixGraphTypes.swift in Sources */,
+				8339C83625D516BE008B2B76 /* MatrixMutilDigraph.swift in Sources */,
+				8339C83725D516BE008B2B76 /* MatrixMutilSigraph.swift in Sources */,
+				8339C83825D516BE008B2B76 /* MatrixSigraph.swift in Sources */,
+				8339C83925D516BE008B2B76 /* BinaryHeap.swift in Sources */,
+				8339C83A25D516BE008B2B76 /* HeapProtocol.swift in Sources */,
+				8339C83B25D516BE008B2B76 /* ArrayList.swift in Sources */,
+				8339C83C25D516BE008B2B76 /* CircleLinkedList.swift in Sources */,
+				8339C83D25D516BE008B2B76 /* CircleLinkedListNode.swift in Sources */,
+				8339C83E25D516BE008B2B76 /* LinkedList.swift in Sources */,
+				8339C83F25D516BE008B2B76 /* LinkedListNode.swift in Sources */,
+				8339C84025D516BF008B2B76 /* SingleCircleLinkedList.swift in Sources */,
+				8339C84125D516BF008B2B76 /* SingleCircleLinkedListNode.swift in Sources */,
+				8339C84225D516BF008B2B76 /* SingleLinkedList.swift in Sources */,
+				8339C84325D516BF008B2B76 /* SingleLinkedListNode.swift in Sources */,
+				8339C84425D516BF008B2B76 /* ListNodableProtocol.swift in Sources */,
+				8339C84525D516BF008B2B76 /* ListProtocol.swift in Sources */,
+				8339C84625D516BF008B2B76 /* SingleLinkedListNodable.swift in Sources */,
+				8339C84725D516BF008B2B76 /* PriorityQueue.swift in Sources */,
+				8339C84825D516BF008B2B76 /* PriorityQueueProtocol.swift in Sources */,
+				8339C84925D516BF008B2B76 /* QueueArray.swift in Sources */,
+				8339C84A25D516BF008B2B76 /* QueueLinkedList.swift in Sources */,
+				8339C84B25D516BF008B2B76 /* QueueProtocol.swift in Sources */,
+				8339C84C25D516BF008B2B76 /* QueueRingBuffer.swift in Sources */,
+				8339C84D25D516BF008B2B76 /* QueueStack.swift in Sources */,
+				8339C84E25D516BF008B2B76 /* HeapSort.swift in Sources */,
+				8339C84F25D516BF008B2B76 /* ArrayStack.swift in Sources */,
+				8339C85025D516BF008B2B76 /* LinkedListStack.swift in Sources */,
+				8339C85125D516BF008B2B76 /* StackProtocol.swift in Sources */,
+				8339C85225D516BF008B2B76 /* UnionFind.swift in Sources */,
+				8339C85325D516BF008B2B76 /* UnionFindProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8364B6CB25D27CA300A62138 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8364B73F25D27DE400A62138 /* Converter.swift in Sources */,
+				8364B74025D27DE500A62138 /* ColorPath.swift in Sources */,
+				8364B74125D27DE500A62138 /* ColorPathConverterSelector.swift in Sources */,
+				8364B74225D27DE500A62138 /* ChromaticAdaptation.swift in Sources */,
+				8364B74325D27DE500A62138 /* DeltaE.swift in Sources */,
+				8364B74425D27DE500A62138 /* Math.swift in Sources */,
+				8364B74525D27DE500A62138 /* IlluminantProtocol.swift in Sources */,
+				8364B74625D27DE500A62138 /* Illuminants.swift in Sources */,
+				8364B74725D27DE500A62138 /* SpectralIlluminant.swift in Sources */,
+				8364B74825D27DE500A62138 /* Density.swift in Sources */,
+				8364B74925D27DE500A62138 /* DensityStandard.swift in Sources */,
+				8364B74A25D27DE500A62138 /* ColorSpaceType.swift in Sources */,
+				8364B74B25D27DE500A62138 /* ATD95.swift in Sources */,
+				8364B74C25D27DE500A62138 /* CIECAM02.swift in Sources */,
+				8364B74D25D27DE500A62138 /* CIECAM02m1.swift in Sources */,
+				8364B74E25D27DE500A62138 /* Hunt.swift in Sources */,
+				8364B74F25D27DE500A62138 /* LLAB.swift in Sources */,
+				8364B75025D27DE500A62138 /* Nayatani95.swift in Sources */,
+				8364B75125D27DE500A62138 /* RLAB.swift in Sources */,
+				8364B75225D27DE500A62138 /* AdobeRGB.swift in Sources */,
+				8364B75325D27DE500A62138 /* AppleRGB.swift in Sources */,
+				8364B75425D27DE500A62138 /* BT2020RGB.swift in Sources */,
+				8364B75525D27DE500A62138 /* CMY.swift in Sources */,
+				8364B75625D27DE500A62138 /* CMYK.swift in Sources */,
+				8364B75825D27DE500A62138 /* Colorable.swift in Sources */,
+				8364B75925D27DE500A62138 /* HSL.swift in Sources */,
+				8364B75A25D27DE500A62138 /* HSV.swift in Sources */,
+				8364B75B25D27DE500A62138 /* IPT.swift in Sources */,
+				8364B75C25D27DE500A62138 /* LCHab.swift in Sources */,
+				8364B75D25D27DE500A62138 /* LCHuv.swift in Sources */,
+				8364B75E25D27DE500A62138 /* Lab.swift in Sources */,
+				8364B75F25D27DE500A62138 /* Luv.swift in Sources */,
+				8360465025D907C000D5E1A7 /* Hex.swift in Sources */,
+				8364B76025D27DE500A62138 /* Spectral.swift in Sources */,
+				8364B76125D27DE500A62138 /* XYZ.swift in Sources */,
+				8364B76225D27DE500A62138 /* sRGB.swift in Sources */,
+				8364B76325D27DE500A62138 /* xyY.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8364B6D325D27CA300A62138 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8364B78A25D27F8D00A62138 /* ColorSpaceConverterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_136 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_137 /* Comparator.swift in Sources */,
+				OBJ_138 /* ComparatorResult.swift in Sources */,
+				OBJ_139 /* DequeArray.swift in Sources */,
+				OBJ_140 /* DequeLinkedList.swift in Sources */,
+				OBJ_141 /* DequeProtocol.swift in Sources */,
+				OBJ_142 /* DequeStack.swift in Sources */,
+				OBJ_143 /* GraphEdge.swift in Sources */,
+				OBJ_144 /* GraphEdgeInfo.swift in Sources */,
+				OBJ_145 /* GraphPathInfo.swift in Sources */,
+				OBJ_146 /* GraphProtocol.swift in Sources */,
+				OBJ_147 /* GraphTypes.swift in Sources */,
+				OBJ_148 /* GraphVertex.swift in Sources */,
+				OBJ_149 /* ListGraph.swift in Sources */,
+				OBJ_150 /* MatrixGraph.swift in Sources */,
+				OBJ_151 /* ListDigraph.swift in Sources */,
+				OBJ_152 /* ListGraphManager.swift in Sources */,
+				OBJ_153 /* ListGraphProtocol.swift in Sources */,
+				OBJ_154 /* ListGraphTypes.swift in Sources */,
+				OBJ_155 /* ListMutilDigraph.swift in Sources */,
+				OBJ_156 /* ListMutilSigraph.swift in Sources */,
+				OBJ_157 /* ListSigraph.swift in Sources */,
+				OBJ_158 /* MatrixDigraph.swift in Sources */,
+				OBJ_159 /* MatrixGraphManager.swift in Sources */,
+				OBJ_160 /* MatrixGraphProtocol.swift in Sources */,
+				OBJ_161 /* MatrixGraphTypes.swift in Sources */,
+				OBJ_162 /* MatrixMutilDigraph.swift in Sources */,
+				OBJ_163 /* MatrixMutilSigraph.swift in Sources */,
+				OBJ_164 /* MatrixSigraph.swift in Sources */,
+				OBJ_165 /* BinaryHeap.swift in Sources */,
+				OBJ_166 /* HeapProtocol.swift in Sources */,
+				OBJ_167 /* ArrayList.swift in Sources */,
+				OBJ_168 /* CircleLinkedList.swift in Sources */,
+				OBJ_169 /* CircleLinkedListNode.swift in Sources */,
+				OBJ_170 /* LinkedList.swift in Sources */,
+				OBJ_171 /* LinkedListNode.swift in Sources */,
+				OBJ_172 /* SingleCircleLinkedList.swift in Sources */,
+				OBJ_173 /* SingleCircleLinkedListNode.swift in Sources */,
+				OBJ_174 /* SingleLinkedList.swift in Sources */,
+				OBJ_175 /* SingleLinkedListNode.swift in Sources */,
+				OBJ_176 /* ListNodableProtocol.swift in Sources */,
+				OBJ_177 /* ListProtocol.swift in Sources */,
+				OBJ_178 /* SingleLinkedListNodable.swift in Sources */,
+				OBJ_179 /* PriorityQueue.swift in Sources */,
+				OBJ_180 /* PriorityQueueProtocol.swift in Sources */,
+				OBJ_181 /* QueueArray.swift in Sources */,
+				OBJ_182 /* QueueLinkedList.swift in Sources */,
+				OBJ_183 /* QueueProtocol.swift in Sources */,
+				OBJ_184 /* QueueRingBuffer.swift in Sources */,
+				OBJ_185 /* QueueStack.swift in Sources */,
+				OBJ_186 /* HeapSort.swift in Sources */,
+				OBJ_187 /* ArrayStack.swift in Sources */,
+				OBJ_188 /* LinkedListStack.swift in Sources */,
+				OBJ_189 /* StackProtocol.swift in Sources */,
+				OBJ_190 /* UnionFind.swift in Sources */,
+				OBJ_191 /* UnionFindProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_197 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_198 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_204 /* ATD95.swift in Sources */,
+				OBJ_205 /* CIECAM02.swift in Sources */,
+				OBJ_206 /* CIECAM02m1.swift in Sources */,
+				OBJ_207 /* Hunt.swift in Sources */,
+				OBJ_208 /* LLAB.swift in Sources */,
+				OBJ_209 /* Nayatani95.swift in Sources */,
+				OBJ_210 /* RLAB.swift in Sources */,
+				OBJ_211 /* ChromaticAdaptation.swift in Sources */,
+				OBJ_212 /* ColorPath.swift in Sources */,
+				OBJ_213 /* ColorPathConverterSelector.swift in Sources */,
+				OBJ_214 /* AdobeRGB.swift in Sources */,
+				OBJ_215 /* AppleRGB.swift in Sources */,
+				OBJ_216 /* BT2020RGB.swift in Sources */,
+				OBJ_217 /* CMY.swift in Sources */,
+				OBJ_218 /* CMYK.swift in Sources */,
+				OBJ_220 /* Colorable.swift in Sources */,
+				OBJ_221 /* HSL.swift in Sources */,
+				OBJ_222 /* HSV.swift in Sources */,
+				OBJ_223 /* IPT.swift in Sources */,
+				OBJ_224 /* LCHab.swift in Sources */,
+				OBJ_225 /* LCHuv.swift in Sources */,
+				OBJ_226 /* Lab.swift in Sources */,
+				OBJ_227 /* Luv.swift in Sources */,
+				OBJ_228 /* Spectral.swift in Sources */,
+				OBJ_229 /* XYZ.swift in Sources */,
+				OBJ_230 /* sRGB.swift in Sources */,
+				OBJ_231 /* xyY.swift in Sources */,
+				OBJ_232 /* ColorSpaceType.swift in Sources */,
+				OBJ_233 /* Converter.swift in Sources */,
+				OBJ_234 /* DeltaE.swift in Sources */,
+				OBJ_235 /* Density.swift in Sources */,
+				OBJ_236 /* DensityStandard.swift in Sources */,
+				8360465125D907C000D5E1A7 /* Hex.swift in Sources */,
+				OBJ_237 /* IlluminantProtocol.swift in Sources */,
+				OBJ_238 /* Illuminants.swift in Sources */,
+				OBJ_239 /* SpectralIlluminant.swift in Sources */,
+				OBJ_240 /* Math.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_248 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				8364B68825D27B0B00A62138 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_259 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_260 /* ColorSpaceConverterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8339C86725D51714008B2B76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8339C80225D516A2008B2B76 /* AlgorithmX iOS */;
+			targetProxy = 8339C86625D51714008B2B76 /* PBXContainerItemProxy */;
+		};
+		8364B6DA25D27CA300A62138 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8364B6CE25D27CA300A62138 /* ColorSpaceConverter iOS */;
+			targetProxy = 8364B6D925D27CA300A62138 /* PBXContainerItemProxy */;
+		};
+		OBJ_243 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "AlgorithmX::AlgorithmX" /* AlgorithmX OSX */;
+			targetProxy = 8364B67525D27AD000A62138 /* PBXContainerItemProxy */;
+		};
+		OBJ_254 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "ColorSpaceConverter::ColorSpaceConverterTests" /* ColorSpaceConverter OSX Tests */;
+			targetProxy = 8364B67825D27AD100A62138 /* PBXContainerItemProxy */;
+		};
+		OBJ_264 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "ColorSpaceConverter::ColorSpaceConverter" /* ColorSpaceConverter OSX */;
+			targetProxy = 8364B67625D27AD100A62138 /* PBXContainerItemProxy */;
+		};
+		OBJ_265 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "AlgorithmX::AlgorithmX" /* AlgorithmX OSX */;
+			targetProxy = 8364B67725D27AD100A62138 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8339C80925D516A2008B2B76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R25D8C74JA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ColorSpaceConverter.xcodeproj/AlgorithmX_Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.windy.www.AlgorithmX-iOS";
+				PRODUCT_NAME = AlgorithmX;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		8339C80A25D516A2008B2B76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R25D8C74JA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ColorSpaceConverter.xcodeproj/AlgorithmX_Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.windy.www.AlgorithmX-iOS";
+				PRODUCT_NAME = AlgorithmX;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		8364B6E125D27CA300A62138 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R25D8C74JA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.windy.www.ColorSpaceConverter-iOS";
+				PRODUCT_NAME = ColorSpaceConverter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		8364B6E225D27CA300A62138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R25D8C74JA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.windy.www.ColorSpaceConverter-iOS";
+				PRODUCT_NAME = ColorSpaceConverter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		8364B6E425D27CA300A62138 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R25D8C74JA;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.windy.www.ColorSpaceConverter-iOSTests";
+				PRODUCT_NAME = "ColorSpaceConverter iOS Tests";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		8364B6E525D27CA300A62138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = R25D8C74JA;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.windy.www.ColorSpaceConverter-iOSTests";
+				PRODUCT_NAME = "ColorSpaceConverter iOS Tests";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ColorSpaceConverter.xcodeproj/AlgorithmX_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = AlgorithmX;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = AlgorithmX;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.3;
+				TARGET_NAME = AlgorithmX;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_135 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ColorSpaceConverter.xcodeproj/AlgorithmX_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = AlgorithmX;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = AlgorithmX;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.3;
+				TARGET_NAME = AlgorithmX;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode 12.3.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -package-description-version 5.3.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode 12.3.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -package-description-version 5.3.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_201 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Accelerate,
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ColorSpaceConverter;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ColorSpaceConverter;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ColorSpaceConverter;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_202 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Accelerate,
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ColorSpaceConverter;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ColorSpaceConverter;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ColorSpaceConverter;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_246 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				LD = /usr/bin/true;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode 12.3.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -package-description-version 5.3.0";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				LD = /usr/bin/true;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode 12.3.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -package-description-version 5.3.0";
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_252 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_253 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_257 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_NAME = "ColorSpaceConverter OSX Tests";
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ColorSpaceConverterTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_NAME = "ColorSpaceConverter OSX Tests";
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ColorSpaceConverterTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8339C80825D516A2008B2B76 /* Build configuration list for PBXNativeTarget "AlgorithmX iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8339C80925D516A2008B2B76 /* Debug */,
+				8339C80A25D516A2008B2B76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8364B6E025D27CA300A62138 /* Build configuration list for PBXNativeTarget "ColorSpaceConverter iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8364B6E125D27CA300A62138 /* Debug */,
+				8364B6E225D27CA300A62138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8364B6E325D27CA300A62138 /* Build configuration list for PBXNativeTarget "ColorSpaceConverter iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8364B6E425D27CA300A62138 /* Debug */,
+				8364B6E525D27CA300A62138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_133 /* Build configuration list for PBXNativeTarget "AlgorithmX OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_134 /* Debug */,
+				OBJ_135 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_194 /* Build configuration list for PBXNativeTarget "AlgorithmXPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_195 /* Debug */,
+				OBJ_196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "ColorSpaceConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_200 /* Build configuration list for PBXNativeTarget "ColorSpaceConverter OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_201 /* Debug */,
+				OBJ_202 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_245 /* Build configuration list for PBXNativeTarget "ColorSpaceConverterPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_246 /* Debug */,
+				OBJ_247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_251 /* Build configuration list for PBXAggregateTarget "ColorSpaceConverterPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_252 /* Debug */,
+				OBJ_253 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_256 /* Build configuration list for PBXNativeTarget "ColorSpaceConverter OSX Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_257 /* Debug */,
+				OBJ_258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

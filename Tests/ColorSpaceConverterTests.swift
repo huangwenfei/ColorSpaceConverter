@@ -277,6 +277,16 @@ class ColorSpaceConverterTests: XCTestCase {
         XCTAssertTrue(formatInt(bt2020Rgb.blue) == 182)
     }
     
+    func testHSVTosRgb_() throws {
+        let color = HSV(h: 0.33430797733061496, s: 0, v: 87/100)
+        /// case 1: to sRgb
+        let srgb = Converter.convert(from: color, to: sRGB.self).uppable()
+        print(srgb)
+        XCTAssertTrue(formatInt(srgb.red) == 222)
+        XCTAssertTrue(formatInt(srgb.green) == 222)
+        XCTAssertTrue(formatInt(srgb.blue) == 222)
+    }
+    
     func testHSVTosRgb() throws {
         let color = HSV(h: 0.7245, s: 0.7912, v: 0.7137)
         /// case 1: to sRgb

@@ -264,6 +264,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8306145D264ACB100066611D /* ColorSpaceConverter.podspec.github */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColorSpaceConverter.podspec.github; sourceTree = SOURCE_ROOT; };
 		8339C80325D516A2008B2B76 /* AlgorithmX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlgorithmX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8360464F25D907C000D5E1A7 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		8364B68725D27B0B00A62138 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
@@ -435,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				83ED102E25DA645F0094D787 /* ColorSpaceConverter.podspec */,
+				8306145D264ACB100066611D /* ColorSpaceConverter.podspec.github */,
 				8364B68725D27B0B00A62138 /* Package.swift */,
 				8364B68F25D27B1700A62138 /* LICENSE */,
 			);

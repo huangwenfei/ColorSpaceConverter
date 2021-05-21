@@ -89,6 +89,8 @@ extension CMYK {
             result.k /= 100
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -102,6 +104,8 @@ extension CMYK {
             result.y *= 100
             result.k *= 100
         }
+        
+        result.isUpscale = true
         
         return result
     }

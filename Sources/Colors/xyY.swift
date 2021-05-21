@@ -79,6 +79,8 @@ extension xyY {
             result.Y /= 100
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -91,6 +93,8 @@ extension xyY {
             result.y *= 83.291139241
             result.Y *= 100
         }
+        
+        result.isUpscale = true
         
         return result
     }

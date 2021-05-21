@@ -78,6 +78,8 @@ extension CMY {
             result.y /= 100
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -90,6 +92,8 @@ extension CMY {
             result.m *= 100
             result.y *= 100
         }
+        
+        result.isUpscale = true
         
         return result
     }

@@ -82,6 +82,8 @@ extension LCHuv {
             result.v /= 360
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -94,6 +96,8 @@ extension LCHuv {
             result.u *= 100
             result.v *= 360
         }
+        
+        result.isUpscale = true
         
         return result
     }

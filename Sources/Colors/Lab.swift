@@ -80,6 +80,8 @@ extension Lab {
             result.b /= (result.b > 0 ? 127 : -128)
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -92,6 +94,8 @@ extension Lab {
             result.a *= (result.a > 0 ? 127 : -128)
             result.b *= (result.b > 0 ? 127 : -128)
         }
+        
+        result.isUpscale = true
         
         return result
     }

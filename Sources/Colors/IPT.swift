@@ -102,6 +102,8 @@ extension IPT {
             result.t /= (result.t > 0 ? 100 : -100)
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -114,6 +116,8 @@ extension IPT {
             result.p *= (result.p > 0 ? 100 : -100)
             result.t *= (result.t > 0 ? 100 : -100)
         }
+        
+        result.isUpscale = true
         
         return result
     }

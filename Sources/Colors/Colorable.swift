@@ -118,6 +118,8 @@ extension RGBColorable {
             result.blue  /= 255
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -130,6 +132,8 @@ extension RGBColorable {
             result.green *= 255
             result.blue  *= 255
         }
+        
+        result.isUpscale = true
         
         return result
     }

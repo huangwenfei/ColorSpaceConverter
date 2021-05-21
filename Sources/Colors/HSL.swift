@@ -88,6 +88,8 @@ extension HSL {
             result.l /= 100
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -100,6 +102,8 @@ extension HSL {
             result.s *= 100
             result.l *= 100
         }
+        
+        result.isUpscale = true
         
         return result
     }

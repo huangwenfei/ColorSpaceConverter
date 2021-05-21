@@ -78,6 +78,8 @@ extension XYZ {
             result.z /= 108.883
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -90,6 +92,8 @@ extension XYZ {
             result.y *= 100
             result.z *= 108.883
         }
+        
+        result.isUpscale = true
         
         return result
     }

@@ -80,6 +80,8 @@ extension Luv {
             result.v /= (result.v > 0 ? 100 : -100)
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -92,6 +94,8 @@ extension Luv {
             result.u *= (result.u > 0 ? 100 : -100)
             result.v *= (result.v > 0 ? 100 : -100)
         }
+        
+        result.isUpscale = true
         
         return result
     }

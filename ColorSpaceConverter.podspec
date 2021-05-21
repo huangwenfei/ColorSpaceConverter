@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "ColorSpaceConverter"
-  spec.version      = "0.1.0"
+  spec.version      = "0.1.1"
   spec.summary      = "Conversion of various color models."
 
   # This description is used to generate tags and improve search results.

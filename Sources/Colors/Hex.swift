@@ -238,6 +238,8 @@ extension Hex {
             result.alpha /= 255
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -251,6 +253,8 @@ extension Hex {
             result.blue  *= 255
             result.alpha *= 255
         }
+        
+        result.isUpscale = true
         
         return result
     }

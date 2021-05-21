@@ -83,9 +83,12 @@ extension HSV {
         var result = self
         
         if isUpscale {
+            result.h /= 360
             result.s /= 100
             result.v /= 100
         }
+        
+        result.isUpscale = false
         
         return result
     }
@@ -95,9 +98,12 @@ extension HSV {
         var result = self
         
         if !isUpscale {
+            result.h *= 360
             result.s *= 100
             result.v *= 100
         }
+        
+        result.isUpscale = true
         
         return result
     }

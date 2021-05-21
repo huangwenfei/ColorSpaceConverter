@@ -82,6 +82,8 @@ extension LCHab {
             result.b /= 360
         }
         
+        result.isUpscale = false
+        
         return result
     }
     
@@ -94,6 +96,8 @@ extension LCHab {
             result.a *= 100
             result.b *= 360
         }
+        
+        result.isUpscale = true
         
         return result
     }

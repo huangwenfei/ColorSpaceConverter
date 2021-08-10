@@ -1,0 +1,22 @@
+
+Pod::Spec.new do |spec|
+
+  spec.name         = "ColorSpaceConverter"
+  spec.version      = "0.1.2"
+  spec.summary      = "Conversion of various color models."
+  spec.description  = <<-DESC
+  Conversion of various color models. Ep: RGB -> XYZ, XYZ -> Lab ... Luv -> RGB .
+                   DESC
+  spec.homepage     = "https://gitee.com/windyhuangwenfei/ColorSpaceConverter"
+  spec.license      = { :type => "BSD 3-Clause", :file => "LICENSE" }
+  spec.author             = { "黄文飞" => "yi.yuan.zi@163.com" }
+  spec.ios.deployment_target = "9.1"
+  spec.osx.deployment_target = "10.10"
+  spec.source       = { :git => "https://gitee.com/windyhuangwenfei/ColorSpaceConverter.git", :tag => spec.version }
+  spec.swift_versions = ['5.1', '5.2', '5.3', '5.4', '5.5']
+  spec.source_files  = "Sources/*.swift", "Sources/**/*.swift"
+  spec.exclude_files = "Sources/Supporting Files/*", "Sources/Appearance Models/*"
+  spec.frameworks = "Accelerate"
+  spec.dependency "AlgorithmX", '~> 0.0.3'
+
+end

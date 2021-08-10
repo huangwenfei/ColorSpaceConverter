@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AlgorithmX",
+        "repositoryURL": "https://gitee.com/windyhuangwenfei/AlgorithmX",
+        "state": {
+          "branch": null,
+          "revision": "541e1fb4e16e08e2557cf04b94f9e45499a0c38c",
+          "version": "0.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

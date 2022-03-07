@@ -1433,10 +1433,13 @@ extension ColorPathConverterSelector {
         /// H values are in degrees and are 0 to 1.0.
         /// S values are a percentage, 0.0 to 1.0.
         /// V values are a percentage, 0.0 to 1.0.
+        ///
 
-        let h = color.h * 360.0
-        let s = color.s
-        let v = color.v
+        let downable = color.downable()
+        
+        let h = downable.h * 360.0
+        let s = downable.s
+        let v = downable.v
 
         let hFloored = floor(h)
         let hSubI = Int(hFloored / 60.0) % 6
@@ -1515,9 +1518,18 @@ extension ColorPathConverterSelector {
     // MARK: - HSL
     public static func HSLToRGB<R: RGBColorable>(color: HSL, infos: [AnyHashable: Any]?) -> R {
         
-        let h = color.h
-        let s = color.s
-        let l = color.l
+        /// HSL to RGB conversion.
+        ///
+        /// H values are in degrees and are 0 to 1.0.
+        /// S values are a percentage, 0.0 to 1.0.
+        /// V values are a percentage, 0.0 to 1.0.
+        ///
+        
+        let downable = color.downable()
+        
+        let h = downable.h
+        let s = downable.s
+        let l = downable.l
 
         let varQ: Element
         if l < 0.5 {
@@ -1567,10 +1579,12 @@ extension ColorPathConverterSelector {
     public static func CMYToRGB<R: RGBColorable>(color: CMY, infos: [AnyHashable: Any]?) -> R {
 
         /// NOTE: Returned values are in the range of 0-255.
+        
+        let downable = color.downable()
 
-        let r = 1.0 - color.c
-        let g = 1.0 - color.m
-        let b = 1.0 - color.y
+        let r = 1.0 - downable.c
+        let g = 1.0 - downable.m
+        let b = 1.0 - downable.y
 
         return .init(
             red: r, green: g, blue: b,
@@ -1628,9 +1642,11 @@ extension ColorPathConverterSelector {
         
         /// NOTE: CMYK and CMY values range from 0.0 to 1.0
 
-        let c = color.c * (1.0 - color.k) + color.k
-        let m = color.m * (1.0 - color.k) + color.k
-        let y = color.y * (1.0 - color.k) + color.k
+        let downable = color.downable()
+        
+        let c = downable.c * (1.0 - downable.k) + downable.k
+        let m = downable.m * (1.0 - downable.k) + downable.k
+        let y = downable.y * (1.0 - downable.k) + downable.k
 
         return .init(c: c, m: m, y: y, illuminant: color.illuminant)
         

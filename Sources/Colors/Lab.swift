@@ -76,8 +76,8 @@ extension Lab {
         
         if isUpscale {
             result.l /= 100
-            result.a /= (result.a > 0 ? 127 : -128)
-            result.b /= (result.b > 0 ? 127 : -128)
+            result.a /= (result.a > 0 ? 127 : 128)
+            result.b /= (result.b > 0 ? 127 : 128)
         }
         
         result.isUpscale = false
@@ -91,8 +91,8 @@ extension Lab {
         
         if !isUpscale {
             result.l *= 100
-            result.a *= (result.a > 0 ? 127 : -128)
-            result.b *= (result.b > 0 ? 127 : -128)
+            result.a *= (result.a > 0 ? 127 : 128)
+            result.b *= (result.b > 0 ? 127 : 128)
         }
         
         result.isUpscale = true

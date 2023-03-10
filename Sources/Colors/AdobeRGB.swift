@@ -2,6 +2,8 @@
 //  AdobeRGB.swift
 //  ColorSpaceConverter
 //
+//  https://www.adobe.com/digitalimag/pdfs/AdobeRGB1998.pdf
+//
 //  Created by 黄文飞 on 2020/11/13.
 //  Copyright © 2020 黄文飞. All rights reserved.
 //

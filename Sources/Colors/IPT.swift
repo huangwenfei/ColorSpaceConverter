@@ -27,7 +27,7 @@ public struct IPT: NormalColorableProtocol, ColorElement {
     public var illuminant: Illuminant = .default
     
     public static var xyzToLmsMatrices: Matrix {
-        (
+        .init(
             [
                  0.4002, 0.7075, -0.0807,
                 -0.2280, 1.1500,  0.0612,
@@ -38,7 +38,7 @@ public struct IPT: NormalColorableProtocol, ColorElement {
     }
     
     public static var lmstoIptMatrices: Matrix {
-        (
+        .init(
             [
                 0.4000,  0.4000,  0.2000,
                 4.4550, -4.8510,  0.3960,
@@ -64,11 +64,11 @@ public struct IPT: NormalColorableProtocol, ColorElement {
 extension IPT {
     
     public static var iUpperRange: ColorElement.Range {
-        (0, 100)
+        .init(0, 100)
     }
     
     public static var pUpperRange: ColorElement.Range {
-        (-100, 100)
+        .init(-100, 100)
     }
     
     public static var tUpperRange: ColorElement.Range {
@@ -77,11 +77,11 @@ extension IPT {
     
     
     public static var iDownerRange: ColorElement.Range {
-        (0, 1)
+        .init(0, 1)
     }
     
     public static var pDownerRange: ColorElement.Range {
-        (-1, 1)
+        .init(-1, 1)
     }
     
     public static var tDownerRange: ColorElement.Range {

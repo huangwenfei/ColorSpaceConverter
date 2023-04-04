@@ -25,7 +25,7 @@ public struct AppleRGB: RGBColorable {
     public static var gamma: Double { 1.8 }
     
     public static var xyzToRgbMatrices: Matrix {
-        (
+        .init(
             [
                  2.9515373, -1.2894116, -0.4738445,
                 -1.0851093,  1.9908566,  0.0372026,
@@ -36,7 +36,7 @@ public struct AppleRGB: RGBColorable {
     }
     
     public static var rgbToXyzMatrices: Matrix {
-        (
+        .init(
             [
                 0.4497288, 0.3162486, 0.1844926,
                 0.2446525, 0.6720283, 0.0833192,

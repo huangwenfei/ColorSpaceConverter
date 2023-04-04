@@ -44,7 +44,7 @@ public struct ChromaticAdaptation {
         /// Perform the adaptation via matrix multiplication.
         let resultMat = Math.mul(
             mat1: transformMatrix,
-            mat2: (elements, elements.count, 1)
+            mat2: .init(elements, elements.count, 1)
         ).values
         
         xyz = .init(array: resultMat)
@@ -71,7 +71,7 @@ public struct ChromaticAdaptation {
         /// Perform the adaptation via matrix multiplication.
         let resultMat = Math.mul(
             mat1: transformMatrix,
-            mat2: (elements, elements.count, 1)
+            mat2: .init(elements, elements.count, 1)
         ).values
         
         x = resultMat[0]
@@ -143,13 +143,13 @@ extension ChromaticAdaptation {
             /// A * X
             /// Y ← αAX + βY
             var rgbSrc = Math.mul(
-                mat1: (mSharp, rows, columns),
-                mat2: (wpSrc, wpRows, wpColumns)
+                mat1: .init(mSharp, rows, columns),
+                mat2: .init(wpSrc, wpRows, wpColumns)
             )
             
             var rgbDst = Math.mul(
-                mat1: (mSharp, rows, columns),
-                mat2: (wpDst, wpRows, wpColumns)
+                mat1: .init(mSharp, rows, columns),
+                mat2: .init(wpDst, wpRows, wpColumns)
             )
 
             /// Ratio of whitepoint sharpened responses
@@ -173,7 +173,7 @@ extension ChromaticAdaptation {
             }
             
             guard let pinvResult = Math.pinv(
-                (mSharp, rows, columns)
+                .init(mSharp, rows, columns)
             ) else {
                 #if DEBUG
                 fatalError("Can not calculate sharp pinv.")
@@ -184,12 +184,12 @@ extension ChromaticAdaptation {
             
             let pinvRat = Math.mul(
                 mat1: pinvResult,
-                mat2: (mRatDiag, count, count)
+                mat2: .init(mRatDiag, count, count)
             )
             
             let mXfm = Math.mul(
                 mat1: pinvRat,
-                mat2: (mSharp, rows, columns)
+                mat2: .init(mSharp, rows, columns)
             )
             
             return mXfm

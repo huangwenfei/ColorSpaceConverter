@@ -199,7 +199,7 @@ public struct Nayatani95 {
         0.7844 * (8.414 + 8.091 * pow(x, 0.5128)) / (8.414 + pow(x, 0.5128))
     }
 
-    private static var xyzToRgbM: Math.Matrix = (
+    private static var xyzToRgbM: Math.Matrix = .init(
         [
             0.40024, 0.70760, -0.08081,
             -0.22630, 1.16532, 0.04570,
@@ -210,7 +210,7 @@ public struct Nayatani95 {
 
     private static func xyzToRgb(xyz: (Double, Double, Double)) -> (Double, Double, Double) {
         let rgb = Math.mul(
-            mat1: xyzToRgbM, vector: ([xyz.0, xyz.1, xyz.2], 3)
+            mat1: xyzToRgbM, vector: .init([xyz.0, xyz.1, xyz.2])
         )
         return (rgb.values[0], rgb.values[1], rgb.values[2])
     }

@@ -1064,7 +1064,7 @@ extension ColorPathConverterSelector {
         
         var lmsValues = Math.mul(
             mat1: transMatrix,
-            mat2: (xyzValues, valueM, valueN)
+            mat2: .init(xyzValues, valueM, valueN)
         ).values
 
         #if true
@@ -1110,7 +1110,7 @@ extension ColorPathConverterSelector {
         /// `3 X 3 * 3 X 1`
         let iptValues = Math.mul(
             mat1: lmsToIptMat,
-            mat2: (lmsPrime, lmsPrime.count, 1)
+            mat2: .init(lmsPrime, lmsPrime.count, 1)
         ).values
         
         return .init(array: iptValues)
@@ -1126,7 +1126,7 @@ extension ColorPathConverterSelector {
         )
 
         switch color.rgbColorSpace {
-        case .unowned:
+        case .unknown:
             return sRGBToXYZ(
                 color: .init(),
                 illuminant: illuminant, infos: infos
@@ -1669,7 +1669,7 @@ extension ColorPathConverterSelector {
         
         let lmsValueMat = Math.mul(
             mat1: lmsToIptInv,
-            mat2: (iptValues, iptValues.count, 1)
+            mat2: .init(iptValues, iptValues.count, 1)
         )
         
         var lmsValues = lmsValueMat.values
@@ -1708,7 +1708,7 @@ extension ColorPathConverterSelector {
         
         let xyzValues = Math.mul(
             mat1: xyzToLmsInv,
-            mat2: (lmsPrime, lmsPrime.count, 1)
+            mat2: .init(lmsPrime, lmsPrime.count, 1)
         ).values
         
         return .init(
@@ -1742,7 +1742,7 @@ extension ColorPathConverterSelector {
         
         let resultMatrix = Math.mul(
             mat1: transMatrix,
-            mat2: (values: values, rows: .init(valueM), columns: .init(valueN))
+            mat2: .init(values: values, rows: .init(valueM), columns: .init(valueN))
         ).values
 
         /// - Tag: Clamp these values to a valid range.

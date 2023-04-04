@@ -10,7 +10,7 @@ import Foundation
 
 public enum ColorSpaceType: String {
     
-    case unowned
+    case unknown
     
     case Hex
     
@@ -56,7 +56,7 @@ public enum ColorSpaceType: String {
         case Self.LCHuv.rawValue:     self = .LCHuv
         case Self.IPT.rawValue:       self = .IPT
         case Self.Spectral.rawValue:  self = .Spectral
-        default:                      self = .unowned
+        default:                      self = .unknown
         }
     }
     
@@ -72,7 +72,7 @@ public enum ColorSpaceType: String {
 extension ColorSpaceType {
     
     public enum RGB: String {
-        case unowned
+        case unknown
         
         case sRGB
         case AppleRGB
@@ -85,13 +85,13 @@ extension ColorSpaceType {
             case Self.AppleRGB.rawValue:  self = .AppleRGB
             case Self.AdobeRGB.rawValue:  self = .AdobeRGB
             case Self.BT2020RGB.rawValue: self = .BT2020RGB
-            default:                      self = .unowned
+            default:                      self = .unknown
             }
         }
         
         public var colorSpace: ColorSpaceType {
             switch self {
-            case .unowned:   return .unowned
+            case .unknown:   return .unknown
             case .sRGB:      return .sRGB
             case .AppleRGB:  return .AppleRGB
             case .AdobeRGB:  return .AdobeRGB

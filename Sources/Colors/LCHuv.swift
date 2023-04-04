@@ -44,7 +44,7 @@ public struct LCHuv: NormalColorableProtocol, ColorElement {
 extension LCHuv {
     
     public static var lUpperRange: ColorElement.Range {
-        (0, 100)
+        .init(0, 100)
     }
     
     public static var uUpperRange: ColorElement.Range {
@@ -52,12 +52,12 @@ extension LCHuv {
     }
     
     public static var vUpperRange: ColorElement.Range {
-        (0, 360)
+        .init(0, 360)
     }
     
     
     public static var lDownerRange: ColorElement.Range {
-        (0, 1)
+        .init(0, 1)
     }
     
     public static var uDownerRange: ColorElement.Range {

@@ -23,7 +23,7 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
     /// [0, 255] - [0, 1]
     public var blue: Element = 0
     /// [0, 255] - [0, 1]
-    public var alpha: Element = 255
+    public var alpha: Element = 1.0
     
     public var isUpscale: Bool = false
     
@@ -35,17 +35,41 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
     public static var rgbToXyzMatrices: Matrix = sRGB.rgbToXyzMatrices
     
     // MARK: Normal Init
-    public init() {  }
+    public init() {
+        self.init(rgb: sRGB.self)
+    }
+    
+    public init<T: RGBColorable>(rgb: T.Type) {
+        self.rgbColorSpace = .init(color: T.self)
+        Self.gamma = T.gamma
+        Self.xyzToRgbMatrices = T.xyzToRgbMatrices
+        Self.rgbToXyzMatrices = T.rgbToXyzMatrices
+    }
     
     public init(red: Int, green: Int, blue: Int, alpha: Int = 255, illuminant: Illuminant = .default) {
+        self.init(red: red, green: green, blue: blue, alpha: alpha, illuminant: illuminant, rgb: sRGB.self)
+    }
+    
+    public init<T: RGBColorable>(red: Int, green: Int, blue: Int, alpha: Int = 255, illuminant: Illuminant = .default, rgb: T.Type) {
+        
+        self.init(rgb: rgb)
+        
         self.red = .init(red)
         self.green = .init(green)
         self.blue = .init(blue)
         self.isUpscale = true
         self.illuminant = illuminant
+        
     }
     
     public init(red: Element, green: Element, blue: Element, alpha: Element = 1.0, illuminant: Illuminant = .default) {
+        self.init(red: red, green: green, blue: blue, alpha: alpha, illuminant: illuminant, rgb: sRGB.self)
+    }
+    
+    public init<T: RGBColorable>(red: Element, green: Element, blue: Element, alpha: Element = 1.0, illuminant: Illuminant = .default, rgb: T.Type) {
+        
+        self.init(rgb: rgb)
+        
         self.red = red
         self.green = green
         self.blue = blue
@@ -61,6 +85,14 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
         )
     }
     
+    public init<T: RGBColorable>(gray: Int, alpha: Int, illuminant: Illuminant = .default, rgb: T.Type) {
+        self.init(
+            red: gray, green: gray, blue: gray, alpha: alpha,
+            illuminant: illuminant,
+            rgb: rgb
+        )
+    }
+    
     public init(gray: Element, alpha: Element, illuminant: Illuminant = .default) {
         self.init(
             red: gray, green: gray, blue: gray, alpha: alpha,
@@ -68,9 +100,22 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
         )
     }
     
+    public init<T: RGBColorable>(gray: Element, alpha: Element, illuminant: Illuminant = .default, rgb: T.Type) {
+        self.init(
+            red: gray, green: gray, blue: gray, alpha: alpha,
+            illuminant: illuminant,
+            rgb: rgb
+        )
+    }
+    
     /// 0xRGBX Or 0XRGBX Or #RGBX
     public init(byString str: String) {
-        self.init()
+        self.init(byString: str, rgb: sRGB.self)
+    }
+    
+    public init<T: RGBColorable>(byString str: String, rgb: T.Type) {
+        
+        self.init(rgb: rgb)
         
         let hexString = str.trimmingCharacters(in: .whitespacesAndNewlines)
         let scanner   = Scanner(string: hexString)
@@ -89,10 +134,10 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
         guard scanner.scanHexInt64(&hexValue) else { return }
         
         switch count {
-        case 3: self.init(byUInt16: .init(hexValue), haveAlpha: false)
-        case 4: self.init(byUInt16: .init(hexValue), haveAlpha: true)
-        case 6: self.init(byUInt32: .init(hexValue), haveAlpha: false)
-        case 8: self.init(byUInt32: .init(hexValue), haveAlpha: true)
+        case 3: self.init(byUInt16: .init(hexValue), haveAlpha: false, rgb: rgb)
+        case 4: self.init(byUInt16: .init(hexValue), haveAlpha: true, rgb: rgb)
+        case 6: self.init(byUInt32: .init(hexValue), haveAlpha: false, rgb: rgb)
+        case 8: self.init(byUInt32: .init(hexValue), haveAlpha: true, rgb: rgb)
         default:
             // Invalid RGB string, number of characters after '#' should be either 3, 4, 6 or 8
             break
@@ -102,6 +147,13 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
     
     /// 16 Bits 0xRGBX
     public init(byUInt16 uint16: UInt16, haveAlpha: Bool = false) {
+        self.init(byUInt16: uint16, haveAlpha: haveAlpha, rgb: sRGB.self)
+    }
+    
+    public init<T: RGBColorable>(byUInt16 uint16: UInt16, haveAlpha: Bool = false, rgb: T.Type) {
+        
+        self.init(rgb: rgb)
+        
         let mask = UInt16(0xF)
         
         let fix: Element = (255.0 / 15.0)
@@ -111,12 +163,18 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
         blue  = .init(uint16 >> (haveAlpha ? 4 : 0) & mask)  * fix
         alpha = .init(haveAlpha ? (uint16 & mask) : 15)      * fix
         isUpscale = true
-        illuminant = .default
         
     }
     
     /// 32 Bits 0xRGBX
     public init(byUInt32 uint32: UInt32, haveAlpha: Bool = false) {
+        self.init(byUInt32: uint32, haveAlpha: haveAlpha, rgb: sRGB.self)
+    }
+    
+    public init<T: RGBColorable>(byUInt32 uint32: UInt32, haveAlpha: Bool = false, rgb: T.Type) {
+        
+        self.init(rgb: rgb)
+        
         let mask = UInt32(0xFF)
         
         red   = .init(uint32 >> (haveAlpha ? 24 : 16) & mask)
@@ -124,7 +182,6 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
         blue  = .init(uint32 >> (haveAlpha ? 8 : 0) & mask)
         alpha = .init(haveAlpha ? (uint32 & mask) : 255)
         isUpscale = true
-        illuminant = .default
         
     }
     
@@ -143,6 +200,24 @@ extension Hex {
         Self.gamma = T.gamma
         Self.xyzToRgbMatrices = T.xyzToRgbMatrices
         Self.rgbToXyzMatrices = T.rgbToXyzMatrices
+    }
+    
+}
+
+extension Hex {
+    
+//    static func test() {
+//        Hex.init(byString: "", rgb: sRGB.self)
+//        Hex.init(byString: "")
+//    }
+    
+    @discardableResult
+    public mutating func replaceXYZInfoTo<T: RGBColorable>(rgb: T.Type) -> Self {
+        self.rgbColorSpace = .init(color: T.self)
+        Self.gamma = T.gamma
+        Self.xyzToRgbMatrices = T.xyzToRgbMatrices
+        Self.rgbToXyzMatrices = T.rgbToXyzMatrices
+        return self
     }
     
 }
@@ -258,12 +333,6 @@ extension Hex {
         
         return result
     }
-    
-}
-
-extension Hex {
-    
-    
     
 }
 

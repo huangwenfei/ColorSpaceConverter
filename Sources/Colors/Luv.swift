@@ -42,11 +42,11 @@ public struct Luv: NormalColorableProtocol, ColorElement {
 extension Luv {
     
     public static var lUpperRange: ColorElement.Range {
-        (0, 100)
+        .init(0, 100)
     }
     
     public static var uUpperRange: ColorElement.Range {
-        (-100, 100)
+        .init(-100, 100)
     }
     
     public static var vUpperRange: ColorElement.Range {
@@ -55,11 +55,11 @@ extension Luv {
     
     
     public static var lDownerRange: ColorElement.Range {
-        (0, 1)
+        .init(0, 1)
     }
     
     public static var uDownerRange: ColorElement.Range {
-        (-1, 1)
+        .init(-1, 1)
     }
     
     public static var vDownerRange: ColorElement.Range {

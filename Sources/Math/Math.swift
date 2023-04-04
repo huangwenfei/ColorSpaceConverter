@@ -137,7 +137,7 @@ extension Math {
             beta, &y, incy
         )
         
-        return (y, y.count)
+        return .init(y)
         
     }
     
@@ -174,7 +174,7 @@ extension Math {
             beta, &resultMatrix, ldc
         )
         
-        return (resultMatrix, .init(transM), .init(valueN))
+        return .init(resultMatrix, .init(transM), .init(valueN))
         
     }
     
@@ -260,7 +260,7 @@ extension Math {
             #endif
         }
         
-        return (a, .init(m), .init(n))
+        return .init(a, .init(m), .init(n))
         
     }
     
@@ -272,7 +272,7 @@ extension Math {
             &result, vDSP_Stride(1),
             vDSP_Length(mat.rows), vDSP_Length(mat.columns)
         )
-        return (result, mat.columns, mat.rows)
+        return .init(result, mat.columns, mat.rows)
     }
 
     internal static func pinv(_ mat: Matrix) -> Matrix? {
@@ -371,13 +371,13 @@ extension Math {
         /// calculate `v * sp * ut`, mul is row major
         
         let v_sp = mul(
-            mat1: (vt, .init(vtm), .init(vtn)),
-            mat2: (sp, .init(sn), .init(sm))
+            mat1: .init(vt, .init(vtm), .init(vtn)),
+            mat2: .init(sp, .init(sn), .init(sm))
         )
         
         let v_sp_ut = mul(
             mat1: v_sp,
-            mat2: (u, .init(um), .init(un))
+            mat2: .init(u, .init(um), .init(un))
         )
         
         return v_sp_ut

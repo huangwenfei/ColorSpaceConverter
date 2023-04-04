@@ -50,11 +50,11 @@ public struct HSV: NormalColorableProtocol, ColorElement {
 extension HSV {
     
     public static var hUpperRange: ColorElement.Range {
-        (0, 360)
+        .init(0, 360)
     }
     
     public static var sUpperRange: ColorElement.Range {
-        (0, 100)
+        .init(0, 100)
     }
     
     public static var vUpperRange: ColorElement.Range {
@@ -63,7 +63,7 @@ extension HSV {
     
     
     public static var hDownerRange: ColorElement.Range {
-        (0, 1)
+        .init(0, 1)
     }
     
     public static var sDownerRange: ColorElement.Range {

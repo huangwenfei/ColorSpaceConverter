@@ -40,20 +40,20 @@ public struct XYZ: NormalColorableProtocol, ColorElement {
 extension XYZ {
     
     public static var xUpperRange: ColorElement.Range {
-        (0, 95.047)
+        .init(0, 95.047)
     }
     
     public static var yUpperRange: ColorElement.Range {
-        (0, 100)
+        .init(0, 100)
     }
     
     public static var zUpperRange: ColorElement.Range {
-        (0, 108.883)
+        .init(0, 108.883)
     }
     
     
     public static var xDownerRange: ColorElement.Range {
-        (0, 1)
+        .init(0, 1)
     }
     
     public static var yDownerRange: ColorElement.Range {

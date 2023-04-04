@@ -21,6 +21,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		832EDD2D29DAF0AF00C0AADC /* MathRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD2C29DAF0AF00C0AADC /* MathRange.swift */; };
+		832EDD2E29DAF0AF00C0AADC /* MathRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD2C29DAF0AF00C0AADC /* MathRange.swift */; };
+		832EDD3029DAF1B300C0AADC /* MathVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD2F29DAF1B300C0AADC /* MathVector.swift */; };
+		832EDD3129DAF1B300C0AADC /* MathVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD2F29DAF1B300C0AADC /* MathVector.swift */; };
+		832EDD3329DAF2D200C0AADC /* MathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD3229DAF2D200C0AADC /* MathElement.swift */; };
+		832EDD3429DAF2D200C0AADC /* MathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD3229DAF2D200C0AADC /* MathElement.swift */; };
+		832EDD3629DAF39100C0AADC /* MathMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD3529DAF39100C0AADC /* MathMatrix.swift */; };
+		832EDD3729DAF39100C0AADC /* MathMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD3529DAF39100C0AADC /* MathMatrix.swift */; };
 		8360465025D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
 		8360465125D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
 		8364B68825D27B0B00A62138 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364B68725D27B0B00A62138 /* Package.swift */; };
@@ -159,6 +167,10 @@
 
 /* Begin PBXFileReference section */
 		8306145D264ACB100066611D /* ColorSpaceConverter.podspec.github */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorSpaceConverter.podspec.github; sourceTree = SOURCE_ROOT; };
+		832EDD2C29DAF0AF00C0AADC /* MathRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathRange.swift; sourceTree = "<group>"; };
+		832EDD2F29DAF1B300C0AADC /* MathVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathVector.swift; sourceTree = "<group>"; };
+		832EDD3229DAF2D200C0AADC /* MathElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathElement.swift; sourceTree = "<group>"; };
+		832EDD3529DAF39100C0AADC /* MathMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMatrix.swift; sourceTree = "<group>"; };
 		8360464F25D907C000D5E1A7 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		8364B68725D27B0B00A62138 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 		8364B68F25D27B1700A62138 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -246,6 +258,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		832EDD2B29DAF02600C0AADC /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				832EDD3229DAF2D200C0AADC /* MathElement.swift */,
+				OBJ_49 /* Math.swift */,
+				832EDD2C29DAF0AF00C0AADC /* MathRange.swift */,
+				832EDD2F29DAF1B300C0AADC /* MathVector.swift */,
+				832EDD3529DAF39100C0AADC /* MathMatrix.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
 		8339C86825D5171D008B2B76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,7 +405,7 @@
 				OBJ_18 /* ColorPathConverterSelector.swift */,
 				OBJ_16 /* ChromaticAdaptation.swift */,
 				OBJ_41 /* DeltaE.swift */,
-				OBJ_49 /* Math.swift */,
+				832EDD2B29DAF02600C0AADC /* Math */,
 				OBJ_45 /* Illuminants */,
 				OBJ_42 /* Density */,
 				OBJ_38 /* Contants */,
@@ -528,7 +552,7 @@
 			attributes = {
 				LastSwiftMigration = 9999;
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					8364B6CE25D27CA300A62138 = {
 						CreatedOnToolsVersion = 12.3;
@@ -551,6 +575,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = OBJ_5;
 			packageReferences = (
@@ -610,6 +635,7 @@
 				8364B74E25D27DE500A62138 /* Hunt.swift in Sources */,
 				8364B74F25D27DE500A62138 /* LLAB.swift in Sources */,
 				8364B75025D27DE500A62138 /* Nayatani95.swift in Sources */,
+				832EDD3629DAF39100C0AADC /* MathMatrix.swift in Sources */,
 				8364B75125D27DE500A62138 /* RLAB.swift in Sources */,
 				8364B75225D27DE500A62138 /* AdobeRGB.swift in Sources */,
 				8364B75325D27DE500A62138 /* AppleRGB.swift in Sources */,
@@ -623,6 +649,9 @@
 				8364B75C25D27DE500A62138 /* LCHab.swift in Sources */,
 				8364B75D25D27DE500A62138 /* LCHuv.swift in Sources */,
 				8364B75E25D27DE500A62138 /* Lab.swift in Sources */,
+				832EDD2D29DAF0AF00C0AADC /* MathRange.swift in Sources */,
+				832EDD3329DAF2D200C0AADC /* MathElement.swift in Sources */,
+				832EDD3029DAF1B300C0AADC /* MathVector.swift in Sources */,
 				8364B75F25D27DE500A62138 /* Luv.swift in Sources */,
 				8360465025D907C000D5E1A7 /* Hex.swift in Sources */,
 				8364B76025D27DE500A62138 /* Spectral.swift in Sources */,
@@ -662,6 +691,7 @@
 				OBJ_220 /* Colorable.swift in Sources */,
 				OBJ_221 /* HSL.swift in Sources */,
 				OBJ_222 /* HSV.swift in Sources */,
+				832EDD3729DAF39100C0AADC /* MathMatrix.swift in Sources */,
 				OBJ_223 /* IPT.swift in Sources */,
 				OBJ_224 /* LCHab.swift in Sources */,
 				OBJ_225 /* LCHuv.swift in Sources */,
@@ -675,6 +705,9 @@
 				OBJ_233 /* Converter.swift in Sources */,
 				OBJ_234 /* DeltaE.swift in Sources */,
 				OBJ_235 /* Density.swift in Sources */,
+				832EDD2E29DAF0AF00C0AADC /* MathRange.swift in Sources */,
+				832EDD3429DAF2D200C0AADC /* MathElement.swift in Sources */,
+				832EDD3129DAF1B300C0AADC /* MathVector.swift in Sources */,
 				OBJ_236 /* DensityStandard.swift in Sources */,
 				8360465125D907C000D5E1A7 /* Hex.swift in Sources */,
 				OBJ_237 /* IlluminantProtocol.swift in Sources */,

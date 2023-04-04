@@ -42,11 +42,11 @@ public struct Lab: NormalColorableProtocol, ColorElement {
 extension Lab {
     
     public static var lUpperRange: ColorElement.Range {
-        (0, 100)
+        .init(0, 100)
     }
     
     public static var aUpperRange: ColorElement.Range {
-        (-128, 127)
+        .init(-128, 127)
     }
     
     public static var bUpperRange: ColorElement.Range {
@@ -55,11 +55,11 @@ extension Lab {
     
     
     public static var lDownerRange: ColorElement.Range {
-        (0, 1)
+        .init(0, 1)
     }
     
     public static var aDownerRange: ColorElement.Range {
-        (-1, 1)
+        .init(-1, 1)
     }
     
     public static var bDownerRange: ColorElement.Range {

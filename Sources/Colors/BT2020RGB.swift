@@ -25,7 +25,7 @@ public struct BT2020RGB: RGBColorable {
     public static var gamma: Double { 2.4 }
     
     public static var xyzToRgbMatrices: Matrix {
-        (
+        .init(
             [
                  1.716651187971269, -0.355670783776393, -0.253366281373660,
                 -0.666684351832489,  1.616481236634939,  0.015768545813911,
@@ -36,7 +36,7 @@ public struct BT2020RGB: RGBColorable {
     }
     
     public static var rgbToXyzMatrices: Matrix {
-        (
+        .init(
             [
                 0.636958048301291, 0.144616903586208, 0.168880975164172,
                 0.262700212011267, 0.677998071518871, 0.059301716469862,

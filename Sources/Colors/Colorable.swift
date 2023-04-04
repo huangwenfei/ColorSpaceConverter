@@ -26,9 +26,9 @@ public struct AnyColorable {
 // MARK: Element
 public protocol ColorElement {
     typealias Element = Double
-    typealias Range = (min: Element, max: Element)
-    typealias Vector = (values: [Element], count: Int)
-    typealias Matrix = (values: [Element], rows: Int, columns: Int)
+    typealias Range = MathRange<Element>
+    typealias Vector = MathVector<Element>
+    typealias Matrix = MathMatrix<Element>
 }
 
 // MARK: Base Color Protocol
@@ -171,7 +171,7 @@ extension RGBColorable {
 extension RGBColorable {
     
     public static var redUpperRange: ColorElement.Range {
-        (0, 255)
+        .init(0, 255)
     }
     
     public static var greenUpperRange: ColorElement.Range {
@@ -188,7 +188,7 @@ extension RGBColorable {
     
     
     public static var redDownerRange: ColorElement.Range {
-        (0, 1)
+        .init(0, 1)
     }
     
     public static var greenDownerRange: ColorElement.Range {

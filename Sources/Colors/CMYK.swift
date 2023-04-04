@@ -42,7 +42,7 @@ public struct CMYK: NormalColorableProtocol, ColorElement {
 extension CMYK {
     
     public static var cUpperRange: ColorElement.Range {
-        (0, 100)
+        .init(0, 100)
     }
     
     public static var mUpperRange: ColorElement.Range {
@@ -59,7 +59,7 @@ extension CMYK {
     
     
     public static var cDownerRange: ColorElement.Range {
-        (0, 1)
+        .init(0, 1)
     }
     
     public static var mDownerRange: ColorElement.Range {

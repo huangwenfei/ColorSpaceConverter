@@ -29,21 +29,17 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
     
     public var illuminant: Illuminant = .default
     
-    // MARK: XYZ Convert
-    public static var gamma: Double = sRGB.gamma
-    public static var xyzToRgbMatrices: Matrix = sRGB.xyzToRgbMatrices
-    public static var rgbToXyzMatrices: Matrix = sRGB.rgbToXyzMatrices
-    
     // MARK: Normal Init
     public init() {
         self.init(rgb: sRGB.self)
     }
     
+    // TODO: malloc: Non-aligned pointer 0x600000740540 being freed (2)
+    // Info:
+    // 1. https://stackoverflow.com/questions/4055277/non-aligned-pointer-being-freed-on-mac 可能只是不同的malloc实现。可能Mac的malloc对齐到更大的边界，因此它会发现您传递给free的指针可能不正确，因为它具有错误的对齐方式。然而，它表示您正在向free()传递一个不是来自malloc()的指针。这肯定是一个bug的迹象，可能在您的所有平台上都会出现。
+    // 2.这个错误提示来自于C语言的malloc函数，在使用malloc函数分配内存后，释放内存时如果指针不是按照内存对齐要求分配的，则会出现该提示。这种情况可能因为代码中存在指针运算错误、未正确使用指针或者类型转换问题等原因导致。如果在Swift代码中遇到类似的问题，建议检查代码中是否存在这些问题，并进行相应的修改。
     public init<T: RGBColorable>(rgb: T.Type) {
         self.rgbColorSpace = .init(color: T.self)
-        Self.gamma = T.gamma
-        Self.xyzToRgbMatrices = T.xyzToRgbMatrices
-        Self.rgbToXyzMatrices = T.rgbToXyzMatrices
     }
     
     public init(red: Int, green: Int, blue: Int, alpha: Int = 255, illuminant: Illuminant = .default) {
@@ -190,33 +186,22 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
 extension Hex {
     
     public init<T: RGBColorable>(rgb: T) {
+        self.init(rgb: T.self)
         self.red = rgb.red
         self.green = rgb.green
         self.blue = rgb.blue
         self.alpha = rgb.isUpscale ? 255 : 1.0
         self.isUpscale = rgb.isUpscale
         self.illuminant = rgb.illuminant
-        self.rgbColorSpace = .init(color: T.self)
-        Self.gamma = T.gamma
-        Self.xyzToRgbMatrices = T.xyzToRgbMatrices
-        Self.rgbToXyzMatrices = T.rgbToXyzMatrices
     }
     
 }
 
 extension Hex {
     
-//    static func test() {
-//        Hex.init(byString: "", rgb: sRGB.self)
-//        Hex.init(byString: "")
-//    }
-    
     @discardableResult
     public mutating func replaceXYZInfoTo<T: RGBColorable>(rgb: T.Type) -> Self {
         self.rgbColorSpace = .init(color: T.self)
-        Self.gamma = T.gamma
-        Self.xyzToRgbMatrices = T.xyzToRgbMatrices
-        Self.rgbToXyzMatrices = T.rgbToXyzMatrices
         return self
     }
     

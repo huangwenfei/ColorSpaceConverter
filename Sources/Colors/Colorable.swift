@@ -23,6 +23,21 @@ public struct AnyColorable {
 
 }
 
+// MARK: AnyRGBColorable
+public struct AnyRGBColorable {
+    
+    /// The value wrapped by this instance.
+    public private(set) var base: Any
+
+    /// Creates a type-erased rgb colorable value that wraps the given instance.
+    ///
+    /// - Parameter base: A rgb colorable value to wrap.
+    public init<H>(_ base: H) where H : RGBColorable {
+        self.base = base
+    }
+
+}
+
 // MARK: Element
 public protocol ColorElement {
     typealias Element = Double
@@ -81,10 +96,10 @@ public protocol RGBColorable: NormalColorableProtocol, SomeElementInit, CustomSt
     typealias IntUnLumaTuple = (red: Int, green: Int, blue: Int)
     typealias FloatUnLumaTuple = (red: Element, green: Element, blue: Element)
     
-    static var gamma: Double { get }
+    var gamma: Double { get }
     
-    static var xyzToRgbMatrices: Matrix { get }
-    static var rgbToXyzMatrices: Matrix { get }
+    var xyzToRgbMatrices: Matrix { get }
+    var rgbToXyzMatrices: Matrix { get }
     
     init(red: Int, green: Int, blue: Int, illuminant: Illuminant)
     init(red: Element, green: Element, blue: Element, illuminant: Illuminant, isUpscale: Bool)
@@ -142,7 +157,7 @@ extension RGBColorable {
 
 extension RGBColorable {
     
-    public static func matrices(isToRgb: Bool = true) -> Matrix {
+    public func matrices(isToRgb: Bool = true) -> Matrix {
         isToRgb ? xyzToRgbMatrices : rgbToXyzMatrices
     }
     

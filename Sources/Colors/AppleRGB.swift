@@ -22,9 +22,9 @@ public struct AppleRGB: RGBColorable {
     
     public var isUpscale: Bool = true
     
-    public static var gamma: Double { 1.8 }
+    public var gamma: Double { 1.8 }
     
-    public static var xyzToRgbMatrices: Matrix {
+    public var xyzToRgbMatrices: Matrix {
         .init(
             [
                  2.9515373, -1.2894116, -0.4738445,
@@ -35,7 +35,7 @@ public struct AppleRGB: RGBColorable {
         )
     }
     
-    public static var rgbToXyzMatrices: Matrix {
+    public var rgbToXyzMatrices: Matrix {
         .init(
             [
                 0.4497288, 0.3162486, 0.1844926,

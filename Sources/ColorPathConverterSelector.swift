@@ -968,12 +968,16 @@ extension ColorPathConverterSelector {
         }
         
         /// - Tag: Apply an RGB working space matrix to the XYZ values (matrix mul).
+        #if false
         let (r, g, b) = applyRGBMatrix(
             var1: tempX, var2: tempY, var3: tempZ, rgbType: R.self, isToRgb: true
         )
+        #else
+        var rgb: R = applyRGBMatrix(fromXYZ: [tempX, tempY, tempZ])
+        #endif
 
         /// - Tag: v
-        let linearChannels = [r, g, b]
+        let linearChannels = rgb.elements /// [r, g, b]
         
         /// - Tag: V
         var nonlinearChannels = [Element](repeating: 0, count: linearChannels.count)
@@ -1008,11 +1012,12 @@ extension ColorPathConverterSelector {
             
             /// - Tag: If it's not sRGB...
             for (idx, channel) in linearChannels.enumerated() {
-                nonlinearChannels[idx] = pow(channel, 1 / R.gamma)
+                nonlinearChannels[idx] = pow(channel, 1 / rgb.gamma)
             }
             
         }
         
+        #if false
         return .init(
             red: nonlinearChannels[0],
             green: nonlinearChannels[1],
@@ -1020,6 +1025,15 @@ extension ColorPathConverterSelector {
             illuminant: illuminant,
             isUpscale: false
         )
+        #else
+        rgb.red = nonlinearChannels[0]
+        rgb.green = nonlinearChannels[1]
+        rgb.blue = nonlinearChannels[2]
+        rgb.illuminant = illuminant
+        rgb.isUpscale = false
+        
+        return rgb
+        #endif
     
     }
     
@@ -1247,12 +1261,13 @@ extension ColorPathConverterSelector {
             /// - Tag: If it's not sRGB...
             
             for (idx, channel) in downColor.elements.enumerated() {
-                linearChannels[idx] = pow(channel, T.gamma)
+                linearChannels[idx] = pow(channel, color.gamma)
             }
             
         }
         
         /// - Tag: Apply an RGB working space matrix to the XYZ values (matrix mul).
+        #if false
         let (x, y, z) = applyRGBMatrix(
             var1: linearChannels[0],
             var2: linearChannels[1],
@@ -1260,6 +1275,12 @@ extension ColorPathConverterSelector {
             rgbType: T.self,
             isToRgb: false
         )
+        #else
+        let _xyz = applyRGBMatrix(fromRGB: T.init(array: linearChannels))
+        let x = _xyz.x
+        let y = _xyz.y
+        let z = _xyz.z
+        #endif
 
         let targetIlluminant: Illuminant
         if let illuminant = illuminant {
@@ -1725,6 +1746,7 @@ extension ColorPathConverterSelector {
     
     public typealias Element = ColorElement.Element
     
+    #if false
     private static func applyRGBMatrix<RGB: RGBColorable>(var1: Element, var2: Element, var3: Element, rgbType: RGB.Type, isToRgb: Bool = true) -> (v1: Element, v2: Element, v3: Element) {
         
 //        Applies an RGB working matrix to convert from XYZ to RGB.
@@ -1753,6 +1775,59 @@ extension ColorPathConverterSelector {
             max(resultMatrix[2], 0)
         )
     }
+    #else
+    private static func applyRGBMatrix<RGB: RGBColorable>(fromXYZ xyz: [Element]) -> RGB {
+        
+        var rgb = RGB.init(array: xyz)
+        
+        /// - Tag: Retrieve the appropriate transformation matrix from the constants.
+        let transMatrix = rgb.matrices(isToRgb: true)
+        
+        /// - Tag: Stuff the RGB/XYZ values into a NumPy matrix for conversion.
+        let values = xyz
+        let valueM = values.count
+        let valueN = 1
+        
+        let resultMatrix = Math.mul(
+            mat1: transMatrix,
+            mat2: .init(values: values, rows: .init(valueM), columns: .init(valueN))
+        ).values
+
+        /// - Tag: Clamp these values to a valid range.
+        
+        rgb.red   = max(resultMatrix[0], 0)
+        rgb.green = max(resultMatrix[1], 0)
+        rgb.blue  = max(resultMatrix[2], 0)
+        
+        return rgb
+        
+    }
+    
+    private static func applyRGBMatrix<RGB: RGBColorable>(fromRGB rgb: RGB) -> XYZ {
+        
+        /// - Tag: Retrieve the appropriate transformation matrix from the constants.
+        let transMatrix = rgb.matrices(isToRgb: false)
+        
+        /// - Tag: Stuff the RGB/XYZ values into a NumPy matrix for conversion.
+        let values = rgb.elements
+        let valueM = values.count
+        let valueN = 1
+        
+        let resultMatrix = Math.mul(
+            mat1: transMatrix,
+            mat2: .init(values: values, rows: .init(valueM), columns: .init(valueN))
+        ).values
+
+        /// - Tag: Clamp these values to a valid range.
+        
+        return .init(
+            x: max(resultMatrix[0], 0),
+            y: max(resultMatrix[1], 0),
+            z: max(resultMatrix[2], 0)
+        )
+        
+    }
+    #endif
     
     /// For RGBToHSL and RGBToHSV, the Hue (H) component is calculated in the same way.
     public static func __RGBToHue(red: Element, green: Element, blue: Element, min: Element, max: Element) -> Element {

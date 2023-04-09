@@ -384,4 +384,39 @@ extension Math {
         
     }
     
+    internal static func transpose(mat: Matrix) -> Matrix {
+        
+        var result = Array(repeating: 0.0, count: mat.count)
+        
+        vDSP_mtransD(
+            mat.values,
+            1,
+            &result,
+            1,
+            vDSP_Length(mat.columns),
+            vDSP_Length(mat.rows)
+        )
+        
+        return .init(result, mat.rows, mat.columns)
+    }
+    
+}
+
+extension Math {
+    
+    internal static func diagflat<T>(mat: MathMatrix<T>) -> MathMatrix<T> where T: MathElement {
+        
+        precondition(mat.rows == 1)
+        
+        let dim = mat.count
+        var result = MathMatrix<T>.init(.init(repeating: .zero, count: dim * dim), dim, dim)
+
+        for i in 0 ..< dim {
+            result.values[i * dim + i] = mat.values[i]
+        }
+
+        return result
+    }
+
+    
 }

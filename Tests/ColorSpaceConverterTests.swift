@@ -554,6 +554,46 @@ class ColorSpaceConverterTests: XCTestCase {
         let lab = Converter.convert(from: hsl, to: Lab.self)
         print(lab) /// Lab(l: 40.38328518018077, a: 55.13998182020166, b: 36.665947952704634, illuminant: Illuminant: [angle: 2˚, lamp: [d65, [0.95047, 1.0, 1.08883]]💡])
     }
+    
+    func testXyY() throws {
+        
+        let xy = MathMatrix.init([0.54369557, 0.32107944], 1, 2)
+        let xyz = xyY.xy2xyz(xy: xy)
+        
+        /// [ 1.6933366...,  1.        ,  0.4211574...]
+        print(xyz)
+        
+    }
+    
+    func testDerivation() throws {
+        
+        let xy = ColorElement.Matrix.init([0.1, 0.3, 0.4, 0.2, 0.4, 0.1], 3, 2)
+        
+        let z = Derivation.xy2z(xy: xy)
+        
+        print("z", z)
+        
+        XCTAssertTrue(z.rows == 3 && z.columns == 1)
+        XCTAssertTrue(z.values == [0.6, 0.3999999999999999, 0.5])
+        
+        let xyz = Derivation.combineH(xy: xy, z: z)
+        
+        print("xyz:", xyz)
+        
+        XCTAssertTrue(xyz.rows == 3 && xyz.columns == 3)
+        XCTAssertTrue(xyz.values == [0.1, 0.3, 0.6, 0.4, 0.2, 0.3999999999999999, 0.4, 0.1, 0.5])
+        
+        let primaries = MathMatrix([0.73470, 0.26530, 0.00000, 1.00000, 0.00010, -0.07700], 3, 2)
+        let whitepoint = MathMatrix([0.32168, 0.33767], 1, 2)
+        
+        let npm = Derivation.normalisedPrimaryMatrix(
+            primaries: primaries, whitepoint: whitepoint
+        )
+        
+        /// [  9.5255239...e-01,   0.0000000...e+00,   9.3678631...e-05, 3.4396645...e-01,   7.2816609...e-01,  -7.2132546...e-02, 0.0000000...e+00,   0.0000000...e+00,   1.0088251...e+00 ], 3 , 3
+        print("npm: ", npm)
+        
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

@@ -96,6 +96,8 @@ public protocol RGBColorable: NormalColorableProtocol, SomeElementInit, CustomSt
     typealias IntUnLumaTuple = (red: Int, green: Int, blue: Int)
     typealias FloatUnLumaTuple = (red: Element, green: Element, blue: Element)
     
+    var primaries: Matrix { get }
+    
     var gamma: Double { get }
     
     var xyzToRgbMatrices: Matrix { get }

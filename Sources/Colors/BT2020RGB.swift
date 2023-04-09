@@ -22,6 +22,10 @@ public struct BT2020RGB: RGBColorable {
     
     public var isUpscale: Bool = true
     
+    public var primaries: Matrix {
+        .init([0.7080, 0.2920, 0.1700, 0.7970, 0.1310, 0.0460], 3, 2)
+    }
+    
     public var gamma: Double { 2.4 }
     
     public var xyzToRgbMatrices: Matrix {

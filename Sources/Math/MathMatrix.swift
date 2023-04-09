@@ -17,6 +17,8 @@ public struct MathMatrix<T>: Hashable where T: MathElement {
     public var rows: Int
     public var columns: Int
     
+    public var count: Int { rows * columns }
+    
     // MARK: - Init -
     public init() {
         values = []
@@ -40,6 +42,18 @@ public struct MathMatrix<T>: Hashable where T: MathElement {
         self.values = v.values
         self.rows = v.rows
         self.columns = v.columns
+    }
+    
+    public func rowColumnSwitch() -> Self {
+        var result = self
+        (result.rows, result.columns) = (columns, rows)
+        return result
+    }
+    
+    public func reshape(_ v: (rows: Int, columns: Int)) -> Self {
+        var result = self
+        (result.rows, result.columns) = (v.rows, v.columns)
+        return result
     }
     
 }

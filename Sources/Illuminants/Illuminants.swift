@@ -28,6 +28,18 @@ public struct Illuminant: IlluminantProtocol {
     public internal(set) var angle: Int = Degrees.two.angle
     public internal(set) var lamp: Lamp = .default
     
+    public var observer: Degrees {
+        switch angle {
+        case Degrees.two.angle: return .two
+        case Degrees.ten.angle: return .ten
+        default:                return .two
+        }
+    }
+    
+//    public var light: Lamp {
+//        switch
+//    }
+    
     /// Self -> Spectral
     public var canToSpectral: Bool {
         spectral != nil
@@ -510,6 +522,42 @@ extension Illuminant {
             var container = encoder.container(keyedBy: CodingKeys.self)
             try container.encode(rawValue, forKey: .value)
         }
+    }
+    
+}
+
+extension Illuminant {
+    
+    public var whitePoint: ColorElement.Matrix {
+        let name = lamp.name
+        let xy: [ColorElement.Element]
+        
+        switch observer {
+        case .two:
+            switch Illuminant.TwoLights(rawValue: name)! {
+            case .a:   xy = Illuminant.TwoObserver.A.xy
+            case .b:   xy = Illuminant.TwoObserver.B.xy
+            case .c:   xy = Illuminant.TwoObserver.C.xy
+            case .d50: xy = Illuminant.TwoObserver.D50.xy
+            case .d55: xy = Illuminant.TwoObserver.D55.xy
+            case .d65: xy = Illuminant.TwoObserver.D65.xy
+            case .d75: xy = Illuminant.TwoObserver.D75.xy
+            case .e:   xy = Illuminant.TwoObserver.E.xy
+            case .f2:  xy = Illuminant.TwoObserver.FL2.xy
+            case .f7:  xy = Illuminant.TwoObserver.FL7.xy
+            case .f11: xy = Illuminant.TwoObserver.FL11.xy
+            }
+            
+        case .ten:
+            switch Illuminant.TenLights(rawValue: name)! {
+            case .d50: xy = Illuminant.TenObserver.D55.xy
+            case .d55: xy = Illuminant.TenObserver.D55.xy
+            case .d65: xy = Illuminant.TenObserver.D55.xy
+            case .d75: xy = Illuminant.TenObserver.D55.xy
+            }
+        }
+        
+        return .init(xy, 1, 2)
     }
     
 }

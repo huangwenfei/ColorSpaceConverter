@@ -843,10 +843,13 @@ extension ColorPathConverterSelector {
     // MARK: - xyY
     public static func xyYToXYZ(color: xyY, infos: [AnyHashable: Any]?) -> XYZ {
         
+        let color = color.downable()
+        
         /// - Tag: avoid division by zero
         let x: XYZ.Element
         let y: XYZ.Element
         let z: XYZ.Element
+        
         if color.y == 0 {
             x = 0
             y = 0
@@ -1165,6 +1168,9 @@ extension ColorPathConverterSelector {
                 color: .init(rgb: colorTuple),
                 illuminant: illuminant, infos: infos
             )
+        // TODO: BT709RGB ...
+        default:
+            return .init()
         }
         
     }

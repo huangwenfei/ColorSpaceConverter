@@ -119,3 +119,18 @@ extension xyY: SomeElementInit {
     }
     
 }
+
+extension xyY {
+    
+    public static func xy2xyz(xy: ColorElement.Matrix) -> ColorElement.Matrix {
+        
+        /// xy -> xyY
+        let xyY = Self.init(array: xy.values + [1.0])
+        
+        /// xyY -> XYZ
+        let xyz = ColorPathConverterSelector.xyYToXYZ(color: xyY, infos: nil)
+        
+        return .init(values: xyz.elements, rows: 1, columns: 3)
+    }
+    
+}

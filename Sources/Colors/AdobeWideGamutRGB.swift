@@ -1,19 +1,16 @@
 //
-//  AdobeRGB.swift
+//  AdobeWideGamutRGB.swift
 //  ColorSpaceConverter
 //
-//  https://www.adobe.com/digitalimag/pdfs/AdobeRGB1998.pdf
-//
-//  Created by 黄文飞 on 2020/11/13.
-//  Copyright © 2020 黄文飞. All rights reserved.
+//  Created by 黄文飞 on 2023/4/7.
 //
 
 import Foundation
 
-public struct AdobeRGB: RGBColorable {
+public struct AdobeWideGamutRGB: RGBColorable {
     
     // MARK: RGBProtocol
-    public var colorSpace: ColorSpaceType { .AdobeRGB }
+    public var colorSpace: ColorSpaceType { .AdobeWideGamutRGB }
     
     public var illuminant: Illuminant = .default
     
@@ -25,7 +22,7 @@ public struct AdobeRGB: RGBColorable {
     public var isUpscale: Bool = true
     
     public var primaries: Matrix {
-        .init([0.6400, 0.3300, 0.2100, 0.7100, 0.1500, 0.0600], 3, 2)
+        .init([0.7347, 0.2653, 0.1152, 0.8264, 0.1566, 0.0177], 3, 2)
     }
     
     public var gamma: Double { 2.2 }

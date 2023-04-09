@@ -1,19 +1,16 @@
 //
-//  AdobeRGB.swift
+//  DICP3RGB.swift
 //  ColorSpaceConverter
 //
-//  https://www.adobe.com/digitalimag/pdfs/AdobeRGB1998.pdf
-//
-//  Created by 黄文飞 on 2020/11/13.
-//  Copyright © 2020 黄文飞. All rights reserved.
+//  Created by 黄文飞 on 2023/4/7.
 //
 
 import Foundation
 
-public struct AdobeRGB: RGBColorable {
+public struct DICP3RGB: RGBColorable {
     
     // MARK: RGBProtocol
-    public var colorSpace: ColorSpaceType { .AdobeRGB }
+    public var colorSpace: ColorSpaceType { .DICP3RGB }
     
     public var illuminant: Illuminant = .default
     
@@ -25,7 +22,7 @@ public struct AdobeRGB: RGBColorable {
     public var isUpscale: Bool = true
     
     public var primaries: Matrix {
-        .init([0.6400, 0.3300, 0.2100, 0.7100, 0.1500, 0.0600], 3, 2)
+        .init([0.7400, 0.2700, 0.2200, 0.7800, 0.0900, -0.0900], 3, 2)
     }
     
     public var gamma: Double { 2.2 }

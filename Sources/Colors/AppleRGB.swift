@@ -53,4 +53,21 @@ public struct AppleRGB: RGBColorable {
     // MARK: Normal Init
     public init() {  }
     
+    // MARK: Gamma Map
+    public func linear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: gamma
+            )
+        }
+    }
+    
+    public func nonlinear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: 1 / gamma
+            )
+        }
+    }
+    
 }

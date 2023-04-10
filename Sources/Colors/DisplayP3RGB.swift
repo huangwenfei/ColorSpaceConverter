@@ -23,34 +23,43 @@ public struct DisplayP3RGB: RGBColorable {
     
     /// is same as DIC-P3
     public var primaries: Matrix {
-        .init([0.7400, 0.2700, 0.2200, 0.7800, 0.0900, -0.0900], 3, 2)
+        .init([0.6800, 0.3200, 0.2650, 0.6900, 0.1500, 0.0600], 3, 2)
     }
     
     public var gamma: Double { 2.2 }
     
     public var xyzToRgbMatrices: Matrix {
-        .init(
-            [
-                 2.0414800, -0.564977, -0.3447130,
-                -0.9692580,  1.875990,  0.0415557,
-                 0.0134455, -0.118373,  1.0152700
-            ],
-            3, 3
-        )
+        Math.inv(rgbToXyzMatrices)!
     }
     
     public var rgbToXyzMatrices: Matrix {
-        .init(
-            [
-                0.5767000, 0.1855560, 0.1882120,
-                0.2973610, 0.6273550, 0.0752847,
-                0.0270328, 0.0706879, 0.9912480
-            ],
-            3, 3
+        Derivation.normalisedPrimaryMatrix(
+            primaries: primaries,
+            whitepoint: illuminant.whitePoint
         )
     }
     
     // MARK: Normal Init
     public init() {  }
+    
+    // MARK: Gamma Map
+    
+    /// as same as sRGB
+    public func linear() -> [Element] {
+        elements.map { channel in
+            channel <= 0.04045
+                ? channel / 12.92
+                : Math.spow((channel + 0.055) / 1.055, 2.4)
+        }
+    }
+    
+    /// as same as sRGB
+    public func nonlinear() -> [Element] {
+        elements.map { channel in
+            channel <= 0.0031308
+                ? channel * 12.92
+                : 1.055 * Math.spow(channel, 1 / 2.4) - 0.055
+        }
+    }
     
 }

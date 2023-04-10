@@ -49,7 +49,7 @@ public struct Illuminant: IlluminantProtocol {
         switch Degrees(rawValue: angle)! {
         case .two:
             switch TwoLights(rawValue: lamp.name)! {
-            case .d55, .d75: return nil
+            case .d55, .d75, .dci: return nil
             case .a:   return .two ~ .a
             case .b:   return .two ~ .b
             case .c:   return .two ~ .c
@@ -314,6 +314,12 @@ extension Illuminant {
             self.z = z
         }
         
+        public init(array: [Element]) {
+            self.x = array[0]
+            self.y = array[1]
+            self.z = array[2]
+        }
+        
         /// - Tag: CustomStringConvertible
         public var description: String {
             return "[\(x), \(y), \(z)]"
@@ -357,6 +363,7 @@ extension Illuminant {
             try container.encode(y, forKey: .y)
             try container.encode(z, forKey: .z)
         }
+        
     }
     
 }
@@ -432,22 +439,24 @@ extension Illuminant {
         case f2
         case f7
         case f11
+        case dci
         
         public var name: String { return rawValue }
         
         public var xyz: Xyz {
             switch self {
-            case .a:   return Xyz(1.09850, 1.00000, 0.35585)
-            case .b:   return Xyz(0.99072, 1.00000, 0.85223)
-            case .c:   return Xyz(0.98074, 1.00000, 1.18232)
-            case .d50: return Xyz(0.96422, 1.00000, 0.82521)
-            case .d55: return Xyz(0.95682, 1.00000, 0.92149)
-            case .d65: return Xyz(0.95047, 1.00000, 1.08883)
-            case .d75: return Xyz(0.94972, 1.00000, 1.22638)
-            case .e:   return Xyz(1.00000, 1.00000, 1.00000)
-            case .f2:  return Xyz(0.99186, 1.00000, 0.67393)
-            case .f7:  return Xyz(0.95041, 1.00000, 1.08747)
-            case .f11: return Xyz(1.00962, 1.00000, 0.64350)
+            case .a:   return  Xyz(1.098490612345073, 1.0, 0.35579825745490257)
+            case .b:   return  Xyz(0.9909274480248003, 1.0, 0.8531327322886155)
+            case .c:   return  Xyz(0.980705971659919, 1.0, 1.1822494939271255)
+            case .d50: return  Xyz(0.9642956764295677, 1.0, 0.8251046025104602)
+            case .d55: return  Xyz(0.9567982961086806, 1.0, 0.9213965001151276)
+            case .d65: return  Xyz(0.9504559270516716, 1.0, 1.0890577507598784)
+            case .d75: return  Xyz(0.9496633638211383, 1.0, 1.226149644308943)
+            case .e:   return  Xyz(1.0, 1.0, 1.0000000000000004)
+            case .f2:  return  Xyz(0.9920021327645961, 1.0, 0.6739536123700347)
+            case .f7:  return  Xyz(0.9504860267314703, 1.0, 1.0871810449574728)
+            case .f11: return  Xyz(1.0095516052003184, 1.0, 0.6436720615547888)
+            case .dci: return  Xyz(0.8945868945868947, 1.0, 0.9544159544159544)
             }
         }
         
@@ -489,10 +498,10 @@ extension Illuminant {
         
         public var xyz: Xyz {
             switch self {
-            case .d50: return Xyz(0.9672, 1.000, 0.8143)
-            case .d55: return Xyz(0.958, 1.000, 0.9093)
-            case .d65: return Xyz(0.9481, 1.000, 1.073)
-            case .d75: return Xyz(0.94416, 1.000, 1.2064)
+            case .d50: return Xyz(0.9672062750333777, 1.0, 0.8142801513128616)
+            case .d55: return Xyz(0.9579952404163201, 1.0, 0.9092238437939042)
+            case .d65: return Xyz(0.94809667673716, 1.0, 1.0730513595166162)
+            case .d75: return Xyz(0.9441713925645873, 1.0, 1.2064272211720228)
             }
         }
         
@@ -546,6 +555,7 @@ extension Illuminant {
             case .f2:  xy = Illuminant.TwoObserver.FL2.xy
             case .f7:  xy = Illuminant.TwoObserver.FL7.xy
             case .f11: xy = Illuminant.TwoObserver.FL11.xy
+            case .dci: xy = Illuminant.TwoObserver.DCI_P3.xy
             }
             
         case .ten:

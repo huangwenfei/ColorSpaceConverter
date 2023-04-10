@@ -28,7 +28,8 @@ public struct AdobeRGB: RGBColorable {
         .init([0.6400, 0.3300, 0.2100, 0.7100, 0.1500, 0.0600], 3, 2)
     }
     
-    public var gamma: Double { 2.2 }
+    /// 2.1245283019
+    public var gamma: Double { 563.0 / 256.0 }
     
     public var xyzToRgbMatrices: Matrix {
         .init(
@@ -54,5 +55,22 @@ public struct AdobeRGB: RGBColorable {
     
     // MARK: Normal Init
     public init() {  }
+    
+    // MARK: Gamma Map
+    public func linear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: gamma
+            )
+        }
+    }
+    
+    public func nonlinear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: 1 / gamma
+            )
+        }
+    }
     
 }

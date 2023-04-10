@@ -971,64 +971,11 @@ extension ColorPathConverterSelector {
         }
         
         /// - Tag: Apply an RGB working space matrix to the XYZ values (matrix mul).
-        #if false
-        let (r, g, b) = applyRGBMatrix(
-            var1: tempX, var2: tempY, var3: tempZ, rgbType: R.self, isToRgb: true
-        )
-        #else
         var rgb: R = applyRGBMatrix(fromXYZ: [tempX, tempY, tempZ])
-        #endif
 
-        /// - Tag: v
-        let linearChannels = rgb.elements /// [r, g, b]
-        
         /// - Tag: V
-        var nonlinearChannels = [Element](repeating: 0, count: linearChannels.count)
-        if R.self == sRGB.self {
-            
-            for (idx, channel) in linearChannels.enumerated() {
-                nonlinearChannels[idx] = (
-                    channel <= 0.0031308
-                        ? channel * 12.92
-                        : 1.055 * pow(channel, 1 / 2.4) - 0.055
-                )
-            }
-            
-        } else if R.self == BT2020RGB.self {
-//            if kwargs.get("is_12_bits_system") {
-//                let a = 1.0993, b = 0.0181
-//            } else {
-//                let a = 1.099, b = 0.018
-//            }
-            
-            let a = 1.099, b = 0.018
-            
-            for (idx, channel) in linearChannels.enumerated() {
-                nonlinearChannels[idx] = (
-                    channel < b
-                        ? channel * 4.5
-                        : a * pow(channel, 0.45) - (a - 1)
-                )
-            }
-            
-        } else {
-            
-            /// - Tag: If it's not sRGB...
-            for (idx, channel) in linearChannels.enumerated() {
-                nonlinearChannels[idx] = pow(channel, 1 / rgb.gamma)
-            }
-            
-        }
-        
-        #if false
-        return .init(
-            red: nonlinearChannels[0],
-            green: nonlinearChannels[1],
-            blue: nonlinearChannels[2],
-            illuminant: illuminant,
-            isUpscale: false
-        )
-        #else
+        let nonlinearChannels = rgb.nonlinear()
+
         rgb.red = nonlinearChannels[0]
         rgb.green = nonlinearChannels[1]
         rgb.blue = nonlinearChannels[2]
@@ -1036,7 +983,6 @@ extension ColorPathConverterSelector {
         rgb.isUpscale = false
         
         return rgb
-        #endif
     
     }
     
@@ -1235,58 +1181,13 @@ extension ColorPathConverterSelector {
         let downColor = color.downable()
         
         /// - Tag: Will contain linearized RGB channels (removed the gamma func).
-        var linearChannels = [Element](repeating: 0, count: 3)
-
-        if T.self == sRGB.self {
-
-            for (idx, channel) in downColor.elements.enumerated() {
-                linearChannels[idx] = (
-                    channel <= 0.04045
-                        ? channel / 12.92
-                        : pow((channel + 0.055) / 1.055, 2.4)
-                )
-            }
-            
-        } else if T.self == BT2020RGB.self {
-//            if kwargs.get("is_12_bits_system"):
-//                a, b, c = 1.0993, 0.0181, 0.081697877417347  # noqa
-//            else:
-//                a, b, c = 1.099, 0.018, 0.08124794403514049  # noqa
-            
-            let a = 1.099, c = 0.08124794403514049
-            
-            for (idx, channel) in downColor.elements.enumerated() {
-                linearChannels[idx] = (
-                    channel <= c
-                        ? channel / 4.5
-                        : pow((channel + (a - 1)) / a, 1 / 0.45)
-                )
-            }
-
-        } else {
-            /// - Tag: If it's not sRGB...
-            
-            for (idx, channel) in downColor.elements.enumerated() {
-                linearChannels[idx] = pow(channel, color.gamma)
-            }
-            
-        }
+        let linearChannels = downColor.linear()
         
         /// - Tag: Apply an RGB working space matrix to the XYZ values (matrix mul).
-        #if false
-        let (x, y, z) = applyRGBMatrix(
-            var1: linearChannels[0],
-            var2: linearChannels[1],
-            var3: linearChannels[2],
-            rgbType: T.self,
-            isToRgb: false
-        )
-        #else
         let _xyz = applyRGBMatrix(fromRGB: T.init(array: linearChannels))
         let x = _xyz.x
         let y = _xyz.y
         let z = _xyz.z
-        #endif
 
         let targetIlluminant: Illuminant
         if let illuminant = illuminant {

@@ -12,7 +12,7 @@ public struct AdobeWideGamutRGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .AdobeWideGamutRGB }
     
-    public var illuminant: Illuminant = .default
+    public var illuminant: Illuminant = .two(.d50)
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -25,31 +25,38 @@ public struct AdobeWideGamutRGB: RGBColorable {
         .init([0.7347, 0.2653, 0.1152, 0.8264, 0.1566, 0.0177], 3, 2)
     }
     
-    public var gamma: Double { 2.2 }
+    /// 2.1245283019
+    public var gamma: Double { 563.0 / 256.0 }
     
     public var xyzToRgbMatrices: Matrix {
-        .init(
-            [
-                 2.0414800, -0.564977, -0.3447130,
-                -0.9692580,  1.875990,  0.0415557,
-                 0.0134455, -0.118373,  1.0152700
-            ],
-            3, 3
-        )
+        Math.inv(rgbToXyzMatrices)!
     }
     
     public var rgbToXyzMatrices: Matrix {
-        .init(
-            [
-                0.5767000, 0.1855560, 0.1882120,
-                0.2973610, 0.6273550, 0.0752847,
-                0.0270328, 0.0706879, 0.9912480
-            ],
-            3, 3
+        Derivation.normalisedPrimaryMatrix(
+            primaries: primaries,
+            whitepoint: illuminant.whitePoint
         )
     }
     
     // MARK: Normal Init
     public init() {  }
+    
+    // MARK: Gamma Map
+    public func linear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: gamma
+            )
+        }
+    }
+    
+    public func nonlinear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: 1 / gamma
+            )
+        }
+    }
     
 }

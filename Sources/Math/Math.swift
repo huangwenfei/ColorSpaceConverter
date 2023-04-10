@@ -420,3 +420,18 @@ extension Math {
 
     
 }
+
+extension Math {
+    
+    public static func spow(_ a: Element, _ p: Element) -> Element {
+        var a_p: Element
+        
+        let sign = (a >= 0 ? 1.0 : -1.0)
+        let abs_a_i_p = Darwin.pow(abs(a), p)
+        let element = sign * abs_a_i_p
+        a_p = element.isNaN ? 0.0 : element
+        
+        return a_p
+    }
+    
+}

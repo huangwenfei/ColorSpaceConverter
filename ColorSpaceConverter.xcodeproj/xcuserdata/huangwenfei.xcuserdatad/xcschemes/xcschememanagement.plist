@@ -7,7 +7,7 @@
 		<key>ColorSpaceConverter OSX Tests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
@@ -21,7 +21,7 @@
 		<key>ColorSpaceConverter iOS Tests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>

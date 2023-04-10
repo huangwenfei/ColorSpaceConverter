@@ -9,7 +9,7 @@ import Foundation
 
 extension Illuminant {
     
-    public enum TwoObserver: Int {
+    public enum TwoObserver: Int, CaseIterable {
         /// CIE
         case A, B, C,
              D50, D55, D60, D65, D75,
@@ -20,6 +20,8 @@ extension Illuminant {
              HP1, HP2, HP3, HP4, HP5,
              LED_B1, LED_B2, LED_B3, LED_B4, LED_B5, LED_BH1, LED_RGB1,
              LED_V1, LED_V2, ID65, ID50
+        /// DCI
+        case DCI_P3
         
         public var xy: [ColorElement.Element] {
             switch self {
@@ -75,13 +77,15 @@ extension Illuminant {
             case .LED_V2:   return [0.37810, 0.37750]
             case .ID65:     return [0.310656625403120, 0.330663091836953]
             case .ID50:     return [0.343211370103531, 0.360207541805137]
+                
+            case .DCI_P3:   return [0.31400, 0.35100]
             }
         }
         
     }
     
     
-    public enum TenObserver: Int {
+    public enum TenObserver: Int, CaseIterable {
         // CIE
         case A, B, C,
              D50, D55, D60, D65, D75,

@@ -121,6 +121,9 @@ public protocol RGBColorable: NormalColorableProtocol, SomeElementInit, CustomSt
     init(rgb: IntUnLumaTuple)
     init(rgb: FloatUnLumaTuple)
     
+    func linear() -> [Element]
+    func nonlinear() -> [Element]
+    
 }
 
 extension RGBColorable {
@@ -344,6 +347,57 @@ extension RGBColorable {
         [red, green, blue]
     }
     
+}
+
+/// - Tag: Linear ( OETF )
+extension RGBColorable {
+    
+    public mutating func lineared() {
+        self = .init(array: self.linear())
+    }
+    
+    public mutating func nonlineared() {
+        self = .init(array: self.nonlinear())
+    }
+    
+    /// Define a typical gamma encoding / decoding function
+    public static func gammaCoder(
+        channel: Element,
+        exponent: Element = 1,
+        handling: GammaNegativeNumberHandling = .indeterminate
+    ) -> Element {
+
+        switch handling {
+        case .indeterminate:
+            return pow(channel, exponent)
+        case .mirror:
+            return Math.spow(channel, exponent)
+        case .preserve:
+            return channel <= 0 ? channel : pow(channel, exponent)
+        case .clamp:
+            return channel <= 0 ? 0 : pow(channel, exponent)
+        }
+        
+    }
+    
+}
+
+///
+/// Defines the behaviour for ``a`` negative numbers and / or the
+/// definition return value:
+///
+/// -   *Indeterminate*: The behaviour will be indeterminate and
+///     definition return value might contain *nans*.
+/// -   *Mirror*: The definition return value will be mirrored around
+///     abscissa and ordinate axis, i.e. Blackmagic Design: Davinci Resolve
+///     behaviour.
+/// -   *Preserve*: The definition will preserve any negative number in
+///     ``a``, i.e. The Foundry Nuke behaviour.
+/// -   *Clamp*: The definition will clamp any negative number in ``a`` to
+///     0.
+///
+public enum GammaNegativeNumberHandling: Int {
+    case indeterminate, mirror, preserve, clamp
 }
 
 // MARK: Element Init

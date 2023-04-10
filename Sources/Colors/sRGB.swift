@@ -55,4 +55,21 @@ public struct sRGB: RGBColorable {
     // MARK: Normal Init
     public init() {  }
     
+    // MARK: Gamma Map
+    public func linear() -> [Element] {
+        elements.map { channel in
+            channel <= 0.04045
+                ? channel / 12.92
+            : Math.spow((channel + 0.055) / 1.055, 2.4)
+        }
+    }
+    
+    public func nonlinear() -> [Element] {
+        elements.map { channel in
+            channel <= 0.0031308
+                ? channel * 12.92
+                : 1.055 * Math.spow(channel, 1 / 2.4) - 0.055
+        }
+    }
+    
 }

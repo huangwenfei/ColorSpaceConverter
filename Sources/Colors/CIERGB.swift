@@ -12,7 +12,7 @@ public struct CIERGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .CIERGB }
     
-    public var illuminant: Illuminant = .default
+    public var illuminant: Illuminant = .two(.e)
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -28,22 +28,15 @@ public struct CIERGB: RGBColorable {
     public var gamma: Double { 2.2 }
     
     public var xyzToRgbMatrices: Matrix {
-        .init(
-            [
-                 2.0414800, -0.564977, -0.3447130,
-                -0.9692580,  1.875990,  0.0415557,
-                 0.0134455, -0.118373,  1.0152700
-            ],
-            3, 3
-        )
+        Math.inv(rgbToXyzMatrices)!
     }
     
     public var rgbToXyzMatrices: Matrix {
         .init(
             [
-                0.5767000, 0.1855560, 0.1882120,
-                0.2973610, 0.6273550, 0.0752847,
-                0.0270328, 0.0706879, 0.9912480
+                0.4900, 0.3100, 0.2000,
+                0.1769, 0.8124, 0.0107,
+                0.0000, 0.0099, 0.9901
             ],
             3, 3
         )
@@ -51,5 +44,22 @@ public struct CIERGB: RGBColorable {
     
     // MARK: Normal Init
     public init() {  }
+    
+    // MARK: Gamma Map
+    public func linear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: gamma
+            )
+        }
+    }
+    
+    public func nonlinear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: 1 / gamma
+            )
+        }
+    }
     
 }

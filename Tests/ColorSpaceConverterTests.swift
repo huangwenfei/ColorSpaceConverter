@@ -594,6 +594,44 @@ class ColorSpaceConverterTests: XCTestCase {
         print("npm: ", npm)
         
     }
+    
+    func testIlluminant() throws {
+        
+        /// BT709RGB nonlinear ...
+        print(1.099 * pow(0.018, 0.45) - 0.099)
+        
+        /// Illuminant-A XYZ  (1.09850, 1.00000, 0.35585)
+        print(xyY.xy2xyz(xy: .init(values: [0.44758, 0.40745], rows: 1, columns: 2)))
+        
+        /// Illuminant-f7 XYZ (0.95041, 1.00000, 1.08747)
+        print(xyY.xy2xyz(xy: .init(values: [0.31290, 0.32920], rows: 1, columns: 2)))
+        
+        /// Illuminant-DCI XYZ
+        print(xyY.xy2xyz(xy: .init(values: [0.31400, 0.35100], rows: 1, columns: 2)))
+        
+        print()
+        let twoObs: [Illuminant.TwoObserver] = [
+            .A, .B, .C,
+            .D50, .D55, .D65, .D75,
+            .E, .FL2, .FL7, .FL11, .DCI_P3
+        ]
+        
+        twoObs.forEach({
+            print("case .\($0):   return Xyz(", xyY.xy2xyz(xy: .init(values: $0.xy, rows: 1, columns: 2)).values)
+        })
+        print()
+        
+        print()
+        let tenObs: [Illuminant.TenObserver] = [
+            .D50, .D55, .D65, .D75
+        ]
+        
+        tenObs.forEach({
+            print("case .\($0):   return Xyz(", xyY.xy2xyz(xy: .init(values: $0.xy, rows: 1, columns: 2)).values)
+        })
+        print()
+        
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

@@ -12,7 +12,72 @@ public struct DICP3RGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .DICP3RGB }
     
-    public var illuminant: Illuminant = .default
+    /// *DCI-P3* colourspace whitepoint name.
+    /// Warnings
+    /// --------
+    /// DCI-P3 illuminant has no associated spectral distribution. DCI has no
+    /// official reference spectral measurement for this whitepoint. The closest
+    /// matching spectral distribution is Kinoton 75P projector.
+    public var illuminant: Illuminant = .two(.dci)
+    
+    // MARK: Color Elements
+    public var red: Element = 0
+    public var green: Element = 0
+    public var blue: Element = 0
+    
+    public var isUpscale: Bool = true
+    
+    public var primaries: Matrix {
+        .init([0.6800, 0.3200, 0.2650, 0.6900, 0.1500, 0.0600], 3, 2)
+    }
+    
+    public var gamma: Double { 2.6 }
+    
+    public var xyzToRgbMatrices: Matrix {
+        Math.inv(rgbToXyzMatrices)!
+    }
+    
+    public var rgbToXyzMatrices: Matrix {
+        Derivation.normalisedPrimaryMatrix(
+            primaries: primaries,
+            whitepoint: illuminant.whitePoint
+        )
+    }
+    
+    // MARK: Normal Init
+    public init() {  }
+    
+    // MARK: Gamma Map
+    public func linear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: gamma
+            )
+        }
+    }
+    
+    public func nonlinear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: 1 / gamma
+            )
+        }
+    }
+    
+}
+
+public struct DICP3PRGB: RGBColorable {
+    
+    // MARK: RGBProtocol
+    public var colorSpace: ColorSpaceType { .DICP3PRGB }
+    
+    /// *DCI-P3* colourspace whitepoint name.
+    /// Warnings
+    /// --------
+    /// DCI-P3 illuminant has no associated spectral distribution. DCI has no
+    /// official reference spectral measurement for this whitepoint. The closest
+    /// matching spectral distribution is Kinoton 75P projector.
+    public var illuminant: Illuminant = .two(.dci)
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -25,31 +90,37 @@ public struct DICP3RGB: RGBColorable {
         .init([0.7400, 0.2700, 0.2200, 0.7800, 0.0900, -0.0900], 3, 2)
     }
     
-    public var gamma: Double { 2.2 }
+    public var gamma: Double { 2.6 }
     
     public var xyzToRgbMatrices: Matrix {
-        .init(
-            [
-                 2.0414800, -0.564977, -0.3447130,
-                -0.9692580,  1.875990,  0.0415557,
-                 0.0134455, -0.118373,  1.0152700
-            ],
-            3, 3
-        )
+        Math.inv(rgbToXyzMatrices)!
     }
     
     public var rgbToXyzMatrices: Matrix {
-        .init(
-            [
-                0.5767000, 0.1855560, 0.1882120,
-                0.2973610, 0.6273550, 0.0752847,
-                0.0270328, 0.0706879, 0.9912480
-            ],
-            3, 3
+        Derivation.normalisedPrimaryMatrix(
+            primaries: primaries,
+            whitepoint: illuminant.whitePoint
         )
     }
     
     // MARK: Normal Init
     public init() {  }
+    
+    // MARK: Gamma Map
+    public func linear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: gamma
+            )
+        }
+    }
+    
+    public func nonlinear() -> [Element] {
+        elements.map { channel in
+            Self.gammaCoder(
+                channel: channel, exponent: 1 / gamma
+            )
+        }
+    }
     
 }

@@ -38,52 +38,112 @@ public struct ColorPathConverterSelector {
         XYZToAppleRGB.pathId:   XYZToAppleRGB,
         XYZToAdobeRGB.pathId:   XYZToAdobeRGB,
         XYZToBT2020RGB.pathId:  XYZToBT2020RGB,
+        XYZToBT709RGB.pathId:  XYZToBT709RGB,
+        XYZToDICP3RGB.pathId:  XYZToDICP3RGB,
+        XYZToDICP3PRGB.pathId:  XYZToDICP3PRGB,
+        XYZToDisplayP3RGB.pathId:  XYZToDisplayP3RGB,
+        XYZToCIERGB.pathId:  XYZToCIERGB,
+        XYZToAdobeWideGamutRGB.pathId:  XYZToAdobeWideGamutRGB,
         XYZToIPT.pathId:        XYZToIPT,
         
         HexTosRGB.pathId:       HexTosRGB,
         HexToAppleRGB.pathId:   HexToAppleRGB,
         HexToAdobeRGB.pathId:   HexToAdobeRGB,
         HexToBT2020RGB.pathId:  HexToBT2020RGB,
+        HexToBT709RGB.pathId:  HexToBT709RGB,
+        HexToDICP3RGB.pathId:  HexToDICP3RGB,
+        HexToDICP3PRGB.pathId:  HexToDICP3PRGB,
+        HexToDisplayP3RGB.pathId:  HexToDisplayP3RGB,
+        HexToCIERGB.pathId:  HexToCIERGB,
+        HexToAdobeWideGamutRGB.pathId:  HexToAdobeWideGamutRGB,
         
         sRGBToHex.pathId:       sRGBToHex,
         AppleRGBToHex.pathId:   AppleRGBToHex,
         AdobeRGBToHex.pathId:   AdobeRGBToHex,
         BT2020RGBToHex.pathId:  BT2020RGBToHex,
+        BT709RGBToHex.pathId:  BT709RGBToHex,
+        DICP3RGBToHex.pathId:  DICP3RGBToHex,
+        DICP3PRGBToHex.pathId:  DICP3PRGBToHex,
+        DisplayP3RGBToHex.pathId:  DisplayP3RGBToHex,
+        CIERGBToHex.pathId:  CIERGBToHex,
+        AdobeWideGamutRGBToHex.pathId:  AdobeWideGamutRGBToHex,
         
         sRGBToXYZ.pathId:       sRGBToXYZ,
         AppleRGBToXYZ.pathId:   AppleRGBToXYZ,
         AdobeRGBToXYZ.pathId:   AdobeRGBToXYZ,
         BT2020RGBToXYZ.pathId:  BT2020RGBToXYZ,
+        BT709RGBToXYZ.pathId:  BT709RGBToXYZ,
+        DICP3RGBToXYZ.pathId:  DICP3RGBToXYZ,
+        DICP3PRGBToXYZ.pathId:  DICP3PRGBToXYZ,
+        DisplayP3RGBToXYZ.pathId:  DisplayP3RGBToXYZ,
+        CIERGBToXYZ.pathId:  CIERGBToXYZ,
+        AdobeWideGamutRGBToXYZ.pathId:  AdobeWideGamutRGBToXYZ,
         
         sRGBToHSV.pathId:       sRGBToHSV,
         AppleRGBToHSV.pathId:   AppleRGBToHSV,
         AdobeRGBToHSV.pathId:   AdobeRGBToHSV,
         BT2020RGBToHSV.pathId:  BT2020RGBToHSV,
+        BT709RGBToHSV.pathId:  BT709RGBToHSV,
+        DICP3RGBToHSV.pathId:  DICP3RGBToHSV,
+        DICP3PRGBToHSV.pathId:  DICP3PRGBToHSV,
+        DisplayP3RGBToHSV.pathId:  DisplayP3RGBToHSV,
+        CIERGBToHSV.pathId:  CIERGBToHSV,
+        AdobeWideGamutRGBToHSV.pathId:  AdobeWideGamutRGBToHSV,
         
         sRGBToHSL.pathId:       sRGBToHSL,
         AppleRGBToHSL.pathId:   AppleRGBToHSL,
         AdobeRGBToHSL.pathId:   AdobeRGBToHSL,
         BT2020RGBToHSL.pathId:  BT2020RGBToHSL,
+        BT709RGBToHSL.pathId:  BT709RGBToHSL,
+        DICP3RGBToHSL.pathId:  DICP3RGBToHSL,
+        DICP3PRGBToHSL.pathId:  DICP3PRGBToHSL,
+        DisplayP3RGBToHSL.pathId:  DisplayP3RGBToHSL,
+        CIERGBToHSL.pathId:  CIERGBToHSL,
+        AdobeWideGamutRGBToHSL.pathId:  AdobeWideGamutRGBToHSL,
         
         sRGBToCMY.pathId:       sRGBToCMY,
         AppleRGBToCMY.pathId:   AppleRGBToCMY,
         AdobeRGBToCMY.pathId:   AdobeRGBToCMY,
         BT2020RGBToCMY.pathId:  BT2020RGBToCMY,
+        BT709RGBToCMY.pathId:  BT709RGBToCMY,
+        DICP3RGBToCMY.pathId:  DICP3RGBToCMY,
+        DICP3PRGBToCMY.pathId:  DICP3PRGBToCMY,
+        DisplayP3RGBToCMY.pathId:  DisplayP3RGBToCMY,
+        CIERGBToCMY.pathId:  CIERGBToCMY,
+        AdobeWideGamutRGBToCMY.pathId:  AdobeWideGamutRGBToCMY,
         
         HSVTosRGB.pathId:       HSVTosRGB,
         HSVToAppleRGB.pathId:   HSVToAppleRGB,
         HSVToAdobeRGB.pathId:   HSVToAdobeRGB,
         HSVToBT2020RGB.pathId:  HSVToBT2020RGB,
+        HSVToBT709RGB.pathId:  HSVToBT709RGB,
+        HSVToDICP3RGB.pathId:  HSVToDICP3RGB,
+        HSVToDICP3PRGB.pathId:  HSVToDICP3PRGB,
+        HSVToDisplayP3RGB.pathId:  HSVToDisplayP3RGB,
+        HSVToCIERGB.pathId:  HSVToCIERGB,
+        HSVToAdobeWideGamutRGB.pathId:  HSVToAdobeWideGamutRGB,
         
         HSLTosRGB.pathId:       HSLTosRGB,
         HSLToAppleRGB.pathId:   HSLToAppleRGB,
         HSLToAdobeRGB.pathId:   HSLToAdobeRGB,
         HSLToBT2020RGB.pathId:  HSLToBT2020RGB,
+        HSLToBT709RGB.pathId:  HSLToBT709RGB,
+        HSLToDICP3RGB.pathId:  HSLToDICP3RGB,
+        HSLToDICP3PRGB.pathId:  HSLToDICP3PRGB,
+        HSLToDisplayP3RGB.pathId:  HSLToDisplayP3RGB,
+        HSLToCIERGB.pathId:  HSLToCIERGB,
+        HSLToAdobeWideGamutRGB.pathId:  HSLToAdobeWideGamutRGB,
         
         CMYTosRGB.pathId:       CMYTosRGB,
         CMYToAppleRGB.pathId:   CMYToAppleRGB,
         CMYToAdobeRGB.pathId:   CMYToAdobeRGB,
         CMYToBT2020RGB.pathId:  CMYToBT2020RGB,
+        CMYToBT709RGB.pathId:  CMYToBT709RGB,
+        CMYToDICP3RGB.pathId:  CMYToDICP3RGB,
+        CMYToDICP3PRGB.pathId:  CMYToDICP3PRGB,
+        CMYToDisplayP3RGB.pathId:  CMYToDisplayP3RGB,
+        CMYToCIERGB.pathId:  CMYToCIERGB,
+        CMYToAdobeWideGamutRGB.pathId:  CMYToAdobeWideGamutRGB,
         
         CMYToCMYK.pathId:       CMYToCMYK,
         
@@ -197,6 +257,66 @@ public struct ColorPathConverterSelector {
         )
     }
     
+    public static let XYZToBT709RGB: PathConverter = .init( .XYZ ==> .BT709RGB ) {
+        let color = $0.base as! XYZ
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.XYZToBT709RGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let XYZToDICP3RGB: PathConverter = .init( .XYZ ==> .DICP3RGB ) {
+        let color = $0.base as! XYZ
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.XYZToDICP3RGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let XYZToDICP3PRGB: PathConverter = .init( .XYZ ==> .DICP3PRGB ) {
+        let color = $0.base as! XYZ
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.XYZToDICP3PRGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let XYZToDisplayP3RGB: PathConverter = .init( .XYZ ==> .DisplayP3RGB ) {
+        let color = $0.base as! XYZ
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.XYZToDisplayP3RGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let XYZToCIERGB: PathConverter = .init( .XYZ ==> .CIERGB ) {
+        let color = $0.base as! XYZ
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.XYZToCIERGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let XYZToAdobeWideGamutRGB: PathConverter = .init( .XYZ ==> .AdobeWideGamutRGB ) {
+        let color = $0.base as! XYZ
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.XYZToAdobeWideGamutRGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
     public static let XYZToIPT: PathConverter = .init( .XYZ ==> .IPT ) {
         .init( Self.XYZToIPT(color: ($0.base as! XYZ), infos: $1) )
     }
@@ -242,6 +362,66 @@ public struct ColorPathConverterSelector {
         )
     }
     
+    public static let HexToBT709RGB: PathConverter = .init( .Hex ==> .BT709RGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.HexToBT709RGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let HexToDICP3RGB: PathConverter = .init( .Hex ==> .DICP3RGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.HexToDICP3RGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let HexToDICP3PRGB: PathConverter = .init( .Hex ==> .DICP3PRGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.HexToDICP3PRGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let HexToDisplayP3RGB: PathConverter = .init( .Hex ==> .DisplayP3RGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.HexToDisplayP3RGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let HexToCIERGB: PathConverter = .init( .Hex ==> .CIERGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.HexToCIERGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let HexToAdobeWideGamutRGB: PathConverter = .init( .Hex ==> .AdobeWideGamutRGB) {
+        let color = $0.base as! Hex
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.HexToAdobeWideGamutRGB(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
     public static let sRGBToHex: PathConverter = .init( .sRGB ==> .Hex) {
         let color = $0.base as! sRGB
         var infos = $1
@@ -279,6 +459,66 @@ public struct ColorPathConverterSelector {
         infos?["\(Illuminant.self)"] = nil
         return .init(
             Self.BT2020RGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
+    public static let BT709RGBToHex: PathConverter = .init( .BT709RGB ==> .Hex) {
+        let color = $0.base as! BT709RGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.BT709RGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let DICP3RGBToHex: PathConverter = .init( .DICP3RGB ==> .Hex) {
+        let color = $0.base as! DICP3RGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.DICP3RGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let DICP3PRGBToHex: PathConverter = .init( .DICP3PRGB ==> .Hex) {
+        let color = $0.base as! DICP3PRGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.DICP3PRGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let DisplayP3RGBToHex: PathConverter = .init( .DisplayP3RGB ==> .Hex) {
+        let color = $0.base as! DisplayP3RGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.DisplayP3RGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let CIERGBToHex: PathConverter = .init( .CIERGB ==> .Hex) {
+        let color = $0.base as! CIERGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.CIERGBToHex(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let AdobeWideGamutRGBToHex: PathConverter = .init( .AdobeWideGamutRGB ==> .Hex) {
+        let color = $0.base as! AdobeWideGamutRGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.AdobeWideGamutRGBToHex(color: color, illuminant: illuminant, infos: infos)
         )
     }
     
@@ -323,6 +563,67 @@ public struct ColorPathConverterSelector {
         )
     }
     
+    public static let BT709RGBToXYZ: PathConverter = .init( .BT709RGB ==> .XYZ ) {
+        let color = $0.base as! BT709RGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.BT709RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let DICP3RGBToXYZ: PathConverter = .init( .DICP3RGB ==> .XYZ ) {
+        let color = $0.base as! DICP3RGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.DICP3RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let DICP3PRGBToXYZ: PathConverter = .init( .DICP3PRGB ==> .XYZ ) {
+        let color = $0.base as! DICP3PRGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.DICP3PRGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let DisplayP3RGBToXYZ: PathConverter = .init( .DisplayP3RGB ==> .XYZ ) {
+        let color = $0.base as! DisplayP3RGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.DisplayP3RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let CIERGBToXYZ: PathConverter = .init( .CIERGB ==> .XYZ ) {
+        let color = $0.base as! CIERGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.CIERGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+
+    public static let AdobeWideGamutRGBToXYZ: PathConverter = .init( .AdobeWideGamutRGB ==> .XYZ ) {
+        let color = $0.base as! AdobeWideGamutRGB
+        var infos = $1
+        let illuminant = infos?["Illuminant"] as! Illuminant
+        infos?["Illuminant"] = nil
+        return .init(
+            Self.AdobeWideGamutRGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+        )
+    }
+    
+    
     public static let sRGBToHSV: PathConverter = .init( .sRGB ==> .HSV ) {
         .init( Self.sRGBToHSV(color: ($0.base as! sRGB), infos: $1) )
     }
@@ -338,6 +639,31 @@ public struct ColorPathConverterSelector {
     public static let BT2020RGBToHSV: PathConverter = .init( .BT2020RGB ==> .HSV ) {
         .init( Self.BT2020RGBToHSV(color: ($0.base as! BT2020RGB), infos: $1) )
     }
+    
+    public static let BT709RGBToHSV: PathConverter = .init( .BT709RGB ==> .HSV ) {
+        .init( Self.BT709RGBToHSV(color: ($0.base as! BT709RGB), infos: $1) )
+    }
+
+    public static let DICP3RGBToHSV: PathConverter = .init( .DICP3RGB ==> .HSV ) {
+        .init( Self.DICP3RGBToHSV(color: ($0.base as! DICP3RGB), infos: $1) )
+    }
+
+    public static let DICP3PRGBToHSV: PathConverter = .init( .DICP3PRGB ==> .HSV ) {
+        .init( Self.DICP3PRGBToHSV(color: ($0.base as! DICP3PRGB), infos: $1) )
+    }
+
+    public static let DisplayP3RGBToHSV: PathConverter = .init( .DisplayP3RGB ==> .HSV ) {
+        .init( Self.DisplayP3RGBToHSV(color: ($0.base as! DisplayP3RGB), infos: $1) )
+    }
+
+    public static let CIERGBToHSV: PathConverter = .init( .CIERGB ==> .HSV ) {
+        .init( Self.CIERGBToHSV(color: ($0.base as! CIERGB), infos: $1) )
+    }
+
+    public static let AdobeWideGamutRGBToHSV: PathConverter = .init( .AdobeWideGamutRGB ==> .HSV ) {
+        .init( Self.AdobeWideGamutRGBToHSV(color: ($0.base as! AdobeWideGamutRGB), infos: $1) )
+    }
+    
     
     public static let sRGBToHSL: PathConverter = .init( .sRGB ==> .HSL ) {
         .init( Self.sRGBToHSL(color: ($0.base as! sRGB), infos: $1) )
@@ -355,6 +681,31 @@ public struct ColorPathConverterSelector {
         .init( Self.BT2020RGBToHSL(color: ($0.base as! BT2020RGB), infos: $1) )
     }
     
+    public static let BT709RGBToHSL: PathConverter = .init( .BT709RGB ==> .HSL ) {
+        .init( Self.BT709RGBToHSL(color: ($0.base as! BT709RGB), infos: $1) )
+    }
+
+    public static let DICP3RGBToHSL: PathConverter = .init( .DICP3RGB ==> .HSL ) {
+        .init( Self.DICP3RGBToHSL(color: ($0.base as! DICP3RGB), infos: $1) )
+    }
+
+    public static let DICP3PRGBToHSL: PathConverter = .init( .DICP3PRGB ==> .HSL ) {
+        .init( Self.DICP3PRGBToHSL(color: ($0.base as! DICP3PRGB), infos: $1) )
+    }
+
+    public static let DisplayP3RGBToHSL: PathConverter = .init( .DisplayP3RGB ==> .HSL ) {
+        .init( Self.DisplayP3RGBToHSL(color: ($0.base as! DisplayP3RGB), infos: $1) )
+    }
+
+    public static let CIERGBToHSL: PathConverter = .init( .CIERGB ==> .HSL ) {
+        .init( Self.CIERGBToHSL(color: ($0.base as! CIERGB), infos: $1) )
+    }
+
+    public static let AdobeWideGamutRGBToHSL: PathConverter = .init( .AdobeWideGamutRGB ==> .HSL ) {
+        .init( Self.AdobeWideGamutRGBToHSL(color: ($0.base as! AdobeWideGamutRGB), infos: $1) )
+    }
+    
+    
     public static let sRGBToCMY: PathConverter = .init( .sRGB ==> .CMY ) {
         .init( Self.sRGBToCMY(color: ($0.base as! sRGB), infos: $1) )
     }
@@ -371,6 +722,31 @@ public struct ColorPathConverterSelector {
         .init( Self.BT2020RGBToCMY(color: ($0.base as! BT2020RGB), infos: $1) )
     }
     
+    public static let BT709RGBToCMY: PathConverter = .init( .BT709RGB ==> .CMY ) {
+        .init( Self.BT709RGBToCMY(color: ($0.base as! BT709RGB), infos: $1) )
+    }
+
+    public static let DICP3RGBToCMY: PathConverter = .init( .DICP3RGB ==> .CMY ) {
+        .init( Self.DICP3RGBToCMY(color: ($0.base as! DICP3RGB), infos: $1) )
+    }
+
+    public static let DICP3PRGBToCMY: PathConverter = .init( .DICP3PRGB ==> .CMY ) {
+        .init( Self.DICP3PRGBToCMY(color: ($0.base as! DICP3PRGB), infos: $1) )
+    }
+
+    public static let DisplayP3RGBToCMY: PathConverter = .init( .DisplayP3RGB ==> .CMY ) {
+        .init( Self.DisplayP3RGBToCMY(color: ($0.base as! DisplayP3RGB), infos: $1) )
+    }
+
+    public static let CIERGBToCMY: PathConverter = .init( .CIERGB ==> .CMY ) {
+        .init( Self.CIERGBToCMY(color: ($0.base as! CIERGB), infos: $1) )
+    }
+
+    public static let AdobeWideGamutRGBToCMY: PathConverter = .init( .AdobeWideGamutRGB ==> .CMY ) {
+        .init( Self.AdobeWideGamutRGBToCMY(color: ($0.base as! AdobeWideGamutRGB), infos: $1) )
+    }
+
+    
     // MARK: HSV
     public static let HSVTosRGB: PathConverter = .init( .HSV ==> .sRGB ) {
         .init( Self.HSVTosRGB(color: ($0.base as! HSV), infos: $1) )
@@ -386,6 +762,30 @@ public struct ColorPathConverterSelector {
     
     public static let HSVToBT2020RGB: PathConverter = .init( .HSV ==> .BT2020RGB ) {
         .init( Self.HSVToBT2020RGB(color: ($0.base as! HSV), infos: $1) )
+    }
+    
+    public static let HSVToBT709RGB: PathConverter = .init( .HSV ==> .BT709RGB ) {
+        .init( Self.HSVToBT709RGB(color: ($0.base as! HSV), infos: $1) )
+    }
+
+    public static let HSVToDICP3RGB: PathConverter = .init( .HSV ==> .DICP3RGB ) {
+        .init( Self.HSVToDICP3RGB(color: ($0.base as! HSV), infos: $1) )
+    }
+
+    public static let HSVToDICP3PRGB: PathConverter = .init( .HSV ==> .DICP3PRGB ) {
+        .init( Self.HSVToDICP3PRGB(color: ($0.base as! HSV), infos: $1) )
+    }
+
+    public static let HSVToDisplayP3RGB: PathConverter = .init( .HSV ==> .DisplayP3RGB ) {
+        .init( Self.HSVToDisplayP3RGB(color: ($0.base as! HSV), infos: $1) )
+    }
+
+    public static let HSVToCIERGB: PathConverter = .init( .HSV ==> .CIERGB ) {
+        .init( Self.HSVToCIERGB(color: ($0.base as! HSV), infos: $1) )
+    }
+
+    public static let HSVToAdobeWideGamutRGB: PathConverter = .init( .HSV ==> .AdobeWideGamutRGB ) {
+        .init( Self.HSVToAdobeWideGamutRGB(color: ($0.base as! HSV), infos: $1) )
     }
     
     // MARK: HSL
@@ -405,6 +805,30 @@ public struct ColorPathConverterSelector {
         .init( Self.HSLToBT2020RGB(color: ($0.base as! HSL), infos: $1) )
     }
     
+    public static let HSLToBT709RGB: PathConverter = .init( .HSL ==> .BT709RGB ) {
+        .init( Self.HSLToBT709RGB(color: ($0.base as! HSL), infos: $1) )
+    }
+
+    public static let HSLToDICP3RGB: PathConverter = .init( .HSL ==> .DICP3RGB ) {
+        .init( Self.HSLToDICP3RGB(color: ($0.base as! HSL), infos: $1) )
+    }
+
+    public static let HSLToDICP3PRGB: PathConverter = .init( .HSL ==> .DICP3PRGB ) {
+        .init( Self.HSLToDICP3PRGB(color: ($0.base as! HSL), infos: $1) )
+    }
+
+    public static let HSLToDisplayP3RGB: PathConverter = .init( .HSL ==> .DisplayP3RGB ) {
+        .init( Self.HSLToDisplayP3RGB(color: ($0.base as! HSL), infos: $1) )
+    }
+
+    public static let HSLToCIERGB: PathConverter = .init( .HSL ==> .CIERGB ) {
+        .init( Self.HSLToCIERGB(color: ($0.base as! HSL), infos: $1) )
+    }
+
+    public static let HSLToAdobeWideGamutRGB: PathConverter = .init( .HSL ==> .AdobeWideGamutRGB ) {
+        .init( Self.HSLToAdobeWideGamutRGB(color: ($0.base as! HSL), infos: $1) )
+    }
+    
     // MARK: CMY
     public static let CMYTosRGB: PathConverter = .init( .CMY ==> .sRGB ) {
         .init( Self.CMYTosRGB(color: ($0.base as! CMY), infos: $1) )
@@ -422,6 +846,30 @@ public struct ColorPathConverterSelector {
         .init( Self.CMYToBT2020RGB(color: ($0.base as! CMY), infos: $1) )
     }
     
+    public static let CMYToBT709RGB: PathConverter = .init( .CMY ==> .BT709RGB ) {
+        .init( Self.CMYToBT709RGB(color: ($0.base as! CMY), infos: $1) )
+    }
+
+    public static let CMYToDICP3RGB: PathConverter = .init( .CMY ==> .DICP3RGB ) {
+        .init( Self.CMYToDICP3RGB(color: ($0.base as! CMY), infos: $1) )
+    }
+
+    public static let CMYToDICP3PRGB: PathConverter = .init( .CMY ==> .DICP3PRGB ) {
+        .init( Self.CMYToDICP3PRGB(color: ($0.base as! CMY), infos: $1) )
+    }
+
+    public static let CMYToDisplayP3RGB: PathConverter = .init( .CMY ==> .DisplayP3RGB ) {
+        .init( Self.CMYToDisplayP3RGB(color: ($0.base as! CMY), infos: $1) )
+    }
+
+    public static let CMYToCIERGB: PathConverter = .init( .CMY ==> .CIERGB ) {
+        .init( Self.CMYToCIERGB(color: ($0.base as! CMY), infos: $1) )
+    }
+
+    public static let CMYToAdobeWideGamutRGB: PathConverter = .init( .CMY ==> .AdobeWideGamutRGB ) {
+        .init( Self.CMYToAdobeWideGamutRGB(color: ($0.base as! CMY), infos: $1) )
+    }
+    
     public static let CMYToCMYK: PathConverter = .init( .CMY ==> .CMYK ) {
         .init( Self.CMYToCMYK(color: ($0.base as! CMY), infos: $1) )
     }
@@ -437,26 +885,6 @@ public struct ColorPathConverterSelector {
     }
     
     // MARK: - RGB Paths
-    
-    #if false
-    //MARK: RGB -> HSL
-    public static let sRGB_2_HSL:      [PathConverter] = [ sRGBToHSL      ]
-    public static let AppleRGB_2_HSL:  [PathConverter] = [ AppleRGBToHSL  ]
-    public static let AdobeRGB_2_HSL:  [PathConverter] = [ AdobeRGBToHSL  ]
-    public static let BT2020RGB_2_HSL: [PathConverter] = [ BT2020RGBToHSL ]
-    
-    //MARK: RGB -> HSV
-    public static let sRGB_2_HSV:      [PathConverter] = [ sRGBToHSV      ]
-    public static let AppleRGB_2_HSV:  [PathConverter] = [ AppleRGBToHSV  ]
-    public static let AdobeRGB_2_HSV:  [PathConverter] = [ AdobeRGBToHSV  ]
-    public static let BT2020RGB_2_HSV: [PathConverter] = [ BT2020RGBToHSV ]
-    
-    //MARK: RGB -> CMY
-    public static let sRGB_2_CMY:      [PathConverter] = [ sRGBToCMY      ]
-    public static let AppleRGB_2_CMY:  [PathConverter] = [ AppleRGBToCMY  ]
-    public static let AdobeRGB_2_CMY:  [PathConverter] = [ AdobeRGBToCMY  ]
-    public static let BT2020RGB_2_CMY: [PathConverter] = [ BT2020RGBToCMY ]
-    #endif
     
     public typealias RgbSelectorTuple = (pathId: PathId, converters: [PathConverter])
     
@@ -481,13 +909,29 @@ public struct ColorPathConverterSelector {
         .BT2020RGB ==> .CMYK, [ BT2020RGBToCMY, CMYToCMYK ]
     )
     
-    #if false
-    //MARK: RGB -> XYZ
-    public static let sRGB_2_XYZ:      [PathConverter] = [ sRGBToXYZ      ]
-    public static let AppleRGB_2_XYZ:  [PathConverter] = [ AppleRGBToXYZ  ]
-    public static let AdobeRGB_2_XYZ:  [PathConverter] = [ AdobeRGBToXYZ  ]
-    public static let BT2020RGB_2_XYZ: [PathConverter] = [ BT2020RGBToXYZ ]
-    #endif
+    public static let BT709RGB_2_CMYK: RgbSelectorTuple = (
+        .BT709RGB ==> .CMYK, [ BT709RGBToCMY, CMYToCMYK ]
+    )
+
+    public static let DICP3RGB_2_CMYK: RgbSelectorTuple = (
+        .DICP3RGB ==> .CMYK, [ DICP3RGBToCMY, CMYToCMYK ]
+    )
+
+    public static let DICP3PRGB_2_CMYK: RgbSelectorTuple = (
+        .DICP3PRGB ==> .CMYK, [ DICP3PRGBToCMY, CMYToCMYK ]
+    )
+
+    public static let DisplayP3RGB_2_CMYK: RgbSelectorTuple = (
+        .DisplayP3RGB ==> .CMYK, [ DisplayP3RGBToCMY, CMYToCMYK ]
+    )
+
+    public static let CIERGB_2_CMYK: RgbSelectorTuple = (
+        .CIERGB ==> .CMYK, [ CIERGBToCMY, CMYToCMYK ]
+    )
+
+    public static let AdobeWideGamutRGB_2_CMYK: RgbSelectorTuple = (
+        .AdobeWideGamutRGB ==> .CMYK, [ AdobeWideGamutRGBToCMY, CMYToCMYK ]
+    )
     
     //MARK: RGB -> xyY
     public static let sRGB_2_xyY: RgbSelectorTuple = (
@@ -503,6 +947,30 @@ public struct ColorPathConverterSelector {
         .BT2020RGB ==> .xyY, [ BT2020RGBToXYZ, XYZToxyY ]
     )
     
+    public static let BT709RGB_2_xyY: RgbSelectorTuple = (
+        .BT709RGB ==> .xyY, [ BT709RGBToXYZ, XYZToxyY ]
+    )
+
+    public static let DICP3RGB_2_xyY: RgbSelectorTuple = (
+        .DICP3RGB ==> .xyY, [ DICP3RGBToXYZ, XYZToxyY ]
+    )
+
+    public static let DICP3PRGB_2_xyY: RgbSelectorTuple = (
+        .DICP3PRGB ==> .xyY, [ DICP3PRGBToXYZ, XYZToxyY ]
+    )
+
+    public static let DisplayP3RGB_2_xyY: RgbSelectorTuple = (
+        .DisplayP3RGB ==> .xyY, [ DisplayP3RGBToXYZ, XYZToxyY ]
+    )
+
+    public static let CIERGB_2_xyY: RgbSelectorTuple = (
+        .CIERGB ==> .xyY, [ CIERGBToXYZ, XYZToxyY ]
+    )
+
+    public static let AdobeWideGamutRGB_2_xyY: RgbSelectorTuple = (
+        .AdobeWideGamutRGB ==> .xyY, [ AdobeWideGamutRGBToXYZ, XYZToxyY ]
+    )
+    
     //MARK: RGB -> Lab
     public static let sRGB_2_Lab: RgbSelectorTuple = (
         .sRGB ==> .Lab, [ sRGBToXYZ, XYZToLab ]
@@ -515,6 +983,30 @@ public struct ColorPathConverterSelector {
     )
     public static let BT2020RGB_2_Lab: RgbSelectorTuple = (
         .BT2020RGB ==> .Lab, [ BT2020RGBToXYZ, XYZToLab ]
+    )
+    
+    public static let BT709RGB_2_Lab: RgbSelectorTuple = (
+        .BT709RGB ==> .Lab, [ BT709RGBToXYZ, XYZToLab ]
+    )
+
+    public static let DICP3RGB_2_Lab: RgbSelectorTuple = (
+        .DICP3RGB ==> .Lab, [ DICP3RGBToXYZ, XYZToLab ]
+    )
+
+    public static let DICP3PRGB_2_Lab: RgbSelectorTuple = (
+        .DICP3PRGB ==> .Lab, [ DICP3PRGBToXYZ, XYZToLab ]
+    )
+
+    public static let DisplayP3RGB_2_Lab: RgbSelectorTuple = (
+        .DisplayP3RGB ==> .Lab, [ DisplayP3RGBToXYZ, XYZToLab ]
+    )
+
+    public static let CIERGB_2_Lab: RgbSelectorTuple = (
+        .CIERGB ==> .Lab, [ CIERGBToXYZ, XYZToLab ]
+    )
+
+    public static let AdobeWideGamutRGB_2_Lab: RgbSelectorTuple = (
+        .AdobeWideGamutRGB ==> .Lab, [ AdobeWideGamutRGBToXYZ, XYZToLab ]
     )
     
     //MARK: RGB -> LCHab
@@ -534,18 +1026,69 @@ public struct ColorPathConverterSelector {
         .BT2020RGB ==> .LCHab, [ BT2020RGBToXYZ, XYZToLab, LabToLCHab ]
     )
     
+    public static let BT709RGB_2_LCHab: RgbSelectorTuple = (
+        .BT709RGB ==> .LCHab, [ BT709RGBToXYZ, XYZToLab, LabToLCHab ]
+    )
+
+    public static let DICP3RGB_2_LCHab: RgbSelectorTuple = (
+        .DICP3RGB ==> .LCHab, [ DICP3RGBToXYZ, XYZToLab, LabToLCHab ]
+    )
+
+    public static let DICP3PRGB_2_LCHab: RgbSelectorTuple = (
+        .DICP3PRGB ==> .LCHab, [ DICP3PRGBToXYZ, XYZToLab, LabToLCHab ]
+    )
+
+    public static let DisplayP3RGB_2_LCHab: RgbSelectorTuple = (
+        .DisplayP3RGB ==> .LCHab, [ DisplayP3RGBToXYZ, XYZToLab, LabToLCHab ]
+    )
+
+    public static let CIERGB_2_LCHab: RgbSelectorTuple = (
+        .CIERGB ==> .LCHab, [ CIERGBToXYZ, XYZToLab, LabToLCHab ]
+    )
+
+    public static let AdobeWideGamutRGB_2_LCHab: RgbSelectorTuple = (
+        .AdobeWideGamutRGB ==> .LCHab, [ AdobeWideGamutRGBToXYZ, XYZToLab, LabToLCHab ]
+    )
+    
     //MARK: RGB -> Luv
     public static let sRGB_2_Luv: RgbSelectorTuple = (
         .sRGB ==> .Luv, [ sRGBToXYZ, XYZToLuv ]
     )
+    
     public static let AppleRGB_2_Luv: RgbSelectorTuple = (
         .AppleRGB ==> .Luv, [ AppleRGBToXYZ, XYZToLuv  ]
     )
+    
     public static let AdobeRGB_2_Luv: RgbSelectorTuple = (
         .AdobeRGB ==> .Luv, [ AdobeRGBToXYZ, XYZToLuv  ]
     )
+    
     public static let BT2020RGB_2_Luv: RgbSelectorTuple = (
         .BT2020RGB ==> .Luv, [ BT2020RGBToXYZ, XYZToLuv ]
+    )
+    
+    public static let BT709RGB_2_Luv: RgbSelectorTuple = (
+        .BT709RGB ==> .Luv, [ BT709RGBToXYZ, XYZToLuv ]
+    )
+
+    public static let DICP3RGB_2_Luv: RgbSelectorTuple = (
+        .DICP3RGB ==> .Luv, [ DICP3RGBToXYZ, XYZToLuv ]
+    )
+
+    public static let DICP3PRGB_2_Luv: RgbSelectorTuple = (
+        .DICP3PRGB ==> .Luv, [ DICP3PRGBToXYZ, XYZToLuv ]
+    )
+
+    public static let DisplayP3RGB_2_Luv: RgbSelectorTuple = (
+        .DisplayP3RGB ==> .Luv, [ DisplayP3RGBToXYZ, XYZToLuv ]
+    )
+
+    public static let CIERGB_2_Luv: RgbSelectorTuple = (
+        .CIERGB ==> .Luv, [ CIERGBToXYZ, XYZToLuv ]
+    )
+
+    public static let AdobeWideGamutRGB_2_Luv: RgbSelectorTuple = (
+        .AdobeWideGamutRGB ==> .Luv, [ AdobeWideGamutRGBToXYZ, XYZToLuv ]
     )
     
     //MARK: RGB -> LCHuv
@@ -565,18 +1108,69 @@ public struct ColorPathConverterSelector {
         .BT2020RGB ==> .LCHuv, [ BT2020RGBToXYZ, XYZToLuv, LuvToLCHuv ]
     )
     
+    public static let BT709RGB_2_LCHuv: RgbSelectorTuple = (
+        .BT709RGB ==> .LCHuv, [ BT709RGBToXYZ, XYZToLuv, LuvToLCHuv ]
+    )
+
+    public static let DICP3RGB_2_LCHuv: RgbSelectorTuple = (
+        .DICP3RGB ==> .LCHuv, [ DICP3RGBToXYZ, XYZToLuv, LuvToLCHuv ]
+    )
+
+    public static let DICP3PRGB_2_LCHuv: RgbSelectorTuple = (
+        .DICP3PRGB ==> .LCHuv, [ DICP3PRGBToXYZ, XYZToLuv, LuvToLCHuv ]
+    )
+
+    public static let DisplayP3RGB_2_LCHuv: RgbSelectorTuple = (
+        .DisplayP3RGB ==> .LCHuv, [ DisplayP3RGBToXYZ, XYZToLuv, LuvToLCHuv ]
+    )
+
+    public static let CIERGB_2_LCHuv: RgbSelectorTuple = (
+        .CIERGB ==> .LCHuv, [ CIERGBToXYZ, XYZToLuv, LuvToLCHuv ]
+    )
+
+    public static let AdobeWideGamutRGB_2_LCHuv: RgbSelectorTuple = (
+        .AdobeWideGamutRGB ==> .LCHuv, [ AdobeWideGamutRGBToXYZ, XYZToLuv, LuvToLCHuv ]
+    )
+    
     //MARK: RGB -> IPT
     public static let sRGB_2_IPT: RgbSelectorTuple = (
         .sRGB ==> .IPT, [ sRGBToXYZ, XYZToIPT ]
     )
+    
     public static let AppleRGB_2_IPT: RgbSelectorTuple = (
         .AppleRGB ==> .IPT, [ AppleRGBToXYZ, XYZToIPT ]
     )
+    
     public static let AdobeRGB_2_IPT: RgbSelectorTuple = (
         .AdobeRGB ==> .IPT, [ AdobeRGBToXYZ, XYZToIPT ]
     )
+    
     public static let BT2020RGB_2_IPT: RgbSelectorTuple = (
         .BT2020RGB ==> .IPT, [ BT2020RGBToXYZ, XYZToIPT ]
+    )
+    
+    public static let BT709RGB_2_IPT: RgbSelectorTuple = (
+        .BT709RGB ==> .IPT, [ BT709RGBToXYZ, XYZToIPT ]
+    )
+
+    public static let DICP3RGB_2_IPT: RgbSelectorTuple = (
+        .DICP3RGB ==> .IPT, [ DICP3RGBToXYZ, XYZToIPT ]
+    )
+
+    public static let DICP3PRGB_2_IPT: RgbSelectorTuple = (
+        .DICP3PRGB ==> .IPT, [ DICP3PRGBToXYZ, XYZToIPT ]
+    )
+
+    public static let DisplayP3RGB_2_IPT: RgbSelectorTuple = (
+        .DisplayP3RGB ==> .IPT, [ DisplayP3RGBToXYZ, XYZToIPT ]
+    )
+
+    public static let CIERGB_2_IPT: RgbSelectorTuple = (
+        .CIERGB ==> .IPT, [ CIERGBToXYZ, XYZToIPT ]
+    )
+
+    public static let AdobeWideGamutRGB_2_IPT: RgbSelectorTuple = (
+        .AdobeWideGamutRGB ==> .IPT, [ AdobeWideGamutRGBToXYZ, XYZToIPT ]
     )
     
 }
@@ -1002,6 +1596,30 @@ extension ColorPathConverterSelector {
         XYZToRGB(color: color, illuminant: illuminant, infos: infos)
     }
     
+    public static func XYZToBT709RGB(color: XYZ, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> BT709RGB {
+        XYZToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func XYZToDICP3RGB(color: XYZ, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> DICP3RGB {
+        XYZToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func XYZToDICP3PRGB(color: XYZ, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> DICP3PRGB {
+        XYZToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func XYZToDisplayP3RGB(color: XYZ, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> DisplayP3RGB {
+        XYZToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func XYZToCIERGB(color: XYZ, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> CIERGB {
+        XYZToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func XYZToAdobeWideGamutRGB(color: XYZ, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> AdobeWideGamutRGB {
+        XYZToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+    
     public static func XYZToIPT(color: XYZ, infos: [AnyHashable: Any]?) -> IPT {
 
         /// NOTE: XYZ values need to be adapted to 2 degree D65
@@ -1150,6 +1768,30 @@ extension ColorPathConverterSelector {
         HexToRGB(color: color, illuminant: illuminant, infos: infos)
     }
     
+    public static func HexToBT709RGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> BT709RGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func HexToDICP3RGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> DICP3RGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func HexToDICP3PRGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> DICP3PRGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func HexToDisplayP3RGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> DisplayP3RGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func HexToCIERGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> CIERGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func HexToAdobeWideGamutRGB(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> AdobeWideGamutRGB {
+        HexToRGB(color: color, illuminant: illuminant, infos: infos)
+    }
+    
     /// - Tag: xRGB -> Hex
     public static func RGBToHex<T: RGBColorable>(color: T, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
         
@@ -1169,6 +1811,30 @@ extension ColorPathConverterSelector {
     }
     
     public static func BT2020RGBToHex(color: BT2020RGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
+    }
+    
+    public static func BT709RGBToHex(color: BT709RGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func DICP3RGBToHex(color: DICP3RGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func DICP3PRGBToHex(color: DICP3PRGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func DisplayP3RGBToHex(color: DisplayP3RGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func CIERGBToHex(color: CIERGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+        RGBToHex(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func AdobeWideGamutRGBToHex(color: AdobeWideGamutRGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
         RGBToHex(color: color, illuminant: illuminant, infos: infos)
     }
     
@@ -1223,6 +1889,30 @@ extension ColorPathConverterSelector {
         RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
     }
     
+    public static func BT709RGBToXYZ(color: BT709RGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> XYZ {
+        RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func DICP3RGBToXYZ(color: DICP3RGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> XYZ {
+        RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func DICP3PRGBToXYZ(color: DICP3PRGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> XYZ {
+        RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func DisplayP3RGBToXYZ(color: DisplayP3RGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> XYZ {
+        RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func CIERGBToXYZ(color: CIERGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> XYZ {
+        RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+    }
+
+    public static func AdobeWideGamutRGBToXYZ(color: AdobeWideGamutRGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> XYZ {
+        RGBToXYZ(color: color, illuminant: illuminant, infos: infos)
+    }
+    
     public static func RGBToHSV<T: RGBColorable>(color: T, infos: [AnyHashable: Any]?) -> HSV {
         
         /// Converts from RGB to HSV.
@@ -1268,6 +1958,30 @@ extension ColorPathConverterSelector {
     }
     
     public static func BT2020RGBToHSV(color: BT2020RGB, infos: [AnyHashable: Any]?) -> HSV {
+        RGBToHSV(color: color, infos: infos)
+    }
+    
+    public static func BT709RGBToHSV(color: BT709RGB, infos: [AnyHashable: Any]?) -> HSV {
+        RGBToHSV(color: color, infos: infos)
+    }
+
+    public static func DICP3RGBToHSV(color: DICP3RGB, infos: [AnyHashable: Any]?) -> HSV {
+        RGBToHSV(color: color, infos: infos)
+    }
+
+    public static func DICP3PRGBToHSV(color: DICP3PRGB, infos: [AnyHashable: Any]?) -> HSV {
+        RGBToHSV(color: color, infos: infos)
+    }
+
+    public static func DisplayP3RGBToHSV(color: DisplayP3RGB, infos: [AnyHashable: Any]?) -> HSV {
+        RGBToHSV(color: color, infos: infos)
+    }
+
+    public static func CIERGBToHSV(color: CIERGB, infos: [AnyHashable: Any]?) -> HSV {
+        RGBToHSV(color: color, infos: infos)
+    }
+
+    public static func AdobeWideGamutRGBToHSV(color: AdobeWideGamutRGB, infos: [AnyHashable: Any]?) -> HSV {
         RGBToHSV(color: color, infos: infos)
     }
     
@@ -1320,6 +2034,30 @@ extension ColorPathConverterSelector {
         RGBToHSL(color: color, infos: infos)
     }
     
+    public static func BT709RGBToHSL(color: BT709RGB, infos: [AnyHashable: Any]?) -> HSL {
+        RGBToHSL(color: color, infos: infos)
+    }
+
+    public static func DICP3RGBToHSL(color: DICP3RGB, infos: [AnyHashable: Any]?) -> HSL {
+        RGBToHSL(color: color, infos: infos)
+    }
+
+    public static func DICP3PRGBToHSL(color: DICP3PRGB, infos: [AnyHashable: Any]?) -> HSL {
+        RGBToHSL(color: color, infos: infos)
+    }
+
+    public static func DisplayP3RGBToHSL(color: DisplayP3RGB, infos: [AnyHashable: Any]?) -> HSL {
+        RGBToHSL(color: color, infos: infos)
+    }
+
+    public static func CIERGBToHSL(color: CIERGB, infos: [AnyHashable: Any]?) -> HSL {
+        RGBToHSL(color: color, infos: infos)
+    }
+
+    public static func AdobeWideGamutRGBToHSL(color: AdobeWideGamutRGB, infos: [AnyHashable: Any]?) -> HSL {
+        RGBToHSL(color: color, infos: infos)
+    }
+    
     public static func RGBToCMY<T: RGBColorable>(color: T, infos: [AnyHashable: Any]?) -> CMY {
     
         let downColor = color.downable()
@@ -1350,6 +2088,30 @@ extension ColorPathConverterSelector {
     }
     
     public static func BT2020RGBToCMY(color: BT2020RGB, infos: [AnyHashable: Any]?) -> CMY {
+        RGBToCMY(color: color, infos: infos)
+    }
+    
+    public static func BT709RGBToCMY(color: BT709RGB, infos: [AnyHashable: Any]?) -> CMY {
+        RGBToCMY(color: color, infos: infos)
+    }
+
+    public static func DICP3RGBToCMY(color: DICP3RGB, infos: [AnyHashable: Any]?) -> CMY {
+        RGBToCMY(color: color, infos: infos)
+    }
+
+    public static func DICP3PRGBToCMY(color: DICP3PRGB, infos: [AnyHashable: Any]?) -> CMY {
+        RGBToCMY(color: color, infos: infos)
+    }
+
+    public static func DisplayP3RGBToCMY(color: DisplayP3RGB, infos: [AnyHashable: Any]?) -> CMY {
+        RGBToCMY(color: color, infos: infos)
+    }
+
+    public static func CIERGBToCMY(color: CIERGB, infos: [AnyHashable: Any]?) -> CMY {
+        RGBToCMY(color: color, infos: infos)
+    }
+
+    public static func AdobeWideGamutRGBToCMY(color: AdobeWideGamutRGB, infos: [AnyHashable: Any]?) -> CMY {
         RGBToCMY(color: color, infos: infos)
     }
     
@@ -1443,6 +2205,30 @@ extension ColorPathConverterSelector {
         HSVToRGB(color: color, infos: infos)
     }
     
+    public static func HSVToBT709RGB(color: HSV, infos: [AnyHashable: Any]?) -> BT709RGB {
+        HSVToRGB(color: color, infos: infos)
+    }
+
+    public static func HSVToDICP3RGB(color: HSV, infos: [AnyHashable: Any]?) -> DICP3RGB {
+        HSVToRGB(color: color, infos: infos)
+    }
+
+    public static func HSVToDICP3PRGB(color: HSV, infos: [AnyHashable: Any]?) -> DICP3PRGB {
+        HSVToRGB(color: color, infos: infos)
+    }
+
+    public static func HSVToDisplayP3RGB(color: HSV, infos: [AnyHashable: Any]?) -> DisplayP3RGB {
+        HSVToRGB(color: color, infos: infos)
+    }
+
+    public static func HSVToCIERGB(color: HSV, infos: [AnyHashable: Any]?) -> CIERGB {
+        HSVToRGB(color: color, infos: infos)
+    }
+
+    public static func HSVToAdobeWideGamutRGB(color: HSV, infos: [AnyHashable: Any]?) -> AdobeWideGamutRGB {
+        HSVToRGB(color: color, infos: infos)
+    }
+    
     // MARK: - HSL
     public static func HSLToRGB<R: RGBColorable>(color: HSL, infos: [AnyHashable: Any]?) -> R {
         
@@ -1503,6 +2289,30 @@ extension ColorPathConverterSelector {
         HSLToRGB(color: color, infos: infos)
     }
     
+    public static func HSLToBT709RGB(color: HSL, infos: [AnyHashable: Any]?) -> BT709RGB {
+        HSLToRGB(color: color, infos: infos)
+    }
+
+    public static func HSLToDICP3RGB(color: HSL, infos: [AnyHashable: Any]?) -> DICP3RGB {
+        HSLToRGB(color: color, infos: infos)
+    }
+
+    public static func HSLToDICP3PRGB(color: HSL, infos: [AnyHashable: Any]?) -> DICP3PRGB {
+        HSLToRGB(color: color, infos: infos)
+    }
+
+    public static func HSLToDisplayP3RGB(color: HSL, infos: [AnyHashable: Any]?) -> DisplayP3RGB {
+        HSLToRGB(color: color, infos: infos)
+    }
+
+    public static func HSLToCIERGB(color: HSL, infos: [AnyHashable: Any]?) -> CIERGB {
+        HSLToRGB(color: color, infos: infos)
+    }
+
+    public static func HSLToAdobeWideGamutRGB(color: HSL, infos: [AnyHashable: Any]?) -> AdobeWideGamutRGB {
+        HSLToRGB(color: color, infos: infos)
+    }
+    
     // MARK: - CMY
     public static func CMYToRGB<R: RGBColorable>(color: CMY, infos: [AnyHashable: Any]?) -> R {
 
@@ -1535,6 +2345,30 @@ extension ColorPathConverterSelector {
     }
     
     public static func CMYToBT2020RGB(color: CMY, infos: [AnyHashable: Any]?) -> BT2020RGB {
+        CMYToRGB(color: color, infos: infos)
+    }
+    
+    public static func CMYToBT709RGB(color: CMY, infos: [AnyHashable: Any]?) -> BT709RGB {
+        CMYToRGB(color: color, infos: infos)
+    }
+
+    public static func CMYToDICP3RGB(color: CMY, infos: [AnyHashable: Any]?) -> DICP3RGB {
+        CMYToRGB(color: color, infos: infos)
+    }
+
+    public static func CMYToDICP3PRGB(color: CMY, infos: [AnyHashable: Any]?) -> DICP3PRGB {
+        CMYToRGB(color: color, infos: infos)
+    }
+
+    public static func CMYToDisplayP3RGB(color: CMY, infos: [AnyHashable: Any]?) -> DisplayP3RGB {
+        CMYToRGB(color: color, infos: infos)
+    }
+
+    public static func CMYToCIERGB(color: CMY, infos: [AnyHashable: Any]?) -> CIERGB {
+        CMYToRGB(color: color, infos: infos)
+    }
+
+    public static func CMYToAdobeWideGamutRGB(color: CMY, infos: [AnyHashable: Any]?) -> AdobeWideGamutRGB {
         CMYToRGB(color: color, infos: infos)
     }
     

@@ -632,7 +632,395 @@ class ColorSpaceConverterTests: XCTestCase {
         print()
         
     }
+    
+    func testXyz2rgbFuncGen() throws {
+        
+        func xyz2rgbProperty(name: ColorSpaceType.RGB) -> String {
+            """
+            public static let XYZTo\(name.rawValue): PathConverter = .init( .XYZ ==> .\(name.rawValue) ) {
+                let color = $0.base as! XYZ
+                var infos = $1
+                let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+                infos?["\(Illuminant.self)"] = nil
+                return .init(
+                    Self.XYZTo\(name.rawValue)(color: color, illuminant: illuminant, infos: infos)
+                )
+            }
+            """
+        }
+        
+        func xyz2rgbFunc(name: ColorSpaceType.RGB) -> String {
+            """
+            public static func XYZTo\(name.rawValue)(color: XYZ, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> \(name.rawValue) {
+                XYZToRGB(color: color, illuminant: illuminant, infos: infos)
+            }
+            """
+        }
+        
+        let rgbs: [ColorSpaceType.RGB] = [
+            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+        ]
+        
+        print("--- xyz2rgbFunc ---")
+        rgbs.forEach({
+            print(xyz2rgbFunc(name: $0)) ; print()
+        })
+        
+        print("--- xyz2rgbProperty ---")
+        rgbs.forEach({
+            print(xyz2rgbProperty(name: $0)) ; print()
+        })
+        
+    }
+    
+    func testHex2rgbFuncGen() throws {
+        
+        func colorProperty2(name: ColorSpaceType.RGB) -> String {
+            """
+            public static let HexTo\(name.rawValue): PathConverter = .init( .Hex ==> .\(name.rawValue)) {
+                let color = $0.base as! Hex
+                var infos = $1
+                let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+                infos?["\(Illuminant.self)"] = nil
+                return .init(
+                    Self.HexTo\(name.rawValue)(color: color, illuminant: illuminant, infos: infos)
+                )
+            }
+            """
+        }
+        
+        func colorFunc2(name: ColorSpaceType.RGB) -> String {
+            """
+            public static func HexTo\(name.rawValue)(color: Hex, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> \(name.rawValue) {
+                HexToRGB(color: color, illuminant: illuminant, infos: infos)
+            }
+            """
+        }
+        
+        func colorProperty4(name: ColorSpaceType.RGB) -> String {
+            """
+            public static let \(name.rawValue)ToHex: PathConverter = .init( .\(name.rawValue) ==> .Hex) {
+                let color = $0.base as! \(name.rawValue)
+                var infos = $1
+                let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+                infos?["\(Illuminant.self)"] = nil
+                return .init(
+                    Self.\(name.rawValue)ToHex(color: color, illuminant: illuminant, infos: infos)
+                )
+            }
+            """
+        }
+        
+        func colorFunc4(name: ColorSpaceType.RGB) -> String {
+            """
+            public static func \(name.rawValue)ToHex(color: \(name.rawValue), illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
+                RGBToHex(color: color, illuminant: illuminant, infos: infos)
+            }
+            """
+        }
+        
+        let rgbs: [ColorSpaceType.RGB] = [
+            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+        ]
+        
+        print("--- colorFunc2 ---")
+        rgbs.forEach({
+            print(colorFunc2(name: $0)) ; print()
+        })
+        
+        print("--- colorProperty2 ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0)) ; print()
+        })
+        
+        print("--- colorFunc4 ---")
+        rgbs.forEach({
+            print(colorFunc4(name: $0)) ; print()
+        })
+        
+        print("--- colorProperty4 ---")
+        rgbs.forEach({
+            print(colorProperty4(name: $0)) ; print()
+        })
+        
+    }
 
+    func testRgb2xyzFuncGen() throws {
+        
+        func colorProperty2(name: ColorSpaceType.RGB, _ to: String) -> String {
+            """
+            public static let \(name.rawValue)To\(to): PathConverter = .init( .\(name.rawValue) ==> .\(to) ) {
+                let color = $0.base as! \(name.rawValue)
+                var infos = $1
+                let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+                infos?["\(Illuminant.self)"] = nil
+                return .init(
+                    Self.\(name.rawValue)To\(to)(color: color, illuminant: illuminant, infos: infos)
+                )
+            }
+            """
+        }
+        
+        func colorFunc2(name: ColorSpaceType.RGB, _ to: String) -> String {
+            """
+            public static func \(name.rawValue)To\(to)(color: \(name.rawValue), illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> \(to) {
+                RGBTo\(to)(color: color, illuminant: illuminant, infos: infos)
+            }
+            """
+        }
+        
+        let rgbs: [ColorSpaceType.RGB] = [
+            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+        ]
+        
+        print("--- colorFunc2 xyz ---")
+        rgbs.forEach({
+            print(colorFunc2(name: $0, "\(XYZ.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 xyz ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, "\(XYZ.self)")) ; print()
+        })
+        
+    }
+    
+    func testRgb2hsv2hsl2cmyFuncGen() throws {
+        
+        func colorProperty2(name: ColorSpaceType.RGB, _ to: String) -> String {
+            """
+            public static let \(name.rawValue)To\(to): PathConverter = .init( .\(name.rawValue) ==> .\(to) ) {
+                .init( Self.\(name.rawValue)To\(to)(color: ($0.base as! \(name.rawValue)), infos: $1) )
+            }
+            """
+        }
+        
+        func colorFunc2(name: ColorSpaceType.RGB, _ to: String) -> String {
+            """
+            public static func \(name.rawValue)To\(to)(color: \(name.rawValue), infos: [AnyHashable: Any]?) -> \(to) {
+                RGBTo\(to)(color: color, infos: infos)
+            }
+            """
+        }
+        
+        let rgbs: [ColorSpaceType.RGB] = [
+            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+        ]
+        
+        print("--- colorFunc2 hsv ---")
+        rgbs.forEach({
+            print(colorFunc2(name: $0, "\(HSV.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 hsv ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, "\(HSV.self)")) ; print()
+        })
+        
+        print("--- colorFunc2 hsl ---")
+        rgbs.forEach({
+            print(colorFunc2(name: $0, "\(HSL.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 hsl ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, "\(HSL.self)")) ; print()
+        })
+        
+        print("--- colorFunc2 cmy ---")
+        rgbs.forEach({
+            print(colorFunc2(name: $0, "\(CMY.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 cmy ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, "\(CMY.self)")) ; print()
+        })
+        
+    }
+    
+    func testHsvHslCmy2rgbFuncGen() throws {
+        
+        func colorProperty2(name: ColorSpaceType.RGB, _ to: String) -> String {
+            """
+            public static let \(to)To\(name.rawValue): PathConverter = .init( .\(to) ==> .\(name.rawValue) ) {
+                .init( Self.\(to)To\(name.rawValue)(color: ($0.base as! \(to)), infos: $1) )
+            }
+            """
+        }
+        
+        func colorFunc2(name: ColorSpaceType.RGB, _ to: String) -> String {
+            """
+            public static func \(to)To\(name.rawValue)(color: \(to), infos: [AnyHashable: Any]?) -> \(name.rawValue) {
+                \(to)ToRGB(color: color, infos: infos)
+            }
+            """
+        }
+        
+        let rgbs: [ColorSpaceType.RGB] = [
+            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+        ]
+        
+        print("--- colorFunc2 hsv ---")
+        rgbs.forEach({
+            print(colorFunc2(name: $0, "\(HSV.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 hsv ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, "\(HSV.self)")) ; print()
+        })
+        
+        print("--- colorFunc2 hsl ---")
+        rgbs.forEach({
+            print(colorFunc2(name: $0, "\(HSL.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 hsl ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, "\(HSL.self)")) ; print()
+        })
+        
+        print("--- colorFunc2 cmy ---")
+        rgbs.forEach({
+            print(colorFunc2(name: $0, "\(CMY.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 cmy ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, "\(CMY.self)")) ; print()
+        })
+        
+    }
+    
+    func testRgb2xxxPathGen() throws {
+        
+        func colorProperty2(name: ColorSpaceType.RGB, pass: String, _ to: String) -> String {
+            """
+            public static let \(name.rawValue)_2_\(to): RgbSelectorTuple = (
+                .\(name.rawValue) ==> .\(to), [ \(name.rawValue)To\(pass), \(pass)To\(to) ]
+            )
+            """
+        }
+        
+        func colorProperty22(name: ColorSpaceType.RGB, pass1: String, pass2: String, _ to: String) -> String {
+            """
+            public static let \(name.rawValue)_2_\(to): RgbSelectorTuple = (
+                .\(name.rawValue) ==> .\(to), [ \(name.rawValue)To\(pass1), \(pass1)To\(pass2), \(pass2)To\(to) ]
+            )
+            """
+        }
+        
+        let rgbs: [ColorSpaceType.RGB] = [
+            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+        ]
+        
+        print("--- colorProperty2 cmyk ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, pass: "\(CMY.self)", "\(CMYK.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 xyY ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, pass: "\(XYZ.self)", "\(xyY.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 lab ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, pass: "\(XYZ.self)", "\(Lab.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 lab ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, pass: "\(XYZ.self)", "\(Lab.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 lchlab ---")
+        rgbs.forEach({
+            print(colorProperty22(name: $0, pass1: "\(XYZ.self)", pass2: "\(Lab.self)", "\(LCHab.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 luv ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, pass: "\(XYZ.self)", "\(Luv.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 lchuv ---")
+        rgbs.forEach({
+            print(colorProperty22(name: $0, pass1: "\(XYZ.self)", pass2: "\(Luv.self)", "\(LCHuv.self)")) ; print()
+        })
+        
+        print("--- colorProperty2 ipt ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0, pass: "\(XYZ.self)", "\(IPT.self)")) ; print()
+        })
+        
+    }
+    
+    func testSelectorGen() throws {
+        
+        func colorProperty2(from: String, to: String) -> String {
+            """
+            \(from)To\(to).pathId:  \(from)To\(to),
+            """
+        }
+        
+        let rgbs: [ColorSpaceType.RGB] = [
+            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+        ]
+        
+        print("--- colorProperty2 xyz2rgb ---")
+        rgbs.forEach({
+            print(colorProperty2(from: "\(XYZ.self)", to: $0.rawValue))
+        })
+        
+        print("--- colorProperty2 hex2rgb ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: "\(Hex.self)", to: $0.rawValue))
+        })
+        
+        print("--- colorProperty2 rgb2hex ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(Hex.self)"))
+        })
+        
+        print("--- colorProperty2 rgb2xyz ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(XYZ.self)"))
+        })
+        
+        print("--- colorProperty2 rgb2hsv ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(HSV.self)"))
+        })
+        
+        print("--- colorProperty2 rgb2hsl ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(HSL.self)"))
+        })
+        
+        print("--- colorProperty2 rgb2cmy ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(CMY.self)"))
+        })
+        
+        print("--- colorProperty2 hsv2rgb ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: "\(HSV.self)", to: $0.rawValue))
+        })
+        
+        print("--- colorProperty2 hsl2rgb ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: "\(HSL.self)", to: $0.rawValue))
+        })
+        
+        print("--- colorProperty2 cmy2rgb ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: "\(CMY.self)", to: $0.rawValue))
+        })
+        
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {

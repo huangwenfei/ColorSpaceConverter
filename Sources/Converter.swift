@@ -184,4 +184,30 @@ extension Converter {
         return color.base as! To
     }
     
+    private static func _convert<From, To, Light, RGB>(
+        from: From,
+        to: To.Type,
+        tryThrougthRGB rgb: RGB.Type,
+        toIlluminant illuminant: Light,
+        infos: [AnyHashable: Any]?
+    ) -> To
+        where From: Colorable, To: Colorable, Light: IlluminantProtocol, RGB: RGBColorable
+    {
+        
+        guard "\(from.self)" != "\(to.self)" else { return from as! To }
+        
+        /// - Tag: Color Paths
+        let converters = ColorPath(from: from.colorSpace, to: to)
+            .generate(througthRGB: .init(color: rgb))
+        
+        /// - Tag: Replace RGB
+        
+        /// - Tag: Iter Paths
+        let color: AnyColorable = converters.reduce(.init(from)) {
+            $1.convert(from: $0, illuminant: illuminant, infos: infos)
+        }
+        
+        return color.base as! To
+    }
+    
 }

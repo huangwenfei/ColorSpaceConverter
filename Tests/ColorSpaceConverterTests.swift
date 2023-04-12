@@ -1021,6 +1021,71 @@ class ColorSpaceConverterTests: XCTestCase {
         
     }
     
+    
+    func testSelectorEdgeGen() throws {
+        
+        func colorProperty2(from: String, to: String) -> String {
+            """
+            addEdge(byFrom: .\(from), to: .\(to))
+            """
+        }
+        
+        let rgbs: [ColorSpaceType.RGB] = [
+            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+        ]
+        
+        print("--- colorProperty2 xyz2rgb ---")
+        rgbs.forEach({
+            print(colorProperty2(from: "\(XYZ.self)", to: $0.rawValue))
+        })
+        
+        print("--- colorProperty2 hex2rgb ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: "\(Hex.self)", to: $0.rawValue))
+        })
+        
+        print("--- colorProperty2 rgb2hex ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(Hex.self)"))
+        })
+        
+        print("--- colorProperty2 rgb2xyz ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(XYZ.self)"))
+        })
+        
+        print("--- colorProperty2 rgb2hsv ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(HSV.self)"))
+        })
+        
+        print("--- colorProperty2 rgb2hsl ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(HSL.self)"))
+        })
+        
+        print("--- colorProperty2 rgb2cmy ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: $0.rawValue, to: "\(CMY.self)"))
+        })
+        
+        print("--- colorProperty2 hsv2rgb ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: "\(HSV.self)", to: $0.rawValue))
+        })
+        
+        print("--- colorProperty2 hsl2rgb ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: "\(HSL.self)", to: $0.rawValue))
+        })
+        
+        print("--- colorProperty2 cmy2rgb ---") ; print()
+        rgbs.forEach({
+            print(colorProperty2(from: "\(CMY.self)", to: $0.rawValue))
+        })
+        
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {

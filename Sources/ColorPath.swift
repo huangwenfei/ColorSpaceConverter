@@ -130,6 +130,27 @@ public struct ColorPath {
         return fromToRgb + rgbToTo
     }
     
+    public func generate(tryThrougthRGB rgb: ColorSpaceType.RGB) -> [PathConverter] {
+        
+        /// - Tag: From === To
+        guard pathId.isVaild else { return [] }
+        
+        /// - Tag: From ==> To, Ignore througthRGB
+        if pathId.from.isRgb || pathId.to.isRgb {
+            return converters(pathId: pathId)
+        }
+        
+        /// - Tag: From ==> (througthRGB) ==> To
+        
+        /// from ==> rgb
+        let fromToRgb = converters(pathId: pathId.from ==> rgb.colorSpace)
+        // print(fromToRgb)
+        /// rgb ==> to
+        let rgbToTo = converters(pathId: rgb.colorSpace ==> pathId.to)
+        // print(rgbToTo)
+        return fromToRgb + rgbToTo
+    }
+    
 }
 
 extension ColorPath {
@@ -244,52 +265,112 @@ extension ColorPath {
         addEdge(byFrom: .XYZ, to: .AppleRGB)
         addEdge(byFrom: .XYZ, to: .AdobeRGB)
         addEdge(byFrom: .XYZ, to: .BT2020RGB)
+        addEdge(byFrom: .XYZ, to: .BT709RGB)
+        addEdge(byFrom: .XYZ, to: .DICP3RGB)
+        addEdge(byFrom: .XYZ, to: .DICP3PRGB)
+        addEdge(byFrom: .XYZ, to: .DisplayP3RGB)
+        addEdge(byFrom: .XYZ, to: .CIERGB)
+        addEdge(byFrom: .XYZ, to: .AdobeWideGamutRGB)
         addEdge(byFrom: .XYZ, to: .IPT)
         
         addEdge(byFrom: .sRGB, to: .XYZ)
         addEdge(byFrom: .AppleRGB, to: .XYZ)
         addEdge(byFrom: .AdobeRGB, to: .XYZ)
         addEdge(byFrom: .BT2020RGB, to: .XYZ)
+        addEdge(byFrom: .BT709RGB, to: .XYZ)
+        addEdge(byFrom: .DICP3RGB, to: .XYZ)
+        addEdge(byFrom: .DICP3PRGB, to: .XYZ)
+        addEdge(byFrom: .DisplayP3RGB, to: .XYZ)
+        addEdge(byFrom: .CIERGB, to: .XYZ)
+        addEdge(byFrom: .AdobeWideGamutRGB, to: .XYZ)
         
         addEdge(byFrom: .sRGB, to: .HSV)
         addEdge(byFrom: .AppleRGB, to: .HSV)
         addEdge(byFrom: .AdobeRGB, to: .HSV)
         addEdge(byFrom: .BT2020RGB, to: .HSV)
+        addEdge(byFrom: .BT709RGB, to: .HSV)
+        addEdge(byFrom: .DICP3RGB, to: .HSV)
+        addEdge(byFrom: .DICP3PRGB, to: .HSV)
+        addEdge(byFrom: .DisplayP3RGB, to: .HSV)
+        addEdge(byFrom: .CIERGB, to: .HSV)
+        addEdge(byFrom: .AdobeWideGamutRGB, to: .HSV)
         
         addEdge(byFrom: .sRGB, to: .HSL)
         addEdge(byFrom: .AppleRGB, to: .HSL)
         addEdge(byFrom: .AdobeRGB, to: .HSL)
         addEdge(byFrom: .BT2020RGB, to: .HSL)
+        addEdge(byFrom: .BT709RGB, to: .HSL)
+        addEdge(byFrom: .DICP3RGB, to: .HSL)
+        addEdge(byFrom: .DICP3PRGB, to: .HSL)
+        addEdge(byFrom: .DisplayP3RGB, to: .HSL)
+        addEdge(byFrom: .CIERGB, to: .HSL)
+        addEdge(byFrom: .AdobeWideGamutRGB, to: .HSL)
         
         addEdge(byFrom: .sRGB, to: .CMY)
         addEdge(byFrom: .AppleRGB, to: .CMY)
         addEdge(byFrom: .AdobeRGB, to: .CMY)
         addEdge(byFrom: .BT2020RGB, to: .CMY)
+        addEdge(byFrom: .BT709RGB, to: .CMY)
+        addEdge(byFrom: .DICP3RGB, to: .CMY)
+        addEdge(byFrom: .DICP3PRGB, to: .CMY)
+        addEdge(byFrom: .DisplayP3RGB, to: .CMY)
+        addEdge(byFrom: .CIERGB, to: .CMY)
+        addEdge(byFrom: .AdobeWideGamutRGB, to: .CMY)
         
         addEdge(byFrom: .sRGB, to: .Hex)
         addEdge(byFrom: .AppleRGB, to: .Hex)
         addEdge(byFrom: .AdobeRGB, to: .Hex)
         addEdge(byFrom: .BT2020RGB, to: .Hex)
+        addEdge(byFrom: .BT709RGB, to: .Hex)
+        addEdge(byFrom: .DICP3RGB, to: .Hex)
+        addEdge(byFrom: .DICP3PRGB, to: .Hex)
+        addEdge(byFrom: .DisplayP3RGB, to: .Hex)
+        addEdge(byFrom: .CIERGB, to: .Hex)
+        addEdge(byFrom: .AdobeWideGamutRGB, to: .Hex)
         
         addEdge(byFrom: .Hex, to: .sRGB)
         addEdge(byFrom: .Hex, to: .AppleRGB)
         addEdge(byFrom: .Hex, to: .AdobeRGB)
         addEdge(byFrom: .Hex, to: .BT2020RGB)
+        addEdge(byFrom: .Hex, to: .BT709RGB)
+        addEdge(byFrom: .Hex, to: .DICP3RGB)
+        addEdge(byFrom: .Hex, to: .DICP3PRGB)
+        addEdge(byFrom: .Hex, to: .DisplayP3RGB)
+        addEdge(byFrom: .Hex, to: .CIERGB)
+        addEdge(byFrom: .Hex, to: .AdobeWideGamutRGB)
         
         addEdge(byFrom: .HSV, to: .sRGB)
         addEdge(byFrom: .HSV, to: .AppleRGB)
         addEdge(byFrom: .HSV, to: .AdobeRGB)
         addEdge(byFrom: .HSV, to: .BT2020RGB)
+        addEdge(byFrom: .HSV, to: .BT709RGB)
+        addEdge(byFrom: .HSV, to: .DICP3RGB)
+        addEdge(byFrom: .HSV, to: .DICP3PRGB)
+        addEdge(byFrom: .HSV, to: .DisplayP3RGB)
+        addEdge(byFrom: .HSV, to: .CIERGB)
+        addEdge(byFrom: .HSV, to: .AdobeWideGamutRGB)
         
         addEdge(byFrom: .HSL, to: .sRGB)
         addEdge(byFrom: .HSL, to: .AppleRGB)
         addEdge(byFrom: .HSL, to: .AdobeRGB)
         addEdge(byFrom: .HSL, to: .BT2020RGB)
+        addEdge(byFrom: .HSL, to: .BT709RGB)
+        addEdge(byFrom: .HSL, to: .DICP3RGB)
+        addEdge(byFrom: .HSL, to: .DICP3PRGB)
+        addEdge(byFrom: .HSL, to: .DisplayP3RGB)
+        addEdge(byFrom: .HSL, to: .CIERGB)
+        addEdge(byFrom: .HSL, to: .AdobeWideGamutRGB)
         
         addEdge(byFrom: .CMY, to: .sRGB)
         addEdge(byFrom: .CMY, to: .AppleRGB)
         addEdge(byFrom: .CMY, to: .AdobeRGB)
         addEdge(byFrom: .CMY, to: .BT2020RGB)
+        addEdge(byFrom: .CMY, to: .BT709RGB)
+        addEdge(byFrom: .CMY, to: .DICP3RGB)
+        addEdge(byFrom: .CMY, to: .DICP3PRGB)
+        addEdge(byFrom: .CMY, to: .DisplayP3RGB)
+        addEdge(byFrom: .CMY, to: .CIERGB)
+        addEdge(byFrom: .CMY, to: .AdobeWideGamutRGB)
         
         addEdge(byFrom: .CMY, to: .CMYK)
         addEdge(byFrom: .CMYK, to: .CMY)

@@ -1,0 +1,34 @@
+Spectral -> XYZ
+
+Lab -> LCHab
+Lab -> XYZ
+
+Luv -> LCHuv
+Luv -> XYZ
+
+LCHab -> Lab
+LCHuv -> Luv
+
+xyY -> XYZ
+XYZ -> xyY
+
+XYZ -> Luv
+XYZ -> Lab
+XYZ -> RGB
+XYZ -> IPT
+
+RGB -> XYZ
+RGB -> HSV
+RGB -> HSL
+RGB -> CMY
+RGB -> Hex
+
+Hex -> RGB
+HSV -> RGB
+HSL -> RGB
+CMY -> RGB
+
+CMY -> CMYK
+CMYK -> CMY
+
+IPT -> XYZ

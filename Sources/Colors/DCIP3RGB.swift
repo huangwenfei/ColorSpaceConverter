@@ -1,5 +1,5 @@
 //
-//  DICP3RGB.swift
+//  DCIP3RGB.swift
 //  ColorSpaceConverter
 //
 //  Created by 黄文飞 on 2023/4/7.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct DICP3RGB: RGBColorable {
+public struct DCIP3RGB: RGBColorable {
     
     // MARK: RGBProtocol
-    public var colorSpace: ColorSpaceType { .DICP3RGB }
+    public var colorSpace: ColorSpaceType { .DCIP3RGB }
     
     /// *DCI-P3* colourspace whitepoint name.
     /// Warnings
@@ -66,10 +66,10 @@ public struct DICP3RGB: RGBColorable {
     
 }
 
-public struct DICP3PRGB: RGBColorable {
+public struct DCIP3PRGB: RGBColorable {
     
     // MARK: RGBProtocol
-    public var colorSpace: ColorSpaceType { .DICP3PRGB }
+    public var colorSpace: ColorSpaceType { .DCIP3PRGB }
     
     /// *DCI-P3* colourspace whitepoint name.
     /// Warnings

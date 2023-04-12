@@ -1,3 +1,11 @@
+XYZ: {
+  style: {
+    stroke: "#53C0D8"
+    stroke-width: 5
+    shadow: true
+  }
+}
+
 Spectral -> XYZ
 
 Lab -> LCHab
@@ -14,19 +22,106 @@ XYZ -> xyY
 
 XYZ -> Luv
 XYZ -> Lab
-XYZ -> RGB
+XYZ -> sRGB
+XYZ -> AppleRGB
+XYZ -> AdobeRGB
+XYZ -> BT2020RGB
+XYZ -> BT709RGB
+XYZ -> DCIP3RGB
+XYZ -> DCIP3PRGB
+XYZ -> DisplayP3RGB
+XYZ -> CIERGB
+XYZ -> AdobeWideGamutRGB
 XYZ -> IPT
 
-RGB -> XYZ
-RGB -> HSV
-RGB -> HSL
-RGB -> CMY
-RGB -> Hex
+Hex -> XYZ
+sRGB -> XYZ
+AppleRGB -> XYZ
+AdobeRGB -> XYZ
+BT2020RGB -> XYZ
+BT709RGB -> XYZ
+DCIP3RGB -> XYZ
+DCIP3PRGB -> XYZ
+DisplayP3RGB -> XYZ
+CIERGB -> XYZ
+AdobeWideGamutRGB -> XYZ
 
-Hex -> RGB
-HSV -> RGB
-HSL -> RGB
-CMY -> RGB
+sRGB -> HSV
+AppleRGB -> HSV
+AdobeRGB -> HSV
+BT2020RGB -> HSV
+BT709RGB -> HSV
+DCIP3RGB -> HSV
+DCIP3PRGB -> HSV
+DisplayP3RGB -> HSV
+CIERGB -> HSV
+AdobeWideGamutRGB -> HSV
+
+sRGB -> HSL
+AppleRGB -> HSL
+AdobeRGB -> HSL
+BT2020RGB -> HSL
+BT709RGB -> HSL
+DCIP3RGB -> HSL
+DCIP3PRGB -> HSL
+DisplayP3RGB -> HSL
+CIERGB -> HSL
+AdobeWideGamutRGB -> HSL
+
+sRGB -> CMY
+AppleRGB -> CMY
+AdobeRGB -> CMY
+BT2020RGB -> CMY
+BT709RGB -> CMY
+DCIP3RGB -> CMY
+DCIP3PRGB -> CMY
+DisplayP3RGB -> CMY
+CIERGB -> CMY
+AdobeWideGamutRGB -> CMY
+
+sRGB -> Hex
+AppleRGB -> Hex
+AdobeRGB -> Hex
+BT2020RGB -> Hex
+BT709RGB -> Hex
+DCIP3RGB -> Hex
+DCIP3PRGB -> Hex
+DisplayP3RGB -> Hex
+CIERGB -> Hex
+AdobeWideGamutRGB -> Hex
+
+HSV -> sRGB
+HSV -> AppleRGB
+HSV -> AdobeRGB
+HSV -> BT2020RGB
+HSV -> BT709RGB
+HSV -> DCIP3RGB
+HSV -> DCIP3PRGB
+HSV -> DisplayP3RGB
+HSV -> CIERGB
+HSV -> AdobeWideGamutRGB
+
+HSL -> sRGB
+HSL -> AppleRGB
+HSL -> AdobeRGB
+HSL -> BT2020RGB
+HSL -> BT709RGB
+HSL -> DCIP3RGB
+HSL -> DCIP3PRGB
+HSL -> DisplayP3RGB
+HSL -> CIERGB
+HSL -> AdobeWideGamutRGB
+
+CMY -> sRGB
+CMY -> AppleRGB
+CMY -> AdobeRGB
+CMY -> BT2020RGB
+CMY -> BT709RGB
+CMY -> DCIP3RGB
+CMY -> DCIP3PRGB
+CMY -> DisplayP3RGB
+CMY -> CIERGB
+CMY -> AdobeWideGamutRGB
 
 CMY -> CMYK
 CMYK -> CMY

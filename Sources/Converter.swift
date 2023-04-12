@@ -187,7 +187,7 @@ extension Converter {
     private static func _convert<From, To, Light, RGB>(
         from: From,
         to: To.Type,
-        tryThrougthRGB rgb: RGB.Type,
+        optionalThrougthRGB rgb: RGB.Type,
         toIlluminant illuminant: Light,
         infos: [AnyHashable: Any]?
     ) -> To
@@ -198,7 +198,7 @@ extension Converter {
         
         /// - Tag: Color Paths
         let converters = ColorPath(from: from.colorSpace, to: to)
-            .generate(througthRGB: .init(color: rgb))
+            .generate(optionalThrougthRGB: .init(color: rgb))
         
         /// - Tag: Replace RGB
         

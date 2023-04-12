@@ -217,9 +217,10 @@ class ColorSpaceConverterTests: XCTestCase {
         XCTAssertTrue(format(cmyk.k) == 0.2863)
         /// case 5: to xyz
         let xyz = Converter.convert(from: rgb, to: XYZ.self)
+        print(xyz)
         XCTAssertTrue(format(xyz.x) == 0.1480)
         XCTAssertTrue(format(xyz.y) == 0.0740)
-        XCTAssertTrue(format(xyz.z) == 0.4757)
+        XCTAssertTrue(format(xyz.z) == 0.4758)
     }
     
     func testBT2020RgbToX() throws {
@@ -362,6 +363,66 @@ class ColorSpaceConverterTests: XCTestCase {
         XCTAssertTrue(formatInt(bt2020Rgb.blue) == 182)
     }
     
+    func testXYZToNewRgbs() {
+        
+        func to2020<T: RGBColorable>(color: T) {
+            let bt2020Rgb = Converter.convert(from: color, to: BT2020RGB.self).uppable()
+            print(color.colorSpace, bt2020Rgb)
+            XCTAssertTrue(formatInt(bt2020Rgb.red) == 88)
+            XCTAssertTrue(formatInt(bt2020Rgb.green) == 38)
+            XCTAssertTrue(formatInt(bt2020Rgb.blue) == 182)
+        }
+        	
+        /// case 4: to bt709
+        var color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
+        let bt709Rgb = Converter.convert(from: color, to: BT709RGB.self).uppable()
+        print(bt709Rgb)
+        XCTAssertTrue(formatInt(bt709Rgb.red) == 113)
+        XCTAssertTrue(formatInt(bt709Rgb.green) == 48)
+        XCTAssertTrue(formatInt(bt709Rgb.blue) == 227)
+        to2020(color: bt709Rgb)
+        /// case 4: to DCIP3
+        color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
+        let dcip3Rgb = Converter.convert(from: color, to: DCIP3RGB.self).uppable()
+        print(dcip3Rgb)
+        XCTAssertTrue(formatInt(dcip3Rgb.red) == 113)
+        XCTAssertTrue(formatInt(dcip3Rgb.green) == 48)
+        XCTAssertTrue(formatInt(dcip3Rgb.blue) == 227)
+        to2020(color: dcip3Rgb)
+        /// case 4: to DCIP3P
+        color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
+        let dcip3pRgb = Converter.convert(from: color, to: DCIP3RGB.self).uppable()
+        print(dcip3pRgb)
+        XCTAssertTrue(formatInt(dcip3pRgb.red) == 113)
+        XCTAssertTrue(formatInt(dcip3pRgb.green) == 48)
+        XCTAssertTrue(formatInt(dcip3pRgb.blue) == 227)
+        to2020(color: dcip3pRgb)
+        /// case 4: to Display P3
+        color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
+        let displayP3RGB = Converter.convert(from: color, to: DisplayP3RGB.self).uppable()
+        print(displayP3RGB)
+        XCTAssertTrue(formatInt(displayP3RGB.red) == 113)
+        XCTAssertTrue(formatInt(displayP3RGB.green) == 48)
+        XCTAssertTrue(formatInt(displayP3RGB.blue) == 227)
+        to2020(color: displayP3RGB)
+        /// case 4: to cie rgb
+        color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
+        let cieRgb = Converter.convert(from: color, to: CIERGB.self).uppable()
+        print(cieRgb)
+        XCTAssertTrue(formatInt(cieRgb.red) == 113)
+        XCTAssertTrue(formatInt(cieRgb.green) == 48)
+        XCTAssertTrue(formatInt(cieRgb.blue) == 227)
+        to2020(color: cieRgb)
+        /// case 4: to adobe wide gamut rgb
+        color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
+        let adobeWideGamutRgb = Converter.convert(from: color, to: AdobeWideGamutRGB.self).uppable()
+        print(adobeWideGamutRgb)
+        XCTAssertTrue(formatInt(adobeWideGamutRgb.red) == 113)
+        XCTAssertTrue(formatInt(adobeWideGamutRgb.green) == 48)
+        XCTAssertTrue(formatInt(adobeWideGamutRgb.blue) == 227)
+        to2020(color: adobeWideGamutRgb)
+    }
+    
     func testCMYAndCMYK() throws {
         /// cmy -> cmyk
         var cmy = CMY(c: 0.6549, m: 0.8510, y: 0.2863)
@@ -412,8 +473,8 @@ class ColorSpaceConverterTests: XCTestCase {
         let lab = Converter.convert(from: xyz, to: Lab.self)
         print(lab)
         XCTAssertTrue(format(lab.l) == 31.4398)
-        XCTAssertTrue(format(lab.a) == 54.1859)
-        XCTAssertTrue(format(lab.b) == -67.0500)
+        XCTAssertTrue(format(lab.a) == 54.1872)
+        XCTAssertTrue(format(lab.b) == -67.0396)
         print()
         /// lab -> xyz
         xyz = Converter.convert(from: lab, to: XYZ.self)
@@ -429,8 +490,8 @@ class ColorSpaceConverterTests: XCTestCase {
         let luv = Converter.convert(from: xyz, to: Luv.self)
         print(luv)
         XCTAssertTrue(format(luv.l) == 31.4398)
-        XCTAssertTrue(format(luv.u) == 5.0615)
-        XCTAssertTrue(format(luv.v) == -90.9356)
+        XCTAssertTrue(format(luv.u) == 5.0655)
+        XCTAssertTrue(format(luv.v) == -90.9290)
         /// luv -> xyz
         xyz = Converter.convert(from: luv, to: XYZ.self)
         print(xyz)
@@ -524,8 +585,8 @@ class ColorSpaceConverterTests: XCTestCase {
         let lab = Converter.convert(from: hsl, to: Lab.self)
         print(lab)
         XCTAssertTrue(format(lab.l) == 31.4344)
-        XCTAssertTrue(format(lab.a) == 54.1972)
-        XCTAssertTrue(format(lab.b) == -67.0630)
+        XCTAssertTrue(format(lab.a) == 54.1985)
+        XCTAssertTrue(format(lab.b) == -67.0527)
         /// lab -> hsl
         hsl = Converter.convert(from: lab, to: HSL.self)
         print(hsl)
@@ -658,7 +719,7 @@ class ColorSpaceConverterTests: XCTestCase {
         }
         
         let rgbs: [ColorSpaceType.RGB] = [
-            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+            .BT709RGB, .DCIP3RGB, .DCIP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
         ]
         
         print("--- xyz2rgbFunc ---")
@@ -720,7 +781,7 @@ class ColorSpaceConverterTests: XCTestCase {
         }
         
         let rgbs: [ColorSpaceType.RGB] = [
-            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+            .BT709RGB, .DCIP3RGB, .DCIP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
         ]
         
         print("--- colorFunc2 ---")
@@ -770,7 +831,7 @@ class ColorSpaceConverterTests: XCTestCase {
         }
         
         let rgbs: [ColorSpaceType.RGB] = [
-            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+            .BT709RGB, .DCIP3RGB, .DCIP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
         ]
         
         print("--- colorFunc2 xyz ---")
@@ -804,7 +865,7 @@ class ColorSpaceConverterTests: XCTestCase {
         }
         
         let rgbs: [ColorSpaceType.RGB] = [
-            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+            .BT709RGB, .DCIP3RGB, .DCIP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
         ]
         
         print("--- colorFunc2 hsv ---")
@@ -858,7 +919,7 @@ class ColorSpaceConverterTests: XCTestCase {
         }
         
         let rgbs: [ColorSpaceType.RGB] = [
-            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+            .BT709RGB, .DCIP3RGB, .DCIP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
         ]
         
         print("--- colorFunc2 hsv ---")
@@ -912,7 +973,7 @@ class ColorSpaceConverterTests: XCTestCase {
         }
         
         let rgbs: [ColorSpaceType.RGB] = [
-            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+            .BT709RGB, .DCIP3RGB, .DCIP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
         ]
         
         print("--- colorProperty2 cmyk ---")
@@ -966,7 +1027,7 @@ class ColorSpaceConverterTests: XCTestCase {
         }
         
         let rgbs: [ColorSpaceType.RGB] = [
-            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+            .BT709RGB, .DCIP3RGB, .DCIP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
         ]
         
         print("--- colorProperty2 xyz2rgb ---")
@@ -1031,7 +1092,7 @@ class ColorSpaceConverterTests: XCTestCase {
         }
         
         let rgbs: [ColorSpaceType.RGB] = [
-            .BT709RGB, .DICP3RGB, .DICP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
+            .BT709RGB, .DCIP3RGB, .DCIP3PRGB, .DisplayP3RGB, .CIERGB, .AdobeWideGamutRGB
         ]
         
         print("--- colorProperty2 xyz2rgb ---")

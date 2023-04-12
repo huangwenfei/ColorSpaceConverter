@@ -183,7 +183,7 @@ extension RGBColorable {
 extension RGBColorable {
     
     public var description: String {
-        "{ red: \(red), green: \(green), blue: \(blue), illuminant: \(illuminant) }"
+        "\(Self.self) { red: \(red), green: \(green), blue: \(blue), illuminant: \(illuminant) }"
     }
     
 }

@@ -80,8 +80,8 @@
 		8376DCE229E05B3900901214 /* BT709RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE029E05B3900901214 /* BT709RGB.swift */; };
 		8376DCE429E05B5200901214 /* DisplayP3RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE329E05B5200901214 /* DisplayP3RGB.swift */; };
 		8376DCE529E05B5200901214 /* DisplayP3RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE329E05B5200901214 /* DisplayP3RGB.swift */; };
-		8376DCE729E05B7C00901214 /* DICP3RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE629E05B7C00901214 /* DICP3RGB.swift */; };
-		8376DCE829E05B7C00901214 /* DICP3RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE629E05B7C00901214 /* DICP3RGB.swift */; };
+		8376DCE729E05B7C00901214 /* DCIP3RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE629E05B7C00901214 /* DCIP3RGB.swift */; };
+		8376DCE829E05B7C00901214 /* DCIP3RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE629E05B7C00901214 /* DCIP3RGB.swift */; };
 		8376DCEA29E05BBF00901214 /* CIERGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE929E05BBF00901214 /* CIERGB.swift */; };
 		8376DCEB29E05BBF00901214 /* CIERGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE929E05BBF00901214 /* CIERGB.swift */; };
 		8376DCED29E071F100901214 /* AdobeWideGamutRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCEC29E071F100901214 /* AdobeWideGamutRGB.swift */; };
@@ -198,7 +198,7 @@
 		8364B6D725D27CA300A62138 /* ColorSpaceConverter iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ColorSpaceConverter iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8376DCE029E05B3900901214 /* BT709RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BT709RGB.swift; sourceTree = "<group>"; };
 		8376DCE329E05B5200901214 /* DisplayP3RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayP3RGB.swift; sourceTree = "<group>"; };
-		8376DCE629E05B7C00901214 /* DICP3RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DICP3RGB.swift; sourceTree = "<group>"; };
+		8376DCE629E05B7C00901214 /* DCIP3RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCIP3RGB.swift; sourceTree = "<group>"; };
 		8376DCE929E05BBF00901214 /* CIERGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIERGB.swift; sourceTree = "<group>"; };
 		8376DCEC29E071F100901214 /* AdobeWideGamutRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdobeWideGamutRGB.swift; sourceTree = "<group>"; };
 		83ED102E25DA645F0094D787 /* ColorSpaceConverter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorSpaceConverter.podspec; sourceTree = SOURCE_ROOT; };
@@ -355,7 +355,7 @@
 				OBJ_21 /* AppleRGB.swift */,
 				OBJ_22 /* BT2020RGB.swift */,
 				8376DCE029E05B3900901214 /* BT709RGB.swift */,
-				8376DCE629E05B7C00901214 /* DICP3RGB.swift */,
+				8376DCE629E05B7C00901214 /* DCIP3RGB.swift */,
 				8376DCE329E05B5200901214 /* DisplayP3RGB.swift */,
 				8376DCE929E05BBF00901214 /* CIERGB.swift */,
 				8376DCEC29E071F100901214 /* AdobeWideGamutRGB.swift */,
@@ -653,7 +653,7 @@
 				8364B74425D27DE500A62138 /* Math.swift in Sources */,
 				8364B74525D27DE500A62138 /* IlluminantProtocol.swift in Sources */,
 				8300196729E2884800188C32 /* Derivation.swift in Sources */,
-				8376DCE729E05B7C00901214 /* DICP3RGB.swift in Sources */,
+				8376DCE729E05B7C00901214 /* DCIP3RGB.swift in Sources */,
 				8364B74625D27DE500A62138 /* Illuminants.swift in Sources */,
 				8364B74725D27DE500A62138 /* SpectralIlluminant.swift in Sources */,
 				8364B74825D27DE500A62138 /* Density.swift in Sources */,
@@ -716,7 +716,7 @@
 				OBJ_209 /* Nayatani95.swift in Sources */,
 				OBJ_210 /* RLAB.swift in Sources */,
 				8300196829E2884800188C32 /* Derivation.swift in Sources */,
-				8376DCE829E05B7C00901214 /* DICP3RGB.swift in Sources */,
+				8376DCE829E05B7C00901214 /* DCIP3RGB.swift in Sources */,
 				OBJ_211 /* ChromaticAdaptation.swift in Sources */,
 				OBJ_212 /* ColorPath.swift in Sources */,
 				OBJ_213 /* ColorPathConverterSelector.swift in Sources */,

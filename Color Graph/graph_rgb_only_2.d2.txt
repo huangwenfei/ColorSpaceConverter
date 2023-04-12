@@ -1,0 +1,41 @@
+XYZ: {
+  style: {
+    stroke: "#53C0D8"
+    stroke-width: 5
+    shadow: true
+  }
+}
+
+XYZ -> sRGB
+XYZ -> AppleRGB
+XYZ -> AdobeRGB
+XYZ -> BT2020RGB
+XYZ -> BT709RGB
+XYZ -> DCIP3RGB
+XYZ -> DCIP3PRGB
+XYZ -> DisplayP3RGB
+XYZ -> CIERGB
+XYZ -> AdobeWideGamutRGB
+
+Hex -> XYZ
+sRGB -> XYZ
+AppleRGB -> XYZ
+AdobeRGB -> XYZ
+BT2020RGB -> XYZ
+BT709RGB -> XYZ
+DCIP3RGB -> XYZ
+DCIP3PRGB -> XYZ
+DisplayP3RGB -> XYZ
+CIERGB -> XYZ
+AdobeWideGamutRGB -> XYZ
+
+sRGB -> Hex
+AppleRGB -> Hex
+AdobeRGB -> Hex
+BT2020RGB -> Hex
+BT709RGB -> Hex
+DCIP3RGB -> Hex
+DCIP3PRGB -> Hex
+DisplayP3RGB -> Hex
+CIERGB -> Hex
+AdobeWideGamutRGB -> Hex

@@ -1,21 +1,30 @@
+XYZ: {
+  style: {
+    stroke: "#53C0D8"
+    stroke-width: 5
+    shadow: true
+  }
+}
+
 XYZ -> sRGB
 XYZ -> AppleRGB
 XYZ -> AdobeRGB
 XYZ -> BT2020RGB
 XYZ -> BT709RGB
-XYZ -> DICP3RGB
-XYZ -> DICP3PRGB
+XYZ -> DCIP3RGB
+XYZ -> DCIP3PRGB
 XYZ -> DisplayP3RGB
 XYZ -> CIERGB
 XYZ -> AdobeWideGamutRGB
 
+Hex -> XYZ
 sRGB -> XYZ
 AppleRGB -> XYZ
 AdobeRGB -> XYZ
 BT2020RGB -> XYZ
 BT709RGB -> XYZ
-DICP3RGB -> XYZ
-DICP3PRGB -> XYZ
+DCIP3RGB -> XYZ
+DCIP3PRGB -> XYZ
 DisplayP3RGB -> XYZ
 CIERGB -> XYZ
 AdobeWideGamutRGB -> XYZ
@@ -25,8 +34,8 @@ AppleRGB -> HSV
 AdobeRGB -> HSV
 BT2020RGB -> HSV
 BT709RGB -> HSV
-DICP3RGB -> HSV
-DICP3PRGB -> HSV
+DCIP3RGB -> HSV
+DCIP3PRGB -> HSV
 DisplayP3RGB -> HSV
 CIERGB -> HSV
 AdobeWideGamutRGB -> HSV
@@ -36,8 +45,8 @@ AppleRGB -> HSL
 AdobeRGB -> HSL
 BT2020RGB -> HSL
 BT709RGB -> HSL
-DICP3RGB -> HSL
-DICP3PRGB -> HSL
+DCIP3RGB -> HSL
+DCIP3PRGB -> HSL
 DisplayP3RGB -> HSL
 CIERGB -> HSL
 AdobeWideGamutRGB -> HSL
@@ -47,8 +56,8 @@ AppleRGB -> CMY
 AdobeRGB -> CMY
 BT2020RGB -> CMY
 BT709RGB -> CMY
-DICP3RGB -> CMY
-DICP3PRGB -> CMY
+DCIP3RGB -> CMY
+DCIP3PRGB -> CMY
 DisplayP3RGB -> CMY
 CIERGB -> CMY
 AdobeWideGamutRGB -> CMY
@@ -58,30 +67,19 @@ AppleRGB -> Hex
 AdobeRGB -> Hex
 BT2020RGB -> Hex
 BT709RGB -> Hex
-DICP3RGB -> Hex
-DICP3PRGB -> Hex
+DCIP3RGB -> Hex
+DCIP3PRGB -> Hex
 DisplayP3RGB -> Hex
 CIERGB -> Hex
 AdobeWideGamutRGB -> Hex
-
-Hex -> sRGB
-Hex -> AppleRGB
-Hex -> AdobeRGB
-Hex -> BT2020RGB
-Hex -> BT709RGB
-Hex -> DICP3RGB
-Hex -> DICP3PRGB
-Hex -> DisplayP3RGB
-Hex -> CIERGB
-Hex -> AdobeWideGamutRGB
 
 HSV -> sRGB
 HSV -> AppleRGB
 HSV -> AdobeRGB
 HSV -> BT2020RGB
 HSV -> BT709RGB
-HSV -> DICP3RGB
-HSV -> DICP3PRGB
+HSV -> DCIP3RGB
+HSV -> DCIP3PRGB
 HSV -> DisplayP3RGB
 HSV -> CIERGB
 HSV -> AdobeWideGamutRGB
@@ -91,8 +89,8 @@ HSL -> AppleRGB
 HSL -> AdobeRGB
 HSL -> BT2020RGB
 HSL -> BT709RGB
-HSL -> DICP3RGB
-HSL -> DICP3PRGB
+HSL -> DCIP3RGB
+HSL -> DCIP3PRGB
 HSL -> DisplayP3RGB
 HSL -> CIERGB
 HSL -> AdobeWideGamutRGB
@@ -102,8 +100,8 @@ CMY -> AppleRGB
 CMY -> AdobeRGB
 CMY -> BT2020RGB
 CMY -> BT709RGB
-CMY -> DICP3RGB
-CMY -> DICP3PRGB
+CMY -> DCIP3RGB
+CMY -> DCIP3PRGB
 CMY -> DisplayP3RGB
 CMY -> CIERGB
 CMY -> AdobeWideGamutRGB

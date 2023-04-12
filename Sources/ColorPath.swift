@@ -115,6 +115,10 @@ public struct ColorPath {
         guard pathId.isVaild else { return [] }
         
         /// - Tag: From ==> To, Ignore througthRGB
+        if pathId.from.rawValue == rgb.rawValue || pathId.to.rawValue == rgb.rawValue {
+            return converters(pathId: pathId)
+        }
+        
         if pathId.from.isRgb || pathId.to.isRgb {
             return converters(pathId: pathId)
         }
@@ -130,15 +134,25 @@ public struct ColorPath {
         return fromToRgb + rgbToTo
     }
     
-    public func generate(tryThrougthRGB rgb: ColorSpaceType.RGB) -> [PathConverter] {
+    /// 如果 from -> to 中间不会经过 RGB，则不强行经过 RGB
+    public func generate(optionalThrougthRGB rgb: ColorSpaceType.RGB) -> [PathConverter] {
         
         /// - Tag: From === To
         guard pathId.isVaild else { return [] }
         
         /// - Tag: From ==> To, Ignore througthRGB
+        if pathId.from.rawValue == rgb.rawValue || pathId.to.rawValue == rgb.rawValue {
+            return converters(pathId: pathId)
+        }
+        
         if pathId.from.isRgb || pathId.to.isRgb {
             return converters(pathId: pathId)
         }
+        
+        let paths = convertersFull(pathId: pathId)
+        let pathStr = paths.reduce("", { $0 + $1.from.rawValue + "->" + $1.to.rawValue + "  " })
+        
+        if !pathStr.contains("RGB") { return paths.map({ $0.weight.converter }) }
         
         /// - Tag: From ==> (througthRGB) ==> To
         
@@ -155,15 +169,13 @@ public struct ColorPath {
 
 extension ColorPath {
     
-    private func converters(pathId: PathId) -> [PathConverter] {
+    private func convertersFull(pathId: PathId) -> ListDigraph<Vertex, Weight>.PathInfo.EdgeInfos {
         guard pathId.isVaild else { return [] }
         
-        if let path = ColorPathConverterSelector.selectors[pathId] {
-            return [path]
-        }
-        
-        if let paths = ColorPathConverterSelector.rgbSelectors[pathId] {
-            return paths
+        if pathId.from.isRgb && pathId.to.isRgb {
+            let from2xyz = convertersFull(pathId: pathId.from ==> .XYZ)
+            let xyz2to = convertersFull(pathId: .XYZ ==> pathId.to)
+            return from2xyz + xyz2to
         }
         
         guard
@@ -172,6 +184,40 @@ extension ColorPath {
         ) else {
             return []
         }
+
+        return path.edgeInfos
+
+    }
+    
+    private func converters(pathId: PathId) -> [PathConverter] {
+        guard pathId.isVaild else { return [] }
+        
+        #if false
+        if let path = ColorPathConverterSelector.selectors[pathId] {
+            return [path]
+        }
+        
+        if let paths = ColorPathConverterSelector.rgbSelectors[pathId] {
+            return paths
+        }
+        #endif
+        
+        if pathId.from.isRgb && pathId.to.isRgb {
+            let from2xyz = converters(pathId: pathId.from ==> .XYZ)
+            let xyz2to = converters(pathId: .XYZ ==> pathId.to)
+            return from2xyz + xyz2to
+        }
+        
+        guard
+            let path = Self.graph.bidirectionalShortestPath(
+                begin: pathId.from, end: pathId.to
+        ) else {
+            return []
+        }
+        
+        #if true && DEBUG
+        print(path.edgeInfos.reduce("", { $0 + $1.from.rawValue + "->" + $1.to.rawValue + "  " }))
+        #endif
 
         return path.edgeInfos.map { $0.weight.converter }
 
@@ -266,20 +312,21 @@ extension ColorPath {
         addEdge(byFrom: .XYZ, to: .AdobeRGB)
         addEdge(byFrom: .XYZ, to: .BT2020RGB)
         addEdge(byFrom: .XYZ, to: .BT709RGB)
-        addEdge(byFrom: .XYZ, to: .DICP3RGB)
-        addEdge(byFrom: .XYZ, to: .DICP3PRGB)
+        addEdge(byFrom: .XYZ, to: .DCIP3RGB)
+        addEdge(byFrom: .XYZ, to: .DCIP3PRGB)
         addEdge(byFrom: .XYZ, to: .DisplayP3RGB)
         addEdge(byFrom: .XYZ, to: .CIERGB)
         addEdge(byFrom: .XYZ, to: .AdobeWideGamutRGB)
         addEdge(byFrom: .XYZ, to: .IPT)
         
+        addEdge(byFrom: .Hex, to: .XYZ)
         addEdge(byFrom: .sRGB, to: .XYZ)
         addEdge(byFrom: .AppleRGB, to: .XYZ)
         addEdge(byFrom: .AdobeRGB, to: .XYZ)
         addEdge(byFrom: .BT2020RGB, to: .XYZ)
         addEdge(byFrom: .BT709RGB, to: .XYZ)
-        addEdge(byFrom: .DICP3RGB, to: .XYZ)
-        addEdge(byFrom: .DICP3PRGB, to: .XYZ)
+        addEdge(byFrom: .DCIP3RGB, to: .XYZ)
+        addEdge(byFrom: .DCIP3PRGB, to: .XYZ)
         addEdge(byFrom: .DisplayP3RGB, to: .XYZ)
         addEdge(byFrom: .CIERGB, to: .XYZ)
         addEdge(byFrom: .AdobeWideGamutRGB, to: .XYZ)
@@ -289,8 +336,8 @@ extension ColorPath {
         addEdge(byFrom: .AdobeRGB, to: .HSV)
         addEdge(byFrom: .BT2020RGB, to: .HSV)
         addEdge(byFrom: .BT709RGB, to: .HSV)
-        addEdge(byFrom: .DICP3RGB, to: .HSV)
-        addEdge(byFrom: .DICP3PRGB, to: .HSV)
+        addEdge(byFrom: .DCIP3RGB, to: .HSV)
+        addEdge(byFrom: .DCIP3PRGB, to: .HSV)
         addEdge(byFrom: .DisplayP3RGB, to: .HSV)
         addEdge(byFrom: .CIERGB, to: .HSV)
         addEdge(byFrom: .AdobeWideGamutRGB, to: .HSV)
@@ -300,8 +347,8 @@ extension ColorPath {
         addEdge(byFrom: .AdobeRGB, to: .HSL)
         addEdge(byFrom: .BT2020RGB, to: .HSL)
         addEdge(byFrom: .BT709RGB, to: .HSL)
-        addEdge(byFrom: .DICP3RGB, to: .HSL)
-        addEdge(byFrom: .DICP3PRGB, to: .HSL)
+        addEdge(byFrom: .DCIP3RGB, to: .HSL)
+        addEdge(byFrom: .DCIP3PRGB, to: .HSL)
         addEdge(byFrom: .DisplayP3RGB, to: .HSL)
         addEdge(byFrom: .CIERGB, to: .HSL)
         addEdge(byFrom: .AdobeWideGamutRGB, to: .HSL)
@@ -311,8 +358,8 @@ extension ColorPath {
         addEdge(byFrom: .AdobeRGB, to: .CMY)
         addEdge(byFrom: .BT2020RGB, to: .CMY)
         addEdge(byFrom: .BT709RGB, to: .CMY)
-        addEdge(byFrom: .DICP3RGB, to: .CMY)
-        addEdge(byFrom: .DICP3PRGB, to: .CMY)
+        addEdge(byFrom: .DCIP3RGB, to: .CMY)
+        addEdge(byFrom: .DCIP3PRGB, to: .CMY)
         addEdge(byFrom: .DisplayP3RGB, to: .CMY)
         addEdge(byFrom: .CIERGB, to: .CMY)
         addEdge(byFrom: .AdobeWideGamutRGB, to: .CMY)
@@ -322,30 +369,30 @@ extension ColorPath {
         addEdge(byFrom: .AdobeRGB, to: .Hex)
         addEdge(byFrom: .BT2020RGB, to: .Hex)
         addEdge(byFrom: .BT709RGB, to: .Hex)
-        addEdge(byFrom: .DICP3RGB, to: .Hex)
-        addEdge(byFrom: .DICP3PRGB, to: .Hex)
+        addEdge(byFrom: .DCIP3RGB, to: .Hex)
+        addEdge(byFrom: .DCIP3PRGB, to: .Hex)
         addEdge(byFrom: .DisplayP3RGB, to: .Hex)
         addEdge(byFrom: .CIERGB, to: .Hex)
         addEdge(byFrom: .AdobeWideGamutRGB, to: .Hex)
         
-        addEdge(byFrom: .Hex, to: .sRGB)
-        addEdge(byFrom: .Hex, to: .AppleRGB)
-        addEdge(byFrom: .Hex, to: .AdobeRGB)
-        addEdge(byFrom: .Hex, to: .BT2020RGB)
-        addEdge(byFrom: .Hex, to: .BT709RGB)
-        addEdge(byFrom: .Hex, to: .DICP3RGB)
-        addEdge(byFrom: .Hex, to: .DICP3PRGB)
-        addEdge(byFrom: .Hex, to: .DisplayP3RGB)
-        addEdge(byFrom: .Hex, to: .CIERGB)
-        addEdge(byFrom: .Hex, to: .AdobeWideGamutRGB)
+//        addEdge(byFrom: .Hex, to: .sRGB)
+//        addEdge(byFrom: .Hex, to: .AppleRGB)
+//        addEdge(byFrom: .Hex, to: .AdobeRGB)
+//        addEdge(byFrom: .Hex, to: .BT2020RGB)
+//        addEdge(byFrom: .Hex, to: .BT709RGB)
+//        addEdge(byFrom: .Hex, to: .DCIP3RGB)
+//        addEdge(byFrom: .Hex, to: .DCIP3PRGB)
+//        addEdge(byFrom: .Hex, to: .DisplayP3RGB)
+//        addEdge(byFrom: .Hex, to: .CIERGB)
+//        addEdge(byFrom: .Hex, to: .AdobeWideGamutRGB)
         
         addEdge(byFrom: .HSV, to: .sRGB)
         addEdge(byFrom: .HSV, to: .AppleRGB)
         addEdge(byFrom: .HSV, to: .AdobeRGB)
         addEdge(byFrom: .HSV, to: .BT2020RGB)
         addEdge(byFrom: .HSV, to: .BT709RGB)
-        addEdge(byFrom: .HSV, to: .DICP3RGB)
-        addEdge(byFrom: .HSV, to: .DICP3PRGB)
+        addEdge(byFrom: .HSV, to: .DCIP3RGB)
+        addEdge(byFrom: .HSV, to: .DCIP3PRGB)
         addEdge(byFrom: .HSV, to: .DisplayP3RGB)
         addEdge(byFrom: .HSV, to: .CIERGB)
         addEdge(byFrom: .HSV, to: .AdobeWideGamutRGB)
@@ -355,8 +402,8 @@ extension ColorPath {
         addEdge(byFrom: .HSL, to: .AdobeRGB)
         addEdge(byFrom: .HSL, to: .BT2020RGB)
         addEdge(byFrom: .HSL, to: .BT709RGB)
-        addEdge(byFrom: .HSL, to: .DICP3RGB)
-        addEdge(byFrom: .HSL, to: .DICP3PRGB)
+        addEdge(byFrom: .HSL, to: .DCIP3RGB)
+        addEdge(byFrom: .HSL, to: .DCIP3PRGB)
         addEdge(byFrom: .HSL, to: .DisplayP3RGB)
         addEdge(byFrom: .HSL, to: .CIERGB)
         addEdge(byFrom: .HSL, to: .AdobeWideGamutRGB)
@@ -366,8 +413,8 @@ extension ColorPath {
         addEdge(byFrom: .CMY, to: .AdobeRGB)
         addEdge(byFrom: .CMY, to: .BT2020RGB)
         addEdge(byFrom: .CMY, to: .BT709RGB)
-        addEdge(byFrom: .CMY, to: .DICP3RGB)
-        addEdge(byFrom: .CMY, to: .DICP3PRGB)
+        addEdge(byFrom: .CMY, to: .DCIP3RGB)
+        addEdge(byFrom: .CMY, to: .DCIP3PRGB)
         addEdge(byFrom: .CMY, to: .DisplayP3RGB)
         addEdge(byFrom: .CMY, to: .CIERGB)
         addEdge(byFrom: .CMY, to: .AdobeWideGamutRGB)

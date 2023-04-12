@@ -26,7 +26,7 @@ public struct BT709RGB: RGBColorable {
     }
     
     // TODO: Gamma ...
-    public var gamma: Double { 2.2 }
+    public var gamma: Double { 2.4 }
     
     public var xyzToRgbMatrices: Matrix {
         Math.inv(rgbToXyzMatrices)!

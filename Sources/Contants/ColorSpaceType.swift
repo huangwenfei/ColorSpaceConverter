@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ColorSpaceType: String {
+public enum ColorSpaceType: String, Hashable {
     
     case unknown
     
@@ -19,8 +19,8 @@ public enum ColorSpaceType: String {
     case AdobeRGB
     case BT2020RGB
     case BT709RGB
-    case DICP3RGB
-    case DICP3PRGB
+    case DCIP3RGB
+    case DCIP3PRGB
     case DisplayP3RGB
     case CIERGB
     case AdobeWideGamutRGB
@@ -51,8 +51,8 @@ public enum ColorSpaceType: String {
         case Self.AdobeRGB.rawValue:           self = .AdobeRGB
         case Self.BT2020RGB.rawValue:          self = .BT2020RGB
         case Self.BT709RGB.rawValue:           self = .BT709RGB
-        case Self.DICP3RGB.rawValue:           self = .DICP3RGB
-        case Self.DICP3PRGB.rawValue:          self = .DICP3PRGB
+        case Self.DCIP3RGB.rawValue:           self = .DCIP3RGB
+        case Self.DCIP3PRGB.rawValue:          self = .DCIP3PRGB
         case Self.DisplayP3RGB.rawValue:       self = .DisplayP3RGB
         case Self.CIERGB.rawValue:             self = .CIERGB
         case Self.AdobeWideGamutRGB.rawValue:  self = .AdobeWideGamutRGB
@@ -78,8 +78,8 @@ public enum ColorSpaceType: String {
         self == .AdobeRGB          ||
         self == .BT2020RGB         ||
         self == .BT709RGB          ||
-        self == .DICP3RGB          ||
-        self == .DICP3PRGB         ||
+        self == .DCIP3RGB          ||
+        self == .DCIP3PRGB         ||
         self == .DisplayP3RGB      ||
         self == .CIERGB            ||
         self == .AdobeWideGamutRGB
@@ -89,7 +89,7 @@ public enum ColorSpaceType: String {
 
 extension ColorSpaceType {
     
-    public enum RGB: String {
+    public enum RGB: String, Hashable {
         case unknown
         
         case sRGB
@@ -97,8 +97,8 @@ extension ColorSpaceType {
         case AdobeRGB
         case BT2020RGB
         case BT709RGB
-        case DICP3RGB
-        case DICP3PRGB
+        case DCIP3RGB
+        case DCIP3PRGB
         case DisplayP3RGB
         case CIERGB
         case AdobeWideGamutRGB
@@ -110,8 +110,8 @@ extension ColorSpaceType {
             case Self.AdobeRGB.rawValue:           self = .AdobeRGB
             case Self.BT2020RGB.rawValue:          self = .BT2020RGB
             case Self.BT709RGB.rawValue:           self = .BT709RGB
-            case Self.DICP3RGB.rawValue:           self = .DICP3RGB
-            case Self.DICP3PRGB.rawValue:          self = .DICP3PRGB
+            case Self.DCIP3RGB.rawValue:           self = .DCIP3RGB
+            case Self.DCIP3PRGB.rawValue:          self = .DCIP3PRGB
             case Self.DisplayP3RGB.rawValue:       self = .DisplayP3RGB
             case Self.CIERGB.rawValue:             self = .CIERGB
             case Self.AdobeWideGamutRGB.rawValue:  self = .AdobeWideGamutRGB
@@ -127,8 +127,8 @@ extension ColorSpaceType {
             case .AdobeRGB:           return .AdobeRGB
             case .BT2020RGB:          return .BT2020RGB
             case .BT709RGB:           return .BT709RGB
-            case .DICP3RGB:           return .DICP3RGB
-            case .DICP3PRGB:          return .DICP3PRGB
+            case .DCIP3RGB:           return .DCIP3RGB
+            case .DCIP3PRGB:          return .DCIP3PRGB
             case .DisplayP3RGB:       return .DisplayP3RGB
             case .CIERGB:             return .CIERGB
             case .AdobeWideGamutRGB:  return .AdobeWideGamutRGB

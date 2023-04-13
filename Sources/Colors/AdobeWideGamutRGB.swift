@@ -12,7 +12,7 @@ public struct AdobeWideGamutRGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .AdobeWideGamutRGB }
     
-    public var illuminant: Illuminant = .two(.d50)
+    public var illuminant: Illuminant = .two ~ .d50
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -26,7 +26,7 @@ public struct AdobeWideGamutRGB: RGBColorable {
     }
     
     /// 2.1245283019
-    public var gamma: Double { 563.0 / 256.0 }
+    public var gamma: Double { TransferFunction.AdobeWideGamutRGB.gamma }
     
     public var xyzToRgbMatrices: Matrix {
         Math.inv(rgbToXyzMatrices)!
@@ -43,20 +43,12 @@ public struct AdobeWideGamutRGB: RGBColorable {
     public init() {  }
     
     // MARK: Gamma Map
-    public func linear() -> [Element] {
-        elements.map { channel in
-            Self.gammaCoder(
-                channel: channel, exponent: gamma
-            )
-        }
+    public func eotfEncoding() -> TransferFunction.Elements {
+        TransferFunction.AdobeWideGamutRGB.eotfEncoding(elements)
     }
     
-    public func nonlinear() -> [Element] {
-        elements.map { channel in
-            Self.gammaCoder(
-                channel: channel, exponent: 1 / gamma
-            )
-        }
+    public func eotfDecoding() -> TransferFunction.Elements {
+        TransferFunction.AdobeWideGamutRGB.eotfDecoding(elements)
     }
     
 }

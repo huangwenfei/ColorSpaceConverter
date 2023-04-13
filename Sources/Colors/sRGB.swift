@@ -15,7 +15,7 @@ public struct sRGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .sRGB }
     
-    public var illuminant: Illuminant = .default
+    public var illuminant: Illuminant = .two ~ .d65
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -28,7 +28,7 @@ public struct sRGB: RGBColorable {
         .init([0.6400, 0.3300, 0.3000, 0.6000, 0.1500, 0.0600], 3, 2)
     }
 
-    public var gamma: Double { 2.2 }
+    public var gamma: Double { TransferFunction.sRGB.gamma }
     
     public var xyzToRgbMatrices: Matrix {
         .init(
@@ -56,20 +56,12 @@ public struct sRGB: RGBColorable {
     public init() {  }
     
     // MARK: Gamma Map
-    public func linear() -> [Element] {
-        elements.map { channel in
-            channel <= 0.04045
-                ? channel / 12.92
-            : Math.spow((channel + 0.055) / 1.055, 2.4)
-        }
+    public func eotfEncoding() -> TransferFunction.Elements {
+        TransferFunction.sRGB.eotfEncoding(elements)
     }
     
-    public func nonlinear() -> [Element] {
-        elements.map { channel in
-            channel <= 0.0031308
-                ? channel * 12.92
-                : 1.055 * Math.spow(channel, 1 / 2.4) - 0.055
-        }
+    public func eotfDecoding() -> TransferFunction.Elements {
+        TransferFunction.sRGB.eotfDecoding(elements)
     }
     
 }

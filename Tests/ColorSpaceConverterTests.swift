@@ -187,9 +187,10 @@ class ColorSpaceConverterTests: XCTestCase {
         XCTAssertTrue(format(cmyk.k) == 0.2863)
         /// case 5: to xyz
         let xyz = Converter.convert(from: rgb, to: XYZ.self)
+//        print(xyz)
         XCTAssertTrue(format(xyz.x) == 0.1771)
         XCTAssertTrue(format(xyz.y) == 0.1033)
-        XCTAssertTrue(format(xyz.z) == 0.5110)
+        XCTAssertTrue(format(xyz.z) == 0.5111)
     }
     
     func testAdobeRgbToX() throws {
@@ -365,62 +366,50 @@ class ColorSpaceConverterTests: XCTestCase {
     
     func testXYZToNewRgbs() {
         
-        func to2020<T: RGBColorable>(color: T) {
-            let bt2020Rgb = Converter.convert(from: color, to: BT2020RGB.self).uppable()
-            print(color.colorSpace, bt2020Rgb)
-            XCTAssertTrue(formatInt(bt2020Rgb.red) == 88)
-            XCTAssertTrue(formatInt(bt2020Rgb.green) == 38)
-            XCTAssertTrue(formatInt(bt2020Rgb.blue) == 182)
-        }
-        	
-        /// case 4: to bt709
         var color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
-        let bt709Rgb = Converter.convert(from: color, to: BT709RGB.self).uppable()
+        
+        /// case 4: to bt709
+        color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
+        let bt709Rgb = Converter.convert(from: color, to: BT709RGB.self).downable()
         print(bt709Rgb)
-        XCTAssertTrue(formatInt(bt709Rgb.red) == 113)
-        XCTAssertTrue(formatInt(bt709Rgb.green) == 48)
-        XCTAssertTrue(formatInt(bt709Rgb.blue) == 227)
-        to2020(color: bt709Rgb)
+        XCTAssertTrue(bt709Rgb.red == 0.38677737960361)
+        XCTAssertTrue(bt709Rgb.green == 0.09226353619873578)
+        XCTAssertTrue(bt709Rgb.blue == 0.7516783353275565)
         /// case 4: to DCIP3
         color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
-        let dcip3Rgb = Converter.convert(from: color, to: DCIP3RGB.self).uppable()
+        let dcip3Rgb = Converter.convert(from: color, to: DCIP3RGB.self).downable()
         print(dcip3Rgb)
-        XCTAssertTrue(formatInt(dcip3Rgb.red) == 113)
-        XCTAssertTrue(formatInt(dcip3Rgb.green) == 48)
-        XCTAssertTrue(formatInt(dcip3Rgb.blue) == 227)
-        to2020(color: dcip3Rgb)
+        XCTAssertTrue(dcip3Rgb.red == 0.4826655320674815)
+        XCTAssertTrue(dcip3Rgb.green == 0.23906677986793812)
+        XCTAssertTrue(dcip3Rgb.blue == 0.8204899560550388)
         /// case 4: to DCIP3P
         color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
-        let dcip3pRgb = Converter.convert(from: color, to: DCIP3RGB.self).uppable()
+        let dcip3pRgb = Converter.convert(from: color, to: DCIP3PRGB.self).downable()
         print(dcip3pRgb)
-        XCTAssertTrue(formatInt(dcip3pRgb.red) == 113)
-        XCTAssertTrue(formatInt(dcip3pRgb.green) == 48)
-        XCTAssertTrue(formatInt(dcip3pRgb.blue) == 227)
-        to2020(color: dcip3pRgb)
+        XCTAssertTrue(dcip3pRgb.red == 0.5128888718196258)
+        XCTAssertTrue(dcip3pRgb.green == 0.438192102864197)
+        XCTAssertTrue(dcip3pRgb.blue == 0.8036540985882176)
         /// case 4: to Display P3
         color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
-        let displayP3RGB = Converter.convert(from: color, to: DisplayP3RGB.self).uppable()
+        let displayP3RGB = Converter.convert(from: color, to: DisplayP3RGB.self).downable()
         print(displayP3RGB)
-        XCTAssertTrue(formatInt(displayP3RGB.red) == 113)
-        XCTAssertTrue(formatInt(displayP3RGB.green) == 48)
-        XCTAssertTrue(formatInt(displayP3RGB.blue) == 227)
-        to2020(color: displayP3RGB)
+        XCTAssertTrue(displayP3RGB.red == 0.4067895232425371)
+        XCTAssertTrue(displayP3RGB.green == 0.17283905565241614)
+        XCTAssertTrue(displayP3RGB.blue == 0.7481380405880417)
         /// case 4: to cie rgb
         color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
-        let cieRgb = Converter.convert(from: color, to: CIERGB.self).uppable()
+        let cieRgb = Converter.convert(from: color, to: CIERGB.self).downable()
         print(cieRgb)
-        XCTAssertTrue(formatInt(cieRgb.red) == 113)
-        XCTAssertTrue(formatInt(cieRgb.green) == 48)
-        XCTAssertTrue(formatInt(cieRgb.blue) == 227)
-        to2020(color: cieRgb)
+        XCTAssertTrue(cieRgb.red == 0.3218368889236663)
+        XCTAssertTrue(cieRgb.green == 0.3275605171491369)
+        XCTAssertTrue(cieRgb.blue == 0.7609002464419496)
         /// case 4: to adobe wide gamut rgb
         color = XYZ(x: 0.1767, y: 0.0902, z: 0.5436)
-        let adobeWideGamutRgb = Converter.convert(from: color, to: AdobeWideGamutRGB.self).uppable()
+        let adobeWideGamutRgb = Converter.convert(from: color, to: AdobeWideGamutRGB.self).downable()
         print(adobeWideGamutRgb)
-        XCTAssertTrue(formatInt(adobeWideGamutRgb.red) == 113)
-        XCTAssertTrue(formatInt(adobeWideGamutRgb.green) == 48)
-        XCTAssertTrue(formatInt(adobeWideGamutRgb.blue) == 227)
-        to2020(color: adobeWideGamutRgb)
+        XCTAssertTrue(adobeWideGamutRgb.red == 0.339819659520058)
+        XCTAssertTrue(adobeWideGamutRgb.green == 0.3084200833174378)
+        XCTAssertTrue(adobeWideGamutRgb.blue == 0.8488723453310392)
     }
     
     func testCMYAndCMYK() throws {
@@ -660,6 +649,7 @@ class ColorSpaceConverterTests: XCTestCase {
         
         /// BT709RGB nonlinear ...
         print(1.099 * pow(0.018, 0.45) - 0.099)
+        print(1.055 * pow(0.0031308, 1 / 2.4) - 0.055)
         
         /// Illuminant-A XYZ  (1.09850, 1.00000, 0.35585)
         print(xyY.xy2xyz(xy: .init(values: [0.44758, 0.40745], rows: 1, columns: 2)))

@@ -15,7 +15,7 @@ public struct AdobeRGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .AdobeRGB }
     
-    public var illuminant: Illuminant = .default
+    public var illuminant: Illuminant = .two ~ .d65
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -29,7 +29,7 @@ public struct AdobeRGB: RGBColorable {
     }
     
     /// 2.1245283019
-    public var gamma: Double { 563.0 / 256.0 }
+    public var gamma: Double { TransferFunction.AdobeRGB.gamma }
     
     public var xyzToRgbMatrices: Matrix {
         .init(
@@ -57,20 +57,12 @@ public struct AdobeRGB: RGBColorable {
     public init() {  }
     
     // MARK: Gamma Map
-    public func linear() -> [Element] {
-        elements.map { channel in
-            Self.gammaCoder(
-                channel: channel, exponent: gamma
-            )
-        }
+    public func eotfEncoding() -> TransferFunction.Elements {
+        TransferFunction.AdobeRGB.eotfEncoding(elements)
     }
     
-    public func nonlinear() -> [Element] {
-        elements.map { channel in
-            Self.gammaCoder(
-                channel: channel, exponent: 1 / gamma
-            )
-        }
+    public func eotfDecoding() -> TransferFunction.Elements {
+        TransferFunction.AdobeRGB.eotfDecoding(elements)
     }
     
 }

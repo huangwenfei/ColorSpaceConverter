@@ -121,8 +121,8 @@ public protocol RGBColorable: NormalColorableProtocol, SomeElementInit, CustomSt
     init(rgb: IntUnLumaTuple)
     init(rgb: FloatUnLumaTuple)
     
-    func linear() -> [Element]
-    func nonlinear() -> [Element]
+    func eotfEncoding() -> TransferFunction.Elements
+    func eotfDecoding() -> TransferFunction.Elements
     
 }
 
@@ -352,32 +352,12 @@ extension RGBColorable {
 /// - Tag: Linear ( OETF )
 extension RGBColorable {
     
-    public mutating func lineared() {
-        self = .init(array: self.linear())
+    public mutating func eotfEncoded() {
+        self = .init(array: self.eotfEncoding())
     }
     
-    public mutating func nonlineared() {
-        self = .init(array: self.nonlinear())
-    }
-    
-    /// Define a typical gamma encoding / decoding function
-    public static func gammaCoder(
-        channel: Element,
-        exponent: Element = 1,
-        handling: GammaNegativeNumberHandling = .indeterminate
-    ) -> Element {
-
-        switch handling {
-        case .indeterminate:
-            return pow(channel, exponent)
-        case .mirror:
-            return Math.spow(channel, exponent)
-        case .preserve:
-            return channel <= 0 ? channel : pow(channel, exponent)
-        case .clamp:
-            return channel <= 0 ? 0 : pow(channel, exponent)
-        }
-        
+    public mutating func eotfDecoded() {
+        self = .init(array: self.eotfDecoding())
     }
     
 }

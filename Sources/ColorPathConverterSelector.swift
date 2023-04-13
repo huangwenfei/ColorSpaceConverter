@@ -1583,7 +1583,7 @@ extension ColorPathConverterSelector {
         var rgb: R = applyRGBMatrix(fromXYZ: [tempX, tempY, tempZ])
 
         /// - Tag: V
-        let nonlinearChannels = rgb.nonlinear()
+        let nonlinearChannels = rgb.eotfEncoding()
 
         rgb.red = nonlinearChannels[0]
         rgb.green = nonlinearChannels[1]
@@ -1849,7 +1849,7 @@ extension ColorPathConverterSelector {
         let downColor = color.downable()
         
         /// - Tag: Will contain linearized RGB channels (removed the gamma func).
-        let linearChannels = downColor.linear()
+        let linearChannels = downColor.eotfDecoding()
         
         /// - Tag: Apply an RGB working space matrix to the XYZ values (matrix mul).
         let _xyz = applyRGBMatrix(fromRGB: T.init(array: linearChannels))

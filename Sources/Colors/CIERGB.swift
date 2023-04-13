@@ -12,7 +12,7 @@ public struct CIERGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .CIERGB }
     
-    public var illuminant: Illuminant = .two(.e)
+    public var illuminant: Illuminant = .two ~ .e
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -22,10 +22,17 @@ public struct CIERGB: RGBColorable {
     public var isUpscale: Bool = true
     
     public var primaries: Matrix {
-        .init([0.734742840005998, 0.265257159994002, 0.273779033824958, 0.717477700256116, 0.166555629580280, 0.008910726182545], 3, 2)
+        .init(
+            [
+                0.734742840005998, 0.265257159994002,
+                0.273779033824958, 0.717477700256116,
+                0.166555629580280, 0.008910726182545
+            ],
+            3, 2
+        )
     }
     
-    public var gamma: Double { 2.2 }
+    public var gamma: Double { TransferFunction.CIERGB.gamma }
     
     public var xyzToRgbMatrices: Matrix {
         Math.inv(rgbToXyzMatrices)!
@@ -46,20 +53,12 @@ public struct CIERGB: RGBColorable {
     public init() {  }
     
     // MARK: Gamma Map
-    public func linear() -> [Element] {
-        elements.map { channel in
-            Self.gammaCoder(
-                channel: channel, exponent: gamma
-            )
-        }
+    public func eotfEncoding() -> TransferFunction.Elements {
+        TransferFunction.CIERGB.eotfEncoding(elements)
     }
     
-    public func nonlinear() -> [Element] {
-        elements.map { channel in
-            Self.gammaCoder(
-                channel: channel, exponent: 1 / gamma
-            )
-        }
+    public func eotfDecoding() -> TransferFunction.Elements {
+        TransferFunction.CIERGB.eotfDecoding(elements)
     }
     
 }

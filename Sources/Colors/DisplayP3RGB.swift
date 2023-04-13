@@ -12,7 +12,7 @@ public struct DisplayP3RGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .DisplayP3RGB }
     
-    public var illuminant: Illuminant = .default
+    public var illuminant: Illuminant = .two ~ .d65
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -26,7 +26,7 @@ public struct DisplayP3RGB: RGBColorable {
         .init([0.6800, 0.3200, 0.2650, 0.6900, 0.1500, 0.0600], 3, 2)
     }
     
-    public var gamma: Double { 2.2 }
+    public var gamma: Double { TransferFunction.DisplayP3RGB.gamma }
     
     public var xyzToRgbMatrices: Matrix {
         Math.inv(rgbToXyzMatrices)!
@@ -45,21 +45,12 @@ public struct DisplayP3RGB: RGBColorable {
     // MARK: Gamma Map
     
     /// as same as sRGB
-    public func linear() -> [Element] {
-        elements.map { channel in
-            channel <= 0.04045
-                ? channel / 12.92
-                : Math.spow((channel + 0.055) / 1.055, 2.4)
-        }
+    public func eotfEncoding() -> TransferFunction.Elements {
+        TransferFunction.DisplayP3RGB.eotfEncoding(elements)
     }
     
-    /// as same as sRGB
-    public func nonlinear() -> [Element] {
-        elements.map { channel in
-            channel <= 0.0031308
-                ? channel * 12.92
-                : 1.055 * Math.spow(channel, 1 / 2.4) - 0.055
-        }
+    public func eotfDecoding() -> TransferFunction.Elements {
+        TransferFunction.DisplayP3RGB.eotfDecoding(elements)
     }
     
 }

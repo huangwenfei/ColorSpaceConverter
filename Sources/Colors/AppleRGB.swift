@@ -13,7 +13,7 @@ public struct AppleRGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .AppleRGB }
     
-    public var illuminant: Illuminant = .default
+    public var illuminant: Illuminant = .two ~ .d65
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -26,8 +26,20 @@ public struct AppleRGB: RGBColorable {
         .init([0.6250, 0.3400, 0.2800, 0.5950, 0.1550, 0.0700], 3, 2)
     }
     
-    public var gamma: Double { 1.8 }
+    public var gamma: Double { TransferFunction.AppleRGB.gamma }
     
+    #if true
+    public var xyzToRgbMatrices: Matrix {
+        Math.inv(rgbToXyzMatrices)!
+    }
+    
+    public var rgbToXyzMatrices: Matrix {
+        Derivation.normalisedPrimaryMatrix(
+            primaries: primaries,
+            whitepoint: illuminant.whitePoint
+        )
+    }
+    #else
     public var xyzToRgbMatrices: Matrix {
         .init(
             [
@@ -49,25 +61,18 @@ public struct AppleRGB: RGBColorable {
             3, 3
         )
     }
+    #endif
     
     // MARK: Normal Init
     public init() {  }
     
     // MARK: Gamma Map
-    public func linear() -> [Element] {
-        elements.map { channel in
-            Self.gammaCoder(
-                channel: channel, exponent: gamma
-            )
-        }
+    public func eotfEncoding() -> TransferFunction.Elements {
+        TransferFunction.AppleRGB.eotfEncoding(elements)
     }
     
-    public func nonlinear() -> [Element] {
-        elements.map { channel in
-            Self.gammaCoder(
-                channel: channel, exponent: 1 / gamma
-            )
-        }
+    public func eotfDecoding() -> TransferFunction.Elements {
+        TransferFunction.AppleRGB.eotfDecoding(elements)
     }
     
 }

@@ -49,7 +49,7 @@ public struct Illuminant: IlluminantProtocol {
         switch Degrees(rawValue: angle)! {
         case .two:
             switch TwoLights(rawValue: lamp.name)! {
-            case .d55, .d75, .dci: return nil
+            case .d55, .d75, .dci_p3: return nil
             case .a:   return .two ~ .a
             case .b:   return .two ~ .b
             case .c:   return .two ~ .c
@@ -439,7 +439,7 @@ extension Illuminant {
         case f2
         case f7
         case f11
-        case dci
+        case dci_p3
         
         public var name: String { return rawValue }
         
@@ -456,7 +456,7 @@ extension Illuminant {
             case .f2:  return  Xyz(0.9920021327645961, 1.0, 0.6739536123700347)
             case .f7:  return  Xyz(0.9504860267314703, 1.0, 1.0871810449574728)
             case .f11: return  Xyz(1.0095516052003184, 1.0, 0.6436720615547888)
-            case .dci: return  Xyz(0.8945868945868947, 1.0, 0.9544159544159544)
+            case .dci_p3: return  Xyz(0.8945868945868947, 1.0, 0.9544159544159544)
             }
         }
         
@@ -555,7 +555,7 @@ extension Illuminant {
             case .f2:  xy = Illuminant.TwoObserver.FL2.xy
             case .f7:  xy = Illuminant.TwoObserver.FL7.xy
             case .f11: xy = Illuminant.TwoObserver.FL11.xy
-            case .dci: xy = Illuminant.TwoObserver.DCI_P3.xy
+            case .dci_p3: xy = Illuminant.TwoObserver.DCI_P3.xy
             }
             
         case .ten:

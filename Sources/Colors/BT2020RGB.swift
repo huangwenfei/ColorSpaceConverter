@@ -13,7 +13,7 @@ public struct BT2020RGB: RGBColorable {
     // MARK: RGBProtocol
     public var colorSpace: ColorSpaceType { .BT2020RGB }
     
-    public var illuminant: Illuminant = .default
+    public var illuminant: Illuminant = .two ~ .d65
     
     // MARK: Color Elements
     public var red: Element = 0
@@ -26,8 +26,20 @@ public struct BT2020RGB: RGBColorable {
         .init([0.7080, 0.2920, 0.1700, 0.7970, 0.1310, 0.0460], 3, 2)
     }
     
-    public var gamma: Double { 2.4 }
+    public var gamma: Double { TransferFunction.BT2020RGB.gamma }
     
+    #if true
+    public var xyzToRgbMatrices: Matrix {
+        Math.inv(rgbToXyzMatrices)!
+    }
+    
+    public var rgbToXyzMatrices: Matrix {
+        Derivation.normalisedPrimaryMatrix(
+            primaries: primaries,
+            whitepoint: illuminant.whitePoint
+        )
+    }
+    #else
     public var xyzToRgbMatrices: Matrix {
         .init(
             [
@@ -49,41 +61,18 @@ public struct BT2020RGB: RGBColorable {
             3, 3
         )
     }
+    #endif
     
     // MARK: Normal Init
     public init() {  }
     
     // MARK: Gamma Map
-    public func linear() -> [Element] {
-        
-//        if kwargs.get("is_12_bits_system"):
-//            a, b, c = 1.0993, 0.0181, 0.081697877417347  # noqa
-//        else:
-//            a, b, c = 1.099, 0.018, 0.08124794403514049  # noqa
-        
-        let a = 1.099, c = 0.08124794403514049
-        
-        return elements.map { channel in
-            channel <= c
-                ? channel / 4.5
-                : Math.spow((channel + (a - 1)) / a, 1 / 0.45)
-        }
+    public func eotfEncoding() -> TransferFunction.Elements {
+        TransferFunction.BT2020RGB.eotfEncoding(elements)
     }
     
-    public func nonlinear() -> [Element] {
-//        if kwargs.get("is_12_bits_system") {
-//            let a = 1.0993, b = 0.0181
-//        } else {
-//            let a = 1.099, b = 0.018
-//        }
-        
-        let a = 1.099, b = 0.018
-        
-        return elements.map { channel in
-            channel < b
-                ? channel * 4.5
-                : a * Math.spow(channel, 0.45) - (a - 1)
-        }
+    public func eotfDecoding() -> TransferFunction.Elements {
+        TransferFunction.BT2020RGB.eotfDecoding(elements)
     }
     
 }

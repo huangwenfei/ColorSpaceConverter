@@ -33,10 +33,12 @@
 		832EDD3429DAF2D200C0AADC /* MathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD3229DAF2D200C0AADC /* MathElement.swift */; };
 		832EDD3629DAF39100C0AADC /* MathMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD3529DAF39100C0AADC /* MathMatrix.swift */; };
 		832EDD3729DAF39100C0AADC /* MathMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD3529DAF39100C0AADC /* MathMatrix.swift */; };
+		832FD13029E7EA4800AAF2B4 /* TransferFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FD12F29E7EA4800AAF2B4 /* TransferFunction.swift */; };
+		832FD13129E7EB9700AAF2B4 /* TransferFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FD12F29E7EA4800AAF2B4 /* TransferFunction.swift */; };
+		832FD13429E7FE0C00AAF2B4 /* ColorSpaceConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "ColorSpaceConverter::ColorSpaceConverter::Product" /* ColorSpaceConverter.framework */; };
 		8360465025D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
 		8360465125D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
 		8364B68825D27B0B00A62138 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364B68725D27B0B00A62138 /* Package.swift */; };
-		8364B6D825D27CA300A62138 /* ColorSpaceConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8364B6CF25D27CA300A62138 /* ColorSpaceConverter.framework */; };
 		8364B73625D27DD000A62138 /* ColorSpaceConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8364B69825D27BBE00A62138 /* ColorSpaceConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8364B73F25D27DE400A62138 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Converter.swift */; };
 		8364B74025D27DE500A62138 /* ColorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ColorPath.swift */; };
@@ -131,6 +133,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		832FD13229E7FE0000AAF2B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8364B6CE25D27CA300A62138;
+			remoteInfo = "ColorSpaceConverter iOS";
+		};
 		8364B67625D27AD100A62138 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -144,13 +153,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = "ColorSpaceConverter::ColorSpaceConverterTests";
 			remoteInfo = ColorSpaceConverterTests;
-		};
-		8364B6D925D27CA300A62138 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8364B6CE25D27CA300A62138;
-			remoteInfo = "ColorSpaceConverter iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -187,6 +189,7 @@
 		832EDD2F29DAF1B300C0AADC /* MathVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathVector.swift; sourceTree = "<group>"; };
 		832EDD3229DAF2D200C0AADC /* MathElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathElement.swift; sourceTree = "<group>"; };
 		832EDD3529DAF39100C0AADC /* MathMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMatrix.swift; sourceTree = "<group>"; };
+		832FD12F29E7EA4800AAF2B4 /* TransferFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFunction.swift; sourceTree = "<group>"; };
 		8360464F25D907C000D5E1A7 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		8364B68725D27B0B00A62138 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 		8364B68F25D27B1700A62138 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -256,7 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8364B6D825D27CA300A62138 /* ColorSpaceConverter.framework in Frameworks */,
+				832FD13429E7FE0C00AAF2B4 /* ColorSpaceConverter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +292,14 @@
 				832EDD3529DAF39100C0AADC /* MathMatrix.swift */,
 			);
 			path = Math;
+			sourceTree = "<group>";
+		};
+		832FD12E29E7EA0700AAF2B4 /* Transfer Funcs */ = {
+			isa = PBXGroup;
+			children = (
+				832FD12F29E7EA4800AAF2B4 /* TransferFunction.swift */,
+			);
+			path = "Transfer Funcs";
 			sourceTree = "<group>";
 		};
 		8339C86825D5171D008B2B76 /* Frameworks */ = {
@@ -439,6 +450,7 @@
 				OBJ_38 /* Contants */,
 				OBJ_8 /* Appearance Models */,
 				OBJ_19 /* Colors */,
+				832FD12E29E7EA0700AAF2B4 /* Transfer Funcs */,
 				8364B69225D27B4D00A62138 /* Supporting Files */,
 			);
 			path = Sources;
@@ -513,7 +525,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8364B6DA25D27CA300A62138 /* PBXTargetDependency */,
+				832FD13329E7FE0000AAF2B4 /* PBXTargetDependency */,
 			);
 			name = "ColorSpaceConverter iOS Tests";
 			productName = "ColorSpaceConverter iOSTests";
@@ -678,6 +690,7 @@
 				8376DCE429E05B5200901214 /* DisplayP3RGB.swift in Sources */,
 				8364B75925D27DE500A62138 /* HSL.swift in Sources */,
 				8364B75A25D27DE500A62138 /* HSV.swift in Sources */,
+				832FD13029E7EA4800AAF2B4 /* TransferFunction.swift in Sources */,
 				8364B75B25D27DE500A62138 /* IPT.swift in Sources */,
 				8364B75C25D27DE500A62138 /* LCHab.swift in Sources */,
 				8364B75D25D27DE500A62138 /* LCHuv.swift in Sources */,
@@ -741,6 +754,7 @@
 				8376DCE529E05B5200901214 /* DisplayP3RGB.swift in Sources */,
 				OBJ_230 /* sRGB.swift in Sources */,
 				OBJ_231 /* xyY.swift in Sources */,
+				832FD13129E7EB9700AAF2B4 /* TransferFunction.swift in Sources */,
 				OBJ_232 /* ColorSpaceType.swift in Sources */,
 				OBJ_233 /* Converter.swift in Sources */,
 				OBJ_234 /* DeltaE.swift in Sources */,
@@ -778,10 +792,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8364B6DA25D27CA300A62138 /* PBXTargetDependency */ = {
+		832FD13329E7FE0000AAF2B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8364B6CE25D27CA300A62138 /* ColorSpaceConverter iOS */;
-			targetProxy = 8364B6D925D27CA300A62138 /* PBXContainerItemProxy */;
+			targetProxy = 832FD13229E7FE0000AAF2B4 /* PBXContainerItemProxy */;
 		};
 		OBJ_254 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

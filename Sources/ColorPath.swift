@@ -134,7 +134,7 @@ public struct ColorPath {
         return fromToRgb + rgbToTo
     }
     
-    /// 如果 from -> to 中间不会经过 RGB，则不强行经过 RGB
+    /// 如果 from -> to 中间不强行经过 RGB, 如果需要经过 RGB 则使用 ThrougthRGB，否则不用。
     public func generate(optionalThrougthRGB rgb: ColorSpaceType.RGB) -> [PathConverter] {
         
         /// - Tag: From === To
@@ -215,7 +215,7 @@ extension ColorPath {
             return []
         }
         
-        #if true && DEBUG
+        #if false && DEBUG
         print(path.edgeInfos.reduce("", { $0 + $1.from.rawValue + "->" + $1.to.rawValue + "  " }))
         #endif
 

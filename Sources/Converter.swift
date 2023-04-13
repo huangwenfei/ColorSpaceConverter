@@ -49,6 +49,25 @@ extension Converter {
         )
     }
     
+    public static func convert<From, To, RGB>(
+        from: From,
+        to: To.Type,
+        optionalThrougthRGB rgb: RGB.Type,
+        toIlluminant illuminant: Illuminant? = nil,
+        infos: [AnyHashable: Any]? = nil
+    ) -> To
+        where From: NormalColorableProtocol, To: NormalColorableProtocol, RGB: RGBColorable
+    {
+        
+        _convert(
+            from: from,
+            to: to,
+            optionalThrougthRGB: rgb,
+            toIlluminant: illuminant ?? from.illuminant,
+            infos: infos
+        )
+    }
+    
 }
 
 // MARK: - Spectral Color ==> Normal Color
@@ -66,7 +85,6 @@ extension Converter {
         _convert(
             from: from,
             to: to,
-            througthRGB: sRGB.self,
             toIlluminant: illuminant ?? .default,
             infos: infos
         )
@@ -91,6 +109,25 @@ extension Converter {
         )
     }
     
+    public static func convert<From, To, RGB>(
+        from: From,
+        to: To.Type,
+        optionalThrougthRGB rgb: RGB.Type,
+        toIlluminant illuminant: Illuminant? = nil,
+        infos: [AnyHashable: Any]? = nil
+    ) -> To
+        where From: SpectralColorableProtocol, To: NormalColorableProtocol, RGB: RGBColorable
+    {
+        
+        _convert(
+            from: from,
+            to: to,
+            optionalThrougthRGB: rgb,
+            toIlluminant: illuminant ?? .default,
+            infos: infos
+        )
+    }
+    
 }
 
 #if false
@@ -109,7 +146,6 @@ extension Converter {
         _convert(
             from: from,
             to: to,
-            througthRGB: sRGB.self,
             toIlluminant: illuminant.unoverlap,
             infos: infos
         )
@@ -149,13 +185,18 @@ extension Converter {
         where From: Colorable, To: Colorable, Light: IlluminantProtocol
     {
         
-        _convert(
-            from: from,
-            to: to,
-            througthRGB: sRGB.self,
-            toIlluminant: illuminant,
-            infos: infos
-        )
+        guard "\(from.self)" != "\(to.self)" else { return from as! To }
+        
+        /// - Tag: Color Paths
+        let converters = ColorPath(from: from.colorSpace, to: to)
+            .generate()
+        
+        /// - Tag: Iter Paths
+        let color: AnyColorable = converters.reduce(.init(from)) {
+            $1.convert(from: $0, illuminant: illuminant, infos: infos)
+        }
+        
+        return color.base as! To
     }
     
     private static func _convert<From, To, Light, RGB>(

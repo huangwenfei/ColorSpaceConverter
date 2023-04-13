@@ -36,6 +36,8 @@
 		832FD13029E7EA4800AAF2B4 /* TransferFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FD12F29E7EA4800AAF2B4 /* TransferFunction.swift */; };
 		832FD13129E7EB9700AAF2B4 /* TransferFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FD12F29E7EA4800AAF2B4 /* TransferFunction.swift */; };
 		832FD13429E7FE0C00AAF2B4 /* ColorSpaceConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "ColorSpaceConverter::ColorSpaceConverter::Product" /* ColorSpaceConverter.framework */; };
+		832FD13629E854DB00AAF2B4 /* RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FD13529E854DB00AAF2B4 /* RGBColor.swift */; };
+		832FD13729E854DB00AAF2B4 /* RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FD13529E854DB00AAF2B4 /* RGBColor.swift */; };
 		8360465025D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
 		8360465125D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
 		8364B68825D27B0B00A62138 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364B68725D27B0B00A62138 /* Package.swift */; };
@@ -190,6 +192,7 @@
 		832EDD3229DAF2D200C0AADC /* MathElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathElement.swift; sourceTree = "<group>"; };
 		832EDD3529DAF39100C0AADC /* MathMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMatrix.swift; sourceTree = "<group>"; };
 		832FD12F29E7EA4800AAF2B4 /* TransferFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFunction.swift; sourceTree = "<group>"; };
+		832FD13529E854DB00AAF2B4 /* RGBColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBColor.swift; sourceTree = "<group>"; };
 		8360464F25D907C000D5E1A7 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		8364B68725D27B0B00A62138 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 		8364B68F25D27B1700A62138 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -361,6 +364,7 @@
 			children = (
 				OBJ_26 /* Colorable.swift */,
 				8360464F25D907C000D5E1A7 /* Hex.swift */,
+				832FD13529E854DB00AAF2B4 /* RGBColor.swift */,
 				OBJ_36 /* sRGB.swift */,
 				OBJ_20 /* AdobeRGB.swift */,
 				OBJ_21 /* AppleRGB.swift */,
@@ -658,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8364B73F25D27DE400A62138 /* Converter.swift in Sources */,
+				832FD13629E854DB00AAF2B4 /* RGBColor.swift in Sources */,
 				8364B74025D27DE500A62138 /* ColorPath.swift in Sources */,
 				8364B74125D27DE500A62138 /* ColorPathConverterSelector.swift in Sources */,
 				8364B74225D27DE500A62138 /* ChromaticAdaptation.swift in Sources */,
@@ -722,6 +727,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_204 /* ATD95.swift in Sources */,
+				832FD13729E854DB00AAF2B4 /* RGBColor.swift in Sources */,
 				OBJ_205 /* CIECAM02.swift in Sources */,
 				OBJ_206 /* CIECAM02m1.swift in Sources */,
 				OBJ_207 /* Hunt.swift in Sources */,

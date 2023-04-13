@@ -170,12 +170,32 @@ extension RGBColorable {
 
 extension RGBColorable {
     
+    // MARK: - Equatable -
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.colorSpace == rhs.colorSpace &&
+        lhs.red == rhs.red &&
+        lhs.green == rhs.green &&
+        lhs.blue == rhs.blue &&
+        lhs.isUpscale == rhs.isUpscale &&
+        lhs.illuminant == rhs.illuminant &&
+        lhs.primaries == rhs.primaries &&
+        lhs.gamma == rhs.gamma &&
+        lhs.xyzToRgbMatrices == rhs.xyzToRgbMatrices &&
+        lhs.rgbToXyzMatrices == rhs.rgbToXyzMatrices
+    }
+    
+    // MARK: - Hashable -
     public func hash(into hasher: inout Hasher) {
         hasher.combine(colorSpace)
         hasher.combine(red)
         hasher.combine(green)
         hasher.combine(blue)
+        hasher.combine(isUpscale)
         hasher.combine(illuminant)
+        hasher.combine(primaries)
+        hasher.combine(gamma)
+        hasher.combine(xyzToRgbMatrices)
+        hasher.combine(rgbToXyzMatrices)
     }
     
 }
@@ -324,6 +344,13 @@ extension RGBColorable {
         self.init(
             red: rgb.red, green: rgb.green, blue: rgb.blue,
             illuminant: illuminant,
+            isUpscale: rgb.isUpscale
+        )
+    }
+    
+    public init<RGB: RGBColorable>(rgb: RGB) {
+        self.init(
+            red: rgb.red, green: rgb.green, blue: rgb.blue,
             isUpscale: rgb.isUpscale
         )
     }

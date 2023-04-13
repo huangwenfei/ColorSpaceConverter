@@ -19,11 +19,34 @@ public protocol TransferFunctionProtocol {
     
 }
 
+public struct TransferFunctionCoding {
+    
+    public typealias Closure = TransferFunction.CodingClosure
+    
+    public var encoding: Closure
+    public var decoding: Closure
+    
+    public init(encoding: @escaping Closure, decoding: @escaping Closure) {
+        self.encoding = encoding
+        self.decoding = decoding
+    }
+    
+    public init(_ encoding: @escaping Closure, _ decoding: @escaping Closure) {
+        self.encoding = encoding
+        self.decoding = decoding
+    }
+    
+}
+
 public struct TransferFunction {
     
+    // MARK: - Types -
     public typealias Element = TransferFunctionProtocol.Element
     public typealias Elements = TransferFunctionProtocol.Elements
     
+    public typealias CodingClosure = (_ elements: Elements) -> Elements
+    
+    // MARK: - Gamma -
     /// Define a typical gamma encoding / decoding function
     public static func gammaCoder(
         channel: Element,
@@ -44,6 +67,38 @@ public struct TransferFunction {
         
     }
     
+    // MARK: - Funcs -
+    public static var funcs: [ColorSpaceType.RGB: TransferFunctionCoding] = [
+        .unknown:           .init(LinearRGB.eotfEncoding, LinearRGB.eotfDecoding),
+        .sRGB:              .init(sRGB.eotfEncoding, sRGB.eotfDecoding),
+        .AdobeRGB:          .init(AdobeRGB.eotfEncoding, AdobeRGB.eotfDecoding),
+        .AppleRGB:          .init(AppleRGB.eotfEncoding, AppleRGB.eotfDecoding),
+        .BT2020RGB:         .init(BT2020RGB.eotfEncoding, BT2020RGB.eotfDecoding),
+        .BT709RGB:          .init(BT709RGB.eotfEncoding, BT709RGB.eotfDecoding),
+        .DCIP3RGB:          .init(DCIP3RGB.eotfEncoding, DCIP3RGB.eotfDecoding),
+        .DCIP3PRGB:         .init(DCIP3PRGB.eotfEncoding, DCIP3PRGB.eotfDecoding),
+        .DisplayP3RGB:      .init(DisplayP3RGB.eotfEncoding, DisplayP3RGB.eotfDecoding),
+        .CIERGB:            .init(CIERGB.eotfEncoding, CIERGB.eotfDecoding),
+        .AdobeWideGamutRGB: .init(AdobeWideGamutRGB.eotfEncoding, AdobeWideGamutRGB.eotfDecoding)
+    ]
+    
+}
+
+// MARK: - Linear RGB -
+extension TransferFunction {
+    public struct LinearRGB: TransferFunctionProtocol {
+        
+        public static let gamma: Element = 1
+        
+        public static func eotfEncoding(_ elements: Elements) -> Elements {
+            elements
+        }
+        
+        public static func eotfDecoding(_ elements: Elements) -> Elements {
+            elements
+        }
+        
+    }
 }
 
 // MARK: - sRGB -

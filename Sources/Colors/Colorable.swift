@@ -257,6 +257,7 @@ extension RGBColorable {
         self.green = .init(min(max(green, 0), 255))
         self.blue  = .init(min(max(blue , 0), 255))
         self.isUpscale = true
+        self.illuminant = illuminant
     }
     
     public init(red: Element, green: Element, blue: Element, illuminant: Illuminant, isUpscale: Bool) {
@@ -272,6 +273,7 @@ extension RGBColorable {
         self.green = min(max(green, 0), 1)
         self.blue  = min(max(blue , 0), 1)
         self.isUpscale = false
+        self.illuminant = illuminant
     }
     
     public init(gray: Int, illuminant: Illuminant) {
@@ -302,36 +304,52 @@ extension RGBColorable {
     }
     
     public init(red: Int, green: Int, blue: Int) {
-        self.init(red: red, green: green, blue: blue, illuminant: .default)
+        self.init(
+            red: red,
+            green: green,
+            blue: blue,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default
+        )
     }
     
     public init(red: Element, green: Element, blue: Element, isUpscale: Bool) {
         self.init(
             red: red, green: green, blue: blue,
-            illuminant: .default,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default,
             isUpscale: isUpscale
         )
     }
     
     public init(gray: Int) {
-        self.init(gray: gray, illuminant: .default)
+        self.init(
+            gray: gray,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default
+        )
     }
     
     public init(gray: Element, isUpscale: Bool) {
-        self.init(gray: gray, illuminant: .default, isUpscale: isUpscale)
+        self.init(
+            gray: gray,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default,
+            isUpscale: isUpscale
+        )
     }
     
     public init(rgb: IntUnLumaTuple) {
         self.init(
-            red: rgb.red, green: rgb.green, blue: rgb.blue,
-            illuminant: .default
+            red: rgb.red,
+            green: rgb.green,
+            blue: rgb.blue,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default
         )
     }
     
     public init(rgb: FloatUnLumaTuple) {
         self.init(
-            red: rgb.red, green: rgb.green, blue: rgb.blue,
-            illuminant: .default,
+            red: rgb.red,
+            green: rgb.green,
+            blue: rgb.blue,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default,
             isUpscale: false
         )
     }
@@ -366,8 +384,20 @@ extension RGBColorable {
         red = values[0] ; green = values[1] ; blue = values[2]
     }
     
+    public init(array: [Element], isUpscale: Bool, illuminant: Illuminant) {
+        self.init()
+        let values = Self.initalize(with: array, elementCount: elementCount)
+        red = values[0] ; green = values[1] ; blue = values[2]
+        self.isUpscale = isUpscale
+        self.illuminant = illuminant
+    }
+    
     public init(iter elements: Element...) {
         self.init(array: elements)
+    }
+    
+    public init(iter elements: Element..., isUpscale: Bool, illuminant: Illuminant) {
+        self.init(array: elements, isUpscale: isUpscale, illuminant: illuminant)
     }
     
     public var elements: [Element] {

@@ -571,3 +571,21 @@ extension Illuminant {
     }
     
 }
+
+extension Illuminant {
+    
+    public static var rgbIlluminants: [ColorSpaceType.RGB: Illuminant] = [
+        .unknown:            .two ~ .d65,
+        .sRGB:               .two ~ .d65,
+        .AppleRGB:           .two ~ .d65,
+        .AdobeRGB:           .two ~ .d65,
+        .BT2020RGB:          .two ~ .d65,
+        .BT709RGB:           .two ~ .d65,
+        .DCIP3RGB:           .two ~ .dci_p3,
+        .DCIP3PRGB:          .two ~ .dci_p3,
+        .DisplayP3RGB:       .two ~ .d65,
+        .CIERGB:             .two ~ .e,
+        .AdobeWideGamutRGB:  .two ~ .d50
+    ]
+    
+}

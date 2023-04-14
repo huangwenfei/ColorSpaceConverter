@@ -95,4 +95,70 @@ extension RGBColor {
         self.eotfDecodingClosure = coder.decoding
     }
     
+    public init(type: ColorSpaceType.RGB, fromRgb rgb: [Element], isUpscale: Bool, illuminant: Illuminant) {
+        
+        func _rgb<T :RGBColorable>(_ t: T.Type) -> Self {
+            let v = T.init(array: rgb, isUpscale: isUpscale, illuminant: illuminant)
+            return .init(rgb: v)
+        }
+        
+        switch type {
+        case .unknown:           self = _rgb(sRGB.self)
+        case .sRGB:              self = _rgb(sRGB.self)
+        case .AppleRGB:          self = _rgb(AppleRGB.self)
+        case .AdobeRGB:          self = _rgb(AdobeRGB.self)
+        case .BT2020RGB:         self = _rgb(BT2020RGB.self)
+        case .BT709RGB:          self = _rgb(BT709RGB.self)
+        case .DCIP3RGB:          self = _rgb(DCIP3RGB.self)
+        case .DCIP3PRGB:         self = _rgb(DCIP3PRGB.self)
+        case .DisplayP3RGB:      self = _rgb(DisplayP3RGB.self)
+        case .CIERGB:            self = _rgb(CIERGB.self)
+        case .AdobeWideGamutRGB: self = _rgb(AdobeWideGamutRGB.self)
+        }
+        
+    }
+    
+    public init(type: ColorSpaceType.RGB, fromRgb rgb: [Element], isUpscale: Bool) {
+        self.init(
+            type: type,
+            fromRgb: rgb,
+            isUpscale: isUpscale,
+            illuminant: Illuminant.rgbIlluminants[type] ?? .default
+        )
+    }
+    
+    public init(fromRgb rgb: IntUnLumaTuple, type: ColorSpaceType.RGB) {
+        self.init(
+            type: type,
+            fromRgb: [.init(rgb.red), .init(rgb.green), .init(rgb.blue)],
+            isUpscale: true
+        )
+    }
+    
+    public init(fromRgb rgb: IntTuple, type: ColorSpaceType.RGB) {
+        self.init(
+            type: type,
+            fromRgb: [.init(rgb.red), .init(rgb.green), .init(rgb.blue)],
+            isUpscale: true,
+            illuminant: rgb.illuminant
+        )
+    }
+    
+    public init(fromRgb rgb: FloatUnLumaTuple, type: ColorSpaceType.RGB) {
+        self.init(
+            type: type,
+            fromRgb: [rgb.red, rgb.green, rgb.blue],
+            isUpscale: false
+        )
+    }
+    
+    public init(fromRgb rgb: FloatTuple, type: ColorSpaceType.RGB) {
+        self.init(
+            type: type,
+            fromRgb: [rgb.red, rgb.green, rgb.blue],
+            isUpscale: false,
+            illuminant: rgb.illuminant
+        )
+    }
+    
 }

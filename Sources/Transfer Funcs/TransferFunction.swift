@@ -47,6 +47,24 @@ public struct TransferFunction {
     public typealias CodingClosure = (_ elements: Elements) -> Elements
     
     // MARK: - Gamma -
+    ///
+    /// Defines the behaviour for ``a`` negative numbers and / or the
+    /// definition return value:
+    ///
+    /// -   *Indeterminate*: The behaviour will be indeterminate and
+    ///     definition return value might contain *nans*.
+    /// -   *Mirror*: The definition return value will be mirrored around
+    ///     abscissa and ordinate axis, i.e. Blackmagic Design: Davinci Resolve
+    ///     behaviour.
+    /// -   *Preserve*: The definition will preserve any negative number in
+    ///     ``a``, i.e. The Foundry Nuke behaviour.
+    /// -   *Clamp*: The definition will clamp any negative number in ``a`` to
+    ///     0.
+    ///
+    public enum GammaNegativeNumberHandling: Int {
+        case indeterminate, mirror, preserve, clamp
+    }
+    
     /// Define a typical gamma encoding / decoding function
     public static func gammaCoder(
         channel: Element,

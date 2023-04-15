@@ -343,3 +343,39 @@ extension Hex: SomeElementInit {
     }
     
 }
+
+extension Hex {
+    
+    /// - Tag: Equatable
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.colorSpace == rhs.colorSpace &&
+        lhs.rgbColorSpace == rhs.rgbColorSpace &&
+        lhs.red == rhs.red &&
+        lhs.green == rhs.green &&
+        lhs.blue == rhs.blue &&
+        lhs.alpha == rhs.alpha &&
+        lhs.isUpscale == rhs.isUpscale &&
+        lhs.illuminant == rhs.illuminant &&
+        lhs.primaries == rhs.primaries &&
+        lhs.gamma == rhs.gamma &&
+        lhs.xyzToRgbMatrices == rhs.xyzToRgbMatrices &&
+        lhs.rgbToXyzMatrices == rhs.rgbToXyzMatrices
+    }
+    
+    /// - Tag: Hashable
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(colorSpace)
+        hasher.combine(rgbColorSpace)
+        hasher.combine(red)
+        hasher.combine(green)
+        hasher.combine(blue)
+        hasher.combine(alpha)
+        hasher.combine(isUpscale)
+        hasher.combine(illuminant)
+        hasher.combine(primaries)
+        hasher.combine(gamma)
+        hasher.combine(xyzToRgbMatrices)
+        hasher.combine(rgbToXyzMatrices)
+    }
+    
+}

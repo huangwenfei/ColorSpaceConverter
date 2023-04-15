@@ -387,17 +387,6 @@ extension ColorPath {
         addEdge(byFrom: .CIERGB, to: .RGBColor)
         addEdge(byFrom: .AdobeWideGamutRGB, to: .RGBColor)
         
-//        addEdge(byFrom: .Hex, to: .sRGB)
-//        addEdge(byFrom: .Hex, to: .AppleRGB)
-//        addEdge(byFrom: .Hex, to: .AdobeRGB)
-//        addEdge(byFrom: .Hex, to: .BT2020RGB)
-//        addEdge(byFrom: .Hex, to: .BT709RGB)
-//        addEdge(byFrom: .Hex, to: .DCIP3RGB)
-//        addEdge(byFrom: .Hex, to: .DCIP3PRGB)
-//        addEdge(byFrom: .Hex, to: .DisplayP3RGB)
-//        addEdge(byFrom: .Hex, to: .CIERGB)
-//        addEdge(byFrom: .Hex, to: .AdobeWideGamutRGB)
-        
         addEdge(byFrom: .HSV, to: .sRGB)
         addEdge(byFrom: .HSV, to: .AppleRGB)
         addEdge(byFrom: .HSV, to: .AdobeRGB)

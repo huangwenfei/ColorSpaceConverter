@@ -122,16 +122,16 @@ extension DeltaE {
         let deltaC = c1 - c2
         deltaLab[0] = deltaC
 
-        var h1 = degrees(atan2(b, a))
+        var h1 = Math.degrees(atan2(b, a))
         if h1 < 0 { h1 += 360 }
     
         let f = sqrt(pow(c1, 4) / (pow(c1, 4) + 1900.0))
 
         let t: Double
         if 164 <= h1 && h1 <= 345 {
-            t = 0.56 + abs(0.2 * cos(radians(h1 + 168)))
+            t = 0.56 + abs(0.2 * cos(Math.radians(h1 + 168)))
         } else {
-            t = 0.36 + abs(0.4 * cos(radians(h1 + 35)))
+            t = 0.36 + abs(0.4 * cos(Math.radians(h1 + 35)))
         }
 
         let sl: Double
@@ -199,10 +199,10 @@ extension DeltaE {
 
         let avgC1pC2p = (c1p + c2p) / 2.0
 
-        var h1p = degrees(atan2(b, a1p))
+        var h1p = Math.degrees(atan2(b, a1p))
         if h1p < 0 { h1p = 360 }
 
-        var h2p = degrees(atan2(rhs.b, a2p))
+        var h2p = Math.degrees(atan2(rhs.b, a2p))
         if h2p < 0 { h2p = 360 }
 
         let absH1pH2p: Double = abs(h1p - h2p) > 180 ? 360 : 0
@@ -210,10 +210,10 @@ extension DeltaE {
 
         let T = (
             1
-            - 0.17 * cos(radians(avgHp - 30))
-            + 0.24 * cos(radians(2 * avgHp))
-            + 0.32 * cos(radians(3 * avgHp + 6))
-            - 0.2 * cos(radians(4 * avgHp - 63))
+            - 0.17 * cos(Math.radians(avgHp - 30))
+            + 0.24 * cos(Math.radians(2 * avgHp))
+            + 0.32 * cos(Math.radians(3 * avgHp + 6))
+            - 0.2 * cos(Math.radians(4 * avgHp - 63))
         )
 
         let diffH2pH1p = h2p - h1p
@@ -222,7 +222,7 @@ extension DeltaE {
 
         let deltaLp = rhs.l - L
         let deltaCp = c2p - c1p
-        deltaHp = 2 * sqrt(c2p * c1p) * sin(radians(deltaHp) / 2.0)
+        deltaHp = 2 * sqrt(c2p * c1p) * sin(Math.radians(deltaHp) / 2.0)
 
         let sl = 1 + (
             (0.015 * pow(avgLp - 50, 2))
@@ -236,7 +236,7 @@ extension DeltaE {
             (pow(avgC1pC2p, 7.0))
             / (pow(avgC1pC2p, 7.0) + pow(25.0, 7.0))
         )
-        let rt = -2 * rc * sin(2 * radians(deltaRo))
+        let rt = -2 * rc * sin(2 * Math.radians(deltaRo))
 
         return sqrt(
             pow(deltaLp / (sl * kl.rawValue), 2)

@@ -44,7 +44,7 @@ public struct PathConverter: ConverterFunc, Hashable, CustomStringConvertible {
     
     public private(set) var pathId: PathId
     
-    public typealias Selector = ColorPathConverterSelector.Selector
+    public typealias Selector = ColorPathSelector.Selector
     public private(set) var converter: Selector
     
     public var description: String {
@@ -119,7 +119,7 @@ public struct ColorPath {
             return converters(pathId: pathId)
         }
         
-        if pathId.from.isRgb || pathId.to.isRgb {
+        if pathId.from.isRgbColorSpace || pathId.to.isRgbColorSpace {
             return converters(pathId: pathId)
         }
         
@@ -145,7 +145,7 @@ public struct ColorPath {
             return converters(pathId: pathId)
         }
         
-        if pathId.from.isRgb || pathId.to.isRgb {
+        if pathId.from.isRgbColorSpace || pathId.to.isRgbColorSpace {
             return converters(pathId: pathId)
         }
         
@@ -172,7 +172,7 @@ extension ColorPath {
     private func convertersFull(pathId: PathId) -> ListDigraph<Vertex, Weight>.PathInfo.EdgeInfos {
         guard pathId.isVaild else { return [] }
         
-        if pathId.from.isRgb && pathId.to.isRgb {
+        if pathId.from.isRgbColorSpace && pathId.to.isRgbColorSpace {
             let from2xyz = convertersFull(pathId: pathId.from ==> .XYZ)
             let xyz2to = convertersFull(pathId: .XYZ ==> pathId.to)
             return from2xyz + xyz2to
@@ -193,16 +193,16 @@ extension ColorPath {
         guard pathId.isVaild else { return [] }
         
         #if false
-        if let path = ColorPathConverterSelector.selectors[pathId] {
+        if let path = ColorPathSelector.selectors[pathId] {
             return [path]
         }
         
-        if let paths = ColorPathConverterSelector.rgbSelectors[pathId] {
+        if let paths = ColorPathSelector.rgbSelectors[pathId] {
             return paths
         }
         #endif
         
-        if pathId.from.isRgb && pathId.to.isRgb {
+        if pathId.from.isRgbColorSpace && pathId.to.isRgbColorSpace {
             let from2xyz = converters(pathId: pathId.from ==> .XYZ)
             let xyz2to = converters(pathId: .XYZ ==> pathId.to)
             return from2xyz + xyz2to
@@ -279,7 +279,7 @@ extension ColorPath {
         
         var graph: ListDigraph<Vertex, Weight> = .init()
         
-        typealias Selector = ColorPathConverterSelector
+        typealias Selector = ColorPathSelector
         func selector(_ pathId: PathId) -> Weight {
             .init(converter: Selector.selectors[pathId]!)
         }

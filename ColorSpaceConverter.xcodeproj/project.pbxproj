@@ -25,6 +25,38 @@
 		8300196829E2884800188C32 /* Derivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300196629E2884800188C32 /* Derivation.swift */; };
 		8300196A29E3187100188C32 /* Illuminants+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300196929E3187100188C32 /* Illuminants+Observer.swift */; };
 		8300196B29E3187100188C32 /* Illuminants+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300196929E3187100188C32 /* Illuminants+Observer.swift */; };
+		8317E66B29EA8DEE007C6654 /* ColorPathSelector+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E66A29EA8DEE007C6654 /* ColorPathSelector+Hex.swift */; };
+		8317E66C29EA8DEE007C6654 /* ColorPathSelector+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E66A29EA8DEE007C6654 /* ColorPathSelector+Hex.swift */; };
+		8317E66E29EA8E8A007C6654 /* ColorPathSelector+RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E66D29EA8E8A007C6654 /* ColorPathSelector+RGBColor.swift */; };
+		8317E66F29EA8E8A007C6654 /* ColorPathSelector+RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E66D29EA8E8A007C6654 /* ColorPathSelector+RGBColor.swift */; };
+		8317E67129EA8ECF007C6654 /* ColorPathSelector+Spectral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67029EA8ECF007C6654 /* ColorPathSelector+Spectral.swift */; };
+		8317E67229EA8ECF007C6654 /* ColorPathSelector+Spectral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67029EA8ECF007C6654 /* ColorPathSelector+Spectral.swift */; };
+		8317E67429EA8F42007C6654 /* ColorPathSelector+Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67329EA8F42007C6654 /* ColorPathSelector+Lab.swift */; };
+		8317E67529EA8F42007C6654 /* ColorPathSelector+Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67329EA8F42007C6654 /* ColorPathSelector+Lab.swift */; };
+		8317E67729EA8F81007C6654 /* ColorPathSelector+Luv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67629EA8F81007C6654 /* ColorPathSelector+Luv.swift */; };
+		8317E67829EA8F81007C6654 /* ColorPathSelector+Luv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67629EA8F81007C6654 /* ColorPathSelector+Luv.swift */; };
+		8317E67A29EA8FA9007C6654 /* ColorPathSelector+LCHab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67929EA8FA9007C6654 /* ColorPathSelector+LCHab.swift */; };
+		8317E67B29EA8FA9007C6654 /* ColorPathSelector+LCHab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67929EA8FA9007C6654 /* ColorPathSelector+LCHab.swift */; };
+		8317E67D29EA8FD6007C6654 /* ColorPathSelector+LCHuv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67C29EA8FD6007C6654 /* ColorPathSelector+LCHuv.swift */; };
+		8317E67E29EA8FD6007C6654 /* ColorPathSelector+LCHuv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67C29EA8FD6007C6654 /* ColorPathSelector+LCHuv.swift */; };
+		8317E68029EA8FF9007C6654 /* ColorPathSelector+xyY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67F29EA8FF9007C6654 /* ColorPathSelector+xyY.swift */; };
+		8317E68129EA8FF9007C6654 /* ColorPathSelector+xyY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E67F29EA8FF9007C6654 /* ColorPathSelector+xyY.swift */; };
+		8317E68329EA902A007C6654 /* ColorPathSelector+XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68229EA902A007C6654 /* ColorPathSelector+XYZ.swift */; };
+		8317E68429EA902A007C6654 /* ColorPathSelector+XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68229EA902A007C6654 /* ColorPathSelector+XYZ.swift */; };
+		8317E68629EA9071007C6654 /* ColorPathSelector+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68529EA9071007C6654 /* ColorPathSelector+Apply.swift */; };
+		8317E68729EA9071007C6654 /* ColorPathSelector+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68529EA9071007C6654 /* ColorPathSelector+Apply.swift */; };
+		8317E68929EA90EF007C6654 /* ColorPathSelector+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68829EA90EF007C6654 /* ColorPathSelector+RGB.swift */; };
+		8317E68A29EA90EF007C6654 /* ColorPathSelector+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68829EA90EF007C6654 /* ColorPathSelector+RGB.swift */; };
+		8317E68C29EA917A007C6654 /* ColorPathSelector+HSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68B29EA917A007C6654 /* ColorPathSelector+HSV.swift */; };
+		8317E68D29EA917A007C6654 /* ColorPathSelector+HSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68B29EA917A007C6654 /* ColorPathSelector+HSV.swift */; };
+		8317E68F29EA926D007C6654 /* ColorPathSelector+HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68E29EA926D007C6654 /* ColorPathSelector+HSL.swift */; };
+		8317E69029EA926D007C6654 /* ColorPathSelector+HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E68E29EA926D007C6654 /* ColorPathSelector+HSL.swift */; };
+		8317E69229EA9297007C6654 /* ColorPathSelector+CMY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E69129EA9297007C6654 /* ColorPathSelector+CMY.swift */; };
+		8317E69329EA9297007C6654 /* ColorPathSelector+CMY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E69129EA9297007C6654 /* ColorPathSelector+CMY.swift */; };
+		8317E69529EA92C6007C6654 /* ColorPathSelector+CMYK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E69429EA92C5007C6654 /* ColorPathSelector+CMYK.swift */; };
+		8317E69629EA92C6007C6654 /* ColorPathSelector+CMYK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E69429EA92C5007C6654 /* ColorPathSelector+CMYK.swift */; };
+		8317E69829EA9300007C6654 /* ColorPathSelector+IPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E69729EA9300007C6654 /* ColorPathSelector+IPT.swift */; };
+		8317E69929EA9300007C6654 /* ColorPathSelector+IPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317E69729EA9300007C6654 /* ColorPathSelector+IPT.swift */; };
 		832EDD2D29DAF0AF00C0AADC /* MathRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD2C29DAF0AF00C0AADC /* MathRange.swift */; };
 		832EDD2E29DAF0AF00C0AADC /* MathRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD2C29DAF0AF00C0AADC /* MathRange.swift */; };
 		832EDD3029DAF1B300C0AADC /* MathVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832EDD2F29DAF1B300C0AADC /* MathVector.swift */; };
@@ -44,7 +76,7 @@
 		8364B73625D27DD000A62138 /* ColorSpaceConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8364B69825D27BBE00A62138 /* ColorSpaceConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8364B73F25D27DE400A62138 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Converter.swift */; };
 		8364B74025D27DE500A62138 /* ColorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ColorPath.swift */; };
-		8364B74125D27DE500A62138 /* ColorPathConverterSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ColorPathConverterSelector.swift */; };
+		8364B74125D27DE500A62138 /* ColorPathSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ColorPathSelector.swift */; };
 		8364B74225D27DE500A62138 /* ChromaticAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* ChromaticAdaptation.swift */; };
 		8364B74325D27DE500A62138 /* DeltaE.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* DeltaE.swift */; };
 		8364B74425D27DE500A62138 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* Math.swift */; };
@@ -103,7 +135,7 @@
 		OBJ_210 /* RLAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* RLAB.swift */; };
 		OBJ_211 /* ChromaticAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* ChromaticAdaptation.swift */; };
 		OBJ_212 /* ColorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ColorPath.swift */; };
-		OBJ_213 /* ColorPathConverterSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ColorPathConverterSelector.swift */; };
+		OBJ_213 /* ColorPathSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ColorPathSelector.swift */; };
 		OBJ_214 /* AdobeRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* AdobeRGB.swift */; };
 		OBJ_215 /* AppleRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* AppleRGB.swift */; };
 		OBJ_216 /* BT2020RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* BT2020RGB.swift */; };
@@ -187,6 +219,22 @@
 		8300196629E2884800188C32 /* Derivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Derivation.swift; sourceTree = "<group>"; };
 		8300196929E3187100188C32 /* Illuminants+Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Illuminants+Observer.swift"; sourceTree = "<group>"; };
 		8306145D264ACB100066611D /* ColorSpaceConverter.podspec.github */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorSpaceConverter.podspec.github; sourceTree = SOURCE_ROOT; };
+		8317E66A29EA8DEE007C6654 /* ColorPathSelector+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+Hex.swift"; sourceTree = "<group>"; };
+		8317E66D29EA8E8A007C6654 /* ColorPathSelector+RGBColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+RGBColor.swift"; sourceTree = "<group>"; };
+		8317E67029EA8ECF007C6654 /* ColorPathSelector+Spectral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+Spectral.swift"; sourceTree = "<group>"; };
+		8317E67329EA8F42007C6654 /* ColorPathSelector+Lab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+Lab.swift"; sourceTree = "<group>"; };
+		8317E67629EA8F81007C6654 /* ColorPathSelector+Luv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+Luv.swift"; sourceTree = "<group>"; };
+		8317E67929EA8FA9007C6654 /* ColorPathSelector+LCHab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+LCHab.swift"; sourceTree = "<group>"; };
+		8317E67C29EA8FD6007C6654 /* ColorPathSelector+LCHuv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+LCHuv.swift"; sourceTree = "<group>"; };
+		8317E67F29EA8FF9007C6654 /* ColorPathSelector+xyY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+xyY.swift"; sourceTree = "<group>"; };
+		8317E68229EA902A007C6654 /* ColorPathSelector+XYZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+XYZ.swift"; sourceTree = "<group>"; };
+		8317E68529EA9071007C6654 /* ColorPathSelector+Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+Apply.swift"; sourceTree = "<group>"; };
+		8317E68829EA90EF007C6654 /* ColorPathSelector+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+RGB.swift"; sourceTree = "<group>"; };
+		8317E68B29EA917A007C6654 /* ColorPathSelector+HSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+HSV.swift"; sourceTree = "<group>"; };
+		8317E68E29EA926D007C6654 /* ColorPathSelector+HSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+HSL.swift"; sourceTree = "<group>"; };
+		8317E69129EA9297007C6654 /* ColorPathSelector+CMY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+CMY.swift"; sourceTree = "<group>"; };
+		8317E69429EA92C5007C6654 /* ColorPathSelector+CMYK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+CMYK.swift"; sourceTree = "<group>"; };
+		8317E69729EA9300007C6654 /* ColorPathSelector+IPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+IPT.swift"; sourceTree = "<group>"; };
 		832EDD2C29DAF0AF00C0AADC /* MathRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathRange.swift; sourceTree = "<group>"; };
 		832EDD2F29DAF1B300C0AADC /* MathVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathVector.swift; sourceTree = "<group>"; };
 		832EDD3229DAF2D200C0AADC /* MathElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathElement.swift; sourceTree = "<group>"; };
@@ -218,7 +266,7 @@
 		OBJ_15 /* RLAB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLAB.swift; sourceTree = "<group>"; };
 		OBJ_16 /* ChromaticAdaptation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaticAdaptation.swift; sourceTree = "<group>"; };
 		OBJ_17 /* ColorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPath.swift; sourceTree = "<group>"; };
-		OBJ_18 /* ColorPathConverterSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPathConverterSelector.swift; sourceTree = "<group>"; };
+		OBJ_18 /* ColorPathSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPathSelector.swift; sourceTree = "<group>"; };
 		OBJ_20 /* AdobeRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdobeRGB.swift; sourceTree = "<group>"; };
 		OBJ_21 /* AppleRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRGB.swift; sourceTree = "<group>"; };
 		OBJ_22 /* BT2020RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BT2020RGB.swift; sourceTree = "<group>"; };
@@ -285,6 +333,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8317E66629EA8D1D007C6654 /* Selector */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_17 /* ColorPath.swift */,
+				OBJ_18 /* ColorPathSelector.swift */,
+				8317E68529EA9071007C6654 /* ColorPathSelector+Apply.swift */,
+				8317E67029EA8ECF007C6654 /* ColorPathSelector+Spectral.swift */,
+				8317E67329EA8F42007C6654 /* ColorPathSelector+Lab.swift */,
+				8317E67629EA8F81007C6654 /* ColorPathSelector+Luv.swift */,
+				8317E67929EA8FA9007C6654 /* ColorPathSelector+LCHab.swift */,
+				8317E67C29EA8FD6007C6654 /* ColorPathSelector+LCHuv.swift */,
+				8317E67F29EA8FF9007C6654 /* ColorPathSelector+xyY.swift */,
+				8317E68229EA902A007C6654 /* ColorPathSelector+XYZ.swift */,
+				8317E68829EA90EF007C6654 /* ColorPathSelector+RGB.swift */,
+				8317E66A29EA8DEE007C6654 /* ColorPathSelector+Hex.swift */,
+				8317E66D29EA8E8A007C6654 /* ColorPathSelector+RGBColor.swift */,
+				8317E68B29EA917A007C6654 /* ColorPathSelector+HSV.swift */,
+				8317E68E29EA926D007C6654 /* ColorPathSelector+HSL.swift */,
+				8317E69129EA9297007C6654 /* ColorPathSelector+CMY.swift */,
+				8317E69429EA92C5007C6654 /* ColorPathSelector+CMYK.swift */,
+				8317E69729EA9300007C6654 /* ColorPathSelector+IPT.swift */,
+			);
+			path = Selector;
+			sourceTree = "<group>";
+		};
+		8317E66729EA8D27007C6654 /* Difference */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_41 /* DeltaE.swift */,
+			);
+			path = Difference;
+			sourceTree = "<group>";
+		};
+		8317E66829EA8D60007C6654 /* Adaptation */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_16 /* ChromaticAdaptation.swift */,
+			);
+			path = Adaptation;
+			sourceTree = "<group>";
+		};
+		8317E66929EA8D94007C6654 /* Derivation */ = {
+			isa = PBXGroup;
+			children = (
+				8300196629E2884800188C32 /* Derivation.swift */,
+			);
+			path = Derivation;
+			sourceTree = "<group>";
+		};
 		832EDD2B29DAF02600C0AADC /* Math */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,7 +483,6 @@
 				OBJ_24 /* CMYK.swift */,
 				OBJ_29 /* IPT.swift */,
 				OBJ_34 /* Spectral.swift */,
-				8300196629E2884800188C32 /* Derivation.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -444,14 +540,14 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_40 /* Converter.swift */,
-				OBJ_17 /* ColorPath.swift */,
-				OBJ_18 /* ColorPathConverterSelector.swift */,
-				OBJ_16 /* ChromaticAdaptation.swift */,
-				OBJ_41 /* DeltaE.swift */,
+				8317E66629EA8D1D007C6654 /* Selector */,
+				8317E66729EA8D27007C6654 /* Difference */,
 				832EDD2B29DAF02600C0AADC /* Math */,
+				OBJ_38 /* Contants */,
+				8317E66829EA8D60007C6654 /* Adaptation */,
+				8317E66929EA8D94007C6654 /* Derivation */,
 				OBJ_45 /* Illuminants */,
 				OBJ_42 /* Density */,
-				OBJ_38 /* Contants */,
 				OBJ_8 /* Appearance Models */,
 				OBJ_19 /* Colors */,
 				832FD12E29E7EA0700AAF2B4 /* Transfer Funcs */,
@@ -663,17 +759,23 @@
 			files = (
 				8364B73F25D27DE400A62138 /* Converter.swift in Sources */,
 				832FD13629E854DB00AAF2B4 /* RGBColor.swift in Sources */,
+				8317E66E29EA8E8A007C6654 /* ColorPathSelector+RGBColor.swift in Sources */,
 				8364B74025D27DE500A62138 /* ColorPath.swift in Sources */,
-				8364B74125D27DE500A62138 /* ColorPathConverterSelector.swift in Sources */,
+				8364B74125D27DE500A62138 /* ColorPathSelector.swift in Sources */,
 				8364B74225D27DE500A62138 /* ChromaticAdaptation.swift in Sources */,
 				8364B74325D27DE500A62138 /* DeltaE.swift in Sources */,
 				8364B74425D27DE500A62138 /* Math.swift in Sources */,
 				8364B74525D27DE500A62138 /* IlluminantProtocol.swift in Sources */,
 				8300196729E2884800188C32 /* Derivation.swift in Sources */,
+				8317E69529EA92C6007C6654 /* ColorPathSelector+CMYK.swift in Sources */,
 				8376DCE729E05B7C00901214 /* DCIP3RGB.swift in Sources */,
+				8317E69829EA9300007C6654 /* ColorPathSelector+IPT.swift in Sources */,
+				8317E68029EA8FF9007C6654 /* ColorPathSelector+xyY.swift in Sources */,
 				8364B74625D27DE500A62138 /* Illuminants.swift in Sources */,
 				8364B74725D27DE500A62138 /* SpectralIlluminant.swift in Sources */,
 				8364B74825D27DE500A62138 /* Density.swift in Sources */,
+				8317E68629EA9071007C6654 /* ColorPathSelector+Apply.swift in Sources */,
+				8317E68C29EA917A007C6654 /* ColorPathSelector+HSV.swift in Sources */,
 				8364B74925D27DE500A62138 /* DensityStandard.swift in Sources */,
 				8364B74A25D27DE500A62138 /* ColorSpaceType.swift in Sources */,
 				8364B74B25D27DE500A62138 /* ATD95.swift in Sources */,
@@ -681,25 +783,35 @@
 				8376DCEA29E05BBF00901214 /* CIERGB.swift in Sources */,
 				8364B74D25D27DE500A62138 /* CIECAM02m1.swift in Sources */,
 				8364B74E25D27DE500A62138 /* Hunt.swift in Sources */,
+				8317E69229EA9297007C6654 /* ColorPathSelector+CMY.swift in Sources */,
 				8364B74F25D27DE500A62138 /* LLAB.swift in Sources */,
 				8364B75025D27DE500A62138 /* Nayatani95.swift in Sources */,
 				832EDD3629DAF39100C0AADC /* MathMatrix.swift in Sources */,
+				8317E67429EA8F42007C6654 /* ColorPathSelector+Lab.swift in Sources */,
 				8364B75125D27DE500A62138 /* RLAB.swift in Sources */,
+				8317E66B29EA8DEE007C6654 /* ColorPathSelector+Hex.swift in Sources */,
+				8317E67A29EA8FA9007C6654 /* ColorPathSelector+LCHab.swift in Sources */,
 				8364B75225D27DE500A62138 /* AdobeRGB.swift in Sources */,
+				8317E68929EA90EF007C6654 /* ColorPathSelector+RGB.swift in Sources */,
+				8317E68F29EA926D007C6654 /* ColorPathSelector+HSL.swift in Sources */,
 				8364B75325D27DE500A62138 /* AppleRGB.swift in Sources */,
 				8376DCE129E05B3900901214 /* BT709RGB.swift in Sources */,
+				8317E67129EA8ECF007C6654 /* ColorPathSelector+Spectral.swift in Sources */,
+				8317E67D29EA8FD6007C6654 /* ColorPathSelector+LCHuv.swift in Sources */,
 				8364B75425D27DE500A62138 /* BT2020RGB.swift in Sources */,
 				8364B75525D27DE500A62138 /* CMY.swift in Sources */,
 				8364B75625D27DE500A62138 /* CMYK.swift in Sources */,
 				8364B75825D27DE500A62138 /* Colorable.swift in Sources */,
 				8376DCE429E05B5200901214 /* DisplayP3RGB.swift in Sources */,
 				8364B75925D27DE500A62138 /* HSL.swift in Sources */,
+				8317E67729EA8F81007C6654 /* ColorPathSelector+Luv.swift in Sources */,
 				8364B75A25D27DE500A62138 /* HSV.swift in Sources */,
 				832FD13029E7EA4800AAF2B4 /* TransferFunction.swift in Sources */,
 				8364B75B25D27DE500A62138 /* IPT.swift in Sources */,
 				8364B75C25D27DE500A62138 /* LCHab.swift in Sources */,
 				8364B75D25D27DE500A62138 /* LCHuv.swift in Sources */,
 				8364B75E25D27DE500A62138 /* Lab.swift in Sources */,
+				8317E68329EA902A007C6654 /* ColorPathSelector+XYZ.swift in Sources */,
 				832EDD2D29DAF0AF00C0AADC /* MathRange.swift in Sources */,
 				8376DCED29E071F100901214 /* AdobeWideGamutRGB.swift in Sources */,
 				832EDD3329DAF2D200C0AADC /* MathElement.swift in Sources */,
@@ -728,6 +840,7 @@
 			files = (
 				OBJ_204 /* ATD95.swift in Sources */,
 				832FD13729E854DB00AAF2B4 /* RGBColor.swift in Sources */,
+				8317E66F29EA8E8A007C6654 /* ColorPathSelector+RGBColor.swift in Sources */,
 				OBJ_205 /* CIECAM02.swift in Sources */,
 				OBJ_206 /* CIECAM02m1.swift in Sources */,
 				OBJ_207 /* Hunt.swift in Sources */,
@@ -735,10 +848,15 @@
 				OBJ_209 /* Nayatani95.swift in Sources */,
 				OBJ_210 /* RLAB.swift in Sources */,
 				8300196829E2884800188C32 /* Derivation.swift in Sources */,
+				8317E69629EA92C6007C6654 /* ColorPathSelector+CMYK.swift in Sources */,
 				8376DCE829E05B7C00901214 /* DCIP3RGB.swift in Sources */,
+				8317E69929EA9300007C6654 /* ColorPathSelector+IPT.swift in Sources */,
+				8317E68129EA8FF9007C6654 /* ColorPathSelector+xyY.swift in Sources */,
 				OBJ_211 /* ChromaticAdaptation.swift in Sources */,
 				OBJ_212 /* ColorPath.swift in Sources */,
-				OBJ_213 /* ColorPathConverterSelector.swift in Sources */,
+				OBJ_213 /* ColorPathSelector.swift in Sources */,
+				8317E68729EA9071007C6654 /* ColorPathSelector+Apply.swift in Sources */,
+				8317E68D29EA917A007C6654 /* ColorPathSelector+HSV.swift in Sources */,
 				OBJ_214 /* AdobeRGB.swift in Sources */,
 				OBJ_215 /* AppleRGB.swift in Sources */,
 				OBJ_216 /* BT2020RGB.swift in Sources */,
@@ -746,25 +864,35 @@
 				8376DCEB29E05BBF00901214 /* CIERGB.swift in Sources */,
 				OBJ_218 /* CMYK.swift in Sources */,
 				OBJ_220 /* Colorable.swift in Sources */,
+				8317E69329EA9297007C6654 /* ColorPathSelector+CMY.swift in Sources */,
 				OBJ_221 /* HSL.swift in Sources */,
 				OBJ_222 /* HSV.swift in Sources */,
 				832EDD3729DAF39100C0AADC /* MathMatrix.swift in Sources */,
+				8317E67529EA8F42007C6654 /* ColorPathSelector+Lab.swift in Sources */,
 				OBJ_223 /* IPT.swift in Sources */,
+				8317E66C29EA8DEE007C6654 /* ColorPathSelector+Hex.swift in Sources */,
+				8317E67B29EA8FA9007C6654 /* ColorPathSelector+LCHab.swift in Sources */,
 				OBJ_224 /* LCHab.swift in Sources */,
+				8317E68A29EA90EF007C6654 /* ColorPathSelector+RGB.swift in Sources */,
+				8317E69029EA926D007C6654 /* ColorPathSelector+HSL.swift in Sources */,
 				OBJ_225 /* LCHuv.swift in Sources */,
 				8376DCE229E05B3900901214 /* BT709RGB.swift in Sources */,
+				8317E67229EA8ECF007C6654 /* ColorPathSelector+Spectral.swift in Sources */,
+				8317E67E29EA8FD6007C6654 /* ColorPathSelector+LCHuv.swift in Sources */,
 				OBJ_226 /* Lab.swift in Sources */,
 				OBJ_227 /* Luv.swift in Sources */,
 				OBJ_228 /* Spectral.swift in Sources */,
 				OBJ_229 /* XYZ.swift in Sources */,
 				8376DCE529E05B5200901214 /* DisplayP3RGB.swift in Sources */,
 				OBJ_230 /* sRGB.swift in Sources */,
+				8317E67829EA8F81007C6654 /* ColorPathSelector+Luv.swift in Sources */,
 				OBJ_231 /* xyY.swift in Sources */,
 				832FD13129E7EB9700AAF2B4 /* TransferFunction.swift in Sources */,
 				OBJ_232 /* ColorSpaceType.swift in Sources */,
 				OBJ_233 /* Converter.swift in Sources */,
 				OBJ_234 /* DeltaE.swift in Sources */,
 				OBJ_235 /* Density.swift in Sources */,
+				8317E68429EA902A007C6654 /* ColorPathSelector+XYZ.swift in Sources */,
 				832EDD2E29DAF0AF00C0AADC /* MathRange.swift in Sources */,
 				8376DCEE29E071F100901214 /* AdobeWideGamutRGB.swift in Sources */,
 				832EDD3429DAF2D200C0AADC /* MathElement.swift in Sources */,

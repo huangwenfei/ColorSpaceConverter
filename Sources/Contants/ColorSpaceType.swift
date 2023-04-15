@@ -13,6 +13,7 @@ public enum ColorSpaceType: String, Hashable {
     case unknown
     
     case Hex
+    case RGBColor
     
     case sRGB
     case AppleRGB
@@ -46,6 +47,7 @@ public enum ColorSpaceType: String, Hashable {
     public init<C: Colorable>(color: C.Type) {
         switch "\(color)" {
         case Self.Hex.rawValue:                self = .Hex
+        case Self.RGBColor.rawValue:           self = .RGBColor
         case Self.sRGB.rawValue:               self = .sRGB
         case Self.AppleRGB.rawValue:           self = .AppleRGB
         case Self.AdobeRGB.rawValue:           self = .AdobeRGB
@@ -72,7 +74,7 @@ public enum ColorSpaceType: String, Hashable {
         }
     }
     
-    public var isRgb: Bool {
+    public var isRgbColorSpace: Bool {
         self == .sRGB              ||
         self == .AppleRGB          ||
         self == .AdobeRGB          ||
@@ -85,11 +87,17 @@ public enum ColorSpaceType: String, Hashable {
         self == .AdobeWideGamutRGB
     }
     
+    public var isRgb: Bool {
+        isRgbColorSpace   ||
+        self == .Hex      ||
+        self == .RGBColor
+    }
+    
 }
 
 extension ColorSpaceType {
     
-    public enum RGB: String, Hashable {
+    public enum RGB: String, Hashable, CaseIterable {
         case unknown
         
         case sRGB
@@ -105,6 +113,22 @@ extension ColorSpaceType {
         
         public init<C: Colorable>(color: C.Type) {
             switch "\(color)" {
+            case Self.sRGB.rawValue:               self = .sRGB
+            case Self.AppleRGB.rawValue:           self = .AppleRGB
+            case Self.AdobeRGB.rawValue:           self = .AdobeRGB
+            case Self.BT2020RGB.rawValue:          self = .BT2020RGB
+            case Self.BT709RGB.rawValue:           self = .BT709RGB
+            case Self.DCIP3RGB.rawValue:           self = .DCIP3RGB
+            case Self.DCIP3PRGB.rawValue:          self = .DCIP3PRGB
+            case Self.DisplayP3RGB.rawValue:       self = .DisplayP3RGB
+            case Self.CIERGB.rawValue:             self = .CIERGB
+            case Self.AdobeWideGamutRGB.rawValue:  self = .AdobeWideGamutRGB
+            default:                               self = .unknown
+            }
+        }
+        
+        public init(color: ColorSpaceType) {
+            switch color.rawValue {
             case Self.sRGB.rawValue:               self = .sRGB
             case Self.AppleRGB.rawValue:           self = .AppleRGB
             case Self.AdobeRGB.rawValue:           self = .AdobeRGB

@@ -128,7 +128,7 @@ extension xyY {
         let xyY = Self.init(array: xy.values + [1.0])
         
         /// xyY -> XYZ
-        let xyz = ColorPathConverterSelector.xyYToXYZ(color: xyY, infos: nil)
+        let xyz = ColorPathSelector.xyYSelector.toXYZ(color: xyY, infos: nil)
         
         return .init(values: xyz.elements, rows: 1, columns: 3)
     }

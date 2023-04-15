@@ -435,3 +435,10 @@ extension Math {
     }
     
 }
+
+extension Math {
+    
+    public static func radians(_ degrees: Double) -> Double { .pi * degrees / 180 }
+    public static func degrees(_ radians: Double) -> Double { radians * 180 / .pi }
+    
+}

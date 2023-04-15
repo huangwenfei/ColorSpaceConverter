@@ -185,7 +185,7 @@ extension Converter {
         where From: Colorable, To: Colorable, Light: IlluminantProtocol
     {
         
-        guard "\(from.self)" != "\(to.self)" else { return from as! To }
+        guard "\(From.self)" != "\(To.self)" else { return from as! To }
         
         /// - Tag: Color Paths
         let converters = ColorPath(from: from.colorSpace, to: to)
@@ -209,7 +209,7 @@ extension Converter {
         where From: Colorable, To: Colorable, Light: IlluminantProtocol, RGB: RGBColorable
     {
         
-        guard "\(from.self)" != "\(to.self)" else { return from as! To }
+        guard "\(From.self)" != "\(To.self)" else { return from as! To }
         
         /// - Tag: Color Paths
         let converters = ColorPath(from: from.colorSpace, to: to)
@@ -235,7 +235,7 @@ extension Converter {
         where From: Colorable, To: Colorable, Light: IlluminantProtocol, RGB: RGBColorable
     {
         
-        guard "\(from.self)" != "\(to.self)" else { return from as! To }
+        guard "\(From.self)" != "\(To.self)" else { return from as! To }
         
         /// - Tag: Color Paths
         let converters = ColorPath(from: from.colorSpace, to: to)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertible {
+public struct Hex: RGBCommonColorable {
     
     // MARK: ColorProtocol
     public var colorSpace: ColorSpaceType { .Hex }
@@ -29,9 +29,23 @@ public struct Hex: NormalColorableProtocol, ColorElement, CustomStringConvertibl
     
     public var illuminant: Illuminant = .default
     
+    public var primaries: Matrix = .init()
+
+    public var gamma: Double = TransferFunction.LinearRGB.gamma
+    
+    public var xyzToRgbMatrices: Matrix = Self.convertIdentity
+    public var rgbToXyzMatrices: Matrix = Self.convertIdentity
+    
     // MARK: Normal Init
-    public init() {
-        self.init(rgb: sRGB.self)
+    public init() {  }
+    
+    // MARK: Gamma Map
+    public var eotfEncodingClosure: CodingClosure = {
+        TransferFunction.LinearRGB.eotfEncoding($0)
+    }
+    
+    public var eotfDecodingClosure: CodingClosure = {
+        TransferFunction.LinearRGB.eotfDecoding($0)
     }
     
     // TODO: malloc: Non-aligned pointer 0x600000740540 being freed (2)
@@ -193,16 +207,6 @@ extension Hex {
         self.alpha = rgb.isUpscale ? 255 : 1.0
         self.isUpscale = rgb.isUpscale
         self.illuminant = rgb.illuminant
-    }
-    
-}
-
-extension Hex {
-    
-    @discardableResult
-    public mutating func replaceXYZInfoTo<T: RGBColorable>(rgb: T.Type) -> Self {
-        self.rgbColorSpace = .init(color: T.self)
-        return self
     }
     
 }

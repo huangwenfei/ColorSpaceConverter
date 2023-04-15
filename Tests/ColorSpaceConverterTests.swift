@@ -795,6 +795,76 @@ class ColorSpaceConverterTests: XCTestCase {
         })
         
     }
+    
+    func testRGBColor2rgbFuncGen() throws {
+        
+        func colorProperty2(name: ColorSpaceType.RGB) -> String {
+            """
+            public static let RGBColorTo\(name.rawValue): PathConverter = .init( .RGBColor ==> .\(name.rawValue)) {
+                let color = $0.base as! RGBColor
+                var infos = $1
+                let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+                infos?["\(Illuminant.self)"] = nil
+                return .init(
+                    Self.RGBColorTo\(name.rawValue)(color: color, illuminant: illuminant, infos: infos)
+                )
+            }
+            """
+        }
+        
+        func colorFunc2(name: ColorSpaceType.RGB) -> String {
+            """
+            public static func RGBColorTo\(name.rawValue)(color: RGBColor, illuminant: Illuminant, infos: [AnyHashable: Any]?) -> \(name.rawValue) {
+                RGBColorToRGB(color: color, illuminant: illuminant, infos: infos)
+            }
+            """
+        }
+        
+        func colorProperty4(name: ColorSpaceType.RGB) -> String {
+            """
+            public static let \(name.rawValue)ToRGBColor: PathConverter = .init( .\(name.rawValue) ==> .RGBColor) {
+                let color = $0.base as! \(name.rawValue)
+                var infos = $1
+                let illuminant = infos?["\(Illuminant.self)"] as! Illuminant
+                infos?["\(Illuminant.self)"] = nil
+                return .init(
+                    Self.\(name.rawValue)ToRGBColor(color: color, illuminant: illuminant, infos: infos)
+                )
+            }
+            """
+        }
+        
+        func colorFunc4(name: ColorSpaceType.RGB) -> String {
+            """
+            public static func \(name.rawValue)ToRGBColor(color: \(name.rawValue), illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> RGBColor {
+                RGBToRGBColor(color: color, illuminant: illuminant, infos: infos)
+            }
+            """
+        }
+        
+        let rgbs = ColorSpaceType.RGB.allCases
+        
+        print("--- colorFunc2 ---")
+        rgbs.forEach({
+            print(colorFunc2(name: $0)) ; print()
+        })
+        
+        print("--- colorProperty2 ---")
+        rgbs.forEach({
+            print(colorProperty2(name: $0)) ; print()
+        })
+        
+        print("--- colorFunc4 ---")
+        rgbs.forEach({
+            print(colorFunc4(name: $0)) ; print()
+        })
+        
+        print("--- colorProperty4 ---")
+        rgbs.forEach({
+            print(colorProperty4(name: $0)) ; print()
+        })
+        
+    }
 
     func testRgb2xyzFuncGen() throws {
         

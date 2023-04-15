@@ -21,9 +21,7 @@ public struct AdobeWideGamutRGB: RGBColorable {
     
     public var isUpscale: Bool = true
     
-    public var primaries: Matrix {
-        .init([0.7347, 0.2653, 0.1152, 0.8264, 0.1566, 0.0177], 3, 2)
-    }
+    public var primaries: Matrix { Illuminant.rgbPrimaries[.AdobeWideGamutRGB]! }
     
     /// 2.1245283019
     public var gamma: Double { TransferFunction.AdobeWideGamutRGB.gamma }

@@ -22,9 +22,7 @@ public struct AppleRGB: RGBColorable {
     
     public var isUpscale: Bool = true
     
-    public var primaries: Matrix {
-        .init([0.6250, 0.3400, 0.2800, 0.5950, 0.1550, 0.0700], 3, 2)
-    }
+    public var primaries: Matrix { Illuminant.rgbPrimaries[.AppleRGB]! }
     
     public var gamma: Double { TransferFunction.AppleRGB.gamma }
     

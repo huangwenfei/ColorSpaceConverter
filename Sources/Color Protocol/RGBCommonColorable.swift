@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol RGBCommonColorable: RGBColorable {
+public protocol RGBCommonColorable: RGBScalable, NormalColorableProtocol, RGBColorElement, RGBSomeElementInit, CustomStringConvertible {
     
     var rgbColorSpace: ColorSpaceType.RGB { get set }
     
@@ -22,6 +22,27 @@ public protocol RGBCommonColorable: RGBColorable {
     
     var eotfEncodingClosure: CodingClosure { get set }
     var eotfDecodingClosure: CodingClosure { get set }
+    
+    init(type: ColorSpaceType.RGB, red: Int, green: Int, blue: Int, illuminant: Illuminant)
+    init(type: ColorSpaceType.RGB, red: Element, green: Element, blue: Element, illuminant: Illuminant, isUpscale: Bool)
+    
+    init(type: ColorSpaceType.RGB, gray: Int, illuminant: Illuminant)
+    init(type: ColorSpaceType.RGB, gray: Element, illuminant: Illuminant, isUpscale: Bool)
+    
+    init(type: ColorSpaceType.RGB, red: Int, green: Int, blue: Int)
+    init(type: ColorSpaceType.RGB, red: Element, green: Element, blue: Element, isUpscale: Bool)
+    
+    init(type: ColorSpaceType.RGB, gray: Int)
+    init(type: ColorSpaceType.RGB, gray: Element, isUpscale: Bool)
+    
+    
+    init<RGB: RGBColorable>(rgb: RGB)
+    init(type: ColorSpaceType.RGB, fromRgb rgb: [Element], isUpscale: Bool, illuminant: Illuminant)
+    init(type: ColorSpaceType.RGB, fromRgb rgb: [Element], isUpscale: Bool)
+    init(fromRgb rgb: IntUnLumaTuple, type: ColorSpaceType.RGB)
+    init(fromRgb rgb: IntTuple, type: ColorSpaceType.RGB)
+    init(fromRgb rgb: FloatUnLumaTuple, type: ColorSpaceType.RGB)
+    init(fromRgb rgb: FloatTuple, type: ColorSpaceType.RGB)
     
 }
 
@@ -42,8 +63,104 @@ extension RGBCommonColorable {
 
 extension RGBCommonColorable {
     
-    public init<RGB: RGBColorable>(mapping rgb: RGB) {
-        self.init(rgb: rgb, illuminant: rgb.illuminant)
+    public var description: String {
+        "\(Self.self) { rgbType: \(rgbColorSpace), red: \(red), green: \(green), blue: \(blue), illuminant: \(illuminant), isUpscale: \(isUpscale) }"
+    }
+    
+}
+
+extension RGBCommonColorable {
+    
+    public init(type: ColorSpaceType.RGB, red: Int, green: Int, blue: Int, illuminant: Illuminant) {
+        let elements: [Element] = [
+            Element(min(max(red  , 0), 255)),
+            Element(min(max(green, 0), 255)),
+            Element(min(max(blue , 0), 255))
+        ]
+        self.init(type: type, fromRgb: elements, isUpscale: true, illuminant: illuminant)
+    }
+    
+    public init(type: ColorSpaceType.RGB, red: Element, green: Element, blue: Element, illuminant: Illuminant, isUpscale: Bool) {
+        
+        guard !isUpscale else {
+            self.init(
+                type: type, red: .init(red), green: .init(green), blue: .init(blue),
+                illuminant: illuminant
+            )
+            return
+        }
+        
+        let elements: [Element] = [
+            Element(min(max(red  , 0), 1)),
+            Element(min(max(green, 0), 1)),
+            Element(min(max(blue , 0), 1))
+        ]
+        self.init(type: type, fromRgb: elements, isUpscale: isUpscale, illuminant: illuminant)
+    }
+    
+    
+    public init(type: ColorSpaceType.RGB, gray: Int, illuminant: Illuminant) {
+        self.init(type: type, red: gray, green: gray, blue: gray, illuminant: illuminant)
+    }
+    
+    public init(type: ColorSpaceType.RGB, gray: Element, illuminant: Illuminant, isUpscale: Bool) {
+        self.init(
+            type: type,
+            red: gray, green: gray, blue: gray,
+            illuminant: illuminant,
+            isUpscale: isUpscale
+        )
+    }
+    
+    
+    public init(type: ColorSpaceType.RGB, red: Int, green: Int, blue: Int) {
+        self.init(
+            type: type,
+            red: red,
+            green: green,
+            blue: blue,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default
+        )
+    }
+    
+    public init(type: ColorSpaceType.RGB, red: Element, green: Element, blue: Element, isUpscale: Bool) {
+        self.init(
+            type: type,
+            red: red, green: green, blue: blue,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default,
+            isUpscale: isUpscale
+        )
+    }
+    
+    
+    public init(type: ColorSpaceType.RGB, gray: Int) {
+        self.init(
+            type: type,
+            gray: gray,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default
+        )
+    }
+    
+    public init(type: ColorSpaceType.RGB, gray: Element, isUpscale: Bool) {
+        self.init(
+            type: type,
+            gray: gray,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default,
+            isUpscale: isUpscale
+        )
+    }
+    
+}
+
+extension RGBCommonColorable {
+    
+    public init<RGB: RGBColorable>(rgb: RGB) {
+        self.init()
+        self.red = rgb.red
+        self.green = rgb.green
+        self.blue = rgb.blue
+        self.isUpscale = rgb.isUpscale
+        self.illuminant = rgb.illuminant
         self.rgbColorSpace = .init(color: rgb.colorSpace)
         self.primaries = rgb.primaries
         self.gamma = rgb.gamma

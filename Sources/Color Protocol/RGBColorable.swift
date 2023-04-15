@@ -7,17 +7,7 @@
 
 import Foundation
 
-public protocol RGBColorable: NormalColorableProtocol, SomeElementInit, CustomStringConvertible {
-    
-    var red: Element { get set }
-    var green: Element { get set }
-    var blue: Element { get set }
-    
-    typealias IntTuple = (red: Int, green: Int, blue: Int, illuminant: Illuminant)
-    typealias FloatTuple = (red: Element, green: Element, blue: Element, illuminant: Illuminant)
-    
-    typealias IntUnLumaTuple = (red: Int, green: Int, blue: Int)
-    typealias FloatUnLumaTuple = (red: Element, green: Element, blue: Element)
+public protocol RGBColorable: RGBScalable, NormalColorableProtocol, RGBColorElement, RGBSomeElementInit, CustomStringConvertible {
     
     var primaries: Matrix { get }
     
@@ -46,40 +36,6 @@ public protocol RGBColorable: NormalColorableProtocol, SomeElementInit, CustomSt
     
     func eotfEncoding() -> TransferFunction.Elements
     func eotfDecoding() -> TransferFunction.Elements
-    
-}
-
-extension RGBColorable {
-    
-    public func downable() -> Self {
-        
-        var result = self
-        
-        if isUpscale {
-            result.red   /= 255
-            result.green /= 255
-            result.blue  /= 255
-        }
-        
-        result.isUpscale = false
-        
-        return result
-    }
-    
-    public func uppable() -> Self {
-        
-        var result = self
-        
-        if !isUpscale {
-            result.red   *= 255
-            result.green *= 255
-            result.blue  *= 255
-        }
-        
-        result.isUpscale = true
-        
-        return result
-    }
     
 }
 
@@ -126,52 +82,12 @@ extension RGBColorable {
 extension RGBColorable {
     
     public var description: String {
-        "\(Self.self) { red: \(red), green: \(green), blue: \(blue), illuminant: \(illuminant) }"
+        "\(Self.self) { red: \(red), green: \(green), blue: \(blue), illuminant: \(illuminant), isUpscale: \(isUpscale) }"
     }
     
 }
 
 extension RGBColorable {
-    
-    public static var redUpperRange: ColorElement.Range {
-        .init(0, 255)
-    }
-    
-    public static var greenUpperRange: ColorElement.Range {
-        redUpperRange
-    }
-    
-    public static var blueUpperRange: ColorElement.Range {
-        redUpperRange
-    }
-    
-    public static var alphaUpperRange: ColorElement.Range {
-        redUpperRange
-    }
-    
-    
-    public static var redDownerRange: ColorElement.Range {
-        .init(0, 1)
-    }
-    
-    public static var greenDownerRange: ColorElement.Range {
-        redDownerRange
-    }
-    
-    public static var blueDownerRange: ColorElement.Range {
-        redDownerRange
-    }
-    
-    public static var alphaDownerRange: ColorElement.Range {
-        redDownerRange
-    }
-    
-}
-
-extension RGBColorable {
-    
-    /// - Tag: ColorProtocol
-    public var elementCount: Int { 3 }
     
     /// - Tag: RGBProtocol
     public init(red: Int, green: Int, blue: Int, illuminant: Illuminant) {
@@ -294,37 +210,6 @@ extension RGBColorable {
             red: rgb.red, green: rgb.green, blue: rgb.blue,
             isUpscale: rgb.isUpscale
         )
-    }
-    
-}
-
-/// - Tag: SomeElementInit
-extension RGBColorable {
-    
-    public init(array: [Element]) {
-        self.init()
-        let values = Self.initalize(with: array, elementCount: elementCount)
-        red = values[0] ; green = values[1] ; blue = values[2]
-    }
-    
-    public init(array: [Element], isUpscale: Bool, illuminant: Illuminant) {
-        self.init()
-        let values = Self.initalize(with: array, elementCount: elementCount)
-        red = values[0] ; green = values[1] ; blue = values[2]
-        self.isUpscale = isUpscale
-        self.illuminant = illuminant
-    }
-    
-    public init(iter elements: Element...) {
-        self.init(array: elements)
-    }
-    
-    public init(iter elements: Element..., isUpscale: Bool, illuminant: Illuminant) {
-        self.init(array: elements, isUpscale: isUpscale, illuminant: illuminant)
-    }
-    
-    public var elements: [Element] {
-        [red, green, blue]
     }
     
 }

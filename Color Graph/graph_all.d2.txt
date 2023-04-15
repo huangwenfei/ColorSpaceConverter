@@ -35,6 +35,7 @@ XYZ -> AdobeWideGamutRGB
 XYZ -> IPT
 
 Hex -> XYZ
+RGBColor -> XYZ
 sRGB -> XYZ
 AppleRGB -> XYZ
 AdobeRGB -> XYZ
@@ -89,6 +90,17 @@ DCIP3PRGB -> Hex
 DisplayP3RGB -> Hex
 CIERGB -> Hex
 AdobeWideGamutRGB -> Hex
+
+sRGB -> RGBColor
+AppleRGB -> RGBColor
+AdobeRGB -> RGBColor
+BT2020RGB -> RGBColor
+BT709RGB -> RGBColor
+DCIP3RGB -> RGBColor
+DCIP3PRGB -> RGBColor
+DisplayP3RGB -> RGBColor
+CIERGB -> RGBColor
+AdobeWideGamutRGB -> RGBColor
 
 HSV -> sRGB
 HSV -> AppleRGB

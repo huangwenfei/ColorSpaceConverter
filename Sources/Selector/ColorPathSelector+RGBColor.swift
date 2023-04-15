@@ -325,7 +325,7 @@ extension ColorPathSelector.RGBColorSeletor {
     
     public static func RGBToRGBColor<T: RGBColorable>(color: T, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> RGBColor {
 
-        .init(mapping: color)
+        .init(rgb: color)
     }
     
     public static func fromsRGB(color: sRGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> RGBColor {

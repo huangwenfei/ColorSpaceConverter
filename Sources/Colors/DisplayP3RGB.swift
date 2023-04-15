@@ -22,9 +22,7 @@ public struct DisplayP3RGB: RGBColorable {
     public var isUpscale: Bool = true
     
     /// is same as DIC-P3
-    public var primaries: Matrix {
-        .init([0.6800, 0.3200, 0.2650, 0.6900, 0.1500, 0.0600], 3, 2)
-    }
+    public var primaries: Matrix { Illuminant.rgbPrimaries[.DisplayP3RGB]! }
     
     public var gamma: Double { TransferFunction.DisplayP3RGB.gamma }
     

@@ -27,9 +27,7 @@ public struct DCIP3RGB: RGBColorable {
     
     public var isUpscale: Bool = true
     
-    public var primaries: Matrix {
-        .init([0.6800, 0.3200, 0.2650, 0.6900, 0.1500, 0.0600], 3, 2)
-    }
+    public var primaries: Matrix { Illuminant.rgbPrimaries[.DCIP3RGB]! }
     
     public var gamma: Double { TransferFunction.DCIP3RGB.gamma }
     
@@ -78,9 +76,7 @@ public struct DCIP3PRGB: RGBColorable {
     
     public var isUpscale: Bool = true
     
-    public var primaries: Matrix {
-        .init([0.7400, 0.2700, 0.2200, 0.7800, 0.0900, -0.0900], 3, 2)
-    }
+    public var primaries: Matrix { Illuminant.rgbPrimaries[.DCIP3PRGB]! }
     
     public var gamma: Double { TransferFunction.DCIP3PRGB.gamma }
     

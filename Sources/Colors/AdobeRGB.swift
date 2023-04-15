@@ -24,9 +24,7 @@ public struct AdobeRGB: RGBColorable {
     
     public var isUpscale: Bool = true
     
-    public var primaries: Matrix {
-        .init([0.6400, 0.3300, 0.2100, 0.7100, 0.1500, 0.0600], 3, 2)
-    }
+    public var primaries: Matrix { Illuminant.rgbPrimaries[.AdobeRGB]! }
     
     /// 2.1245283019
     public var gamma: Double { TransferFunction.AdobeRGB.gamma }

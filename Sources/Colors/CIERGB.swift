@@ -21,16 +21,7 @@ public struct CIERGB: RGBColorable {
     
     public var isUpscale: Bool = true
     
-    public var primaries: Matrix {
-        .init(
-            [
-                0.734742840005998, 0.265257159994002,
-                0.273779033824958, 0.717477700256116,
-                0.166555629580280, 0.008910726182545
-            ],
-            3, 2
-        )
-    }
+    public var primaries: Matrix { Illuminant.rgbPrimaries[.CIERGB]! }
     
     public var gamma: Double { TransferFunction.CIERGB.gamma }
     

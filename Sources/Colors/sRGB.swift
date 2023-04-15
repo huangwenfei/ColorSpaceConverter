@@ -24,9 +24,7 @@ public struct sRGB: RGBColorable {
     
     public var isUpscale: Bool = true
     
-    public var primaries: Matrix {
-        .init([0.6400, 0.3300, 0.3000, 0.6000, 0.1500, 0.0600], 3, 2)
-    }
+    public var primaries: Matrix { Illuminant.rgbPrimaries[.sRGB]! }
 
     public var gamma: Double { TransferFunction.sRGB.gamma }
     

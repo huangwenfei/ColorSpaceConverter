@@ -325,7 +325,7 @@ extension ColorPathSelector.HexSeletor {
     /// - Tag: xRGB -> Hex
     public static func RGBToHex<T: RGBColorable>(color: T, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {
 
-        .init(mapping: color)
+        .init(rgb: color)
     }
 
     public static func fromsRGB(color: sRGB, illuminant: Illuminant?, infos: [AnyHashable: Any]?) -> Hex {

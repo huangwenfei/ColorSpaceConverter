@@ -9,19 +9,14 @@
 import Foundation
 
 // MARK: Base Color Protocol
-public protocol Colorable: Hashable {
+public protocol Colorable: ColorScalable, Hashable {
     
     var colorSpace: ColorSpaceType { get }
-    var elementCount: Int { get }
     
     associatedtype IlluminantType: IlluminantProtocol
     var illuminant: IlluminantType { get set }
     
     init()
-    
-    var isUpscale: Bool { get set }
-    func uppable() -> Self
-    func downable() -> Self
     
 }
 

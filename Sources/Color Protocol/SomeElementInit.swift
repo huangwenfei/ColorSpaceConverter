@@ -8,7 +8,9 @@
 import Foundation
 
 public protocol SomeElementInit: ColorElement {
+    
     var elements: [Element] { get }
+    var elementCount: Int { get }
     
     init(array: [Element])
     init(iter elements: Element...)

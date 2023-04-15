@@ -35,7 +35,6 @@ public protocol RGBCommonColorable: RGBScalable, NormalColorableProtocol, RGBCol
     init(type: ColorSpaceType.RGB, gray: Int)
     init(type: ColorSpaceType.RGB, gray: Element, isUpscale: Bool)
     
-    
     init<RGB: RGBColorable>(rgb: RGB)
     init(type: ColorSpaceType.RGB, fromRgb rgb: [Element], isUpscale: Bool, illuminant: Illuminant)
     init(type: ColorSpaceType.RGB, fromRgb rgb: [Element], isUpscale: Bool)

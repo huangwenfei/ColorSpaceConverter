@@ -26,7 +26,7 @@ public struct CMY: NormalColorableProtocol {
     
     // MARK: Normal Init
     public init() {  }
-    
+
     public init(c: Element, m: Element, y: Element, isUpscale: Bool = false, illuminant: Illuminant = .default) {
         self.c = c
         self.m = m

@@ -34,6 +34,9 @@ public protocol RGBColorable: RGBScalable, NormalColorableProtocol, RGBColorElem
     init(rgb: IntUnLumaTuple)
     init(rgb: FloatUnLumaTuple)
     
+    init<RGB: RGBColorable>(rgb: RGB, illuminant: Illuminant)
+    init<RGB: RGBColorable>(rgb: RGB)
+    
     func eotfEncoding() -> TransferFunction.Elements
     func eotfDecoding() -> TransferFunction.Elements
     
@@ -223,6 +226,25 @@ extension RGBColorable {
     
     public mutating func eotfDecoded() {
         self = .init(array: self.eotfDecoding())
+    }
+    
+}
+
+extension RGBColorable {
+    
+    public init<RGB: RGBCommonColorable>(rgb: RGB, illuminant: Illuminant) {
+        self.init(
+            red: rgb.red, green: rgb.green, blue: rgb.blue,
+            illuminant: illuminant,
+            isUpscale: rgb.isUpscale
+        )
+    }
+    
+    public init<RGB: RGBCommonColorable>(rgb: RGB) {
+        self.init(
+            red: rgb.red, green: rgb.green, blue: rgb.blue,
+            isUpscale: rgb.isUpscale
+        )
     }
     
 }

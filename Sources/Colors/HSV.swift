@@ -28,7 +28,7 @@ public struct HSV: NormalColorableProtocol, ColorElement {
     
     // MARK: Normal Init
     public init() {  }
-    
+
     public init(h: Int, s: Int, v: Int, illuminant: Illuminant = .default) {
         self.h = .init(h)
         self.s = .init(s)

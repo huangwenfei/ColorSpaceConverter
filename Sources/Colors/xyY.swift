@@ -28,11 +28,12 @@ public struct xyY: NormalColorableProtocol, ColorElement {
     
     // MARK: Normal Init
     public init() {  }
-    
-    public init(x: Element, y: Element, Y: Element, illuminant: Illuminant = .default) {
+
+    public init(x: Element, y: Element, Y: Element, isUpscale: Bool = false, illuminant: Illuminant = .default) {
         self.x = x
         self.y = y
         self.Y = Y
+        self.isUpscale = isUpscale
         self.illuminant = illuminant
     }
     

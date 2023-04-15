@@ -28,7 +28,7 @@ public struct Luv: NormalColorableProtocol, ColorElement {
     
     // MARK: Normal Init
     public init() {  }
-    
+
     public init(l: Element, u: Element, v: Element, isUpscale: Bool = true, illuminant: Illuminant = .default) {
         self.l = l
         self.u = u

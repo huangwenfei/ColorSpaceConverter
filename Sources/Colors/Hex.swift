@@ -52,8 +52,9 @@ public struct Hex: RGBCommonColorable {
     // Info:
     // 1. https://stackoverflow.com/questions/4055277/non-aligned-pointer-being-freed-on-mac 可能只是不同的malloc实现。可能Mac的malloc对齐到更大的边界，因此它会发现您传递给free的指针可能不正确，因为它具有错误的对齐方式。然而，它表示您正在向free()传递一个不是来自malloc()的指针。这肯定是一个bug的迹象，可能在您的所有平台上都会出现。
     // 2.这个错误提示来自于C语言的malloc函数，在使用malloc函数分配内存后，释放内存时如果指针不是按照内存对齐要求分配的，则会出现该提示。这种情况可能因为代码中存在指针运算错误、未正确使用指针或者类型转换问题等原因导致。如果在Swift代码中遇到类似的问题，建议检查代码中是否存在这些问题，并进行相应的修改。
-    public init<T: RGBColorable>(rgb: T.Type) {
-        self.rgbColorSpace = .init(color: T.self)
+    public init<T: RGBColorable>(rgbType: T.Type) {
+        self.init(type: .init(color: rgbType), fromRgb: [0, 0, 0], isUpscale: true)
+        self.alpha = 255
     }
     
     public init(red: Int, green: Int, blue: Int, alpha: Int = 255, illuminant: Illuminant = .default) {
@@ -62,11 +63,9 @@ public struct Hex: RGBCommonColorable {
     
     public init<T: RGBColorable>(red: Int, green: Int, blue: Int, alpha: Int = 255, illuminant: Illuminant = .default, rgb: T.Type) {
         
-        self.init(rgb: rgb)
+        self.init(type: .init(color: rgb), red: red, green: green, blue: blue)
         
-        self.red = .init(red)
-        self.green = .init(green)
-        self.blue = .init(blue)
+        self.alpha = .init(min(max(0, alpha), 255))
         self.isUpscale = true
         self.illuminant = illuminant
         
@@ -78,13 +77,9 @@ public struct Hex: RGBCommonColorable {
     
     public init<T: RGBColorable>(red: Element, green: Element, blue: Element, alpha: Element = 1.0, illuminant: Illuminant = .default, rgb: T.Type) {
         
-        self.init(rgb: rgb)
+        self.init(type: .init(color: rgb), red: red, green: green, blue: blue, isUpscale: false)
         
-        self.red = red
-        self.green = green
-        self.blue = blue
-        self.alpha = alpha
-        self.isUpscale = false
+        self.alpha = min(max(0, alpha), 1)
         self.illuminant = illuminant
     }
     
@@ -125,7 +120,7 @@ public struct Hex: RGBCommonColorable {
     
     public init<T: RGBColorable>(byString str: String, rgb: T.Type) {
         
-        self.init(rgb: rgb)
+        self.init(rgbType: rgb)
         
         let hexString = str.trimmingCharacters(in: .whitespacesAndNewlines)
         let scanner   = Scanner(string: hexString)
@@ -162,7 +157,7 @@ public struct Hex: RGBCommonColorable {
     
     public init<T: RGBColorable>(byUInt16 uint16: UInt16, haveAlpha: Bool = false, rgb: T.Type) {
         
-        self.init(rgb: rgb)
+        self.init(rgbType: rgb)
         
         let mask = UInt16(0xF)
         
@@ -183,7 +178,7 @@ public struct Hex: RGBCommonColorable {
     
     public init<T: RGBColorable>(byUInt32 uint32: UInt32, haveAlpha: Bool = false, rgb: T.Type) {
         
-        self.init(rgb: rgb)
+        self.init(rgbType: rgb)
         
         let mask = UInt32(0xFF)
         
@@ -199,14 +194,40 @@ public struct Hex: RGBCommonColorable {
 
 extension Hex {
     
-    public init<T: RGBColorable>(rgb: T) {
-        self.init(rgb: T.self)
+    public init<RGB: RGBColorable>(rgb: RGB) {
+        self.init()
         self.red = rgb.red
         self.green = rgb.green
         self.blue = rgb.blue
         self.alpha = rgb.isUpscale ? 255 : 1.0
         self.isUpscale = rgb.isUpscale
         self.illuminant = rgb.illuminant
+        self.rgbColorSpace = .init(color: rgb.colorSpace)
+        self.primaries = rgb.primaries
+        self.gamma = rgb.gamma
+        self.xyzToRgbMatrices = rgb.xyzToRgbMatrices
+        self.rgbToXyzMatrices = rgb.rgbToXyzMatrices
+        let coder = TransferFunction.funcs[.init(rawValue: rgb.colorSpace.rawValue)!]!
+        self.eotfEncodingClosure = coder.encoding
+        self.eotfDecodingClosure = coder.decoding
+    }
+    
+    public init<RGB: RGBCommonColorable>(rgb: RGB) {
+        self.init()
+        self.red = rgb.red
+        self.green = rgb.green
+        self.blue = rgb.blue
+        self.alpha = rgb.isUpscale ? 255 : 1.0
+        self.isUpscale = rgb.isUpscale
+        self.illuminant = rgb.illuminant
+        self.rgbColorSpace = rgb.rgbColorSpace
+        self.primaries = rgb.primaries
+        self.gamma = rgb.gamma
+        self.xyzToRgbMatrices = rgb.xyzToRgbMatrices
+        self.rgbToXyzMatrices = rgb.rgbToXyzMatrices
+        let coder = TransferFunction.funcs[rgb.rgbColorSpace]!
+        self.eotfEncodingClosure = coder.encoding
+        self.eotfDecodingClosure = coder.decoding
     }
     
 }
@@ -254,88 +275,18 @@ extension Hex {
         "[#00000000, #FFFFFFFF]"
     }
     
-    public static var redUpperRange: ColorElement.Range {
-        sRGB.redUpperRange
-    }
-    
-    public static var greenUpperRange: ColorElement.Range {
-        redUpperRange
-    }
-    
-    public static var blueUpperRange: ColorElement.Range {
-        redUpperRange
-    }
-    
-    public static var alphaUpperRange: ColorElement.Range {
-        redUpperRange
-    }
-    
-    
-    public static var redDownerRange: ColorElement.Range {
-        sRGB.redDownerRange
-    }
-    
-    public static var greenDownerRange: ColorElement.Range {
-        redDownerRange
-    }
-    
-    public static var blueDownerRange: ColorElement.Range {
-        redDownerRange
-    }
-    
-    public static var alphaDownerRange: ColorElement.Range {
-        redDownerRange
-    }
-    
 }
 
 extension Hex {
     
-    public func downable() -> Self {
-        
-        var result = self
-        
-        if isUpscale {
-            result.red   /= 255
-            result.green /= 255
-            result.blue  /= 255
-            result.alpha /= 255
-        }
-        
-        result.isUpscale = false
-        
-        return result
-    }
-    
-    public func uppable() -> Self {
-        
-        var result = self
-        
-        if !isUpscale {
-            result.red   *= 255
-            result.green *= 255
-            result.blue  *= 255
-            result.alpha *= 255
-        }
-        
-        result.isUpscale = true
-        
-        return result
-    }
-    
-}
-
-/// - Tag: SomeElementInit
-extension Hex: SomeElementInit {
-    
-    public init(array: [Element]) {
+    public init(array: [Element], type: ColorSpaceType.RGB) {
         self.init()
         let values = Self.initalize(with: array, elementCount: elementCount)
         red = values[0] ; green = values[1] ; blue = values[2] ; alpha = values[3]
     }
     
-    public init(iter elements: Element...) {
-        self.init(array: elements)
+    public init(iter elements: Element..., type: ColorSpaceType.RGB) {
+        self.init(array: elements, type: type)
     }
     
     public var elements: [Element] {

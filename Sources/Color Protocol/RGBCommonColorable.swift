@@ -170,6 +170,23 @@ extension RGBCommonColorable {
         self.eotfDecodingClosure = coder.decoding
     }
     
+    public init<RGB: RGBCommonColorable>(rgb: RGB) {
+        self.init()
+        self.red = rgb.red
+        self.green = rgb.green
+        self.blue = rgb.blue
+        self.isUpscale = rgb.isUpscale
+        self.illuminant = rgb.illuminant
+        self.rgbColorSpace = rgb.rgbColorSpace
+        self.primaries = rgb.primaries
+        self.gamma = rgb.gamma
+        self.xyzToRgbMatrices = rgb.xyzToRgbMatrices
+        self.rgbToXyzMatrices = rgb.rgbToXyzMatrices
+        let coder = TransferFunction.funcs[rgb.rgbColorSpace]!
+        self.eotfEncodingClosure = coder.encoding
+        self.eotfDecodingClosure = coder.decoding
+    }
+    
     public init(type: ColorSpaceType.RGB, fromRgb rgb: [Element], isUpscale: Bool, illuminant: Illuminant) {
         
         func _rgb<T :RGBColorable>(_ t: T.Type) -> Self {

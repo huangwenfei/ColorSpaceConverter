@@ -20,7 +20,7 @@ public protocol Colorable: ColorScalable, Hashable {
     
 }
 
-extension Colorable where Self: SomeElementInit {
+extension Colorable where Self: ColorSomeElementInit {
     
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.colorSpace == rhs.colorSpace &&

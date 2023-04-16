@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol RGBSomeElementInit: SomeElementInit {
+public protocol RGBSomeElementInit: ColorSomeElementInit {
     
     init(array: [Element], isUpscale: Bool, illuminant: Illuminant)
     init(iter elements: Element..., isUpscale: Bool, illuminant: Illuminant)

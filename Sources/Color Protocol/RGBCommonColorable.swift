@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol RGBCommonColorable: RGBScalable, NormalColorableProtocol, RGBColorElement, RGBSomeElementInit, CustomStringConvertible {
+public protocol RGBCommonColorable: RGBScalable, NormalColorableProtocol, RGBColorElement, RGBCommonSomeElementInit, CustomStringConvertible {
     
     var rgbColorSpace: ColorSpaceType.RGB { get set }
     

@@ -262,9 +262,9 @@ extension ColorPathSelector.XYZSelector {
         /// - Tag: V
         let nonlinearChannels = rgb.eotfEncoding()
 
-        rgb.red = nonlinearChannels[0]
-        rgb.green = nonlinearChannels[1]
-        rgb.blue = nonlinearChannels[2]
+        rgb.red = min(max(nonlinearChannels[0], R.redDownerRange.min), R.redDownerRange.max)
+        rgb.green = min(max(nonlinearChannels[1], R.greenDownerRange.min), R.greenDownerRange.max)
+        rgb.blue = min(max(nonlinearChannels[2], R.blueDownerRange.min), R.blueDownerRange.max)
         rgb.illuminant = illuminant
         rgb.isUpscale = false
         

@@ -1207,6 +1207,18 @@ class ColorSpaceConverterTests: XCTestCase {
         
     }
     
+    func testLabToRGB() throws {
+        
+        let lab = Lab(l: 68, a: 100, b: 3, isUpscale: true)
+        
+        print(Converter.convert(from: lab, to: XYZ.self).uppable().elements, Converter.convert(from: lab, to: RGBColor.self).uppable().elements, Converter.convert(from: lab, to: sRGB.self).uppable().elements, Converter.convert(from: lab, to: HSL.self).uppable().elements)
+        
+        let srgb = sRGB(red: 255.0, green: 4.6494157861071415, blue: 164.71071179038788, isUpscale: true)
+        
+        print(Converter.convert(from: srgb, to: RGBColor.self).uppable())
+        
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {

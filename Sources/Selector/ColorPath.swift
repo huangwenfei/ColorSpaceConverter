@@ -215,7 +215,7 @@ extension ColorPath {
             return []
         }
         
-        #if false && DEBUG
+        #if true && DEBUG
         print(path.edgeInfos.reduce("", { $0 + $1.from.rawValue + "->" + $1.to.rawValue + "  " }))
         #endif
 

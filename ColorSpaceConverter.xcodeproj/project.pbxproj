@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		234DCE322A78DD7D00598D35 /* AlgorithmX in Frameworks */ = {isa = PBXBuildFile; productRef = 234DCE312A78DD7D00598D35 /* AlgorithmX */; };
+		234DCE342A78DD8F00598D35 /* AlgorithmX in Frameworks */ = {isa = PBXBuildFile; productRef = 234DCE332A78DD8F00598D35 /* AlgorithmX */; };
+		234DCE352A78DD8F00598D35 /* AlgorithmX in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 234DCE332A78DD8F00598D35 /* AlgorithmX */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8300196729E2884800188C32 /* Derivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300196629E2884800188C32 /* Derivation.swift */; };
 		8300196829E2884800188C32 /* Derivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300196629E2884800188C32 /* Derivation.swift */; };
 		8300196A29E3187100188C32 /* Illuminants+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300196929E3187100188C32 /* Illuminants+Observer.swift */; };
@@ -146,10 +149,6 @@
 		8376DCEB29E05BBF00901214 /* CIERGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCE929E05BBF00901214 /* CIERGB.swift */; };
 		8376DCED29E071F100901214 /* AdobeWideGamutRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCEC29E071F100901214 /* AdobeWideGamutRGB.swift */; };
 		8376DCEE29E071F100901214 /* AdobeWideGamutRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376DCEC29E071F100901214 /* AdobeWideGamutRGB.swift */; };
-		837FBF9F26C2292A00C62259 /* AlgorithmX in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 837FBF9E26C2292A00C62259 /* AlgorithmX */; };
-		837FBFA026C2292A00C62259 /* AlgorithmX in Embed Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 837FBF9E26C2292A00C62259 /* AlgorithmX */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		837FBFA326C2298000C62259 /* AlgorithmX in Frameworks */ = {isa = PBXBuildFile; productRef = 837FBFA226C2298000C62259 /* AlgorithmX */; };
-		837FBFA426C2298000C62259 /* AlgorithmX in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 837FBFA226C2298000C62259 /* AlgorithmX */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		83B7E8B729EB9A8100AFA365 /* RGBCommonSomeElementInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B7E8B629EB9A8100AFA365 /* RGBCommonSomeElementInit.swift */; };
 		83B7E8B829EB9A8100AFA365 /* RGBCommonSomeElementInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B7E8B629EB9A8100AFA365 /* RGBCommonSomeElementInit.swift */; };
 		83B7E8BA29EB9B4800AFA365 /* ColorSomeElementInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B7E8B929EB9B4800AFA365 /* ColorSomeElementInit.swift */; };
@@ -225,7 +224,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				837FBFA026C2292A00C62259 /* AlgorithmX in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,7 +234,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				837FBFA426C2298000C62259 /* AlgorithmX in Embed Frameworks */,
+				234DCE352A78DD8F00598D35 /* AlgorithmX in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				837FBF9F26C2292A00C62259 /* AlgorithmX in Frameworks */,
+				234DCE322A78DD7D00598D35 /* AlgorithmX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +358,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				837FBFA326C2298000C62259 /* AlgorithmX in Frameworks */,
+				234DCE342A78DD8F00598D35 /* AlgorithmX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,7 +678,7 @@
 			);
 			name = "ColorSpaceConverter iOS";
 			packageProductDependencies = (
-				837FBF9E26C2292A00C62259 /* AlgorithmX */,
+				234DCE312A78DD7D00598D35 /* AlgorithmX */,
 			);
 			productName = "ColorSpaceConverter iOS";
 			productReference = 8364B6CF25D27CA300A62138 /* ColorSpaceConverter.framework */;
@@ -719,7 +717,7 @@
 			);
 			name = "ColorSpaceConverter OSX";
 			packageProductDependencies = (
-				837FBFA226C2298000C62259 /* AlgorithmX */,
+				234DCE332A78DD8F00598D35 /* AlgorithmX */,
 			);
 			productName = ColorSpaceConverter;
 			productReference = "ColorSpaceConverter::ColorSpaceConverter::Product" /* ColorSpaceConverter.framework */;
@@ -791,7 +789,7 @@
 			);
 			mainGroup = OBJ_5;
 			packageReferences = (
-				837FBF9D26C2292A00C62259 /* XCRemoteSwiftPackageReference "AlgorithmX" */,
+				234DCE302A78DD7D00598D35 /* XCRemoteSwiftPackageReference "AlgorithmX" */,
 			);
 			productRefGroup = OBJ_126 /* Products */;
 			projectDirPath = "";
@@ -1100,7 +1098,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1175,7 +1173,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1349,7 +1347,7 @@
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1385,7 +1383,7 @@
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1644,7 +1642,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		837FBF9D26C2292A00C62259 /* XCRemoteSwiftPackageReference "AlgorithmX" */ = {
+		234DCE302A78DD7D00598D35 /* XCRemoteSwiftPackageReference "AlgorithmX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitee.com/windyhuangwenfei/AlgorithmX";
 			requirement = {
@@ -1655,14 +1653,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		837FBF9E26C2292A00C62259 /* AlgorithmX */ = {
+		234DCE312A78DD7D00598D35 /* AlgorithmX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 837FBF9D26C2292A00C62259 /* XCRemoteSwiftPackageReference "AlgorithmX" */;
+			package = 234DCE302A78DD7D00598D35 /* XCRemoteSwiftPackageReference "AlgorithmX" */;
 			productName = AlgorithmX;
 		};
-		837FBFA226C2298000C62259 /* AlgorithmX */ = {
+		234DCE332A78DD8F00598D35 /* AlgorithmX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 837FBF9D26C2292A00C62259 /* XCRemoteSwiftPackageReference "AlgorithmX" */;
+			package = 234DCE302A78DD7D00598D35 /* XCRemoteSwiftPackageReference "AlgorithmX" */;
 			productName = AlgorithmX;
 		};
 /* End XCSwiftPackageProductDependency section */

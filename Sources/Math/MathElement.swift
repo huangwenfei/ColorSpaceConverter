@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol MathElement: BinaryFloatingPoint, SIMDScalar {
+public protocol MathElement: BinaryFloatingPoint, SIMDScalar, Decodable, Encodable {
     
 }
 

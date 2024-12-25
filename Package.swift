@@ -41,7 +41,6 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "ColorSpaceConverter",
-            type: .dynamic,
             targets: ["ColorSpaceConverter"]
         ),
     ],
@@ -50,7 +49,7 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
         .package(
             url: "https://github.com/huangwenfei/AlgorithmX",
-            .upToNextMajor(from: .init("0.0.1"))
+            from: "0.0.3"
         )
         
     ],
@@ -63,10 +62,6 @@ let package = Package(
                 "AlgorithmX"
             ],
             path: "Sources",
-            exclude: [
-                "Supporting Files/ColorSpaceConverter.h",
-                "Supporting Files/Info.plist"
-            ],
             linkerSettings: [
                 .linkedFramework(
                     "Accelerate", .when(platforms: [.iOS, .macOS])

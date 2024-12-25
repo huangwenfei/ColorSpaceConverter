@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -99,7 +99,6 @@
 		833F39D629EAF4B10064183C /* RGBSomeElementInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39D429EAF4B10064183C /* RGBSomeElementInit.swift */; };
 		8360465025D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
 		8360465125D907C000D5E1A7 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360464F25D907C000D5E1A7 /* Hex.swift */; };
-		8364B68825D27B0B00A62138 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364B68725D27B0B00A62138 /* Package.swift */; };
 		8364B73625D27DD000A62138 /* ColorSpaceConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8364B69825D27BBE00A62138 /* ColorSpaceConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8364B73F25D27DE400A62138 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Converter.swift */; };
 		8364B74025D27DE500A62138 /* ColorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ColorPath.swift */; };
@@ -1009,7 +1008,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				8364B68825D27B0B00A62138 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,7 +1199,6 @@
 		8364B6E425D27CA300A62138 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1272,7 +1269,6 @@
 		8364B6E525D27CA300A62138 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1474,7 +1470,6 @@
 		OBJ_257 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1506,7 +1501,6 @@
 		OBJ_258 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (

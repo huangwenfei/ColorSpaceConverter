@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ColorSpaceConverter"
-  spec.version      = "0.1.7"
+  spec.version      = "0.1.8"
   spec.summary      = "Conversion of various color models."
   spec.description  = <<-DESC
   Conversion of various color models. Ep: RGB -> XYZ, XYZ -> Lab ... Luv -> RGB .

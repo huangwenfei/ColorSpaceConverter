@@ -1,14 +1,15 @@
 {
+  "originHash" : "3d283499b6051b97064fe4539750de82f211a17128e5a8e4d7a03e00fd941b94",
   "pins" : [
     {
       "identity" : "algorithmx",
       "kind" : "remoteSourceControl",
       "location" : "https://gitee.com/windyhuangwenfei/AlgorithmX",
       "state" : {
-        "revision" : "541e1fb4e16e08e2557cf04b94f9e45499a0c38c",
-        "version" : "0.0.3"
+        "revision" : "763eed9a9e9e4c087c1280823b659de7c10d0fe4",
+        "version" : "0.0.4"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

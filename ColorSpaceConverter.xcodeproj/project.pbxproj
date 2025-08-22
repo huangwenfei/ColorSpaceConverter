@@ -1716,7 +1716,7 @@
 			repositoryURL = "https://gitee.com/windyhuangwenfei/AlgorithmX";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
+				minimumVersion = 0.0.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

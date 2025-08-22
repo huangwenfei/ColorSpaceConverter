@@ -130,10 +130,20 @@ public struct Hex: RGBCommonColorable {
         var count = str.count
         
         if hexString.hasPrefix("#") {
-            scanner.scanLocation = 1
+            if #available(iOS 13.0, macOS 10.15, *) {
+                let index = scanner.string.index(scanner.string.startIndex, offsetBy: 1, limitedBy: scanner.string.endIndex)!
+                scanner.currentIndex = index
+            } else {
+                scanner.scanLocation = 1
+            }
             count -= 1
         } else if hexString.hasPrefix("0x") || hexString.hasPrefix("0X") {
-            scanner.scanLocation = 2
+            if #available(iOS 13.0, macOS 10.15, *) {
+                let index = scanner.string.index(scanner.string.startIndex, offsetBy: 2, limitedBy: scanner.string.endIndex)!
+                scanner.currentIndex = index
+            } else {
+                scanner.scanLocation = 2
+            }
             count -= 2
         }
     

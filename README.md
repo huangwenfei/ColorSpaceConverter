@@ -47,8 +47,8 @@ In addition to the `struct Spectral: SpectralColorableProtocol` is special, othe
 
 let intRgb = AppleRGB(red: 50, green: 100, blue: 12); /// red [0, 255]
 
-let floatRgb = AppleRGB(red: 0.1, green: 0.3, blue: 0.5, isUpscale: false); /// red [0, 1]
-let floatRgb = AppleRGB(red: 50, green: 100, blue: 12, isUpscale: true); /// red [0, 255]
+let floatRgb = AppleRGB(red: 0.1, green: 0.3, blue: 0.5, isUpscale: true); /// red [0, 1]
+let floatRgb = AppleRGB(red: 50, green: 100, blue: 12, isUpscale: false); /// red [0, 255]
 
 let intIlluminantRgb = AppleRGB(red: 50, green: 100, blue: 12, illuminant: .two(.d65)); /// red [0, 255], illuminant: 2 Degrees, D65 light
 
@@ -58,16 +58,16 @@ let intHex = Hex(red: 50, green: 100, blue: 12, alpha: 255); /// red [0, 255]
 let floatHex = Hex(red: 0.1, green: 0.3, blue: 0.5, alpha: 1.0); /// red [0, 1]
 
 /// Other
-let xyz = XYZ(x: 0.1, y: 0.2, z: 0.3, isUpscale: false, illuminant: .two(.d65)); /// x [0, 1]
+let xyz = XYZ(x: 0.1, y: 0.2, z: 0.3, isUpscale: true, illuminant: .two(.d65)); /// x [0, 1]
 
-let lab = Lab(l: 0.1, a: 0.2, b: 0.3, isUpscale: false, illuminant: .two(.d65)); /// l [0, 1]
+let lab = Lab(l: 0.1, a: 0.2, b: 0.3, isUpscale: true, illuminant: .two(.d65)); /// l [0, 1]
 
 ```
 
 `isUpscale`: 
-- RGB: `true` -> [0, 1], `false` -> [0, 255]
-- XYZ: `true` -> [0, 1], `false` -> x [0, 95.047], y [0, 100], z [0, 108.883]
-- CMYK: `true` -> [0, 1], `false` -> [0, 100]
+- RGB: `false` -> [0, 1], `true` -> [0, 255]
+- XYZ: `false` -> [0, 1], `true` -> x [0, 95.047], y [0, 100], z [0, 108.883]
+- CMYK: `false` -> [0, 1], `true` -> [0, 100]
 
 ### Normal -> Normal
 

@@ -243,7 +243,7 @@
 /* Begin PBXFileReference section */
 		8300196629E2884800188C32 /* Derivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Derivation.swift; sourceTree = "<group>"; };
 		8300196929E3187100188C32 /* Illuminants+Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Illuminants+Observer.swift"; sourceTree = "<group>"; };
-		8306145D264ACB100066611D /* ColorSpaceConverter.podspec.github */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorSpaceConverter.podspec.github; sourceTree = SOURCE_ROOT; };
+		8306145D264ACB100066611D /* ColorSpaceConverter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorSpaceConverter.podspec; sourceTree = SOURCE_ROOT; };
 		8317E66A29EA8DEE007C6654 /* ColorPathSelector+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+Hex.swift"; sourceTree = "<group>"; };
 		8317E66D29EA8E8A007C6654 /* ColorPathSelector+RGBColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+RGBColor.swift"; sourceTree = "<group>"; };
 		8317E67029EA8ECF007C6654 /* ColorPathSelector+Spectral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPathSelector+Spectral.swift"; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 		8376DCEC29E071F100901214 /* AdobeWideGamutRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdobeWideGamutRGB.swift; sourceTree = "<group>"; };
 		83B7E8B629EB9A8100AFA365 /* RGBCommonSomeElementInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBCommonSomeElementInit.swift; sourceTree = "<group>"; };
 		83B7E8B929EB9B4800AFA365 /* ColorSomeElementInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSomeElementInit.swift; sourceTree = "<group>"; };
-		83ED102E25DA645F0094D787 /* ColorSpaceConverter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorSpaceConverter.podspec; sourceTree = SOURCE_ROOT; };
+		83ED102E25DA645F0094D787 /* ColorSpaceConverter.podspec.gitee */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorSpaceConverter.podspec.gitee; sourceTree = SOURCE_ROOT; };
 		"ColorSpaceConverter::ColorSpaceConverter::Product" /* ColorSpaceConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ColorSpaceConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"ColorSpaceConverter::ColorSpaceConverterTests::Product" /* ColorSpaceConverter OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = "ColorSpaceConverter OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* CIECAM02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIECAM02.swift; sourceTree = "<group>"; };
@@ -480,8 +480,8 @@
 		8364B68025D27AF700A62138 /* Deployment */ = {
 			isa = PBXGroup;
 			children = (
-				83ED102E25DA645F0094D787 /* ColorSpaceConverter.podspec */,
-				8306145D264ACB100066611D /* ColorSpaceConverter.podspec.github */,
+				83ED102E25DA645F0094D787 /* ColorSpaceConverter.podspec.gitee */,
+				8306145D264ACB100066611D /* ColorSpaceConverter.podspec */,
 				8364B68725D27B0B00A62138 /* Package.swift */,
 				8364B68F25D27B1700A62138 /* LICENSE */,
 			);
@@ -1096,7 +1096,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1172,7 +1172,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1246,7 +1246,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1312,7 +1312,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1343,7 +1343,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
@@ -1380,7 +1380,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
@@ -1412,6 +1412,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD = /usr/bin/true;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1433,6 +1434,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD = /usr/bin/true;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1451,6 +1453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEAD_CODE_STRIPPING = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -1461,6 +1464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEAD_CODE_STRIPPING = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -1478,7 +1482,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks",
@@ -1509,7 +1513,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks",

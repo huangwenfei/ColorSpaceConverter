@@ -71,15 +71,15 @@ public struct Hex: RGBCommonColorable {
         
     }
     
-    public init(red: Element, green: Element, blue: Element, alpha: Element = 1.0, illuminant: Illuminant = .default) {
-        self.init(red: red, green: green, blue: blue, alpha: alpha, illuminant: illuminant, rgb: sRGB.self)
+    public init(red: Element, green: Element, blue: Element, alpha: Element = 1.0, isUpscale: Bool, illuminant: Illuminant = .default) {
+        self.init(red: red, green: green, blue: blue, alpha: alpha, isUpscale: isUpscale, illuminant: illuminant, rgb: sRGB.self)
     }
     
-    public init<T: RGBColorable>(red: Element, green: Element, blue: Element, alpha: Element = 1.0, illuminant: Illuminant = .default, rgb: T.Type) {
+    public init<T: RGBColorable>(red: Element, green: Element, blue: Element, alpha: Element = 1.0, isUpscale: Bool, illuminant: Illuminant = .default, rgb: T.Type) {
         
-        self.init(type: .init(color: rgb), red: red, green: green, blue: blue, isUpscale: false)
+        self.init(type: .init(color: rgb), red: red, green: green, blue: blue, isUpscale: isUpscale)
         
-        self.alpha = min(max(0, alpha), 1)
+        self.alpha = isUpscale ? min(max(0, alpha), 1) : min(max(0, alpha), 255)
         self.illuminant = illuminant
     }
     
@@ -98,16 +98,18 @@ public struct Hex: RGBCommonColorable {
         )
     }
     
-    public init(gray: Element, alpha: Element, illuminant: Illuminant = .default) {
+    public init(gray: Element, alpha: Element, isUpscale: Bool, illuminant: Illuminant = .default) {
         self.init(
             red: gray, green: gray, blue: gray, alpha: alpha,
+            isUpscale: isUpscale,
             illuminant: illuminant
         )
     }
     
-    public init<T: RGBColorable>(gray: Element, alpha: Element, illuminant: Illuminant = .default, rgb: T.Type) {
+    public init<T: RGBColorable>(gray: Element, alpha: Element, isUpscale: Bool, illuminant: Illuminant = .default, rgb: T.Type) {
         self.init(
             red: gray, green: gray, blue: gray, alpha: alpha,
+            isUpscale: isUpscale,
             illuminant: illuminant,
             rgb: rgb
         )

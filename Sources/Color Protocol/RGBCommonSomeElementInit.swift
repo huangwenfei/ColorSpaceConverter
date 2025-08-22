@@ -27,7 +27,7 @@ extension RGBCommonSomeElementInit where Self: RGBCommonColorable, IlluminantTyp
     }
     
     public init(type: ColorSpaceType.RGB, array: [Element], isUpscale: Bool, illuminant: Illuminant) {
-        self.init(type: type, red: 0, green: 0, blue: 0, illuminant: illuminant, isUpscale: isUpscale)
+        self.init(type: type, red: 0, green: 0, blue: 0, isUpscale: isUpscale, illuminant: illuminant)
         let values = Self.initalize(with: array, elementCount: elementCount)
         red = values[0] ; green = values[1] ; blue = values[2]
     }

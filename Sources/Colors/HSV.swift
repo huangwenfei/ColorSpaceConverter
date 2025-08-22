@@ -37,7 +37,15 @@ public struct HSV: NormalColorableProtocol, ColorElement {
         self.illuminant = illuminant
     }
     
-    public init(h: Element, s: Element, v: Element, illuminant: Illuminant = .default) {
+    public init(h: Element, s: Element, v: Element, isUpscale: Bool, illuminant: Illuminant = .default) {
+        guard !isUpscale else {
+            self.init(
+                h: .init(h), s: .init(s), v: .init(v),
+                illuminant: illuminant
+            )
+            return
+        }
+        self.init()
         self.h = h
         self.s = s
         self.v = v

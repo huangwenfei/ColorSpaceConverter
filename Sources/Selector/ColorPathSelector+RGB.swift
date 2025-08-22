@@ -391,7 +391,7 @@ extension ColorPathSelector.RGBSelector {
 
         let v = max
 
-        return .init(h: h / 360.0, s: s, v: v, illuminant: color.illuminant)
+        return .init(h: h / 360.0, s: s, v: v, isUpscale: false, illuminant: color.illuminant)
         
     }
     
@@ -465,7 +465,7 @@ extension ColorPathSelector.RGBSelector {
             s = (max - min) / (2.0 - (2.0 * l))
         }
 
-        return .init(h: h / 360.0, s: s, l: l, illuminant: color.illuminant)
+        return .init(h: h / 360.0, s: s, l: l, isUpscale: false, illuminant: color.illuminant)
         
     }
     

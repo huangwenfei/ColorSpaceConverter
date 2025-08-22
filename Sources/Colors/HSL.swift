@@ -37,7 +37,15 @@ public struct HSL: NormalColorableProtocol, ColorElement {
         self.illuminant = illuminant
     }
     
-    public init(h: Element, s: Element, l: Element, illuminant: Illuminant = .default) {
+    public init(h: Element, s: Element, l: Element, isUpscale: Bool, illuminant: Illuminant = .default) {
+        guard !isUpscale else {
+            self.init(
+                h: .init(h), s: .init(s), l: .init(l),
+                illuminant: illuminant
+            )
+            return
+        }
+        self.init()
         self.h = h
         self.s = s
         self.l = l

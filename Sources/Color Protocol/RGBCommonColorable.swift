@@ -24,10 +24,10 @@ public protocol RGBCommonColorable: RGBScalable, NormalColorableProtocol, RGBCol
     var eotfDecodingClosure: CodingClosure { get set }
     
     init(type: ColorSpaceType.RGB, red: Int, green: Int, blue: Int, illuminant: Illuminant)
-    init(type: ColorSpaceType.RGB, red: Element, green: Element, blue: Element, illuminant: Illuminant, isUpscale: Bool)
+    init(type: ColorSpaceType.RGB, red: Element, green: Element, blue: Element, isUpscale: Bool, illuminant: Illuminant)
     
     init(type: ColorSpaceType.RGB, gray: Int, illuminant: Illuminant)
-    init(type: ColorSpaceType.RGB, gray: Element, illuminant: Illuminant, isUpscale: Bool)
+    init(type: ColorSpaceType.RGB, gray: Element, isUpscale: Bool, illuminant: Illuminant)
     
     init(type: ColorSpaceType.RGB, red: Int, green: Int, blue: Int)
     init(type: ColorSpaceType.RGB, red: Element, green: Element, blue: Element, isUpscale: Bool)
@@ -79,7 +79,7 @@ extension RGBCommonColorable {
         self.init(type: type, fromRgb: elements, isUpscale: true, illuminant: illuminant)
     }
     
-    public init(type: ColorSpaceType.RGB, red: Element, green: Element, blue: Element, illuminant: Illuminant, isUpscale: Bool) {
+    public init(type: ColorSpaceType.RGB, red: Element, green: Element, blue: Element, isUpscale: Bool, illuminant: Illuminant) {
         
         guard !isUpscale else {
             self.init(
@@ -102,12 +102,12 @@ extension RGBCommonColorable {
         self.init(type: type, red: gray, green: gray, blue: gray, illuminant: illuminant)
     }
     
-    public init(type: ColorSpaceType.RGB, gray: Element, illuminant: Illuminant, isUpscale: Bool) {
+    public init(type: ColorSpaceType.RGB, gray: Element, isUpscale: Bool, illuminant: Illuminant) {
         self.init(
             type: type,
             red: gray, green: gray, blue: gray,
-            illuminant: illuminant,
-            isUpscale: isUpscale
+            isUpscale: isUpscale,
+            illuminant: illuminant
         )
     }
     
@@ -126,8 +126,8 @@ extension RGBCommonColorable {
         self.init(
             type: type,
             red: red, green: green, blue: blue,
-            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default,
-            isUpscale: isUpscale
+            isUpscale: isUpscale,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default
         )
     }
     
@@ -144,8 +144,8 @@ extension RGBCommonColorable {
         self.init(
             type: type,
             gray: gray,
-            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default,
-            isUpscale: isUpscale
+            isUpscale: isUpscale,
+            illuminant: Illuminant.rgbIlluminants[.init(color: Self.self)] ?? .default
         )
     }
     
